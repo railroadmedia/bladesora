@@ -1,4 +1,6 @@
-<?php namespace Railroad\Bladesora\Providers;
+<?php
+
+namespace Railroad\Bladesora\Providers;
 
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
 
