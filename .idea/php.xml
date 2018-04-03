@@ -485,11 +485,7 @@
   </component>
   <component name="PhpProjectServersManager">
     <servers>
-      <server host="dev.recordeo.com" id="6b72671b-aef6-433d-9741-8be39ec7ccb2" name="recordeo" use_path_mappings="true">
-        <path_mappings>
-          <mapping local-root="$PROJECT_DIR$" remote-root="/app/recordeo" />
-        </path_mappings>
-      </server>
+      <server host="dev.bladesora.com" id="6b72671b-aef6-433d-9741-8be39ec7ccb2" name="recordeo" use_path_mappings="true" />
     </servers>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.1" />
