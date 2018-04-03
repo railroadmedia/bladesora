@@ -18,6 +18,8 @@ class BladesoraServiceProvider extends ServiceProvider
                 __DIR__ . '/../config/bladesora.php' => config_path('bladesora.php'),
             ]
         );
+
+        $this->loadViewsFrom(__DIR__.'/../../views', 'bladesora');
     }
 
     /**
