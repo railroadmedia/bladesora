@@ -3,6 +3,5 @@
         <div class="flex flex-column logo ph">
             <img src="{{ $logo }}">
         </div>
-
     </div>
 </div>
