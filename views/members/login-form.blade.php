@@ -21,7 +21,7 @@
 
 <section id="resetForm" class="flex flex-column shadow bg-white pa-3 mb-3 corners-3 hide">
 
-    <p class="body mb-3 text-light">Please enter your email address and we will send you instructions to reset your password.</p>
+    <p class="body mb text-light">Please enter your email address and we will send you instructions to reset your password.</p>
 
     <form action="{{ $resetUrl }}" class="flex flex-column">
         <div class="form-group mb">
