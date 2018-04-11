@@ -1,8 +1,8 @@
 <header id="nav" class="container fluid collapsed shadow">
     <div class="flex flex-row">
-        <div class="flex flex-column logo ph align-center">
+        <a href="/members" class="flex flex-column logo ph align-center">
             <img src="{{ $logo }}">
-        </div>
+        </a>
 
         <div class="flex flex-column">
 
@@ -15,7 +15,7 @@
         </div>
     </div>
 </header>
-<aside id="navSideBar" class="shadow bg-white">
+<aside id="navSideBar" class="shadow bg-white flex flex-column">
     <section id="userInfo" class="flex flex-column align-center pa-3">
         <div class="avatar mb">
             <div class="square">
@@ -30,9 +30,18 @@
             <i class="fas fa-user mr-1"></i> My Profile
         </a>
     </section>
-    <section id="pageLinks">
+    <section id="pageLinks" class="flex flex-column">
         @foreach($links as $page => $info)
-            @include('bladesora::members.partials._nav-link')
+            @include('bladesora::members.partials._nav-link', [
+                "page" => $page,
+                "icon" => $info['icon'],
+                "url" => $info['url']
+            ])
         @endforeach
+        <div class="flex flex-column spacer"></div>
+        <div class="sub-links flex flex-column mt-3">
+            <a class="flex flex-row align-h-center text-dark ph mv-1" href="{{ $supportUrl }}">Support <i class="fal fa-external-link ml-1"></i></a>
+            <a class="flex flex-row align-h-center text-dark ph mb-1" href="{{ $logoutUrl }}">Logout</a>
+        </div>
     </section>
 </aside>
