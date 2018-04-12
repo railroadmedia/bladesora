@@ -1,6 +1,6 @@
-<header id="nav" class="container fluid collapsed shadow">
+<header id="nav" class="container fluid collapsed shadow bv-dark-1">
     <div class="flex flex-row">
-        <a href="/members" class="flex flex-column logo ph align-center">
+        <a href="/members" class="flex flex-column logo ph align-center br-light-1">
             <img src="{{ $logo }}">
         </a>
 
@@ -8,7 +8,19 @@
 
         </div>
 
-        <div id="menuButton" class="flex flex-column menu noselect">
+        <div class="flex header-button flex-column noselect pa-1">
+            <a id="notificationButton" class="square">
+                <i class="rounded inset-border fas fa-bell flex-center"></i>
+            </a>
+        </div>
+
+        <div class="flex header-button flex-column noselect pa-1 mr-1">
+            <a class="square">
+                <img class="rounded inset-border" src="https://placehold.it/100x100">
+            </a>
+        </div>
+
+        <div id="menuButton" class="flex flex-column menu noselect bl-light-1">
             <div class="flex flex-row text-white align-center uppercase">
                 <span class="title hide-sm-down">Menu</span> <i class="menu-icon"></i>
             </div>
@@ -19,7 +31,7 @@
     <section id="userInfo" class="flex flex-column align-center pa-3">
         <div class="avatar mb">
             <div class="square">
-                <img class="rounded" src="https://placehold.it/250x250">
+                <img class="rounded inset-border" src="https://placehold.it/250x250">
             </div>
         </div>
         <div class="mb">
@@ -40,8 +52,8 @@
         @endforeach
         <div class="flex flex-column spacer"></div>
         <div class="sub-links flex flex-column mt-3">
-            <a class="flex flex-row align-h-center text-dark ph mv-1" href="{{ $supportUrl }}">Support <i class="fal fa-external-link ml-1"></i></a>
-            <a class="flex flex-row align-h-center text-dark ph mb-1" href="{{ $logoutUrl }}">Logout</a>
+            <a class="flex flex-row align-v-center text-dark ph mv-1" href="{{ $supportUrl }}">Support <i class="fal fa-external-link ml-1"></i></a>
+            <a class="flex flex-row align-v-center text-dark ph mb-1" href="{{ $logoutUrl }}">Logout</a>
         </div>
     </section>
 </aside>
