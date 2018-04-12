@@ -3,7 +3,7 @@
         <div class="flex flex-row">
             <div class="flex flex-column pr-2">
                 <h1 class="heading text-white mb-2">
-                    <i class="fas fa-home text-{{ $brand }}"></i> Home
+                    <i class="{{ $pageIcon }} text-{{ $brand }}"></i> {{ $pageTitle }}
                 </h1>
                 <p class="body text-white">{{ $pageDescription }}</p>
             </div>

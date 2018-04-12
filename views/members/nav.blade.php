@@ -9,9 +9,9 @@
         </div>
 
         <div class="flex header-button flex-column noselect pa-1">
-            <a id="notificationButton" class="square">
+            <div id="notificationButton" class="square">
                 <i class="rounded inset-border fas fa-bell flex-center"></i>
-            </a>
+            </div>
         </div>
 
         <div class="flex header-button flex-column noselect pa-1 mr-1">

@@ -3,7 +3,7 @@
         <div class="flex flex-row flex-wrap align-h-center">
             <section class="flex flex-column footer-col">
                 <div class="flex flex-row tiny align-center">
-                    Musora Media Inc &copy; {{ date('Y') }} - <a href="">Terms</a> / <a href="">Privacy</a>
+                    Musora Media Inc &copy; {{ date('Y') }} - <a href="{{ $termsUrl }}">Terms</a> / <a href="{{ $privacyUrl }}">Privacy</a>
                 </div>
             </section>
 
@@ -11,7 +11,7 @@
 
             <section class="flex flex-column footer-col">
                 <div class="flex flex-row tiny align-center">
-                    <a href="">Support</a> / <a href="">Logout</a>
+                    <a href="{{ $supportUrl }}">Support</a> / <a href="{{ $logoutUrl }}">Logout</a>
                 </div>
             </section>
         </div>
