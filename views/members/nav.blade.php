@@ -14,7 +14,7 @@
             </div>
         </div>
 
-        <div class="flex header-button flex-column noselect pa-1 mr-1">
+        <div class="flex header-button flex-column noselect pa-1 mr-1 hide-xs-only">
             <a class="square">
                 <img class="rounded inset-border" src="https://placehold.it/100x100">
             </a>

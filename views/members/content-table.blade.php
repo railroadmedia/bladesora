@@ -1,5 +1,5 @@
-<div class="container">
-    <div class="content-table flex flex-column bg-white shadow corners-3 mb-5">
+<div class="container mv-2">
+    <div class="content-table flex flex-column bg-white shadow corners-3">
         @if(!empty($tableTitle))
             <div class="flex flex-column pv-3 ph bb-light-1">
                 <h1 class="heading">{{ $tableTitle }}</h1>
