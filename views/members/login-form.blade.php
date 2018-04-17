@@ -15,8 +15,8 @@
             <label for="loginPassword" class="{{ $brand ?? '' }}">Password</label>
         </div>
 
-        <button type="submit" class="text-white btn bg-recordeo mb-3">
-            Sign In
+        <button type="submit" class="btn mb-3">
+            <span class="text-white bg-recordeo">Sign In</span>
         </button>
     </form>
 
@@ -38,8 +38,8 @@
             <label for="resetEmail" class="{{ $brand ?? '' }}">Email Address</label>
         </div>
 
-        <button type="submit" class="text-white btn bg-recordeo mb-3">
-            Get New Password
+        <button type="submit" class="btn mb-3">
+            <span class="text-white bg-recordeo">Get New Password</span>
         </button>
     </form>
 
