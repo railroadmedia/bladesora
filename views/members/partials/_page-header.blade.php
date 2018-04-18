@@ -2,8 +2,16 @@
     <div class="container">
         <div class="flex flex-row">
             <div class="flex flex-column pr-2">
+                @if(!empty($pageType))
+                    <p class="body text-{{ $brand }} font-bold uppercase">{{ $pageType }}</p>
+                @endif
+
                 <h1 class="heading text-white mb-2">
-                    <i class="{{ $pageIcon }} text-{{ $brand }}"></i> {{ $pageTitle }}
+                    @if(!empty($pageIcon))
+                        <i class="{{ $pageIcon }} text-{{ $brand }}"></i>
+                    @endif
+
+                    {{ $pageTitle }}
                 </h1>
                 <p class="body text-white">{{ $pageDescription }}</p>
             </div>

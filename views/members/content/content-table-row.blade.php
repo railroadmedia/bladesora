@@ -6,9 +6,11 @@
     </div>
 
     <div class="flex flex-column align-v-center pl-1 title-column overflow">
-        <p class="tiny text-recordeo text-truncate">
-            {{ ucwords($item['contentType']) }}
-        </p>
+        @if(!empty($item['colorTitle']))
+            <p class="tiny text-recordeo text-truncate">
+                {{ ucwords($item['colorTitle']) }}
+            </p>
+        @endif
         <p class="tiny text-black font-bold text-truncate">
             {{ $item['title'] }}
         </p>
@@ -34,7 +36,12 @@
             @if(!empty($item['progress']))
                 <i class="fas {{ $item['progress'] == 'completed' ? 'fa-check-circle' : 'fa-adjust' }} flex-center text-recordeo rounded"></i>
             @else
-                <i class="fas fa-arrow-circle-right flex-center text-light rounded"></i>
+
+                @if(in_array($item['contentType'], ['course', 'learning-path', 'pack', 'pack-bundle']))
+                    <i class="fas fa-arrow-circle-right flex-center text-light rounded"></i>
+                @else
+                    <i class="fas fa-play-circle flex-center text-light rounded"></i>
+                @endif
             @endif
         </div>
     </div>
