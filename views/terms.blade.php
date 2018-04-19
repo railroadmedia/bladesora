@@ -25,7 +25,7 @@
             damage, or loss related to, the accuracy, completeness or timeliness of the information.</p>
 
         <p class="font-bold">Copyright Information</p>
-        <p class="mb-3">Unless otherwise noted, all of the text, audio, and video content within {{ ucwords($brand) }}
+        <p class="mb-3">Unless otherwise noted, all of the text, audio, and video content within {{ ucwords($brand) }}.com
             is the copyrighted property of Musora Media, Inc. This copyrighted material includes all writing by staff,
             video lessons, and some of the artwork, drawings and logos. You may print out any articles and activities
             for your personal use only.</p>
@@ -33,10 +33,10 @@
         <p class="mb-3">Materials may not be reproduced on another website, book, or publication without express written
             permission. Any reproduction or editing by any means mechanical or electronic without the explicit written
             permission of Musora Media, Inc. is expressly prohibited. Certain names, logos, phrases, and artwork on
-            these pages may constitute trademarks of Musora Media or its sponsors. The mark "{{ ucwords($brand) }}"
+            these pages may constitute trademarks of Musora Media or its sponsors. The mark "{{ ucwords($brand) }}.com"
             and the contents of its website are the sole property of Musora Media. Reproduction in whole or in part is
             strictly prohibited without written permission of Musora Media, Inc.. Musora Media, Inc. also cannot
-            guarantee that all content and material appearing in the {{ ucwords($brand) }} website is not infringing
+            guarantee that all content and material appearing in the {{ ucwords($brand) }}.com website is not infringing
             on any registered or non-registered copyrights.</p>
 
         <p class="font-bold">User Contributions</p>

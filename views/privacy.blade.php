@@ -12,7 +12,7 @@
         <p class="mb-3">Below is a list of the standard policies we use on this website. They are in place to safeguard our users, and to ensure we can provide a quality user experience!</p>
 
         <p class="font-bold">Standard Website Logs</p>
-        <p class="mb-3">The {{ ucwords($brand) }} website logs all website visitors and transactions. We collect the standard information most all websites collect such as: the type of browser you are using, your IP address, your ISPs domain, time of day, date, web pages viewed, and length of time that you spend visiting this site, what forms were filled out, and what you purchase on our website. This data is logged on our servers through Google™ Analytics and Intercom™ for internal use only. We won't share any of the information outside of our company.</p>
+        <p class="mb-3">The {{ ucwords($brand) }}.com website logs all website visitors and transactions. We collect the standard information most all websites collect such as: the type of browser you are using, your IP address, your ISPs domain, time of day, date, web pages viewed, and length of time that you spend visiting this site, what forms were filled out, and what you purchase on our website. This data is logged on our servers through Google™ Analytics and Intercom™ for internal use only. We won't share any of the information outside of our company.</p>
 
         <p class="font-bold">Subscriptions & E-mail Data</p>
         <p class="mb-3">Our website offers users the option to subscribe for periodical updates. This is done with a name and e-mail address for registration. As with our server logs – all information that is collected will never be shared with any 3rd party.</p>
