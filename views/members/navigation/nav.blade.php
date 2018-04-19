@@ -20,7 +20,7 @@
             </a>
         </div>
 
-        <div id="menuButton" class="flex flex-column menu noselect bl-light-1">
+        <div id="menuButton" class="flex flex-column menu noselect bl-light-1" role="button">
             <div class="flex flex-row text-white align-center uppercase">
                 <span class="title hide-sm-down">Menu</span> <i class="menu-icon"></i>
             </div>

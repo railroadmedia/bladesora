@@ -21,7 +21,11 @@ class BladesoraServiceProvider extends ServiceProvider
             ]
         );
 
-        $this->loadViewsFrom(__DIR__.'/../../views', 'bladesora');
+        $this->loadViewsFrom(__DIR__ . '/../../views', 'bladesora');
+
+        if (file_exists($file = __DIR__ . '/../../helpers/helpers.php')) {
+            require $file;
+        }
     }
 
     /**
