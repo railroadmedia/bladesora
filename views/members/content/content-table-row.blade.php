@@ -15,19 +15,19 @@
             {{ $title }}
         </p>
         <p class="tiny text-dark text-truncate font-italic hide-md-up">
-            @foreach($columnData as $index => $columnData)
+            @foreach($columnData as $index => $column)
                 @if($index > 0)
                     <span style="margin:0 5px;">&#x25AA;</span>
                 @endif
 
-                {{ $columnData }}
+                {{ $column }}
             @endforEach
         </p>
     </div>
 
-    @foreach($columnData as $columnData)
+    @foreach($columnData as $column)
         <div class="flex flex-column align-center basic-col text-dark font-italic tiny hide-sm-down">
-            {{ $columnData }}
+            {{ $column }}
         </div>
     @endforEach
 
