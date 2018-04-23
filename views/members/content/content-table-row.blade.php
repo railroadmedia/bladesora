@@ -1,4 +1,4 @@
-<a href="{{ $url }}" class="content-table-row flex flex-row bt-light-1 no-decoration">
+<a href="{{ $url }}" class="content-table-row flex flex-row bt-light-1 no-decoration {{ !empty($compact) && $compact === true ? 'compact' : '' }}">
     <div class="flex flex-column thumbnail align-v-center pl-1">
         <div class="thumb-wrap">
             <div class="thumb-img widescreen bg-center corners-3" style="background-image:url({{ $thumbnail }});"></div>
@@ -11,7 +11,7 @@
                 {{ ucwords($colorTitle) }}
             </p>
         @endif
-        <p class="tiny text-black font-bold text-truncate">
+        <p class="tiny text-black font-bold item-title">
             {{ $title }}
         </p>
         <p class="tiny text-dark text-truncate font-italic hide-md-up">
