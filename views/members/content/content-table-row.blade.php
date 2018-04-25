@@ -20,14 +20,14 @@
                     <span style="margin:0 5px;">&#x25AA;</span>
                 @endif
 
-                {{ $column }}
+                {{ strtotime($column) ? \Carbon\Carbon::parse($column)->format('M j/y') : $column }}
             @endforEach
         </p>
     </div>
 
     @foreach($columnData as $column)
         <div class="flex flex-column align-center basic-col text-dark font-italic tiny hide-sm-down">
-            {{ $column }}
+            {{ strtotime($column) ? \Carbon\Carbon::parse($column)->format('M j/y') : $column }}
         </div>
     @endforEach
 
