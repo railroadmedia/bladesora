@@ -1,5 +1,5 @@
 <div class="flex flex-column bg-white shadow corners-3">
-    <div class="flex flex-column pa bb-light-1">
+    <div class="flex flex-column pa-3 bb-light-1">
         <h1 class="heading">
             <a href="{{ $forumUrl }}" class="no-decoration mr-1">
                 <i class="fas fa-arrow-circle-left text-light"></i>
