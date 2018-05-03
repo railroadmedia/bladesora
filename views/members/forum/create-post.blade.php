@@ -16,6 +16,8 @@
             </div>
             <div class="flex flex-column pa">
                 <form action="{{ $formAction }}" method="post">
+                    {{ csrf_field() }}
+
                     <div class="form-group mb-2">
                         <input type="text" id="postTitle">
                         <label for="postTitle" class="{{ $brand }}">Title</label>
@@ -23,7 +25,7 @@
 
                     <div class="form-group mb-2">
                         <select id="postTopic">
-                            <option selected disabled style="display:none">
+                            <option selected disabled style="display:none;">
                             @foreach($topicOptions as $topic)
                                 <option>{{ $topic }}</option>
                             @endforeach
@@ -35,7 +37,7 @@
 
                     <div class="flex flex-row align-h-right mt-2">
                         <a href="{{ $forumUrl }}"
-                           class="btn bg-black text-black no-decoration inverted collapse-150 no-border">Cancel</a>
+                           class="btn bg-black text-black no-decoration flat collapse-150 no-border mr-1">Cancel</a>
 
                         <button class="btn collapse-320" type="submit">
                                 <span class="bg-{{ $brand }} text-white corners-3">
