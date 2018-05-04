@@ -1,7 +1,7 @@
 <header id="pageHeader" class="container fluid pv-4" style="background-image:url({{ $backgroundImage }});">
     <div class="container">
         <div class="flex flex-row">
-            <div class="flex flex-column pr-2">
+            <div class="flex flex-column grow pr-2">
                 @if(!empty($pageType))
                     <p class="body text-{{ $brand }} font-bold uppercase">{{ $pageType }}</p>
                 @endif

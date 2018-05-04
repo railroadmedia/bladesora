@@ -8,15 +8,19 @@
 
         </div>
 
-        <div class="flex header-button flex-column noselect pa-1">
+        <div class="flex header-button flex-column noselect">
             <div id="notificationButton" class="square">
-                <i class="rounded inset-border fas fa-bell flex-center"></i>
+                <div class="pa-1 wrap">
+                    <i class="rounded inset-border fas fa-bell flex-center"></i>
+                </div>
             </div>
         </div>
 
-        <div class="flex header-button flex-column noselect pa-1 mr-1 hide-xs-only">
+        <div class="flex header-button flex-column noselect mr-1 hide-xs-only">
             <a class="square">
-                <img class="rounded inset-border" src="https://placehold.it/100x100">
+                <div class="pa-1 wrap">
+                    <img class="rounded inset-border" src="https://placehold.it/100x100">
+                </div>
             </a>
         </div>
 
