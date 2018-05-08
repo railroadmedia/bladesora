@@ -42,7 +42,7 @@
             <h4 class="title text-white">Curtis Conway</h4>
         </div>
 
-        <a href="" class="btn bg-{{ $brand }} inverted text-{{ $brand }}">
+        <a href="{{ $accountUrl }}" class="btn bg-{{ $brand }} inverted text-{{ $brand }}">
             <i class="fas fa-user mr-1"></i> My Profile
         </a>
     </section>
