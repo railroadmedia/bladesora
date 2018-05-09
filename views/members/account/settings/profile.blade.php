@@ -12,6 +12,10 @@
         </div>
 
         <div class="flex flex-row pa-3 flex-auto bt-light-1">
+            @include('bladesora::members.account.settings.profile.avatar-form')
+        </div>
+
+        <div class="flex flex-row pa-3 flex-auto bt-light-1">
             @include('bladesora::members.account.settings.profile.about-form')
         </div>
     </div>
