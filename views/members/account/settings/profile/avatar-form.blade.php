@@ -4,7 +4,7 @@
     @endslot
 
     @slot('modalId')
-        profilePictureModal
+        avatarModal
     @endslot
 
     @slot('formData')
@@ -22,5 +22,18 @@
     @endslot
 
     @slot('formModal')
+        <div id="avatarModal" class="modal">
+            <div class="flex flex-column bg-white corners-3 shadow">
+                <div class="flex flex-row pa-3">
+                    <h2 class="subheading">Edit: Profile Picture</h2>
+                </div>
+
+                <div id="avatarUpload"></div>
+            </div>
+
+            <span class="close-modal close-button">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
     @endslot
 @endcomponent
