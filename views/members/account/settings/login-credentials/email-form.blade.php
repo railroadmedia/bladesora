@@ -1,30 +1,33 @@
 @component('bladesora::members.account.settings.edit-form')
     @slot('formTitle')
-        Display Name
+        Login Email
     @endslot
 
     @slot('modalId')
-        displayNameModal
+        loginEmailModal
     @endslot
 
     @slot('formData')
         <div class="flex flex-column">
             @include('bladesora::members.account.partials._text-fields', [
                 "fields" => [
-                    "Display Name" => "victor guidera",
+                    "Login Email" => "victor@mailinator.com",
                 ]
             ])
-            <p class="tiny text-dark font-italic">
-                This is the name other users will see on your profile, comments and forum posts.
-            </p>
+
+            @if(!empty($pending))
+                <p class="tiny text-error font-italic">
+                    Email change pending confirmation
+                </p>
+            @endif
         </div>
     @endslot
 
     @slot('formModal')
-        <div id="displayNameModal" class="modal">
+        <div id="loginEmailModal" class="modal">
             <div class="flex flex-column bg-white corners-3 shadow">
                 <div class="flex flex-row pa-3">
-                    <h2 class="subheading">Edit: Display Name</h2>
+                    <h2 class="subheading">Edit: Login Email</h2>
                 </div>
 
                 <form>
@@ -32,12 +35,12 @@
                         <div class="flex flex-column">
                             @include('bladesora::members.inputs.text-input', [
                                 "brand" => "recordeo",
-                                "type" => "text",
-                                "inputId" => "displayName",
-                                "inputName" => "display_name",
-                                "inputLabel" => "Display Name",
+                                "inputId" => "loginEmail",
+                                "inputName" => "login_email",
+                                "inputLabel" => "Login Email",
                                 "inputValue" => "",
                                 "inputErrors" => [],
+                                "type" => "email",
                             ])
                         </div>
                     </div>

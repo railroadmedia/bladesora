@@ -2,19 +2,15 @@
 
 @section('edit-forms')
     <div class="flex flex-column pa-3 flex-auto">
-        <h1 class="heading">Profile</h1>
+        <h1 class="heading">Login Credentials</h1>
     </div>
     <div id="editForm" class="flex flex-column">
         <div class="flex flex-row pa-3 flex-auto bt-light-1">
-            @include('bladesora::members.account.settings.profile.display-name-form')
+            @include('bladesora::members.account.settings.login-credentials.email-form')
         </div>
 
         <div class="flex flex-row pa-3 flex-auto bt-light-1">
-            @include('bladesora::members.account.settings.profile.avatar-form')
-        </div>
-
-        <div class="flex flex-row pa-3 flex-auto bt-light-1">
-            @include('bladesora::members.account.settings.profile.about-form')
+            @include('bladesora::members.account.settings.login-credentials.password-form')
         </div>
     </div>
 @endsection

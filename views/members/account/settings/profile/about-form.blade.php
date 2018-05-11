@@ -41,6 +41,7 @@
                         <div class="flex flex-column">
                             @include('bladesora::members.inputs.text-input', [
                                 "brand" => "recordeo",
+                                "type" => "text",
                                 "inputId" => "profileName",
                                 "inputName" => "full_name",
                                 "inputLabel" => "Full Name",

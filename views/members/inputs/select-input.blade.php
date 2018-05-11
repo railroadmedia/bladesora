@@ -1,12 +1,13 @@
 <div class="form-group">
     <select id="{{ $inputId }}"
             name="{{ $inputName }}"
-            class="{{ count($inputErrors) > 0 ? 'has-error' : '' }}">
+            class="{{ count($inputErrors) > 0 ? 'has-error' : '' }}"
+            {{ !empty($disabled) && $disabled === true ? 'disabled' : '' }}>
         <option value="" style="display:none;"></option>
         @foreach($inputOptions as $option)
-            <option value="{{ $option }}"
-                    {{ $inputValue === $option ? 'selected' : '' }}>
-                {{ ucwords($option) }}
+            <option value="{{ (string)$option }}"
+                    {{ $inputValue === (string)$option ? 'selected' : '' }}>
+                {{ ucwords((string)$option) }}
             </option>
         @endforeach
     </select>
