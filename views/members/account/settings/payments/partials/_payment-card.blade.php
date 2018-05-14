@@ -35,8 +35,8 @@
                     <p class="tiny uppercase dense">
                         expires
                         <span class="title ml-1 dense">
-                                {{ $activeMethod['expiry'] }}
-                            </span>
+                            {{ $activeMethod['expiryMonth'] }}/{{ substr($activeMethod['expiryYear'], 2) }}
+                        </span>
                     </p>
                 </div>
             </div>

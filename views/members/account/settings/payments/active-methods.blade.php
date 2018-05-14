@@ -1,27 +1,63 @@
 <div class="flex flex-column">
-    <h2 class="subheading mb-2">
-        Your Active Payment Methods
-    </h2>
+    <div class="flex flex-row pa-3">
+        <div class="flex flex-column grow">
+            <h2 class="subheading mb-2">
+                Your Active Payment Methods
+            </h2>
 
-    <p class="tiny text-dark">Your Recordeo subscription will automatically be charged by default to the credit card below. If you want to use a different credit card, just add a new payment method and select the new one as default.</p>
+            <p class="tiny text-dark">Your Recordeo subscription will automatically be charged by default to the credit card below. If you want to use a different credit card, just add a new payment method and select the new one as default.</p>
+        </div>
+    </div>
 
-    <div class="flex flex-row flex-wrap mt-3">
-        @foreach($activeMethods as $activeMethod)
-            <div class="flex flex-column xs-12 sm-12 md-6 cc-col">
+    <div class="flex flex-row flex-wrap ph-2">
+        @foreach($activeMethods as $index => $activeMethod)
+            <div id="{{ $activeMethod['id'] }}" class="flex flex-column xs-12 sm-12 md-6 cc-col ph-2 mb-3">
                 @include('bladesora::members.account.settings.payments.partials._payment-method', [
+                        "index" => $index,
                         "activeMethod" => $activeMethod
                     ])
 
 
             </div>
         @endforeach
-        <div class="flex flex-column xs-12 sm-12 md-6 cc-col">
+
+        <div class="flex flex-column xs-12 sm-12 md-6 cc-col ph-2 mb-3">
             <div class="credit-card-box">
-                <div class="card flex-center ba-dark-2 dashed corners-5 pointer">
+                <div class="card flex-center ba-dark-2 dashed corners-5 pointer"
+                     data-open-modal="paymentModalNew">
                     <h3 class="title text-dark uppercase dense">
                         <i class="fas fa-plus mr-1"></i>
                         Add Payment Method
                     </h3>
+                </div>
+            </div>
+
+            <div id="paymentModalNew" class="modal">
+                <div class="flex flex-column bg-white corners-3 shadow">
+                    <div class="flex flex-row pa-3 align-v-center">
+                        <div class="flex flex-column">
+                            <h2 class="subheading">Edit: Payment Method</h2>
+                        </div>
+                        <div class="flex flex-column">
+                            <div class="flex flex-row flex-auto align-h-right" style="font-size:32px;">
+                                <i class="fab fa-cc-visa ml-1"></i>
+                                <i class="fab fa-cc-mastercard ml-1"></i>
+                                <i class="fab fa-cc-amex ml-1"></i>
+                                <i class="fab fa-cc-paypal ml-1"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    @include('bladesora::members.account.settings.payments.partials._payment-method-form', [
+                        "formId" => "paymentMethodNew",
+                        "formAction" => "",
+                        "formMethod" => "",
+                        "activeMethod" => null
+                    ])
+
+                    <span class="close-modal close-button">
+                        <i class="fas fa-times"></i>
+                    </span>
                 </div>
             </div>
         </div>

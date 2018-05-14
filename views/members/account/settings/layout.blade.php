@@ -22,22 +22,10 @@
                     "active" => strpos(url()->current(), 'payment')
                 ],
                 [
-                    "url" => url()->route('account.settings.privacy'),
-                    "icon" => "far fa-eye-slash",
-                    "title" => "Privacy",
-                    "active" => strpos(url()->current(), 'privacy')
-                ],
-                [
                     "url" => url()->route('account.settings.notifications'),
                     "icon" => "fas fa-bell",
                     "title" => "Notifications",
                     "active" => strpos(url()->current(), 'notifications')
-                ],
-                [
-                    "url" => url()->route('account.settings.membership'),
-                    "icon" => "far fa-calendar-alt",
-                    "title" => "Membership",
-                    "active" => strpos(url()->current(), 'subscription')
                 ],
             ]
         ])
