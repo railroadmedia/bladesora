@@ -8,7 +8,7 @@
     @endslot
 
     @slot('formData')
-        <div class="flex flex-column">
+        <div class="flex flex-column grow">
             @include('bladesora::members.account.partials._text-fields', [
                 "fields" => [
                     "Full Name" => "Victor Guidera",

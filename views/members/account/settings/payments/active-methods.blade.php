@@ -16,8 +16,6 @@
                         "index" => $index,
                         "activeMethod" => $activeMethod
                     ])
-
-
             </div>
         @endforeach
 
@@ -36,7 +34,7 @@
                 <div class="flex flex-column bg-white corners-3 shadow">
                     <div class="flex flex-row pa-3 align-v-center">
                         <div class="flex flex-column">
-                            <h2 class="subheading">Edit: Payment Method</h2>
+                            <h2 class="subheading">Add New Payment Method</h2>
                         </div>
                         <div class="flex flex-column">
                             <div class="flex flex-row flex-auto align-h-right" style="font-size:32px;">

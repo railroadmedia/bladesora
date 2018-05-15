@@ -1,36 +1,25 @@
 <div class="flex flex-row bg-white shadow corners-3">
-    <div id="settingsSidebar" class="flex flex-column br-light-1 corners-left-3 hide-xs-only">
-        @include('bladesora::members.account.partials._sidebar-links', [
-            "brand" => $brand,
-            "sections" => [
-                [
-                    "url" => url()->route('account.settings.profile'),
-                    "icon" => "fas fa-edit",
-                    "title" => "Profile",
-                    "active" => strpos(url()->current(), 'profile')
-                ],
-                [
-                    "url" => url()->route('account.settings.login'),
-                    "icon" => "fas fa-lock",
-                    "title" => "Login Credentials",
-                    "active" => strpos(url()->current(), 'login')
-                ],
-                [
-                    "url" => url()->route('account.settings.payments'),
-                    "icon" => "far fa-credit-card",
-                    "title" => "Payments",
-                    "active" => strpos(url()->current(), 'payment')
-                ],
-                [
-                    "url" => url()->route('account.settings.notifications'),
-                    "icon" => "fas fa-bell",
-                    "title" => "Notifications",
-                    "active" => strpos(url()->current(), 'notifications')
-                ],
-            ]
-        ])
-    </div>
     <div class="flex flex-column">
-        @yield('edit-forms')
+        <div class="flex flex-row hide-sm-up">
+            @foreach($sections as $index => $section)
+                <a href="{{ $section['url'] }}"
+                   class="flex flex-column subheading align-center pa-2 bb-light-1 no-decoration
+                {{ $index > 0 ? 'bl-light-1' : '' }}
+                   {{ $section['active'] ? 'bg-recordeo text-white' : 'text-dark' }}">
+                    <i class="{{ $section['icon'] }}"></i>
+                </a>
+            @endforeach
+        </div>
+        <div class="flex flex-row">
+            <div id="settingsSidebar" class="flex flex-column br-light-1 corners-left-3 hide-xs-only">
+                @include('bladesora::members.account.partials._sidebar-links', [
+                    "brand" => $brand,
+                    "sections" => $sections
+                ])
+            </div>
+            <div class="flex flex-column grow">
+                @yield('edit-forms')
+            </div>
+        </div>
     </div>
 </div>

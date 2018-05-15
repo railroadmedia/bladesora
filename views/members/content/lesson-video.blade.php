@@ -1,5 +1,5 @@
 <div class="container">
-    <div class="flex flex-row mb-2">
+    <div class="flex flex-row overflow mb-2">
         <div class="flex flex-column pr-1">
             <h1 class="heading text-white">{{ $lessonTitle }}</h1>
             <h4 class="subtitle text-white uppercase">

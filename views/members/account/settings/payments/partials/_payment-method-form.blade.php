@@ -1,30 +1,42 @@
-@section('scripts')
-    @if(empty($activeMethod))
-        <script>
-            document.addEventListener('DOMContentLoaded', function(){
-                const thisForm = document.getElementById('paymentMethodNew');
-                const typeField = document.getElementById('methodType');
-                const creditCardFields = thisForm.querySelector('.credit-card-fields');
-                const paypalFields = thisForm.querySelector('.paypal-fields');
-
-                typeField.addEventListener('change', function(){
-                    if(this.value === 'paypal'){
-                        creditCardFields.classList.add('hide');
-                        paypalFields.classList.remove('hide');
-                    }
-                    else {
-                        creditCardFields.classList.remove('hide');
-                        paypalFields.classList.add('hide');
-                    }
-                });
-            });
-        </script>
-    @endif
-@append
-
 <form id="{{ $formId }}"
       action="{{ $formAction }}"
-      method="{{ $formMethod }}">
+      method="{{ $formMethod }}"
+      class="payment-form">
+
+    @if(!empty($editingPayment) && $editingPayment === true)
+        <div class="method-fields mb-2">
+            <div class="flex flex-row ph-3">
+                <div class="flex flex-column">
+                    <div class="flex flex-row mb-2">
+                        @include('bladesora::members.inputs.radio-input', [
+                            "inputID" => "newMethod",
+                            "inputName" => "payment_method_type",
+                            "inputLabel" => "New Payment Method",
+                            "inputValue" => null,
+                            "checked" => true
+                        ])
+                    </div>
+
+                    @if(!empty($activeMethods))
+                        @foreach($activeMethods as $activeMethod)
+                            <div class="flex flex-row mb-2">
+                                @include('bladesora::members.inputs.radio-input', [
+                                    "inputID" => "methodType" . ucwords($activeMethod['type']),
+                                    "inputName" => "payment_method_type",
+                                    "inputLabel" => $activeMethod['type'] === 'paypal' ?
+                                                    'Use Paypal Account - ' . $activeMethod['email'] :
+                                                    'Use ' . ucwords($activeMethod['type']) .
+                                                    ' ending in ' . $activeMethod['lastFourDigits'],
+                                    "inputValue" => $activeMethod['id'],
+                                    "checked" => false
+                                ])
+                            </div>
+                        @endforeach
+                    @endif
+                </div>
+            </div>
+        </div>
+    @endif
 
     <div class="type-fields">
         <div class="flex flex-row ph-3">
@@ -95,17 +107,6 @@
 
         <div class="flex flex-row ph-3 mt-1 inline-inputs">
             <div class="flex flex-column">
-                @include('bladesora::members.inputs.text-input', [
-                    "brand" => "recordeo",
-                    "type" => "text",
-                    "inputId" => "nameOnCard",
-                    "inputName" => "card_name",
-                    "inputLabel" => "Name on Card",
-                    "inputValue" => "",
-                    "inputErrors" => [],
-                ])
-            </div>
-            <div class="flex flex-column">
                 @include('bladesora::members.inputs.select-input', [
                     "brand" => "recordeo",
                     "inputId" => "cardCountry",
@@ -119,7 +120,7 @@
                     "inputErrors" => [],
                 ])
             </div>
-            <div class="flex flex-column smaller hide">
+            <div class="flex flex-column hide">
                 @include('bladesora::members.inputs.select-input', [
                     "brand" => "recordeo",
                     "inputId" => "cardRegion",
@@ -147,7 +148,8 @@
             </div>
         </div>
     </div>
-    <div class="paypal-fields {{ !empty($activeMethod) && $activeMethod['type'] === 'paypal' ? '' : 'hide' }}">
+
+    <div class="paypal-fields hide">
         <div class="flex flex-row ph-3">
             <div class="flex flex-column mb-1">
                 <p class="tiny text-dark font-italic">Click the Save button to be redirected to PayPal for authentication.</p>
