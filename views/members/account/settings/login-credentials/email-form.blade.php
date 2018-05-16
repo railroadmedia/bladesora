@@ -30,10 +30,13 @@
                     <h2 class="subheading">Edit: Login Email</h2>
                 </div>
 
-                <form>
+                <form method="POST" action="{{ $action }}">
+                    {{ method_field($method) }}
+                    {{ csrf_field() }}
+
                     <div class="flex flex-row ph-3 mb-1">
                         <div class="flex flex-column">
-                            @include('bladesora::members.inputs.text-input', [
+                            @include('bladesora::members.inputs.text-input', array_merge([
                                 "brand" => "recordeo",
                                 "inputId" => "loginEmail",
                                 "inputName" => "login_email",
@@ -41,7 +44,7 @@
                                 "inputValue" => "",
                                 "inputErrors" => [],
                                 "type" => "email",
-                            ])
+                            ], $emailInput ?? []))
                         </div>
                     </div>
 

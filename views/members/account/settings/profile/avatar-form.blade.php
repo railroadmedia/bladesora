@@ -11,7 +11,7 @@
         <div class="flex flex-column">
             <div class="flex flex-row flex-wrap align-center">
                 <div class="flex flex-column image-col align-center">
-                    <img class="rounded" src="https://placehold.it/250x250">
+                    <img class="rounded" src="{{ $profilePictureUrl }}">
                 </div>
                 <div class="flex flex-column align-center pa">
                     <p class="tiny text-dark">For best results upload a square photo.</p>
@@ -29,8 +29,8 @@
                 </div>
 
                 <input type="hidden" id="vuePropData"
-                       data-s3-upload-endpoint=""
-                       data-save-endpoint="">
+                       data-s3-upload-endpoint="{{ $uploadRequestEndpoint }}"
+                       data-save-endpoint="{{ $fieldSaveRequestEndpoint }}">
 
                 <div id="avatarUpload"></div>
             </div>

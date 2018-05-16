@@ -24,10 +24,13 @@
                     <h2 class="subheading">Edit: Login Password</h2>
                 </div>
 
-                <form>
+                <form method="POST" action="{{ $action }}">
+                    {{ method_field($method) }}
+                    {{ csrf_field() }}
+
                     <div class="flex flex-row ph-3 mb-3">
                         <div class="flex flex-column">
-                            @include('bladesora::members.inputs.text-input', [
+                            @include('bladesora::members.inputs.text-input', array_merge([
                                 "brand" => "recordeo",
                                 "type" => "password",
                                 "inputId" => "currentPassword",
@@ -35,13 +38,13 @@
                                 "inputLabel" => "Current Password",
                                 "inputValue" => "",
                                 "inputErrors" => [],
-                            ])
+                            ], $currentPasswordInput ?? []))
                         </div>
                     </div>
 
                     <div class="flex flex-row ph-3 mb-1">
                         <div class="flex flex-column">
-                            @include('bladesora::members.inputs.text-input', [
+                            @include('bladesora::members.inputs.text-input', array_merge([
                                 "brand" => "recordeo",
                                 "type" => "password",
                                 "inputId" => "loginPassword",
@@ -49,13 +52,13 @@
                                 "inputLabel" => "New Password",
                                 "inputValue" => "",
                                 "inputErrors" => [],
-                            ])
+                            ], $newPasswordInput ?? []))
                         </div>
                     </div>
 
                     <div class="flex flex-row ph-3 mb-1">
                         <div class="flex flex-column">
-                            @include('bladesora::members.inputs.text-input', [
+                            @include('bladesora::members.inputs.text-input', array_merge([
                                 "brand" => "recordeo",
                                 "type" => "password",
                                 "inputId" => "loginPasswordConfirm",
@@ -63,7 +66,7 @@
                                 "inputLabel" => "Confirm Password",
                                 "inputValue" => "",
                                 "inputErrors" => [],
-                            ])
+                            ], $newPasswordConfirmationInput ?? []))
                         </div>
                     </div>
 

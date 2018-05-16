@@ -11,21 +11,15 @@
         <div class="flex flex-column grow">
             @include('bladesora::members.account.partials._text-fields', [
                 "fields" => [
-                    "Full Name" => "Victor Guidera",
-                    "Location" => "Canada",
-                    "Gender" => "Male",
-                    "Birthday" => "May 21, 1990",
+                    "Full Name" => $fullName,
+                    "Location" => $country,
+                    "Gender" => $gender,
+                    "Birthday" => $birthday,
                 ]
             ])
 
             <p class="body font-bold mb-1 mt-3">Biography</p>
-            <p class="body">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto debitis ea enim fuga fugit illum labore molestiae obcaecati odit optio placeat quidem quis ratione rerum similique soluta, totam unde voluptates?
-                <br><br>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto consequatur cum debitis dignissimos, ea eveniet fugiat in magnam nemo nihil nobis nostrum officia perspiciatis porro quam, sint tempore ut voluptate.
-                <br><br>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. At, laborum nostrum quas quia reiciendis totam ullam? Accusamus deserunt, dolorum eum expedita illum maxime nam, nemo quam quos sit ullam vel.
-            </p>
+            <p class="body">{{ $biography }}</p>
         </div>
     @endslot
 
@@ -36,23 +30,24 @@
                     <h2 class="subheading">Edit: About</h2>
                 </div>
 
-                <form>
+                <form method="POST" action="{{ $action }}">
+                    {{ method_field($method) }}
+                    {{ csrf_field() }}
+
                     <div class="flex flex-row ph-3 inline-inputs">
                         <div class="flex flex-column">
-                            @include('bladesora::members.inputs.text-input', [
+                            @include('bladesora::members.inputs.text-input', array_merge([
                                 "brand" => "recordeo",
                                 "type" => "text",
                                 "inputId" => "profileName",
                                 "inputName" => "full_name",
                                 "inputLabel" => "Full Name",
                                 "inputValue" => "",
-                                "inputErrors" => [
-                                    'This field is required'
-                                ],
-                            ])
+                                "inputErrors" => [],
+                            ], $fullNameInput ?? []))
                         </div>
                         <div class="flex flex-column">
-                            @include('bladesora::members.inputs.select-input', [
+                            @include('bladesora::members.inputs.select-input', array_merge([
                                 "brand" => "recordeo",
                                 "inputId" => "profileCountry",
                                 "inputName" => "country",
@@ -63,13 +58,13 @@
                                     'United States',
                                 ],
                                 "inputErrors" => [],
-                            ])
+                            ], $countryInput ?? []))
                         </div>
                     </div>
 
                     <div class="flex flex-row ph-3 inline-inputs">
                         <div class="flex flex-column">
-                            @include('bladesora::members.inputs.select-input', [
+                            @include('bladesora::members.inputs.select-input', array_merge([
                                 "brand" => "recordeo",
                                 "inputId" => "profileGender",
                                 "inputName" => "gender",
@@ -80,30 +75,30 @@
                                     'Female',
                                 ],
                                 "inputErrors" => [],
-                            ])
+                            ], $genderInput ?? []))
                         </div>
                         <div class="flex flex-column">
-                            @include('bladesora::members.inputs.datetime-input', [
+                            @include('bladesora::members.inputs.datetime-input', array_merge([
                                 "brand" => "recordeo",
                                 "inputId" => "profileBirthday",
                                 "inputName" => "birthday",
                                 "inputLabel" => "Birthday",
                                 "inputValue" => \Carbon\Carbon::now(),
                                 "inputErrors" => [],
-                            ])
+                            ], $birthdayInput ?? []))
                         </div>
                     </div>
 
                     <div class="flex flex-row ph-3 mb-1">
                         <div class="flex flex-column">
-                            @include('bladesora::members.inputs.textarea-input', [
+                            @include('bladesora::members.inputs.textarea-input', array_merge([
                                 "brand" => "recordeo",
                                 "inputId" => "profileBio",
                                 "inputName" => "biography",
                                 "inputLabel" => "Biography",
                                 "inputValue" => "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus deleniti laboriosam obcaecati quae quod ratione, recusandae rerum similique voluptates. Alias delectus dicta fugiat in laboriosam modi nihil quisquam ratione, veritatis.",
                                 "inputErrors" => [],
-                            ])
+                            ], $biographyInput ?? []))
                         </div>
                     </div>
 

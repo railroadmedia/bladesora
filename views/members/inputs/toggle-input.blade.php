@@ -4,8 +4,12 @@
     </label>
 
     <span class="toggle-input">
+        {{-- the hidden input will force the checkbox to return false if its not checked --}}
+        <input type="hidden" name="{{ $inputName }}" value="0">
+
         <input id="{{ $inputID }}"
                name="{{ $inputName }}"
+               value="{{ $inputValue ?? 'on' }}"
                {{ !empty($checked) && $checked === true ? 'checked' : '' }}
                type="checkbox">
 

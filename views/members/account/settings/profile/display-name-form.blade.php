@@ -11,7 +11,7 @@
         <div class="flex flex-column">
             @include('bladesora::members.account.partials._text-fields', [
                 "fields" => [
-                    "Display Name" => "victor guidera",
+                    "Display Name" => $displayName,
                 ]
             ])
             <p class="tiny text-dark font-italic">
@@ -27,7 +27,10 @@
                     <h2 class="subheading">Edit: Display Name</h2>
                 </div>
 
-                <form>
+                <form method="POST" action="{{ $action }}">
+                    {{ method_field($method) }}
+                    {{ csrf_field() }}
+
                     <div class="flex flex-row ph-3 mb-1">
                         <div class="flex flex-column">
                             @include('bladesora::members.inputs.text-input', array_merge([
@@ -38,7 +41,7 @@
                                 "inputLabel" => "Display Name",
                                 "inputValue" => "",
                                 "inputErrors" => [],
-                            ], $displayNameForm ?? []))
+                            ], $displayNameInput ?? []))
                         </div>
                     </div>
 
