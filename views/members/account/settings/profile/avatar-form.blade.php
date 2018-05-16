@@ -28,6 +28,10 @@
                     <h2 class="subheading">Edit: Profile Picture</h2>
                 </div>
 
+                <input type="hidden" id="vuePropData"
+                       data-s3-upload-endpoint=""
+                       data-save-endpoint="">
+
                 <div id="avatarUpload"></div>
             </div>
 

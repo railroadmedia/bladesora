@@ -1,4 +1,4 @@
-@component('bladesora::members.account.settings.edit-form')
+@component('bladesora::members.account.settings.edit-form', ["brand" => "recordeo"])
     @slot('formTitle')
         Display Name
     @endslot
@@ -30,7 +30,7 @@
                 <form>
                     <div class="flex flex-row ph-3 mb-1">
                         <div class="flex flex-column">
-                            @include('bladesora::members.inputs.text-input', [
+                            @include('bladesora::members.inputs.text-input', array_merge([
                                 "brand" => "recordeo",
                                 "type" => "text",
                                 "inputId" => "displayName",
@@ -38,7 +38,7 @@
                                 "inputLabel" => "Display Name",
                                 "inputValue" => "",
                                 "inputErrors" => [],
-                            ])
+                            ], $displayNameForm ?? []))
                         </div>
                     </div>
 

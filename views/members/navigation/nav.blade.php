@@ -9,15 +9,17 @@
         </div>
 
         <div class="flex header-button flex-column noselect">
-            <div id="notificationButton" class="square">
+            <a href="{{ $links['Notifications']['url'] }}"
+               id="notificationButton" class="square">
                 <div class="pa-1 wrap">
-                    <i class="rounded inset-border fas fa-bell flex-center"></i>
+                    <i class="rounded inset-border text-black fas fa-bell flex-center"></i>
                 </div>
-            </div>
+            </a>
         </div>
 
         <div class="flex header-button flex-column noselect mr-1 hide-xs-only">
-            <a class="square">
+            <a href="{{ $accountUrl }}"
+               class="square">
                 <div class="pa-1 wrap">
                     <img class="rounded inset-border" src="https://placehold.it/100x100">
                 </div>
