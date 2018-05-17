@@ -1,6 +1,6 @@
 @component('bladesora::members.account.settings.edit-form')
     @slot('formTitle')
-        About Victor
+        About {{ $displayName }}
     @endslot
 
     @slot('modalId')
@@ -52,12 +52,6 @@
                                 "inputId" => "profileCountry",
                                 "inputName" => "country",
                                 "inputLabel" => "Country",
-                                "inputValue" => "Canada",
-                                "inputOptions" => [
-                                    'Canada',
-                                    'United States',
-                                ],
-                                "inputErrors" => [],
                             ], $countryInput ?? []))
                         </div>
                     </div>

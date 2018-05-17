@@ -21,7 +21,7 @@
             <a href="{{ $accountUrl }}"
                class="square">
                 <div class="pa-1 wrap">
-                    <img class="rounded inset-border" src="https://placehold.it/100x100">
+                    <img class="rounded inset-border" src="{{ $userAvatar }}">
                 </div>
             </a>
         </div>
@@ -37,7 +37,7 @@
     <section id="userInfo" class="flex flex-column align-center pa-3">
         <div class="avatar mb">
             <div class="square">
-                <img class="rounded inset-border" src="https://placehold.it/250x250">
+                <img class="rounded inset-border" src="{{ $userAvatar }}">
             </div>
         </div>
         <div class="mb">
