@@ -29,8 +29,9 @@
                 </div>
 
                 <input type="hidden" id="vuePropData"
-                       data-s3-upload-endpoint="{{ $uploadRequestEndpoint }}"
-                       data-save-endpoint="{{ $fieldSaveRequestEndpoint }}">
+                       data-upload-endpoint="{{ $uploadRequestEndpoint }}"
+                       data-save-endpoint="{{ $fieldSaveRequestEndpoint }}"
+                       data-user-id="{{ $userId }}">
 
                 <div id="avatarUpload"></div>
             </div>
