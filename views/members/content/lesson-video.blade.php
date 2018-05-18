@@ -63,10 +63,16 @@
                         @endif
                     </div>
                     <div class="flex flex-column ph-1 align-center">
-                        <button class="btn">
-                <span class="bg-{{ $brand }} inverted text-{{ $brand }}">
-                    <i class="fas fa-check mr-1"></i> Mark as Complete
-                </span>
+                        <button class="btn completeButton {{ $isCompleted ? 'is-complete' : '' }}"
+                                data-content-id="{{ $contentId }}">
+
+                            <span class="incompleted bg-{{ $brand }} inverted text-{{ $brand }}">
+                                <i class="fas fa-check mr-1"></i> Mark as Complete
+                            </span>
+
+                            <span class="completed bg-{{ $brand }} text-white">
+                                <i class="fas fa-check mr-1"></i> Completed
+                            </span>
                         </button>
                     </div>
                     <div class="flex flex-column sq-btn-col">
