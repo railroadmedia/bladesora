@@ -1,8 +1,9 @@
 <a @if(!empty($url)) href="{{ $url }}" @endif
-   class="content-table-row flex flex-row bt-light-1 no-decoration {{ !empty($compact) && $compact === true ? 'compact' : '' }}">
+   class="content-table-row flex flex-row bt-grey-1-1 no-decoration {{ !empty($compact) && $compact === true ? 'compact' : '' }}">
     <div class="flex flex-column thumbnail-col align-v-center pl-1">
         <div class="thumb-wrap">
-            <div class="thumb-img widescreen bg-center corners-3" style="background-image:url({{ $thumbnail }});"></div>
+            <div class="thumb-img box-4-by-3 bg-center corners-3 {{ !empty($releaseDate) && \Carbon\Carbon::parse($releaseDate) > \Carbon\Carbon::now() ? 'desaturate' : '' }}"
+                 style="background-image:url({{ $thumbnail }});"></div>
         </div>
     </div>
 

@@ -1,10 +1,8 @@
-<div id="breadCrumbs" class="container fluid bg-x-dark bb-light-1 collapsed hide-xs-only">
+<div id="breadCrumbs" class="container fluid bg-x-dark bb-grey-4-1 collapsed hide-xs-only">
     <div class="container text-light pa-1 uppercase">
         <div class="flex flex-row">
             @foreach($pages as $index => $page)
-                @if($index === 0)
-                    <i class="icon-learning-paths mh-1 bg-light text-x-dark tiny flex-center flex-auto corners-3"></i>
-                @else
+                @if($index !== 0)
                     <span class="mh-1 tiny">&raquo;</span>
                 @endif
 

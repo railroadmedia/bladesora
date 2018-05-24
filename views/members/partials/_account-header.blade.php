@@ -13,14 +13,14 @@
                     Recordeo Member Since {{ $memberSince }}
                 </p>
             </div>
-            <div class="flex flex-column experience hide-xs-only">
-                <h1 class="heading text-white">
-                    {{ number_format($expAmount) }}
-                </h1>
-                <p class="body text-white uppercase font-light">
-                    Experience Points
-                </p>
-            </div>
+            {{--<div class="flex flex-column experience hide-xs-only">--}}
+                {{--<h1 class="heading text-white">--}}
+                    {{--{{ number_format($expAmount) }}--}}
+                {{--</h1>--}}
+                {{--<p class="body text-white uppercase font-light">--}}
+                    {{--Experience Points--}}
+                {{--</p>--}}
+            {{--</div>--}}
         </div>
     </div>
 </div>

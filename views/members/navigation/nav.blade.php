@@ -1,6 +1,6 @@
-<header id="nav" class="container fluid collapsed shadow bv-dark-1">
+<header id="nav" class="container fluid collapsed shadow bv-grey-4-1">
     <div class="flex flex-row">
-        <a href="/members" class="flex flex-column logo ph align-center br-light-1">
+        <a href="/members" class="flex flex-column logo ph align-center br-grey-4-1">
             <img src="{{ $logo }}">
         </a>
 
@@ -26,7 +26,7 @@
             </a>
         </div>
 
-        <div id="menuButton" class="flex flex-column menu noselect bl-light-1" role="button">
+        <div id="menuButton" class="flex flex-column menu noselect bl-grey-4-1" role="button">
             <div class="flex flex-row text-white align-center uppercase">
                 <span class="title hide-sm-down">Menu</span> <i class="menu-icon"></i>
             </div>
