@@ -1,4 +1,4 @@
-<div class="flex flex-column">
+<div class="flex flex-column grow">
     <div class="flex flex-row flex-auto align-v-center mb-2">
         <div class="flex flex-column">
             <h2 class="subheading">
@@ -14,7 +14,7 @@
         </div>
     </div>
     <div class="flex flex-row">
-        <div class="flex flex-column">
+        <div class="flex flex-column grow">
             <div class="flex flex-row">
                 {{ $formData }}
             </div>

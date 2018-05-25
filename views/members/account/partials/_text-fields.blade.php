@@ -3,7 +3,7 @@
         <div class="flex flex-column key">
             <p class="body font-bold">{{ ucwords($key) }}</p>
         </div>
-        <div class="flex flex-column value">
+        <div class="flex flex-column value grow">
             <p class="body">{{ $value }}</p>
         </div>
     </div>
