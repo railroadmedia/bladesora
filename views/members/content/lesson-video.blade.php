@@ -48,6 +48,7 @@
             @else
                 <input type="hidden" id="mediaElementPropData"
                        data-brand="{{ $brand }}"
+                       data-video-poster="{{ $videoPoster ?? "" }}"
                        data-video-sources="{{ json_encode($videoSources) }}">
 
                 <div class="widescreen">

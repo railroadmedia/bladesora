@@ -36,9 +36,7 @@
 <aside id="navSideBar" class="shadow bg-white flex flex-column">
     <section id="userInfo" class="flex flex-column align-center pa-3">
         <div class="avatar mb">
-            <div class="square">
-                <img class="rounded inset-border" src="{{ $userAvatar }}">
-            </div>
+            <img class="rounded inset-border" src="{{ $userAvatar }}">
         </div>
         <div class="mb">
             <h4 class="title text-white">Curtis Conway</h4>

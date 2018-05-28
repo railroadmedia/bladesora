@@ -40,9 +40,9 @@
                            class="btn bg-black text-black no-decoration flat collapse-150 no-border mr-1">Cancel</a>
 
                         <button class="btn collapse-320" type="submit">
-                                <span class="bg-{{ $brand }} text-white corners-3">
-                                    Create Discussion
-                                </span>
+                            <span class="bg-{{ $brand }} text-white corners-3">
+                                Create Discussion
+                            </span>
                         </button>
                     </div>
                 </form>
