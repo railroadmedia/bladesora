@@ -2,6 +2,7 @@
     <div class="flex flex-row overflow mb-2">
         <div class="flex flex-column pr-1">
             <h1 class="heading text-white">{{ $lessonTitle }}</h1>
+            @if(!empty($courseTitle))
             <h4 class="subtitle text-white uppercase">
                 @if($contentType === 'course-part')
                     From <a href="{{ $courseUrl }}" class="text-{{ $brand }} no-decoration">
@@ -13,6 +14,7 @@
                     </a>
                 @endif
             </h4>
+            @endif
         </div>
 
         @if($lessonResources)
@@ -92,7 +94,7 @@
         @if(!empty($isLive) && $isLive === true)
             <div id="chatContainer" class="flex flex-column">
                 <div class="inside flex flex-column corners-3 shadow bg-white">
-                    <iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0" allowtransparency="true" src="https://chatroll.com/embed/chat/recordeo?id=Ln2VVVrQo3G&platform=html"></iframe>
+                    <iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0" allowtransparency="true" src="{{ $chatrollUrl }}"></iframe>
                 </div>
             </div>
         @endif
