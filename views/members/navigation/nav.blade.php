@@ -39,7 +39,7 @@
             <img class="rounded inset-border" src="{{ $userAvatar }}">
         </div>
         <div class="mb">
-            <h4 class="title text-white">Curtis Conway</h4>
+            <h4 class="title text-white">{{ $userName }}</h4>
         </div>
 
         <a href="{{ $accountUrl }}" class="btn bg-{{ $brand }} inverted text-{{ $brand }}">
