@@ -16,11 +16,13 @@
     </div>
 </div>
 
-<div class="flex flex-row">
-    <button class="btn delete-payment"
-            data-method-to-delete="{{ $activeMethod['id'] }}">
+@if($showDelete)
+    <div class="flex flex-row">
+        <button class="btn delete-payment"
+                data-method-to-delete="{{ $activeMethod['id'] }}">
         <span class="bg-error inverted text-error corners-3 short">
             Delete
         </span>
-    </button>
-</div>
+        </button>
+    </div>
+@endif

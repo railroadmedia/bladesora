@@ -9,19 +9,18 @@
             {{ $plan['method'] }}
         </p>
     </div>
-    <div class="flex flex-column edit-button">
-        <button class="btn"
-                data-open-modal="paymentModal{{ str_replace(' ', '', ucwords($plan['title'])) }}">
-            <span class="bg-black inverted text-black corners-3 short">
-                Edit
-            </span>
-        </button>
-    </div>
+    {{--<div class="flex flex-column edit-button">--}}
+        {{--<button class="btn"--}}
+                {{--data-open-modal="paymentModal{{ str_replace(' ', '', ucwords($plan['title'])) }}">--}}
+            {{--<span class="bg-black inverted text-black corners-3 short">--}}
+                {{--Edit--}}
+            {{--</span>--}}
+        {{--</button>--}}
+    {{--</div>--}}
 </div>
 
 @foreach($plan['payments'] as $key => $payment)
-    <a href="{{ $payment['invoiceUrl'] }}"
-       class="flex flex-row align-v-center no-decoration mb-1">
+    <div class="flex flex-row align-v-center no-decoration mb-1">
         <div class="flex flex-column">
             <p class="tiny font-bold">
                 <i class="fal fa-file-pdf mr-1"></i>
@@ -42,7 +41,7 @@
                 ${{ number_format($payment['amount'], 2) }}
             </p>
         </div>
-    </a>
+    </div>
 @endforeach
 
 <div id="paymentModal{{ str_replace(' ', '', ucwords($plan['title'])) }}" class="modal">
