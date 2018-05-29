@@ -1,6 +1,15 @@
-<a @if(!empty($url)) href="{{ $url }}" @endif
+<a @if(!empty($url) && (!empty($releaseDate) && \Carbon\Carbon::parse($releaseDate) < \Carbon\Carbon::now())) href="{{ $url }}" @endif
    class="content-table-row flex flex-row bt-grey-1-1 no-decoration {{ !empty($compact) && $compact === true ? 'compact' : '' }}">
-    <div class="flex flex-column thumbnail-col align-v-center pl-1">
+
+    @if(!empty($position))
+        <div class="flex flex-column icon-col align-center">
+            <p class="subheading text-black">
+                {{ $position }}
+            </p>
+        </div>
+    @endif
+
+    <div class="flex flex-column thumbnail-col align-v-center {{ empty($position) ? 'pl-1' : '' }}">
         <div class="thumb-wrap">
             <div class="thumb-img box-4-by-3 bg-center corners-3 {{ !empty($releaseDate) && \Carbon\Carbon::parse($releaseDate) > \Carbon\Carbon::now() ? 'desaturate' : '' }}"
                  style="background-image:url({{ $thumbnail }});"></div>
@@ -16,20 +25,20 @@
         <p class="tiny text-black font-bold item-title">
             {{ $title }}
         </p>
-        <p class="tiny text-dark text-truncate font-italic hide-md-up">
+        <p class="x-tiny text-dark text-truncate font-italic hide-md-up">
             @foreach($columnData as $index => $column)
                 @if($index > 0)
-                    <span style="margin:0 5px;">&#x25AA;</span>
+                    <span class="bullet">&#x25CF;</span>
                 @endif
 
-                {{ strtotime($column) ? \Carbon\Carbon::parse($column)->format('M j/y') : $column }}
+                {{ $column }}
             @endforEach
         </p>
     </div>
 
     @foreach($columnData as $column)
-        <div class="flex flex-column align-center basic-col text-dark font-italic tiny hide-sm-down">
-            {{ strtotime($column) ? \Carbon\Carbon::parse($column)->format('M j/y') : $column }}
+        <div class="flex flex-column uppercase align-center basic-col text-dark font-italic x-tiny hide-sm-down">
+            {{ $column }}
         </div>
     @endforEach
 

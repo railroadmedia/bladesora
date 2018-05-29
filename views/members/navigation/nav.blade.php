@@ -28,13 +28,13 @@
 
         <div id="menuButton" class="flex flex-column menu noselect bl-grey-4-1" role="button">
             <div class="flex flex-row text-white align-center uppercase">
-                <span class="title hide-sm-down">Menu</span> <i class="menu-icon"></i>
+                <i class="menu-icon"></i>
             </div>
         </div>
     </div>
 </header>
 <aside id="navSideBar" class="shadow bg-white flex flex-column">
-    <section id="userInfo" class="flex flex-column align-center pa-3">
+    <section id="userInfo" class="flex flex-column align-center bg-grey-5 pa-3">
         <div class="avatar mb">
             <img class="rounded inset-border" src="{{ $userAvatar }}">
         </div>
@@ -56,8 +56,9 @@
         @endforeach
         <div class="flex flex-column spacer"></div>
         <div class="sub-links flex flex-column mt-3">
-            <a class="flex flex-row align-v-center text-dark ph mv-1" href="{{ $supportUrl }}">Support <i class="fal fa-external-link ml-1"></i></a>
-            <a class="flex flex-row align-v-center text-dark ph mb-1" href="{{ $logoutUrl }}">Logout</a>
+            <a class="flex flex-row align-v-center text-black ph mv-1" href="{{ $supportUrl }}">Support <i class="fal fa-external-link ml-1"></i></a>
+            <a class="flex flex-row align-v-center text-black ph mb-1" href="{{ $logoutUrl }}">Logout</a>
         </div>
     </section>
 </aside>
+<div id="backgroundOverlay"></div>
