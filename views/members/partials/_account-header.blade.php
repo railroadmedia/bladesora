@@ -2,7 +2,9 @@
     <div class="container">
         <div class="flex flex-row align-center account-header">
             <div class="header-avatar flex flex-column">
-                <img class="rounded inset-border" src="{{ $userAvatar }}">
+                <img class="rounded inset-border"
+                     src="{{ $userAvatar }}"
+                     data-avatar-update="true">
             </div>
             <div class="flex flex-column user ph-3 mv-3">
                 <h1 class="heading text-white flex flex-row align-v-center">

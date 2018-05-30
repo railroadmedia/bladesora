@@ -11,7 +11,7 @@
         <div class="flex flex-column">
             @include('bladesora::members.account.partials._text-fields', [
                 "fields" => [
-                    "Login Email" => "victor@mailinator.com",
+                    "Login Email" => $emailInput['inputValue'],
                 ]
             ])
 
@@ -45,6 +45,20 @@
                                 "inputErrors" => [],
                                 "type" => "email",
                             ], $emailInput ?? []))
+                        </div>
+                    </div>
+
+                    <div class="flex flex-row ph-3 mb-1">
+                        <div class="flex flex-column">
+                            @include('bladesora::members.inputs.text-input', array_merge([
+                                "brand" => "recordeo",
+                                "inputId" => "emailPassword",
+                                "inputName" => "password",
+                                "inputLabel" => "Password",
+                                "inputValue" => "",
+                                "inputErrors" => [],
+                                "type" => "password",
+                            ], $emailPasswordInput ?? []))
                         </div>
                     </div>
 

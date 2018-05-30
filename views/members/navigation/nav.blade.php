@@ -21,7 +21,9 @@
             <a href="{{ $accountUrl }}"
                class="square">
                 <div class="pa-1 wrap">
-                    <img class="rounded inset-border" src="{{ $userAvatar }}">
+                    <img class="rounded inset-border"
+                         src="{{ $userAvatar }}"
+                         data-avatar-update="true">
                 </div>
             </a>
         </div>
@@ -36,7 +38,9 @@
 <aside id="navSideBar" class="shadow bg-white flex flex-column">
     <section id="userInfo" class="flex flex-column align-center bg-grey-5 pa-3">
         <div class="avatar mb">
-            <img class="rounded inset-border" src="{{ $userAvatar }}">
+            <img class="rounded inset-border"
+                 src="{{ $userAvatar }}"
+                 data-avatar-update="true">
         </div>
         <div class="mb">
             <h4 class="title text-white">{{ $userName }}</h4>

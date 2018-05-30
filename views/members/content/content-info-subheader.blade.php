@@ -22,7 +22,8 @@
 
             @if(!empty($resetProgress) && $resetProgress === true)
                 <div class="flex flex-column button-col mb-1">
-                    <button class="resetProgress btn" title="Reset Progress">
+                    <button class="resetProgress btn" title="Reset Progress"
+                            data-content-id="{{ $contentId }}">
                         <span class="text-white bg-white inverted">
                             <i class="fas fa-redo-alt fa-flip-horizontal"></i>
                             <span class="hide-md-up uppercase flex-auto ml-1" style="width:auto;">Reset Progress</span>

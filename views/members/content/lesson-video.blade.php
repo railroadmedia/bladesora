@@ -45,8 +45,6 @@
         <div id="videoContainer" class="flex flex-column">
             @if(!empty($isLive) && $isLive === true)
                 <div class="widescreen mb-3">
-                    {{--<iframe id="liveVideo" src="https://www.youtube.com/embed/_4ukfDnQOi0&rel=0&autoplay=1&playsinline=1&modestbranding=1" frameborder="0" allowfullscreen></iframe>--}}
-
                     <iframe id="liveVideo" src="https://www.youtube.com/embed/_4ukfDnQOi0?rel=0&autoplay=1&playsinline=1&modestbranding=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                 </div>
             @else
@@ -65,8 +63,13 @@
                             <a href="{{ $prevLessonUrl }}" class="btn bg-{{ $brand }} inverted text-{{ $brand }}">
                                 <i class="fas fa-chevron-left"></i>
                             </a>
+                        @else
+                            <a class="btn bg-grey-3 inverted text-grey-3">
+                                <i class="fas fa-chevron-left"></i>
+                            </a>
                         @endif
                     </div>
+
                     <div class="flex flex-column ph-1 align-center">
                         <button class="btn completeButton {{ $isCompleted ? 'is-complete' : '' }}"
                                 data-content-id="{{ $contentId }}">
@@ -80,9 +83,14 @@
                             </span>
                         </button>
                     </div>
+
                     <div class="flex flex-column sq-btn-col">
                         @if(!empty($nextLessonUrl))
                             <a href="{{ $nextLessonUrl }}" class="btn bg-{{ $brand }} inverted text-{{ $brand }}">
+                                <i class="fas fa-chevron-right"></i>
+                            </a>
+                        @else
+                            <a class="btn bg-grey-3 inverted text-grey-3">
                                 <i class="fas fa-chevron-right"></i>
                             </a>
                         @endif

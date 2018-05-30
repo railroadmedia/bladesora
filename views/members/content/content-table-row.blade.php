@@ -25,7 +25,7 @@
         <p class="tiny text-black font-bold item-title">
             {{ $title }}
         </p>
-        <p class="x-tiny text-dark text-truncate font-italic hide-md-up">
+        <p class="x-tiny text-dark text-truncate font-italic uppercase hide-md-up">
             @foreach($columnData as $index => $column)
                 @if($index > 0)
                     <span class="bullet">&#x25CF;</span>

@@ -11,7 +11,9 @@
         <div class="flex flex-column">
             <div class="flex flex-row flex-wrap align-center">
                 <div class="flex flex-column image-col align-center">
-                    <img class="rounded" src="{{ $profilePictureUrl }}">
+                    <img class="rounded"
+                         src="{{ $profilePictureUrl }}"
+                         data-avatar-update="true">
                 </div>
                 <div class="flex flex-column align-center pa">
                     <p class="tiny text-dark">For best results upload a square photo.</p>
