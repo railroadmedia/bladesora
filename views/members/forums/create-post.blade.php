@@ -17,23 +17,26 @@
             <div class="flex flex-column pa">
                 <form action="{{ $formAction }}" method="post">
                     {{ csrf_field() }}
+                    {{ method_field($method) }}
+
+                    <input type="hidden" name="category_id" value="1">
 
                     <div class="form-group mb-2">
-                        <input type="text" id="postTitle">
-                        <label for="postTitle" class="{{ $brand }}">Title</label>
+                        <input type="text" name="title" id="title">
+                        <label for="title" class="{{ $brand }}">Title</label>
                     </div>
 
-                    <div class="form-group mb-2">
-                        <select id="postTopic">
-                            <option selected disabled style="display:none;">
-                            @foreach($topicOptions as $topic)
-                                <option>{{ $topic }}</option>
-                            @endforeach
-                        </select>
-                        <label for="postTopic" class="{{ $brand }}">Topic</label>
-                    </div>
+                    {{--<div class="form-group mb-2">--}}
+                        {{--<select id="postTopic">--}}
+                            {{--<option selected disabled style="display:none;">--}}
+                            {{--@foreach($topicOptions as $topic)--}}
+                                {{--<option>{{ $topic }}</option>--}}
+                            {{--@endforeach--}}
+                        {{--</select>--}}
+                        {{--<label for="postTopic" class="{{ $brand }}">Topic</label>--}}
+                    {{--</div>--}}
 
-                    <div id="textEditor"></div>
+                    <textarea id="textEditor_" name="first_post_content"></textarea>
 
                     <div class="flex flex-row align-h-right mt-2">
                         <a href="{{ $forumUrl }}"
