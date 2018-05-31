@@ -12,7 +12,7 @@
                     {{ $userName }}
                 </h1>
                 <p class="body text-white uppercase font-light">
-                    Recordeo Member Since {{ $memberSince }}
+                    Recordeo Member Since {{ \Carbon\Carbon::parse($memberSince)->format('Y') }}
                 </p>
             </div>
             {{--<div class="flex flex-column experience hide-xs-only">--}}

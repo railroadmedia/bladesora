@@ -51,7 +51,7 @@
                 <i class="fas fa-calendar-plus flex-center text-light rounded"></i>
 
                 <span class="start">{{ $releaseDate ?? ''}}</span>
-                <span class="timezone">UTC</span>
+                <span class="timezone">America/Los_Angeles</span>
                 <span class="title">{{ $title }}</span>
             @else
                 @if(!empty($progress))
