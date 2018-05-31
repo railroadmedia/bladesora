@@ -7,36 +7,41 @@
             Create a Discussion
         </h1>
     </div>
-    <div class="flex flex-column pa">
+    <div class="flex flex-column ph pv-3">
         <div class="flex flex-row">
-            <div class="flex flex-column pa avatar-column hide-xs-only">
-                <div class="square">
-                    <img class="rounded" src="{{ $userAvatar }}">
-                </div>
+            <div class="flex flex-column avatar-column hide-xs-only">
+                <img class="rounded" src="{{ $userAvatar }}">
             </div>
-            <div class="flex flex-column pa">
+            <div class="flex flex-column ph">
                 <form action="{{ $formAction }}" method="post">
                     {{ csrf_field() }}
                     {{ method_field($method) }}
 
                     <input type="hidden" name="category_id" value="1">
-
                     <div class="form-group mb-2">
                         <input type="text" name="title" id="title">
                         <label for="title" class="{{ $brand }}">Title</label>
+
+                        @include('bladesora::members.inputs.partials._errors', [
+                            "inputErrors" => $errors->get('title')
+                        ])
                     </div>
 
-                    {{--<div class="form-group mb-2">--}}
-                        {{--<select id="postTopic">--}}
-                            {{--<option selected disabled style="display:none;">--}}
-                            {{--@foreach($topicOptions as $topic)--}}
-                                {{--<option>{{ $topic }}</option>--}}
-                            {{--@endforeach--}}
-                        {{--</select>--}}
-                        {{--<label for="postTopic" class="{{ $brand }}">Topic</label>--}}
-                    {{--</div>--}}
+                    <div class="form-group mb-2">
+                        <select id="postTopic" name="category_ids[]">
+                            <option selected disabled style="display:none;">
+                            @foreach($topicOptions as $index => $topic)
+                                <option value="{{ $index + 1 }}">{{ $topic }}</option>
+                            @endforeach
+                        </select>
+                        <label for="postTopic" class="{{ $brand }}">Topic</label>
 
-                    <textarea id="textEditor_" name="first_post_content"></textarea>
+                        @include('bladesora::members.inputs.partials._errors', [
+                            "inputErrors" => $errors->get('category_ids[]')
+                        ])
+                    </div>
+
+                    <div id="textEditor"></div>
 
                     <div class="flex flex-row align-h-right mt-2">
                         <a href="{{ $forumUrl }}"
