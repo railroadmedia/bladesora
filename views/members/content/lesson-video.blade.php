@@ -45,13 +45,14 @@
         <div id="videoContainer" class="flex flex-column">
             @if(!empty($isLive) && $isLive === true)
                 <div class="widescreen mb-3">
-                    <iframe id="liveVideo" src="https://www.youtube.com/embed/_4ukfDnQOi0?rel=0&autoplay=1&playsinline=1&modestbranding=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                    <iframe id="liveVideo" src="https://www.youtube.com/embed/live_stream?channel=UCTjpcu0G-zR8UXXDHShFC_w&rel=0&autoplay=1&playsinline=1&modestbranding=1" frameborder="0" allowfullscreen></iframe>
                 </div>
             @else
                 <input type="hidden" id="mediaElementPropData"
                        data-brand="{{ $brand }}"
                        data-video-poster="{{ $videoPoster ?? "" }}"
-                       data-video-sources="{{ json_encode($videoSources) }}">
+                       data-video-sources="{{ json_encode($videoSources) }}"
+                       data-progress-state="{{ $progressState }}">
 
                 <div class="widescreen">
                     <div id="videoPlayer"></div> {{-- Vue will mount the video player component to this element --}}
