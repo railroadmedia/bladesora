@@ -5,15 +5,35 @@
             {{ csrf_field() }}
         @endif
 
-        <div class="form-group mb">
-            <input id="loginEmail" type="email" name="email">
-            <label for="loginEmail" class="{{ $brand ?? '' }}">Email Address</label>
+        <div class="flex flex-column mb-2">
+            @include('bladesora::members.inputs.text-input', [
+               "brand" => $brand,
+               "type" => "email",
+               "inputId" => "loginEmail",
+               "inputName" => "email",
+               "inputLabel" => "Email Address",
+               "inputValue" => "",
+               "inputErrors" => []
+           ])
         </div>
 
-        <div class="form-group mb">
-            <input id="loginPassword" type="password" name="password">
-            <label for="loginPassword" class="{{ $brand ?? '' }}">Password</label>
+        <div class="flex flex-column mb-2">
+            @include('bladesora::members.inputs.text-input', [
+                "brand" => $brand,
+                "type" => "password",
+                "inputId" => "loginPassword",
+                "inputName" => "password",
+                "inputLabel" => "Password",
+                "inputValue" => "",
+                "inputErrors" => []
+            ])
         </div>
+
+        <ul class="flex flex-column mb-2 tiny text-error list-style-none">
+            @foreach($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
 
         <button type="submit" class="btn mb-3">
             <span class="text-white bg-recordeo">Sign In</span>
