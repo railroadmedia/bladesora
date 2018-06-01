@@ -44,7 +44,7 @@
     <div class="flex flex-row flex-wrap">
         <div id="videoContainer" class="flex flex-column">
             @if(!empty($isLive) && $isLive === true)
-                <div class="widescreen mb-3">
+                <div class="mb-3">
                     <iframe id="liveVideo" src="https://www.youtube.com/embed/live_stream?channel=UCCqoluWzMhPmfKMH4B3MkVg&rel=0&autoplay=1&playsinline=1&modestbranding=1" frameborder="0" allowfullscreen></iframe>
                 </div>
             @else
