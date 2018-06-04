@@ -10,22 +10,24 @@
         </p>
     </div>
     {{--<div class="flex flex-column edit-button">--}}
-        {{--<button class="btn"--}}
-                {{--data-open-modal="paymentModal{{ str_replace(' ', '', ucwords($plan['title'])) }}">--}}
-            {{--<span class="bg-black inverted text-black corners-3 short">--}}
-                {{--Edit--}}
-            {{--</span>--}}
-        {{--</button>--}}
+    {{--<button class="btn"--}}
+    {{--data-open-modal="paymentModal{{ str_replace(' ', '', ucwords($plan['title'])) }}">--}}
+    {{--<span class="bg-black inverted text-black corners-3 short">--}}
+    {{--Edit--}}
+    {{--</span>--}}
+    {{--</button>--}}
     {{--</div>--}}
 </div>
 
 @foreach($plan['payments'] as $key => $payment)
     <div class="flex flex-row align-v-center no-decoration mb-1">
         <div class="flex flex-column">
-            <p class="tiny font-bold">
-                <i class="fal fa-file-pdf mr-1"></i>
-                {{ \Carbon\Carbon::parse($payment['date'])->format('F j, Y') }}
-            </p>
+            <a href="{{ url()->route('invoice.order', [$payment['orderId']]) }}">
+                <p class="tiny font-bold">
+                    <i class="fal fa-file-pdf mr-1"></i>
+                    {{ \Carbon\Carbon::parse($payment['date'])->format('F j, Y') }}
+                </p>
+            </a>
         </div>
         <div class="flex flex-column payment-col hide-xs-only">
             <p class="tiny font-italic text-dark uppercase">
