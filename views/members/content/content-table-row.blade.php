@@ -1,4 +1,4 @@
-<a @if(!empty($url) && (!empty($releaseDate) && \Carbon\Carbon::parse($releaseDate) < \Carbon\Carbon::now())) href="{{ $url }}" @endif
+<a @if(!empty($url) && !($isScheduled ?? false)) href="{{ $url }}" @endif
    class="content-table-row flex flex-row bt-grey-1-1 no-decoration {{ !empty($compact) && $compact === true ? 'compact' : '' }}">
 
     @if(!empty($position))
@@ -11,7 +11,7 @@
 
     <div class="flex flex-column thumbnail-col align-v-center {{ empty($position) ? 'pl-1' : '' }}">
         <div class="thumb-wrap">
-            <div class="thumb-img box-4-by-3 bg-center corners-3 {{ !empty($releaseDate) && \Carbon\Carbon::parse($releaseDate) > \Carbon\Carbon::now() ? 'desaturate' : '' }}"
+            <div class="thumb-img box-4-by-3 bg-center corners-3 {{ $isScheduled ?? false ? 'desaturate' : '' }}"
                  style="background-image:url({{ $thumbnail }});"></div>
         </div>
     </div>
@@ -43,15 +43,15 @@
     @endforEach
 
     <div class="flex flex-column icon-col align-v-center">
-        <div class="square body {{ !empty($releaseDate) && \Carbon\Carbon::parse($releaseDate) > \Carbon\Carbon::now() ? 'addeventatc' : '' }}"
+        <div class="square body {{ $isScheduled ?? false ? 'addeventatc' : '' }}"
              data-dropdown-y="up"
              data-dropdown-x="right"
              data-intel-apple="true">
-            @if(!empty($releaseDate) && \Carbon\Carbon::parse($releaseDate) > \Carbon\Carbon::now())
+            @if($isScheduled ?? false)
                 <i class="fas fa-calendar-plus flex-center text-light rounded"></i>
 
-                <span class="start">{{ $releaseDate ?? ''}}</span>
-                <span class="timezone">America/Los_Angeles</span>
+                <span class="start">{{ $releaseDate }}</span>
+                <span class="timezone">UTC</span>
                 <span class="title">{{ $title }}</span>
             @else
                 @if(!empty($progress))
