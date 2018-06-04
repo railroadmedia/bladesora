@@ -23,3 +23,26 @@ if (!function_exists('get_resource_icon')) {
         }
     }
 }
+
+if (!function_exists('get_user_time')) {
+    /**
+     * @param $timeString
+     * @param null $timezoneString
+     * @return \Carbon\Carbon
+     */
+    function get_user_time($timeString, $timezoneString = null)
+    {
+        return \Carbon\Carbon::parse($timeString)
+            ->tz($timezoneString ?? auth()->user()->fetch('timezone', 'America/Los_Angeles'));
+    }
+}
+
+if (!function_exists('now')) {
+    /**
+     * @return \Carbon\Carbon
+     */
+    function now()
+    {
+        return \Carbon\Carbon::now();
+    }
+}
