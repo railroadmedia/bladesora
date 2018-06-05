@@ -8,7 +8,7 @@
             </div>
             <div class="flex flex-column user ph-3 mv-3">
                 <h1 class="heading text-white flex flex-row align-v-center">
-                    <span class="flag flag-ca"></span>
+                    <span class="flag flag-{{ strtolower($countryCode) }}"></span>
                     {{ $userName }}
                 </h1>
                 <p class="body text-white uppercase font-light">

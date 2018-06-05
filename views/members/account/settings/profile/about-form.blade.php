@@ -14,7 +14,7 @@
                     "Full Name" => $fullName,
                     "Location" => $country,
                     "Gender" => $gender,
-                    "Birthday" => \Carbon\Carbon::parse($birthday)->format('F j, Y'),
+                    "Birthday" => !empty($birthday) ? \Carbon\Carbon::parse($birthday)->format('F j, Y') : '',
                 ]
             ])
 
