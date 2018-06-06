@@ -22,7 +22,7 @@
 @foreach($plan['payments'] as $key => $payment)
     <div class="flex flex-row align-v-center no-decoration mb-1">
         <div class="flex flex-column">
-            <a href="{{ url()->route('invoice.order', [$payment['orderId']]) }}">
+            <a href="{{ url()->route('invoice.order', [$payment['orderId']]) }}" target="_blank">
                 <p class="tiny font-bold">
                     <i class="fal fa-file-pdf mr-1"></i>
                     {{ \Carbon\Carbon::parse($payment['date'])->format('F j, Y') }}

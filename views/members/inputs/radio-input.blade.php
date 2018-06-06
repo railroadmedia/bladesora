@@ -1,9 +1,5 @@
 <div class="flex flex-row form-group align-v-center">
-    <label for="{{ $inputID }}" class="toggle-label">
-        {{ $inputLabel }}
-    </label>
-
-    <span class="radio-input">
+    <span class="radio-input mr-1">
         <input id="{{ $inputID }}"
                name="{{ $inputName }}"
                {{ !empty($checked) && $checked === true ? 'checked' : '' }}
@@ -12,4 +8,8 @@
 
         <span class="toggle"></span>
     </span>
+
+    <label for="{{ $inputID }}" class="toggle-label">
+        {{ $inputLabel }}
+    </label>
 </div>

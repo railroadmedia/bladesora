@@ -1,9 +1,5 @@
 <div class="flex flex-row form-group align-v-center">
-    <label for="{{ $inputID }}" class="toggle-label">
-        {{ $inputLabel }}
-    </label>
-
-    <span class="toggle-input">
+    <span class="toggle-input mr-1">
         {{-- the hidden input will force the checkbox to return false if its not checked --}}
         <input type="hidden" name="{{ $inputName }}" value="0">
 
@@ -17,4 +13,8 @@
             <span class="handle"></span>
         </span>
     </span>
+
+    <label for="{{ $inputID }}" class="toggle-label">
+        {{ $inputLabel }}
+    </label>
 </div>
