@@ -1,5 +1,7 @@
 <a @if(!empty($url) && !($isScheduled ?? false)) href="{{ $url }}" @endif
-   class="content-table-row flex flex-row bt-grey-1-1 no-decoration {{ !empty($compact) && $compact === true ? 'compact' : '' }}">
+   class="content-table-row flex flex-row bt-grey-1-1 no-decoration
+    {{ !empty($compact) && $compact === true ? 'compact' : '' }}
+    {{ $isScheduled ?? false ? 'scheduled' : '' }}">
 
     @if(!empty($position))
         <div class="flex flex-column icon-col align-center">
@@ -13,6 +15,10 @@
         <div class="thumb-wrap">
             <div class="thumb-img box-4-by-3 bg-center corners-3 {{ $isScheduled ?? false ? 'desaturate' : '' }}"
                  style="background-image:url({{ $thumbnail }});"></div>
+
+            <span class="thumb-hover flex-center">
+                <i class="fas {{ $contentType === 'course' ? 'fa-arrow-right' : 'fa-play' }}"></i>
+            </span>
         </div>
     </div>
 
