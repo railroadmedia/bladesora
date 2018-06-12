@@ -27,6 +27,28 @@
                         </a>
                     </div>
                 @endif
+
+                @if(!empty($timezoneSelector) && $timezoneSelector === true)
+                    <div class="flex flex-row align-v-center mt-2 flex-wrap forum-buttons">
+                        <form id="timezoneForm"
+                              class="flex flex-column"
+                              method="POST"
+                              action="{{ url()->route('usora.user-field.update-or-create-by-key') }}">
+                            {{ method_field('patch') }}
+                            {{ csrf_field() }}
+                            <div class="form-group xs-12 sm-6">
+                                <select id="timezoneSelector"
+                                        class="text-white"
+                                        name="timezone">
+                                    @foreach($timezones as $timezone)
+                                        <option class="text-black" {{ $timezone === $usersTimezone ? 'selected' : '' }}>{{ $timezone }}</option>
+                                    @endforeach
+                                </select>
+                                <label for="timezoneSelector" class="{{ $brand }}">Timezone</label>
+                            </div>
+                        </form>
+                    </div>
+                @endif
             </div>
             <div class="flex flex-column sm-2 hide-xs-only"></div>
             <div class="header-avatar flex flex-column hide-xs-only">
