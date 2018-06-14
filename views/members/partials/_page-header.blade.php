@@ -36,10 +36,12 @@
                               action="{{ url()->route('usora.user-field.update-or-create-by-key') }}">
                             {{ method_field('patch') }}
                             {{ csrf_field() }}
+                            <input type="hidden" name="key" value="timezone">
+
                             <div class="form-group xs-12 sm-6">
                                 <select id="timezoneSelector"
                                         class="text-white"
-                                        name="timezone">
+                                        name="value">
                                     @foreach($timezones as $timezone)
                                         <option class="text-black" {{ $timezone === $usersTimezone ? 'selected' : '' }}>{{ $timezone }}</option>
                                     @endforeach

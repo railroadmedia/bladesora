@@ -33,7 +33,7 @@ if (!function_exists('get_user_time')) {
     function get_user_time($timeString, $timezoneString = null)
     {
         return \Carbon\Carbon::parse($timeString)
-            ->tz($timezoneString ?? auth()->user()->fetch('timezone', 'America/Los_Angeles'));
+            ->tz($timezoneString ?? auth()->user()->fetch('fields.timezone', 'America/Los_Angeles'));
     }
 }
 
