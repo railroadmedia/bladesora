@@ -19,7 +19,7 @@
 
         @if($lessonResources)
             <div class="flex flex-column align-center sq-btn-col">
-                <div class="btn bg-white inverted text-white is-dropdown">
+                <div class="btn bg-{{ $brand }} inverted text-{{ $brand }} is-dropdown">
                     <i class="fas fa-download no-events"></i>
 
                     <div class="dropdown-content bg-white shadow tiny text-black">
