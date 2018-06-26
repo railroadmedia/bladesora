@@ -1,5 +1,5 @@
 <div class="container">
-    <div class="flex flex-row overflow mb-2">
+    <div class="flex flex-row mb-2">
         <div class="flex flex-column pr-1">
             <h1 class="heading text-white">{{ $lessonTitle }}</h1>
             @if(!empty($courseTitle))
@@ -24,13 +24,13 @@
 
                     <div class="dropdown-content bg-white shadow tiny text-black">
                         <ul>
-                            @foreach($lessonResources as $title => $url)
+                            @foreach($lessonResources as $resource)
                                 <li>
                                     <a class="no-decoration text-black pa-1"
-                                       href="{{ $url }}"
+                                       href="{{ $resource['resource_name'] }}"
                                        target="_blank"
                                        download>
-                                        <i class="fal {{ get_resource_icon($url) }} mr-1" style="width:20px;"></i>  {{ $title }}
+                                        <i class="fal {{ get_resource_icon($resource['resource_url']) }} mr-1" style="width:20px;"></i>  {{ $resource['resource_name'] }}
                                     </a>
                                 </li>
                             @endforeach
