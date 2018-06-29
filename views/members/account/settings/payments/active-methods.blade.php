@@ -2,7 +2,7 @@
     <div class="flex flex-row pa-3">
         <div class="flex flex-column grow">
             <h2 class="subheading mb-2">
-                Your Active Payment Methods
+                Active Payment Methods
             </h2>
 
             <p class="tiny text-dark">Below you’ll see a list of your payment methods. If you’d like to change the payment method used for your Recordeo Membership add a new one here then update it in the Upcoming Payments area below. </p>

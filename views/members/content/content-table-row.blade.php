@@ -16,6 +16,12 @@
             <div class="thumb-img box-4-by-3 bg-center corners-3 {{ $isScheduled ?? false ? 'desaturate' : '' }}"
                  style="background-image:url({{ $thumbnail }});"></div>
 
+            @if(!empty($isNew) && $isNew === true)
+                <span class="new-badge flex-center text-white bg-recordeo">
+                    <i class="fas fa-star"></i>
+                </span>
+            @endif
+
             <span class="thumb-hover flex-center">
                 <i class="fas {{ $contentType === 'course' ? 'fa-arrow-right' : 'fa-play' }}"></i>
             </span>
