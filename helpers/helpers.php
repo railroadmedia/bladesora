@@ -24,6 +24,19 @@ if (!function_exists('get_resource_icon')) {
     }
 }
 
+if(!function_exists('seconds_to_time')){
+    function seconds_to_time($seconds) {
+        $start = new \DateTime('@0');
+        $end = new \DateTime("@$seconds");
+
+        if($seconds >= 3600){
+            return $start->diff($end)->format('%H:%I:%S');
+        }
+
+        return $start->diff($end)->format('%I:%S');
+    }
+}
+
 if (!function_exists('get_user_time')) {
     /**
      * @param $timeString
