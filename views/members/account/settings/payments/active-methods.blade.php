@@ -49,7 +49,7 @@
 
                     @include('bladesora::members.account.settings.payments.partials._payment-method-form', [
                         "formId" => "paymentMethodNew",
-                        "formAction" => route('payment-method.store')",
+                        "formAction" => route('payment-method.store'),
                         "formMethod" => "POST",
                         "methodField" => "PUT",
                         "activeMethod" => null
