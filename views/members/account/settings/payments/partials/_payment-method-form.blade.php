@@ -114,6 +114,17 @@
 
         <div class="flex flex-row ph-3 mt-1 inline-inputs">
             <div class="flex flex-column">
+                @include('bladesora::members.inputs.text-input', [
+                    "brand" => "recordeo",
+                    "type" => "text",
+                    "inputId" => "nameOnCard",
+                    "inputName" => "name",
+                    "inputLabel" => "Name On Card",
+                    "inputValue" => "",
+                    "inputErrors" => [],
+                ])
+            </div>
+            <div class="flex flex-column">
                 @include('bladesora::members.inputs.select-input', [
                     "brand" => "recordeo",
                     "inputId" => "cardCountry",
