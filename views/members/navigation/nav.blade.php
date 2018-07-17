@@ -4,18 +4,45 @@
             <img src="{{ $logo }}">
         </a>
 
-        <div class="flex flex-column">
-
+        <div class="flex flex-column search-column align-v-center ph-2">
+            @if(!empty($searchEndpoint))
+                <form method="GET" action="{{ $searchEndpoint }}">
+                    <div class="flex flex-row align-v-center">
+                        <span id="searchIcon" class="flex flex-column flex-auto title text-grey-4 mr-2">
+                            <i class="fas fa-search"></i>
+                        </span>
+                        <div id="searchBox" class="form-group flex flex-column">
+                            <input id="searchInput"
+                                   type="text"
+                                   class="solo text-white"
+                                   placeholder="What would you like to learn?"
+                                   autocomplete="off">
+                        </div>
+                    </div>
+                </form>
+            @endif
         </div>
 
-        <div class="flex header-button flex-column noselect">
-            <a href="{{ $links['Notifications']['url'] }}"
-               id="notificationButton" class="square">
-                <div class="pa-1 wrap">
-                    <i class="rounded inset-border text-black fas fa-bell flex-center"></i>
-                </div>
-            </a>
-        </div>
+        @if(!empty($isLive) && $isLive === true)
+            <div class="flex header-button flex-column align-v-center noselect ph-1">
+                <a href="{{ $livePageUrl }}"
+                   id="liveIndicator"
+                   class="bg-error text-white tiny font-bold corners-3 text-center uppercase no-decoration">
+                    Live
+                </a>
+            </div>
+        @endif
+
+        @if(!empty($links['Notifications']))
+            <div class="flex header-button flex-column noselect">
+                <a href="{{ $links['Notifications']['url'] }}"
+                   id="notificationButton" class="square">
+                    <div class="pa-1 wrap">
+                        <i class="rounded inset-border text-black fas fa-bell flex-center"></i>
+                    </div>
+                </a>
+            </div>
+        @endif
 
         <div class="flex header-button flex-column noselect mr-1 hide-xs-only">
             <a href="{{ $accountUrl }}"
@@ -52,11 +79,20 @@
     </section>
     <section id="pageLinks" class="flex flex-column">
         @foreach($links as $page => $info)
-            @include('bladesora::members.partials._nav-link', [
-                "page" => $page,
-                "icon" => $info['icon'],
-                "url" => $info['url']
-            ])
+            @if(!empty($info['children']))
+                @include('bladesora::members.partials._parent-nav-link', [
+                    "page" => $page,
+                    "icon" => $info['icon'],
+                    "children" => $info['children'],
+                ])
+            @else
+                @include('bladesora::members.partials._nav-link', [
+                    "page" => $page,
+                    "icon" => $info['icon'],
+                    "url" => $info['url'],
+                ])
+            @endif
+
         @endforeach
         <div class="flex flex-column spacer"></div>
         <div class="sub-links flex flex-column mt-3">
