@@ -20,7 +20,10 @@
             </div>
         @endforeach
 
-        <input id="vuePropData" type="hidden">
+        <input
+            id="vuePropData"
+            type="hidden"
+            data-current-user="{{ $currentUser }}">
 
         <div id="paymentsElement"></div>
 
