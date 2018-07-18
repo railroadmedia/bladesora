@@ -3,6 +3,13 @@
       method="{{ $formMethod }}"
       class="payment-form">
 
+    <input type="hidden" name="_method" value="{{ $methodField }}">
+    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+    <input name="stripe-publishable-key"
+        id="stripe-publishable-key"
+        type="hidden"
+        value="{{ \Railroad\Ecommerce\Services\ConfigService::$paymentGateways['stripe']['recordeo']['stripe_publishable_key'] }}">
+
     @if(!empty($editingPayment) && $editingPayment === true)
         <div class="method-fields mb-2">
             <div class="flex flex-row ph-3">
@@ -106,6 +113,17 @@
         </div>
 
         <div class="flex flex-row ph-3 mt-1 inline-inputs">
+            <div class="flex flex-column">
+                @include('bladesora::members.inputs.text-input', [
+                    "brand" => "recordeo",
+                    "type" => "text",
+                    "inputId" => "nameOnCard",
+                    "inputName" => "name",
+                    "inputLabel" => "Name On Card",
+                    "inputValue" => "",
+                    "inputErrors" => [],
+                ])
+            </div>
             <div class="flex flex-column">
                 @include('bladesora::members.inputs.select-input', [
                     "brand" => "recordeo",

@@ -52,6 +52,8 @@
                        data-brand="{{ $brand }}"
                        data-video-poster="{{ $videoPoster ?? "" }}"
                        data-video-sources="{{ json_encode($videoSources) }}"
+                       data-video-id="{{ $videoId }}"
+                       data-current-second="{{ $currentSecond }}"
                        data-progress-state="{{ $progressState }}">
 
                 <div class="">
