@@ -54,7 +54,8 @@
                        data-video-sources="{{ json_encode($videoSources) }}"
                        data-video-id="{{ $videoId }}"
                        data-current-second="{{ $currentSecond }}"
-                       data-progress-state="{{ $progressState }}">
+                       data-progress-state="{{ $progressState }}"
+                       data-video-length="{{ $videoLength }}">
 
                 <div class="">
                     <div id="videoPlayer"></div> {{-- Vue will mount the video player component to this element --}}
