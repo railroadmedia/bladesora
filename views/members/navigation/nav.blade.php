@@ -24,7 +24,7 @@
         </div>
 
         @if(!empty($isLive) && $isLive === true)
-            <div class="flex header-button flex-column align-v-center noselect ph-1">
+            <div class="flex header-button live-button flex-column align-v-center noselect ph-1">
                 <a href="{{ $livePageUrl }}"
                    id="liveIndicator"
                    class="bg-error text-white tiny font-bold corners-3 text-center uppercase no-decoration">
