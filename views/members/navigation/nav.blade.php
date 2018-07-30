@@ -57,7 +57,7 @@
 
         <div id="menuButton" class="flex flex-column menu noselect bl-grey-4-1" role="button">
             <div class="flex flex-row text-white align-center uppercase">
-                <i class="menu-icon"></i>
+                <i class="menu-bars-icon"></i>
             </div>
         </div>
     </div>

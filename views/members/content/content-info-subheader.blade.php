@@ -1,7 +1,7 @@
 <div id="subHeader" class="container collapsed-h fluid bg-x-dark pt-1">
     <div class="container collapsed">
         <div class="flex flex-row align-center flex-wrap ph">
-            <div class="flex flex-column body uppercase align-v-center text-white mb-2">
+            <div class="flex flex-column body uppercase align-v-center text-white mb-1">
                 @foreach($infoData as $index => $info)
                     @if($index > 0)
                         |

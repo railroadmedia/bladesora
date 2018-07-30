@@ -1,17 +1,17 @@
-<div class="content-progress flex flex-row flex-wrap bg-{{ $brand }} corners-3 pa {{ !empty($compact) && $compact === true ? 'compact' : '' }}">
+<div class="content-progress flex flex-row flex-wrap bg-{{ $themeColor }} corners-3 pa {{ !empty($compact) && $compact === true ? 'compact' : '' }}">
     <div class="flex flex-column {{ !empty($compact) && $compact === true ? '' : 'xs-12 sm-9 lg-10' }}">
         <div class="flex flex-row trophy-progress-bar mr-2 {{ $progress === 100 ? 'complete' : '' }}">
-            <div class="flex flex-column trophy-progress-cutoff bg-{{ $brand }} inverted">
+            <div class="flex flex-column trophy-progress-cutoff bg-{{ $themeColor }} inverted">
                 <div class="trophy-progress bg-white" style="width:{{ $progress }}%;"></div>
             </div>
             <div class="flex flex-column align-center trophy title">
-                <i class="fas fa-trophy text-{{ $brand }} pr-1"></i>
+                <i class="fas fa-trophy text-{{ $themeColor }} pr-1"></i>
             </div>
         </div>
     </div>
     @if(empty($compact))
         <div class="flex flex-column {{ !empty($compact) && $compact === true ? '' : 'xs-12 sm-3 lg-2' }}">
-            <a href="{{ $progress === 100 ? url()->route('members.home') : $nextLessonUrl }}" class="btn bg-white text-{{ $brand }} short">
+            <a href="{{ $progress === 100 ? url()->route('members.home') : $nextLessonUrl }}" class="btn bg-white text-{{ $themeColor }} short">
                 @if($progress > 0 && $progress < 100)
                     Next Lesson &raquo;
                 @elseif($progress === 100)

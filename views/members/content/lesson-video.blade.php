@@ -5,11 +5,11 @@
             @if(!empty($courseTitle))
             <h4 class="subtitle text-white uppercase">
                 @if($contentType === 'course-part')
-                    From <a href="{{ $courseUrl }}" class="text-{{ $brand }} no-decoration">
+                    From <a href="{{ $courseUrl }}" class="text-{{ $themeColor }} no-decoration">
                         {{ $courseTitle }}
                     </a>
                 @else
-                    With <a href="{{ $courseUrl }}" class="text-{{ $brand }} no-decoration">
+                    With <a href="{{ $courseUrl }}" class="text-{{ $themeColor }} no-decoration">
                         {{ $lessonInstructor }}
                     </a>
                 @endif
@@ -19,7 +19,7 @@
 
         @if($lessonResources)
             <div class="flex flex-column align-center sq-btn-col">
-                <div class="btn bg-{{ $brand }} inverted text-{{ $brand }} is-dropdown">
+                <div class="btn bg-{{ $themeColor }} inverted text-{{ $themeColor }} is-dropdown">
                     <i class="fas fa-download no-events"></i>
 
                     <div class="dropdown-content bg-white shadow tiny text-black">
@@ -45,11 +45,11 @@
         <div id="videoContainer" class="flex flex-column">
             @if(!empty($isLive) && $isLive === true)
                 <div class="widescreen mb-3">
-                    <iframe id="liveVideo" src="https://www.youtube.com/embed/live_stream?channel=UCTjpcu0G-zR8UXXDHShFC_w&rel=0&autoplay=1&playsinline=1&modestbranding=1" frameborder="0" allowfullscreen></iframe>
+                    <iframe id="liveVideo" src="https://www.youtube.com/embed/live_stream?channel=UCTjpcu0G-zR8UXXDHShFC_w&rel=0&autoplay=1&playsinline=1&modestthemeColoring=1" frameborder="0" allowfullscreen></iframe>
                 </div>
             @else
                 <input type="hidden" id="mediaElementPropData"
-                       data-brand="{{ $brand }}"
+                       data-theme-color="{{ $themeColor }}"
                        data-video-poster="{{ $videoPoster ?? "" }}"
                        data-video-sources="{{ json_encode($videoSources) }}"
                        data-video-id="{{ $videoId }}"
@@ -64,7 +64,7 @@
                 <div class="flex flex-row mv-3">
                     <div class="flex flex-column sq-btn-col">
                         @if(!empty($prevLessonUrl))
-                            <a href="{{ $prevLessonUrl }}" class="btn bg-{{ $brand }} inverted text-{{ $brand }}">
+                            <a href="{{ $prevLessonUrl }}" class="btn bg-{{ $themeColor }} inverted text-{{ $themeColor }}">
                                 <i class="fas fa-chevron-left"></i>
                             </a>
                         @else
@@ -78,11 +78,11 @@
                         <button class="btn completeButton {{ $isCompleted ? 'is-complete' : '' }}"
                                 data-content-id="{{ $contentId }}">
 
-                            <span class="incompleted bg-{{ $brand }} inverted text-{{ $brand }}">
+                            <span class="incompleted bg-{{ $themeColor }} inverted text-{{ $themeColor }}">
                                 <i class="fas fa-check mr-1"></i> Mark as Complete
                             </span>
 
-                            <span class="completed bg-{{ $brand }} text-white">
+                            <span class="completed bg-{{ $themeColor }} text-white">
                                 <i class="fas fa-check mr-1"></i> Completed
                             </span>
                         </button>
@@ -90,7 +90,7 @@
 
                     <div class="flex flex-column sq-btn-col">
                         @if(!empty($nextLessonUrl))
-                            <a href="{{ $nextLessonUrl }}" class="btn bg-{{ $brand }} inverted text-{{ $brand }}">
+                            <a href="{{ $nextLessonUrl }}" class="btn bg-{{ $themeColor }} inverted text-{{ $themeColor }}">
                                 <i class="fas fa-chevron-right"></i>
                             </a>
                         @else
