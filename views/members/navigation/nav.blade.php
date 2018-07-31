@@ -1,4 +1,4 @@
-<header id="nav" class="container fluid collapsed shadow bv-grey-4-1">
+<header id="nav" class="container fluid collapsed shadow bg-black bv-grey-4-1">
     <div class="flex flex-row">
         <a href="/members" class="flex flex-column logo ph align-center br-grey-4-1">
             <img src="{{ $logo }}">
@@ -73,7 +73,7 @@
             <h4 class="title text-white">{{ $userName }}</h4>
         </div>
 
-        <a href="{{ $accountUrl }}" class="btn bg-{{ $brand }} inverted text-{{ $brand }}">
+        <a href="{{ $accountUrl }}" class="btn bg-{{ $themeColor }} inverted text-{{ $themeColor }}">
             <i class="fas fa-user mr-1"></i> My Profile
         </a>
     </section>
