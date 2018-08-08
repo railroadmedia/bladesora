@@ -1,4 +1,4 @@
-<div class="flex flex-row pv-3 bt-grey-1-1 content-overview">
+<div class="flex flex-row pv-3 content-overview {{ !empty($hideBorder) && $hideBorder ? '' : 'bt-grey-1-1' }}">
     <div class="flex flex-column align-v-center large-thumbnail {{ $themeColor }} {{ !empty($releaseDate) && \Carbon\Carbon::parse($releaseDate) > \Carbon\Carbon::now() ? 'desaturate' : '' }}">
         <div class="thumb-wrap">
             <div class="thumb-img bg-center corners-3 {{ $forceSquareThumb === true ? 'square' : 'widescreen' }}"
@@ -32,9 +32,11 @@
                         @endif
                     </a>
 
-                    <a href="" class="btn bg-black text-black inverted short collapse-200">
-                        <i class="fas fa-arrow-circle-right mr-1"></i> See Lessons
-                    </a>
+                    @if(!empty($lessonsUrl))
+                        <a href="{{ $lessonsUrl }}" class="btn bg-black text-black inverted short collapse-200">
+                            <i class="fas fa-arrow-circle-right mr-1"></i> See Lessons
+                        </a>
+                    @endif
                 </div>
 
             </div>

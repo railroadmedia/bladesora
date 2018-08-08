@@ -11,7 +11,9 @@
             </div>
             @if(!empty($addToList) && $addToList === true)
                 <div class="flex flex-column button-col mb-1">
-                    <button class="addToList btn" title="Add To List">
+                    <button class="addToList btn {{ $isAdded ? 'added' : '' }}"
+                            title="{{ $isAdded ? 'Remove from' : 'Add to' }} your list"
+                            data-content-id="{{ $contentId }}">
                         <span class="text-white bg-white inverted">
                             <i class="fas fa-plus"></i>
                             <span class="hide-md-up uppercase flex-auto ml-1" style="width:auto;">Add To List</span>
