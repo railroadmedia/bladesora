@@ -17,7 +17,7 @@
                  style="background-image:url({{ $thumbnail }});"></div>
 
             @if(!empty($isNew) && $isNew === true)
-                <span class="new-badge flex-center text-white bg-recordeo">
+                <span class="new-badge flex-center text-white bg-{{ $themeColor }}">
                     <i class="fas fa-star"></i>
                 </span>
             @endif
@@ -30,7 +30,7 @@
 
     <div class="flex flex-column align-v-center pl-1 title-column overflow">
         @if(!empty($colorTitle))
-            <p class="tiny text-recordeo uppercase text-truncate">
+            <p class="tiny text-{{ $themeColor }} uppercase text-truncate">
                 {{ ucwords($colorTitle) }}
             </p>
         @endif
@@ -67,7 +67,7 @@
                 <span class="title">{{ $title }}</span>
             @else
                 @if(!empty($progress))
-                    <i class="fas {{ $progress == 'completed' ? 'fa-check-circle' : 'fa-adjust' }} flex-center text-recordeo rounded"></i>
+                    <i class="fas {{ $progress == 'completed' ? 'fa-check-circle' : 'fa-adjust' }} flex-center text-{{ $themeColor }} rounded"></i>
                 @else
 
                     @if(in_array($contentType, ['course', 'learning-path', 'pack', 'pack-bundle']))

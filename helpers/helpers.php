@@ -50,6 +50,24 @@ if (!function_exists('get_user_time')) {
     }
 }
 
+if(!function_exists('mapDifficulty')){
+    function mapDifficulty($difficulty){
+        if($difficulty <= 3){
+            return 'beginner';
+        }
+        else if($difficulty > 3 && $difficulty <= 6){
+            return 'intermediate';
+        }
+        else if($difficulty > 6){
+            return 'advanced';
+        }
+
+        // Some content has difficulty already parsed as a word, if its undefined,
+        // Just default it to 'all'
+        return $difficulty || 'all';
+    }
+}
+
 if (!function_exists('now')) {
     /**
      * @return \Carbon\Carbon
