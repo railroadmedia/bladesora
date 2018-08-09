@@ -1,5 +1,5 @@
 <a @if(!empty($url) && !($isScheduled ?? false)) href="{{ $url }}" @endif
-   class="content-table-row flex flex-row bt-grey-1-1 no-decoration
+   class="content-table-row flex flex-row bt-grey-1-1 no-decoration pa-1
     {{ !empty($compact) && $compact === true ? 'compact' : '' }}
     {{ $isScheduled ?? false ? 'scheduled' : '' }}">
 
