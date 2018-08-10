@@ -30,7 +30,7 @@
             </a>
         </div>
         <div class="flex flex-column payment-col hide-xs-only">
-            <p class="tiny font-italic text-dark uppercase">
+            <p class="tiny font-italic text-grey-3 uppercase">
                 @if($plan['total'] !== null)
                     {{ $key }} of {{ $plan['total'] }}
                 @else
@@ -39,7 +39,7 @@
             </p>
         </div>
         <div class="flex flex-column edit-button align-h-right">
-            <p class="tiny uppercase font-italic text-dark">
+            <p class="tiny uppercase font-italic text-grey-3">
                 ${{ number_format($payment['amount'], 2) }}
             </p>
         </div>

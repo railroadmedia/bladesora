@@ -170,7 +170,7 @@
     <div class="paypal-fields hide">
         <div class="flex flex-row ph-3">
             <div class="flex flex-column mb-1">
-                <p class="tiny text-dark font-italic">Click the Save button to be redirected to PayPal for authentication.</p>
+                <p class="tiny text-grey-3 font-italic">Click the Save button to be redirected to PayPal for authentication.</p>
             </div>
         </div>
     </div>

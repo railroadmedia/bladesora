@@ -14,7 +14,7 @@
                     "Display Name" => $displayName,
                 ]
             ])
-            <p class="tiny text-dark font-italic">
+            <p class="tiny text-grey-3 font-italic">
                 This is the name other users will see on your profile, comments and forum posts.
             </p>
         </div>

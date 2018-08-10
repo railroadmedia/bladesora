@@ -5,7 +5,7 @@
                 Active Payment Methods
             </h2>
 
-            <p class="tiny text-dark">Below you’ll see a list of your payment methods. If you’d like to change the payment method used for your Recordeo Membership add a new one here then update it in the Upcoming Payments area below. </p>
+            <p class="tiny text-grey-3">Below you’ll see a list of your payment methods. If you’d like to change the payment method used for your Recordeo Membership add a new one here then update it in the Upcoming Payments area below. </p>
         </div>
     </div>
 

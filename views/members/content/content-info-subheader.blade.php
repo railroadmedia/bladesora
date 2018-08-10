@@ -12,11 +12,13 @@
             @if(!empty($addToList) && $addToList === true)
                 <div class="flex flex-column button-col mb-1">
                     <button class="addToList btn {{ $isAdded ? 'added' : '' }}"
-                            title="{{ $isAdded ? 'Remove from' : 'Add to' }} your list"
                             data-content-id="{{ $contentId }}">
-                        <span class="text-white bg-white inverted">
+                        <span class="un-added bg-white inverted text-white">
                             <i class="fas fa-plus"></i>
-                            <span class="hide-md-up uppercase flex-auto ml-1" style="width:auto;">Add To List</span>
+                        </span>
+
+                        <span class="is-added bg-x-dark text-white">
+                            <i class="fas fa-plus rotate-45"></i>
                         </span>
                     </button>
                 </div>

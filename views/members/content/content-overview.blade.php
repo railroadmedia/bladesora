@@ -42,7 +42,7 @@
             </div>
 
             @if(!empty($itemDetails))
-                <div class="flex flex-column align-center basic-col uppercase text-dark font-italic x-tiny hide-sm-down">
+                <div class="flex flex-column align-center basic-col uppercase text-grey-3 font-italic x-tiny hide-sm-down">
                     {{ $itemDetails }}
                 </div>
             @endif
@@ -57,10 +57,10 @@
                         @if(!empty($itemProgress))
                             <i class="fas {{ $itemProgress == 'completed' ? 'fa-check-circle' : 'fa-adjust' }} flex-center text-{{ $themeColor }} rounded"></i>
                         @else
-                            <i class="fas fa-arrow-circle-right flex-center text-light rounded"></i>
+                            <i class="fas fa-arrow-circle-right flex-center text-grey-2 rounded"></i>
                         @endif
                     @else
-                        <i class="fas fa-calendar-plus flex-center text-light rounded"></i>
+                        <i class="fas fa-calendar-plus flex-center text-grey-2 rounded"></i>
 
                         <span class="start">{{ $releaseDate }}</span>
                         <span class="timezone">UTC</span>

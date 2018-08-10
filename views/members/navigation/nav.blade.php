@@ -90,6 +90,7 @@
                     "page" => $page,
                     "icon" => $info['icon'],
                     "url" => $info['url'],
+                    "greyed" => false
                 ])
             @endif
 

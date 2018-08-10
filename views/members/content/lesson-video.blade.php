@@ -30,7 +30,7 @@
                                        href="{{ $resource['resource_url'] }}"
                                        target="_blank"
                                        download>
-                                        <i class="fal {{ get_resource_icon($resource['resource_url']) }} mr-1" style="width:20px;"></i>  {{ $resource['resource_name'] }}
+                                        <i class="fas {{ get_resource_icon($resource['resource_url']) }} mr-1" style="width:20px;"></i>  {{ $resource['resource_name'] }}
                                     </a>
                                 </li>
                             @endforeach
@@ -39,6 +39,19 @@
                 </div>
             </div>
         @endif
+
+        <div class="flex flex-column align-center sq-btn-col ml-1">
+            <button class="addToList btn {{ $isAdded ? 'added' : '' }}"
+                 data-content-id="{{ $contentId }}">
+                <span class="un-added bg-{{ $themeColor }} inverted text-{{ $themeColor }}">
+                    <i class="fas fa-plus"></i>
+                </span>
+
+                <span class="is-added bg-{{ $themeColor }} text-white">
+                    <i class="fas fa-plus rotate-45"></i>
+                </span>
+            </button>
+        </div>
     </div>
 
     <div class="flex flex-row flex-wrap">
@@ -62,13 +75,13 @@
                 </div>
 
                 <div class="flex flex-row mv-3">
-                    <div class="flex flex-column sq-btn-col">
+                    <div class="flex flex-column sq-btn-col mr-1">
                         @if(!empty($prevLessonUrl))
                             <a href="{{ $prevLessonUrl }}" class="btn bg-{{ $themeColor }} inverted text-{{ $themeColor }}">
                                 <i class="fas fa-chevron-left"></i>
                             </a>
                         @else
-                            <a class="btn bg-grey-3 inverted text-grey-3">
+                            <a class="btn bg-grey-3 inverted text-grey-3 no-events">
                                 <i class="fas fa-chevron-left"></i>
                             </a>
                         @endif
@@ -88,13 +101,13 @@
                         </button>
                     </div>
 
-                    <div class="flex flex-column sq-btn-col">
+                    <div class="flex flex-column sq-btn-col ml-1">
                         @if(!empty($nextLessonUrl))
                             <a href="{{ $nextLessonUrl }}" class="btn bg-{{ $themeColor }} inverted text-{{ $themeColor }}">
                                 <i class="fas fa-chevron-right"></i>
                             </a>
                         @else
-                            <a class="btn bg-grey-3 inverted text-grey-3">
+                            <a class="btn bg-grey-3 inverted text-grey-3 no-events">
                                 <i class="fas fa-chevron-right"></i>
                             </a>
                         @endif

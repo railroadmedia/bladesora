@@ -1,5 +1,5 @@
 <div class="page-link parent flex flex-row flex-wrap subtitle text-black align-v-center">
-    <span class="page-link parent-button pa-1 bb-grey-1-1">
+    <span class="page-link parent-button pa-1 bb-grey-2-1">
         <i class="{{ $icon }} mr-1 text-{{ $themeColor }}"></i>{{ $page }}
 
         <i class="fas fa-chevron-down text-grey-2 arrow"></i>
@@ -11,6 +11,7 @@
                 "page" => $page,
                 "icon" => $info['icon'],
                 "url" => $info['url'],
+                "greyed" => true
             ])
         @endforeach
     </div>

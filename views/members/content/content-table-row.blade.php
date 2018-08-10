@@ -1,5 +1,5 @@
 <a @if(!empty($url) && !($isScheduled ?? false)) href="{{ $url }}" @endif
-   class="content-table-row flex flex-row bt-grey-1-1 no-decoration pa-1
+   class="content-table-row flex flex-row bt-grey-1-1 no-decoration pa-1 align-v-center
     {{ !empty($compact) && $compact === true ? 'compact' : '' }}
     {{ $isScheduled ?? false ? 'scheduled' : '' }}">
 
@@ -11,9 +11,9 @@
         </div>
     @endif
 
-    <div class="flex flex-column thumbnail-col align-v-center {{ empty($position) ? 'pl-1' : '' }}">
+    <div class="flex flex-column thumbnail-col align-v-center">
         <div class="thumb-wrap">
-            <div class="thumb-img box-4-by-3 bg-center corners-3 {{ $isScheduled ?? false ? 'desaturate' : '' }}"
+            <div class="thumb-img widescreen bg-center corners-3 {{ $isScheduled ?? false ? 'desaturate' : '' }}"
                  style="background-image:url({{ $thumbnail }});"></div>
 
             @if(!empty($isNew) && $isNew === true)
@@ -37,10 +37,10 @@
         <p class="tiny text-black font-bold item-title">
             {{ $title }}
         </p>
-        <p class="x-tiny text-dark text-truncate font-italic uppercase hide-md-up">
+        <p class="x-tiny text-grey-3 text-truncate font-italic uppercase hide-md-up">
             @foreach($columnData as $index => $column)
                 @if($index > 0)
-                    <span class="bullet">&#x25CF;</span>
+                    <span class="bullet">-</span>
                 @endif
 
                 {{ $column }}
@@ -49,18 +49,18 @@
     </div>
 
     @foreach($columnData as $column)
-        <div class="flex flex-column uppercase align-center basic-col text-dark font-italic x-tiny hide-sm-down">
+        <div class="flex flex-column uppercase align-center basic-col text-grey-3 font-italic x-tiny hide-sm-down">
             {{ $column }}
         </div>
     @endforEach
 
     <div class="flex flex-column icon-col align-v-center">
-        <div class="square body {{ $isScheduled ?? false ? 'addeventatc' : '' }}"
+        <div class="body {{ $isScheduled ?? false ? 'addeventatc' : '' }}"
              data-dropdown-y="up"
              data-dropdown-x="right"
              data-intel-apple="true">
             @if($isScheduled ?? false)
-                <i class="fas fa-calendar-plus flex-center text-light rounded"></i>
+                <i class="fas fa-calendar-plus flex-center text-grey-2 rounded"></i>
 
                 <span class="start">{{ $releaseDate }}</span>
                 <span class="timezone">UTC</span>
@@ -71,9 +71,9 @@
                 @else
 
                     @if(in_array($contentType, ['course', 'learning-path', 'pack', 'pack-bundle']))
-                        <i class="fas fa-arrow-circle-right flex-center text-light rounded"></i>
+                        <i class="fas fa-arrow-circle-right flex-center text-grey-2 rounded"></i>
                     @else
-                        <i class="fas fa-play-circle flex-center text-light rounded"></i>
+                        <i class="fas fa-play-circle flex-center text-grey-2 rounded"></i>
                     @endif
                 @endif
             @endif
