@@ -17,7 +17,7 @@
             @endif
         </div>
 
-        @if($lessonResources)
+        @if(!empty($lessonResources))
             <div class="flex flex-column align-center sq-btn-col">
                 <div class="btn bg-{{ $themeColor }} inverted text-{{ $themeColor }} is-dropdown">
                     <i class="fas fa-download no-events"></i>
