@@ -3,17 +3,21 @@
         <div class="flex flex-column pr-1">
             <h1 class="heading text-white">{{ $lessonTitle }}</h1>
             @if(!empty($courseTitle))
-            <h4 class="subtitle text-white uppercase">
-                @if($contentType === 'course-part')
-                    From <a href="{{ $courseUrl }}" class="text-{{ $themeColor }} no-decoration">
-                        {{ $courseTitle }}
-                    </a>
-                @else
-                    With <a href="{{ $courseUrl }}" class="text-{{ $themeColor }} no-decoration">
-                        {{ $lessonInstructor }}
-                    </a>
-                @endif
-            </h4>
+                <h4 class="subtitle text-white uppercase sssssss {{ $contentType }}">
+                    @if($contentType === 'course-part')
+                        From <a href="{{ $courseUrl }}" class="text-{{ $themeColor }} no-decoration">
+                            {{ $courseTitle }}
+                        </a>
+                    @else
+                        <h4 class="subtitle text-white uppercase sssssss {{ $contentType }}">
+                            With <span class="text-{{ $themeColor }} no-decoration">{{ $lessonInstructor }}</span>
+                        </h4>
+                    @endif
+                </h4>
+            @else
+                <h4 class="subtitle text-white uppercase sssssss {{ $contentType }}">
+                    With <span class="text-{{ $themeColor }} no-decoration">{{ $lessonInstructor }}</span>
+                </h4>
             @endif
         </div>
 
@@ -40,18 +44,20 @@
             </div>
         @endif
 
-        <div class="flex flex-column align-center sq-btn-col ml-1">
-            <button class="addToList btn {{ $isAdded ? 'added' : '' }}"
-                 data-content-id="{{ $contentId }}">
-                <span class="un-added bg-{{ $themeColor }} inverted text-{{ $themeColor }}">
-                    <i class="fas fa-plus"></i>
-                </span>
+        @if(empty($isLive) || $isLive !== true)
+            <div class="flex flex-column align-center sq-btn-col ml-1">
+                <button class="addToList btn {{ $isAdded ? 'added' : '' }}"
+                     data-content-id="{{ $contentId }}">
+                    <span class="un-added bg-{{ $themeColor }} inverted text-{{ $themeColor }}">
+                        <i class="fas fa-plus"></i>
+                    </span>
 
-                <span class="is-added bg-{{ $themeColor }} text-white">
-                    <i class="fas fa-plus rotate-45"></i>
-                </span>
-            </button>
-        </div>
+                    <span class="is-added bg-{{ $themeColor }} text-white">
+                        <i class="fas fa-plus rotate-45"></i>
+                    </span>
+                </button>
+            </div>
+        @endif
     </div>
 
     <div class="flex flex-row flex-wrap">
@@ -61,17 +67,15 @@
                     <iframe id="liveVideo" src="https://www.youtube.com/embed/live_stream?channel=UCTjpcu0G-zR8UXXDHShFC_w&rel=0&autoplay=1&playsinline=1&modestthemeColoring=1" frameborder="0" allowfullscreen></iframe>
                 </div>
             @else
-                <input type="hidden" id="mediaElementPropData"
-                       data-theme-color="{{ $themeColor }}"
-                       data-video-poster="{{ $videoPoster ?? "" }}"
-                       data-video-sources="{{ json_encode($videoSources) }}"
-                       data-video-id="{{ $videoId }}"
-                       data-current-second="{{ $currentSecond ?? 0 }}"
-                       data-progress-state="{{ $progressState }}"
-                       data-video-length="{{ $videoLength }}">
-
                 <div class="">
-                    <div id="videoPlayer"></div> {{-- Vue will mount the video player component to this element --}}
+                    <div id="videoPlayer"
+                         data-theme-color="{{ $themeColor }}"
+                         data-video-poster="{{ $videoPoster ?? "" }}"
+                         data-video-sources="{{ json_encode($videoSources) }}"
+                         data-video-id="{{ $videoId }}"
+                         data-current-second="{{ $currentSecond ?? 0 }}"
+                         data-progress-state="{{ $progressState }}"
+                         data-video-length="{{ $videoLength }}"></div> {{-- Vue will mount the video player component to this element --}}
                 </div>
 
                 <div class="flex flex-row mv-3">
@@ -115,7 +119,13 @@
                 </div>
             @endif
 
-            <div id="emailForm"></div> {{-- Vue will mount the email form component to this element --}}
+            @if(!empty($isLive) && $isLive === true)
+                <div id="emailForm"
+                     data-email-subject="Question on Lesson: {{ $lessonTitle }}"
+                     data-email-type="ask-question"
+                     data-user-avatar="{{ $userAvatar }}"
+                     data-theme-color="{{ $themeColor }}"></div> {{-- Vue will mount the email form component to this element --}}
+            @endif
         </div>
 
         @if(!empty($isLive) && $isLive === true)
