@@ -1,7 +1,7 @@
-<div id="subHeader" class="container collapsed-h fluid bg-x-dark pv-1">
-    <div class="container collapsed">
-        <div class="flex flex-row align-center flex-wrap ph">
-            <div class="flex flex-column body uppercase align-v-center text-white">
+<div id="subHeader" class="container collapsed-h fluid bg-x-dark pt-1">
+    <div class="container">
+        <div class="flex flex-row align-center flex-wrap">
+            <div class="flex flex-column body uppercase align-v-center text-white mb-1">
                 @foreach($infoData as $index => $info)
                     @if($index > 0)
                         |
@@ -18,7 +18,7 @@
                             <i class="fas fa-plus"></i>
                         </span>
 
-                        <span class="is-added bg-x-dark text-white">
+                        <span class="is-added bg-white text-x-dark">
                             <i class="fas fa-plus rotate-45"></i>
                         </span>
                     </button>
@@ -26,9 +26,10 @@
             @endif
 
             @if(!empty($downloadableResources))
-                <div class="flex flex-column button-col">
-                    <div class="btn bg-white inverted text-white is-dropdown">
-                        <i class="fas fa-download no-events"></i>
+                <div class="flex flex-column button-col mb-1">
+                    <div class="btn bg-white inverted is-dropdown">
+                        <i class="unopen fas fa-download no-events text-white"></i>
+                        <i class="open fas fa-download no-events text-x-dark"></i>
 
                         <div class="dropdown-content bg-white shadow tiny text-black">
                             <ul>

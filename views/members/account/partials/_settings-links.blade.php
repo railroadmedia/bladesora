@@ -2,7 +2,9 @@
     @foreach($sections as $section)
         <div class="account-link flex flex-column xs-6 sm-4 md-3 pa {{ $brand }}">
             <a href="{{ $section['url'] }}"
-               class="flex-center ba-black-2 corners-3 heading no-decoration text-black pv-3 ph-1">
+               class="flex-center ba-black-2 corners-3 heading no-decoration text-black pv-3 ph-1"
+               target="{{ $section['download'] ? '_blank' : '_self' }}"
+                {{ $section['download'] ? 'download' : '' }}>
                 <i class="{{ $section['icon'] }} mb-1"></i>
                 <p class="subtitle text-center">{{ $section['title'] }}</p>
             </a>

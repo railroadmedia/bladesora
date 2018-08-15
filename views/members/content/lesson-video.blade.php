@@ -2,23 +2,17 @@
     <div class="flex flex-row mb-2">
         <div class="flex flex-column pr-1">
             <h1 class="heading text-white">{{ $lessonTitle }}</h1>
-            @if(!empty($courseTitle))
-                <h4 class="subtitle text-white uppercase sssssss {{ $contentType }}">
-                    @if($contentType === 'course-part')
-                        From <a href="{{ $courseUrl }}" class="text-{{ $themeColor }} no-decoration">
-                            {{ $courseTitle }}
-                        </a>
-                    @else
-                        <h4 class="subtitle text-white uppercase sssssss {{ $contentType }}">
-                            With <span class="text-{{ $themeColor }} no-decoration">{{ $lessonInstructor }}</span>
-                        </h4>
-                    @endif
-                </h4>
-            @else
-                <h4 class="subtitle text-white uppercase sssssss {{ $contentType }}">
-                    With <span class="text-{{ $themeColor }} no-decoration">{{ $lessonInstructor }}</span>
-                </h4>
-            @endif
+            <h4 class="subtitle text-white uppercase sssssss {{ $contentType }}">
+                @if($contentType === 'course-part' || $contentType === 'pack-bundle-lesson')
+                    From <a href="{{ $courseUrl }}" class="text-{{ $themeColor }} no-decoration">
+                        {{ $courseTitle }}
+                    </a>
+                @else
+                    <h4 class="subtitle text-white uppercase sssssss {{ $contentType }}">
+                        With <span class="text-{{ $themeColor }} no-decoration">{{ $lessonInstructor }}</span>
+                    </h4>
+                @endif
+            </h4>
         </div>
 
         @if(!empty($lessonResources))
@@ -64,7 +58,7 @@
         <div id="videoContainer" class="flex flex-column">
             @if(!empty($isLive) && $isLive === true)
                 <div class="widescreen mb-3">
-                    <iframe id="liveVideo" src="https://www.youtube.com/embed/live_stream?channel=UCTjpcu0G-zR8UXXDHShFC_w&rel=0&autoplay=1&playsinline=1&modestthemeColoring=1" frameborder="0" allowfullscreen></iframe>
+                    <iframe id="liveVideo" src="https://www.youtube.com/embed/live_stream?channel={{ $liveStreamId }}&rel=0&autoplay=1&playsinline=1&modestthemeColoring=1" frameborder="0" allowfullscreen></iframe>
                 </div>
             @else
                 <div class="">
@@ -123,7 +117,9 @@
                 <div id="emailForm"
                      data-email-subject="Question on Lesson: {{ $lessonTitle }}"
                      data-email-type="ask-question"
+                     data-success-message="Your question has been sent!"
                      data-user-avatar="{{ $userAvatar }}"
+                     data-lesson-page="true"
                      data-theme-color="{{ $themeColor }}"></div> {{-- Vue will mount the email form component to this element --}}
             @endif
         </div>

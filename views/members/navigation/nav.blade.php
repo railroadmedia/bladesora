@@ -13,6 +13,7 @@
                         </span>
                         <div id="searchBox" class="form-group flex flex-column">
                             <input id="searchInput"
+                                   name="term"
                                    type="text"
                                    class="solo text-white"
                                    placeholder="What would you like to learn?"
