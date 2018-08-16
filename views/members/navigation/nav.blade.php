@@ -12,6 +12,9 @@
             <a href="{{ $links['Notifications']['url'] }}"
                id="notificationButton" class="square">
                 <div class="pa-1 wrap">
+                    @if (isset($unreadNotificationCount))
+                        <span class="rounded bg-{{ $brand }} text-white new">{{ $unreadNotificationCount }}</span>
+                    @endif
                     <i class="rounded inset-border text-black fas fa-bell flex-center"></i>
                 </div>
             </a>
