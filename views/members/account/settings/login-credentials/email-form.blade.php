@@ -12,7 +12,8 @@
             @include('bladesora::members.account.partials._text-fields', [
                 "fields" => [
                     "Login Email" => $emailInput['inputValue'],
-                ]
+                ],
+                "showEmpty" => true
             ])
 
             @if(!empty($pending))
@@ -37,7 +38,7 @@
                     <div class="flex flex-row ph-3 mb-1">
                         <div class="flex flex-column">
                             @include('bladesora::members.inputs.text-input', array_merge([
-                                "brand" => "recordeo",
+                                "brand" => $brand,
                                 "inputId" => "loginEmail",
                                 "inputName" => "login_email",
                                 "inputLabel" => "Login Email",
@@ -51,7 +52,7 @@
                     <div class="flex flex-row ph-3 mb-1">
                         <div class="flex flex-column">
                             @include('bladesora::members.inputs.text-input', array_merge([
-                                "brand" => "recordeo",
+                                "brand" => $brand,
                                 "inputId" => "emailPassword",
                                 "inputName" => "password",
                                 "inputLabel" => "Password",
@@ -64,7 +65,7 @@
 
                     <div class="flex flex-row ph-3 pb-3">
                         <button class="btn collapse-150 mr-1">
-                            <span class="bg-recordeo text-white corners-3 short">
+                            <span class="bg-{{ $brand }} text-white corners-3 short">
                                 Save
                             </span>
                         </button>
