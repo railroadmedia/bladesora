@@ -97,12 +97,12 @@
                         </div>
                     </div>
 
-                    <div class="flex flex-row ph-3 mb-1">
+                    <div class="flex flex-row ph-3 pv mb-1">
                         <div class="flex flex-column">
                             @include('bladesora::members.inputs.file-input', array_merge([
                                 "brand" => $brand,
                                 "inputId" => "gearPhoto",
-                                "inputName" => "bannerImage",
+                                "inputName" => "profile-data[drumkit-image|user-profile-images]",
                                 "inputLabel" => "Gear Photo",
                                 "inputValue" => "",
                                 "inputErrors" => [],
