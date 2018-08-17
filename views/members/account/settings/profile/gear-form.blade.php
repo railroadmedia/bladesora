@@ -29,7 +29,7 @@
                     <h2 class="subheading">Edit: My Gear</h2>
                 </div>
 
-                <form method="POST" action="{{ $action }}">
+                <form method="POST" action="{{ $action }}" enctype="multipart/form-data">
                     {{ method_field($method) }}
                     {{ csrf_field() }}
 
