@@ -91,7 +91,7 @@
                                 "inputId" => "profileBio",
                                 "inputName" => "biography",
                                 "inputLabel" => "Biography",
-                                "inputValue" => "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus deleniti laboriosam obcaecati quae quod ratione, recusandae rerum similique voluptates. Alias delectus dicta fugiat in laboriosam modi nihil quisquam ratione, veritatis.",
+                                "inputValue" => "",
                                 "inputErrors" => [],
                             ], $biographyInput ?? []))
                         </div>

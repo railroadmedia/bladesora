@@ -19,6 +19,12 @@
                 ],
                 "showEmpty" => true
             ])
+
+            @if($gearPhoto)
+            <div class="flex flex-row bg-center" style="max-width:480px;background-image:url({{ $gearPhoto }});">
+                <div class="widescreen bg-center"></div>
+            </div>
+            @endif
         </div>
     @endslot
 

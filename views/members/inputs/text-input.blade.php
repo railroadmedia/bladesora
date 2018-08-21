@@ -3,7 +3,7 @@
            name="{{ $inputName }}"
            value="{{ $inputValue ?? '' }}"
            type="{{ !empty($type) ? $type : 'text' }}"
-           class="{{ !empty($inputErrors) && count($inputErrors) > 0 ? 'has-error' : '' }}"
+           class="{{ !empty($inputErrors) && count($inputErrors) > 0 ? 'has-error' : '' }} {{ $customClasses }}"
            autocomplete="off"
            spellcheck="false"
             {{ !empty($disabled) && $disabled === true ? 'disabled' : '' }}>

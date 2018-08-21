@@ -113,7 +113,7 @@
                 </div>
             @endif
 
-            @if(!empty($isLive) && $isLive === true)
+            @if($isLive === true || $showEmail === true)
                 <div id="emailForm"
                      data-email-subject="Question on Lesson: {{ $lessonTitle }}"
                      data-email-type="ask-question"
