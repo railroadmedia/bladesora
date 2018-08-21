@@ -11,7 +11,7 @@
     </div>
     @if(empty($compact))
         <div class="flex flex-column {{ !empty($compact) && $compact === true ? '' : 'xs-12 sm-3 lg-2' }}">
-            <a href="{{ $progress === 100 ? url()->route('members.home') : $nextLessonUrl }}" class="btn bg-white text-{{ $themeColor }} short">
+            <a href="{{ $progress === 100 ? url()->route('members.home') : $nextLessonUrl }}" class="btn bg-white text-{{ $themeColor }} short {{ $contentType === 'learning-path' ? 'start-learning-path' : '' }}">
                 @if($progress > 0 && $progress < 100)
                     Next Lesson &raquo;
                 @elseif($progress === 100)
@@ -23,17 +23,18 @@
         </div>
     @endif
 </div>
-@if($progress === 100)
-    <div class="congrats-container flex flex-row bg-white corners-bottom-3 pa bb-recordeo-3 {{ !empty($compact) && $compact === true ? 'compact' : '' }}">
-        <div class="flex flex-column flex-auto align-center">
-            <div class="square bg-black rounded">
-                <div class="pa-1 heading text-white">
-                    <i class="fas fa-trophy"></i>
-                </div>
-            </div>
-        </div>
-        <div class="flex flex-column align-v-center ph">
-            <h4 class="subtitle"><span class="font-bold">Course Complete!</span> Congratulations you've finished this Course!</h4>
-        </div>
-    </div>
-@endif
+
+{{--@if($progress === 100)--}}
+    {{--<div class="congrats-container flex flex-row bg-white corners-bottom-3 pa bb-recordeo-3 {{ !empty($compact) && $compact === true ? 'compact' : '' }}">--}}
+        {{--<div class="flex flex-column flex-auto align-center">--}}
+            {{--<div class="square bg-black rounded">--}}
+                {{--<div class="pa-1 heading text-white">--}}
+                    {{--<i class="fas fa-trophy"></i>--}}
+                {{--</div>--}}
+            {{--</div>--}}
+        {{--</div>--}}
+        {{--<div class="flex flex-column align-v-center ph">--}}
+            {{--<h4 class="subtitle"><span class="font-bold">Course Complete!</span> Congratulations you've finished this Course!</h4>--}}
+        {{--</div>--}}
+    {{--</div>--}}
+{{--@endif--}}
