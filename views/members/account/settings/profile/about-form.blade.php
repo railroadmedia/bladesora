@@ -13,7 +13,6 @@
                 "fields" => [
                     "Full Name" => $fullName,
                     "Location" => $country,
-                    "Gender" => $gender,
                     "Birthday" => !empty($birthday) ? \Carbon\Carbon::parse($birthday)->format('F j, Y') : '',
                 ],
                 "showEmpty" => true
@@ -58,20 +57,6 @@
                     </div>
 
                     <div class="flex flex-row ph-3 inline-inputs">
-                        <div class="flex flex-column">
-                            @include('bladesora::members.inputs.select-input', array_merge([
-                                "brand" => $brand,
-                                "inputId" => "profileGender",
-                                "inputName" => "gender",
-                                "inputLabel" => "Gender",
-                                "inputValue" => "Male",
-                                "inputOptions" => [
-                                    'Male',
-                                    'Female',
-                                ],
-                                "inputErrors" => [],
-                            ], $genderInput ?? []))
-                        </div>
                         <div class="flex flex-column">
                             @include('bladesora::members.inputs.datetime-input', array_merge([
                                 "brand" => $brand,
