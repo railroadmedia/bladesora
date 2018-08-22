@@ -4,7 +4,7 @@
            value="{{ $inputValue ?? '' }}"
            type="{{ !empty($type) ? $type : 'text' }}"
            class="{{ !empty($inputErrors) && count($inputErrors) > 0 ? 'has-error' : '' }} {{ $customClasses }}"
-           autocomplete="off"
+           autocomplete="{{ $autoComplete ?? 'off' }}"
            spellcheck="false"
             {{ !empty($disabled) && $disabled === true ? 'disabled' : '' }}>
     <label for="{{ $inputId }}"
