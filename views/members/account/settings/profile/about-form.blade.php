@@ -19,7 +19,7 @@
             ])
 
             <p class="body font-bold mb-1 mt-3">Biography</p>
-            <p class="body">{{ $biography }}</p>
+            <p class="body">{!! $biography !!}</p>
         </div>
     @endslot
 
