@@ -61,7 +61,11 @@
                     <iframe id="liveVideo" src="https://www.youtube.com/embed/live_stream?channel={{ $liveStreamId }}&rel=0&autoplay=1&playsinline=1&modestthemeColoring=1" frameborder="0" allowfullscreen></iframe>
                 </div>
             @else
-                <div class="">
+                @if(!empty($youtubeId))
+                    <div class="widescreen">
+                        <iframe id="player" frameborder="0" allowfullscreen="1" allow="autoplay; encrypted-media" title="YouTube video player" src="https://www.youtube.com/embed/{{ $youtubeId }}?autoplay=0&amp;modestbranding=1&amp;playsinline=1&amp;showinfo=1&amp;rel=0&amp;start=25&amp;enablejsapi=1&amp;origin=https%3A%2F%2Fwww.drumeo.com&amp;widgetid=1"></iframe>
+                    </div>
+                @else
                     <div id="videoPlayer"
                          data-theme-color="{{ $themeColor }}"
                          data-video-poster="{{ $videoPoster ?? "" }}"
@@ -69,10 +73,8 @@
                          data-video-id="{{ $videoId }}"
                          data-current-second="{{ $currentSecond ?? 0 }}"
                          data-progress-state="{{ $progressState }}"
-                         data-is-youtube="{{ !empty($youtubeId) }}"
-                         data-youtube-id="{{ $youtubeId ?? null }}"
                          data-video-length="{{ $videoLength }}"></div> {{-- Vue will mount the video player component to this element --}}
-                </div>
+                @endif
 
                 <div class="flex flex-row mv-3">
                     <div class="flex flex-column sq-btn-col mr-1">
