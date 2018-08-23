@@ -69,6 +69,8 @@
                          data-video-id="{{ $videoId }}"
                          data-current-second="{{ $currentSecond ?? 0 }}"
                          data-progress-state="{{ $progressState }}"
+                         data-is-youtube="{{ !empty($youtubeId) }}"
+                         data-youtube-id="{{ $youtubeId ?? null }}"
                          data-video-length="{{ $videoLength }}"></div> {{-- Vue will mount the video player component to this element --}}
                 </div>
 
