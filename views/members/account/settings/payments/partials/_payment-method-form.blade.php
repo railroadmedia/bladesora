@@ -8,7 +8,7 @@
     <input name="stripe-publishable-key"
         id="stripe-publishable-key"
         type="hidden"
-        value="{{ \Railroad\Ecommerce\Services\ConfigService::$paymentGateways['stripe']['recordeo']['stripe_publishable_key'] }}">
+        value="">
 
     @if(!empty($editingPayment) && $editingPayment === true)
         <div class="method-fields mb-2">
@@ -25,6 +25,7 @@
                     </div>
 
                     @if(!empty($activeMethods))
+                        @foreach($activeMethods as $activeMethod)
                         @foreach($activeMethods as $activeMethod)
                             <div class="flex flex-row mb-2">
                                 @include('bladesora::members.inputs.radio-input', [
@@ -49,7 +50,7 @@
         <div class="flex flex-row ph-3">
             <div class="flex flex-column mb-1">
                 @include('bladesora::members.inputs.select-input', [
-                    "brand" => "recordeo",
+                    "brand" => $brand ?? "recordeo",
                     "inputId" => "methodType",
                     "inputName" => "method_type",
                     "inputLabel" => "Payment Method Type",
@@ -65,7 +66,7 @@
         <div class="flex flex-row ph-3">
             <div class="flex flex-column mb-1">
                 @include('bladesora::members.inputs.text-input', [
-                    "brand" => "recordeo",
+                    "brand" => $brand ?? 'recordeo',
                     "type" => "text",
                     "inputId" => "ccNumber",
                     "inputName" => "cc_number",
@@ -79,7 +80,7 @@
         <div class="flex flex-row ph-3 inline-inputs">
             <div class="flex flex-column">
                 @include('bladesora::members.inputs.select-input', [
-                    "brand" => "recordeo",
+                    "brand" => $brand ?? 'recordeo',
                     "inputId" => "expiryMonth",
                     "inputName" => "expiry_month",
                     "inputLabel" => "Expiry Month",
@@ -90,7 +91,7 @@
             </div>
             <div class="flex flex-column">
                 @include('bladesora::members.inputs.select-input', [
-                    "brand" => "recordeo",
+                    "brand" => $brand ?? 'recordeo',
                     "inputId" => "expiryYear",
                     "inputName" => "expiry_year",
                     "inputLabel" => "Expiry Year",
@@ -101,7 +102,7 @@
             </div>
             <div class="flex flex-column smaller">
                 @include('bladesora::members.inputs.text-input', [
-                    "brand" => "recordeo",
+                    "brand" => $brand ?? 'recordeo',
                     "type" => "text",
                     "inputId" => "cvvNumber",
                     "inputName" => "cvv",
@@ -115,7 +116,7 @@
         <div class="flex flex-row ph-3 mt-1 inline-inputs">
             <div class="flex flex-column">
                 @include('bladesora::members.inputs.text-input', [
-                    "brand" => "recordeo",
+                    "brand" => $brand ?? 'recordeo',
                     "type" => "text",
                     "inputId" => "nameOnCard",
                     "inputName" => "name",
@@ -126,7 +127,7 @@
             </div>
             <div class="flex flex-column">
                 @include('bladesora::members.inputs.select-input', [
-                    "brand" => "recordeo",
+                    "brand" => $brand ?? "recordeo",
                     "inputId" => "cardCountry",
                     "inputName" => "country",
                     "inputLabel" => "Country",
@@ -140,7 +141,7 @@
             </div>
             <div class="flex flex-column hide">
                 @include('bladesora::members.inputs.select-input', [
-                    "brand" => "recordeo",
+                    "brand" => $brand ?? "recordeo",
                     "inputId" => "cardRegion",
                     "inputName" => "region",
                     "inputLabel" => "Province",
@@ -178,7 +179,7 @@
     <div class="flex flex-row ph-3 mt-2 mb-3">
         <button class="btn collapse-150 mr-1"
                 type="submit">
-            <span class="bg-recordeo text-white corners-3 short">
+            <span class="bg-{{ $brand ?? "recordeo" }} text-white corners-3 short">
                 Save
             </span>
         </button>

@@ -98,7 +98,11 @@
         @endforeach
         <div class="flex flex-column spacer"></div>
         <div class="sub-links flex flex-column mt-3">
-            <a class="flex flex-row align-v-center text-black ph mv-1" href="{{ $supportUrl }}">Support</a>
+            @if(!empty($legacyResourcesUrl))
+                <a class="flex flex-row align-v-center text-black ph mb-1" href="{{ $legacyResourcesUrl }}">Legacy Resources</a>
+            @endif
+
+            <a class="flex flex-row align-v-center text-black ph mb-1" href="{{ $supportUrl }}">Support</a>
             <a class="flex flex-row align-v-center text-black ph mb-1" href="{{ $logoutUrl }}">Logout</a>
         </div>
     </section>

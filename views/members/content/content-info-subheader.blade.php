@@ -1,13 +1,20 @@
 <div id="subHeader" class="container collapsed-h fluid bg-x-dark pt-1">
     <div class="container">
         <div class="flex flex-row align-center flex-wrap">
-            <div class="flex flex-column body uppercase align-v-center text-white mb-1">
-                @foreach($infoData as $index => $info)
-                    @if($index > 0)
-                        |
-                    @endif
-                    {{ $info }}
-                @endforeach
+            <div class="flex flex-column align-v-center text-white mb-1">
+                <div class="flex flex-row align-v-center">
+                    @foreach($infoData as $index => $info)
+                        @if($index > 0)
+                            <span class="hide-xs-only body uppercase">
+                                <span style="margin:0 5px;">|</span>{{ $info }}
+                            </span>
+                        @else
+                            <span class="body uppercase">
+                                {{ $info  }}
+                            </span>
+                        @endif
+                    @endforeach
+                </div>
             </div>
 
             @if(!empty($addToList) && $addToList === true)
@@ -55,7 +62,6 @@
                             data-content-id="{{ $contentId }}">
                         <span class="text-white bg-white inverted">
                             <i class="fas fa-redo-alt fa-flip-horizontal"></i>
-                            <span class="hide-md-up uppercase flex-auto ml-1" style="width:auto;">Reset Progress</span>
                         </span>
                     </button>
                 </div>

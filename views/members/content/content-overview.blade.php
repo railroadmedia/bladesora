@@ -48,7 +48,7 @@
             @endif
 
             <div class="flex flex-column icon-col align-v-center hide-sm-down">
-                <div class="square body {{ \Carbon\Carbon::parse($releaseDate) > \Carbon\Carbon::now() ? 'addeventatc' : '' }}"
+                <div class="body {{ \Carbon\Carbon::parse($releaseDate) > \Carbon\Carbon::now() ? 'addeventatc' : '' }}"
                      data-dropdown-y="up"
                      data-dropdown-x="right"
                      data-intel-apple="true">

@@ -17,7 +17,7 @@
                 @elseif($progress === 100)
                     Back to Home
                 @else
-                    Start {{ ucwords($contentType) }}
+                    Start {{  ucwords(str_replace('-', ' ', $contentType)) }}
                 @endif
             </a>
         </div>

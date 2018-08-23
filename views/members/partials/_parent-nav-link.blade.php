@@ -1,4 +1,5 @@
-<div class="page-link parent flex flex-row flex-wrap subtitle text-black align-v-center">
+<div class="page-link parent flex flex-row flex-wrap subtitle text-black align-v-center"
+     data-remain-open="{{ strtolower(str_replace(' ', '-', $page)) }}">
     <span class="page-link parent-button pa-1 bb-grey-2-1">
         <i class="{{ $icon }} mr-1 text-{{ $themeColor }}"></i>{{ $page }}
 
