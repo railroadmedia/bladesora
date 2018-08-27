@@ -67,6 +67,7 @@
             "formId" => "paymentPlan" . str_replace(' ', '', ucwords($plan['title'])),
             "formAction" => "",
             "formMethod" => "",
+            'methodField' => "",
             "activeMethod" => null
         ])
 
