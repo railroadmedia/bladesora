@@ -64,19 +64,27 @@
     </div>
 </header>
 <aside id="navSideBar" class="shadow bg-white flex flex-column">
-    <section id="userInfo" class="flex flex-column align-center bg-grey-5 pa-3">
-        <div class="avatar mb">
-            <img class="rounded inset-border"
-                 src="{{ $userAvatar }}"
-                 data-avatar-update="true">
+    <section id="userInfo" class="flex flex-column flex-auto bg-grey-5 pa-3">
+        <div class="flex flex-column align-h-center avatar mb">
+            <div class="avatar-wrap flex">
+                <div class="square" style="width:100%;">
+
+                    <img class="rounded inset-border"
+                         src="{{ $userAvatar }}"
+                         data-avatar-update="true">
+                </div>
+            </div>
         </div>
-        <div class="mb">
+
+        <div class="flex flex-column mb align-h-center">
             <h4 class="title text-white">{{ $userName }}</h4>
         </div>
 
-        <a href="{{ $accountUrl }}" class="btn bg-{{ $themeColor }} inverted text-{{ $themeColor }}">
-            <i class="fas fa-user mr-1"></i> My Profile
-        </a>
+        <div class="flex flex-column align-h-center">
+            <a href="{{ $accountUrl }}" class="btn bg-{{ $themeColor }} inverted text-{{ $themeColor }}">
+                <i class="fas fa-user mr-1"></i> My Profile
+            </a>
+        </div>
     </section>
     <section id="pageLinks" class="flex flex-column">
         @foreach($links as $page => $info)

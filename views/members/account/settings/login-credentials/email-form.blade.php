@@ -35,6 +35,12 @@
                     {{ method_field($method) }}
                     {{ csrf_field() }}
 
+                    @if($showLegacyUserNameMessage)
+                        <div class="flex flex-row ph-3 mb-2">
+                            <p class="tiny text-grey-3">WARNING: It looks like you are still using the legacy username login. While you are still able to login with your user name right now, upon changing your email you will be required to log in using that email from now on.</p>
+                        </div>
+                    @endif
+
                     <div class="flex flex-row ph-3 mb-1">
                         <div class="flex flex-column">
                             @include('bladesora::members.inputs.text-input', array_merge([

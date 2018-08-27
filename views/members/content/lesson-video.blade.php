@@ -73,7 +73,8 @@
                          data-video-id="{{ $videoId }}"
                          data-current-second="{{ $currentSecond ?? 0 }}"
                          data-progress-state="{{ $progressState }}"
-                         data-video-length="{{ $videoLength }}"></div> {{-- Vue will mount the video player component to this element --}}
+                         data-video-length="{{ $videoLength }}"
+                         data-check-for-timecode="true"></div> {{-- Vue will mount the video player component to this element --}}
                 @endif
 
                 <div class="flex flex-row mv-3">
