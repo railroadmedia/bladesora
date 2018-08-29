@@ -3,8 +3,8 @@
            name="{{ $inputName }}"
            value="{{ $inputValue ?? '' }}"
            type="{{ !empty($type) ? $type : 'text' }}"
-           class="{{ !empty($inputErrors) && count($inputErrors) > 0 ? 'has-error' : '' }}"
-           autocomplete="off"
+           class="{{ !empty($inputErrors) && count($inputErrors) > 0 ? 'has-error' : '' }} {{ $customClasses }}"
+           autocomplete="{{ $autoComplete ?? 'off' }}"
            spellcheck="false"
             {{ !empty($disabled) && $disabled === true ? 'disabled' : '' }}>
     <label for="{{ $inputId }}"

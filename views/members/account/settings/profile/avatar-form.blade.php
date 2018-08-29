@@ -16,8 +16,8 @@
                          data-avatar-update="true">
                 </div>
                 <div class="flex flex-column align-center pa">
-                    <p class="tiny text-dark">For best results upload a square photo.</p>
-                    <p class="tiny text-dark font-italic">Max file size: 5MB</p>
+                    <p class="tiny text-grey-3">For best results upload a square photo.</p>
+                    <p class="tiny text-grey-3 font-italic">Max file size: 5MB</p>
                 </div>
             </div>
         </div>

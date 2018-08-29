@@ -10,6 +10,6 @@
     </span>
 
     <label for="{{ $inputID }}" class="toggle-label">
-        {{ $inputLabel }}
+        {!! $inputLabel !!}
     </label>
 </div>

@@ -12,7 +12,8 @@
             @include('bladesora::members.account.partials._text-fields', [
                 "fields" => [
                     "Current Password" => "********",
-                ]
+                ],
+                "showEmpty" => true
             ])
         </div>
     @endslot
@@ -31,7 +32,7 @@
                     <div class="flex flex-row ph-3 mb-3">
                         <div class="flex flex-column">
                             @include('bladesora::members.inputs.text-input', array_merge([
-                                "brand" => "recordeo",
+                                "brand" => $brand,
                                 "type" => "password",
                                 "inputId" => "currentPassword",
                                 "inputName" => "current_password",
@@ -45,7 +46,7 @@
                     <div class="flex flex-row ph-3 mb-1">
                         <div class="flex flex-column">
                             @include('bladesora::members.inputs.text-input', array_merge([
-                                "brand" => "recordeo",
+                                "brand" => $brand,
                                 "type" => "password",
                                 "inputId" => "loginPassword",
                                 "inputName" => "login_password",
@@ -59,7 +60,7 @@
                     <div class="flex flex-row ph-3 mb-1">
                         <div class="flex flex-column">
                             @include('bladesora::members.inputs.text-input', array_merge([
-                                "brand" => "recordeo",
+                                "brand" => $brand,
                                 "type" => "password",
                                 "inputId" => "loginPasswordConfirm",
                                 "inputName" => "login_password_confirm",
@@ -72,7 +73,7 @@
 
                     <div class="flex flex-row ph-3 pb-3">
                         <button class="btn collapse-150 mr-1">
-                            <span class="bg-recordeo text-white corners-3 short">
+                            <span class="bg-{{ $brand }} text-white corners-3 short">
                                 Save
                             </span>
                         </button>

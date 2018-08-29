@@ -2,7 +2,7 @@
     <div class="flex flex-column pa-3 bb-light-1">
         <h1 class="heading">
             <a href="{{ $forumUrl }}" class="no-decoration mr-1">
-                <i class="fas fa-arrow-circle-left text-light"></i>
+                <i class="fas fa-arrow-circle-left text-grey-2"></i>
             </a>
             Create a Discussion
         </h1>
