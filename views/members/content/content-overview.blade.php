@@ -22,8 +22,9 @@
                     </p>
                 @endif
 
-                <p class="body font-bold mb-1">{{ $itemTitle }}</p>
-                <p class="tiny mb-1">{{ $itemDescription }}</p>
+                <a href="{{ $itemUrl }}"
+                   class="body font-bold text-black no-decoration mb-1">{{ $itemTitle }}</a>
+                <p class="tiny mb-1 item-description">{{ $itemDescription }}</p>
 
                 <div class="flex flex-row align-v-center overview-links">
                     <a href="{{ $itemUrl }}"

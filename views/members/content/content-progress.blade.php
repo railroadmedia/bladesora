@@ -11,7 +11,9 @@
     </div>
     @if(empty($compact))
         <div class="flex flex-column {{ !empty($compact) && $compact === true ? '' : 'xs-12 sm-3 lg-2' }}">
-            <a href="{{ $progress === 100 ? $backButton['url'] : $nextLessonUrl }}" class="btn bg-white text-{{ $themeColor }} short {{ $contentType === 'learning-path' ? 'start-learning-path' : '' }}">
+            <a href="{{ $progress === 100 ? $backButton['url'] : $nextLessonUrl }}"
+               class="btn bg-white short text-{{ $themeColor }}
+               {{ $contentType === 'learning-path' && $progress < 100 ? 'start-learning-path' : '' }}">
                 @if($progress > 0 && $progress < 100)
                     Next Lesson &raquo;
                 @elseif($progress === 100)
