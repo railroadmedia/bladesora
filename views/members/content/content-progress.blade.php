@@ -11,13 +11,13 @@
     </div>
     @if(empty($compact))
         <div class="flex flex-column {{ !empty($compact) && $compact === true ? '' : 'xs-12 sm-3 lg-2' }}">
-            <a href="{{ $progress === 100 ? url()->route('members.home') : $nextLessonUrl }}" class="btn bg-white text-{{ $themeColor }} short {{ $contentType === 'learning-path' ? 'start-learning-path' : '' }}">
+            <a href="{{ $progress === 100 ? $backButton['url'] : $nextLessonUrl }}" class="btn bg-white text-{{ $themeColor }} short {{ $contentType === 'learning-path' ? 'start-learning-path' : '' }}">
                 @if($progress > 0 && $progress < 100)
                     Next Lesson &raquo;
                 @elseif($progress === 100)
-                    Back to Home
+                    {{ $backButton['text'] }}
                 @else
-                    Start {{  ucwords(str_replace('-', ' ', $contentType)) }}
+                    Start First Lesson
                 @endif
             </a>
         </div>

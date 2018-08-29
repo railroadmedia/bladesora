@@ -7,8 +7,14 @@
                 @endif
 
                 <h1 class="heading text-white mb-2">
-                    @if(!empty($pageIcon))
-                        <i class="{{ $pageIcon }} text-{{ $themeColor }}"></i>
+                    @if(!empty($backButtonUrl))
+                        <a href="{{ $backButtonUrl }}" class="no-decoration">
+                            <i class="fas fa-arrow-circle-left text-grey-2"></i>
+                        </a>
+                    @else
+                        @if(!empty($pageIcon))
+                            <i class="{{ $pageIcon }} text-{{ $themeColor }}"></i>
+                        @endif
                     @endif
 
                     {{ $pageTitle }}

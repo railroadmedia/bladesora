@@ -1,8 +1,16 @@
 <div class="flex flex-row pv-3 content-overview {{ !empty($hideBorder) && $hideBorder ? '' : 'bt-grey-1-1' }}">
     <div class="flex flex-column align-v-center large-thumbnail {{ $themeColor }} {{ !empty($releaseDate) && \Carbon\Carbon::parse($releaseDate) > \Carbon\Carbon::now() ? 'desaturate' : '' }}">
         <div class="thumb-wrap">
+            <a href="{{ $itemUrl }}">
             <div class="thumb-img bg-center corners-3 {{ $forceSquareThumb === true ? 'square' : 'widescreen' }}"
-                 style="background-image:url({{ $itemThumbnail }});"></div>
+                 style="background-image:url({{ $itemThumbnail }});">
+                @if(!empty($logoImage))
+                    <div class="logo-image pa-1">
+                        <img src="{{ $logoImage }}">
+                    </div>
+                @endif
+            </div>
+            </a>
         </div>
     </div>
     <div class="flex flex-column grow">
@@ -17,18 +25,18 @@
                 <p class="body font-bold mb-1">{{ $itemTitle }}</p>
                 <p class="tiny mb-1">{{ $itemDescription }}</p>
 
-                <div class="flex flex-row align-v-center">
+                <div class="flex flex-row align-v-center overview-links">
                     <a href="{{ $itemUrl }}"
                        class="btn bg-{{ $themeColor }} text-white collapse-250 go-to-button mr-1">
                         @if($itemProgress === 'started')
                             <i class="fas fa-play mr-1"></i>
-                            Continue Next Lesson
+                            Next Lesson
                         @elseif($itemProgress === 'completed')
                             <i class="fas fa-check-circle mr-1"></i>
                             Completed
                         @else
                             <i class="fas fa-play mr-1"></i>
-                            Start First Lesson
+                            First Lesson
                         @endif
                     </a>
 

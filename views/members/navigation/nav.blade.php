@@ -1,6 +1,6 @@
-<header id="nav" class="container fluid collapsed shadow bg-black bv-grey-4-1">
+<header id="nav" class="container fluid collapsed shadow bg-black bv-grey-5-1">
     <div class="flex flex-row">
-        <a href="/members" class="flex flex-column logo ph align-center br-grey-4-1">
+        <a href="/members" class="flex flex-column logo ph align-center br-grey-5-1">
             <img src="{{ $logo }}">
         </a>
 
@@ -61,7 +61,7 @@
             </a>
         </div>
 
-        <div id="menuButton" class="flex flex-column menu noselect bl-grey-4-1" role="button">
+        <div id="menuButton" class="flex flex-column menu noselect bl-grey-5-1" role="button">
             <div class="flex flex-row text-white align-center uppercase">
                 <i class="menu-bars-icon"></i>
             </div>
@@ -69,28 +69,6 @@
     </div>
 </header>
 <aside id="navSideBar" class="shadow bg-white flex flex-column">
-    <section id="userInfo" class="flex flex-column flex-auto bg-grey-5 pa-3">
-        <div class="flex flex-column align-h-center avatar mb">
-            <div class="avatar-wrap flex">
-                <div class="square" style="width:100%;">
-
-                    <img class="rounded inset-border"
-                         src="{{ $userAvatar }}"
-                         data-avatar-update="true">
-                </div>
-            </div>
-        </div>
-
-        <div class="flex flex-column mb align-h-center">
-            <h4 class="title text-white">{{ $userName }}</h4>
-        </div>
-
-        <div class="flex flex-column align-h-center">
-            <a href="{{ $accountUrl }}" class="btn bg-{{ $themeColor }} inverted text-{{ $themeColor }}">
-                <i class="fas fa-user mr-1"></i> My Profile
-            </a>
-        </div>
-    </section>
     <section id="pageLinks" class="flex flex-column">
         @foreach($links as $page => $info)
             @if(!empty($info['children']))
@@ -111,6 +89,14 @@
         @endforeach
         <div class="flex flex-column spacer"></div>
         <div class="sub-links flex flex-column mt-3">
+
+            @if(!empty($drumeoBeatUrl))
+                <a class="flex flex-row align-v-center text-black ph mb-1"
+                   href="{{ $drumeoBeatUrl }}" target="_blank">
+                    Drumeo Beat <i class="fal fa-external-link ml-1"></i>
+                </a>
+            @endif
+
             @if(!empty($legacyResourcesUrl))
                 <a class="flex flex-row align-v-center text-black ph mb-1" href="{{ $legacyResourcesUrl }}">Legacy Resources</a>
             @endif
