@@ -18,7 +18,8 @@
         @if(!empty($lessonResources))
             <div class="flex flex-column align-center sq-btn-col">
                 <div class="btn bg-{{ $themeColor }} inverted text-{{ $themeColor }} is-dropdown">
-                    <i class="fas fa-download no-events"></i>
+                    <i class="unopen fas fa-download no-events text-{{ $themeColor }}"></i>
+                    <i class="open fas fa-download no-events text-white"></i>
 
                     <div class="dropdown-content bg-white shadow tiny text-black">
                         <ul>
