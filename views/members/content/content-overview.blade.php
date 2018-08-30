@@ -1,15 +1,15 @@
 <div class="flex flex-row pv-3 content-overview {{ !empty($hideBorder) && $hideBorder ? '' : 'bt-grey-1-1' }}">
     <div class="flex flex-column align-v-center large-thumbnail {{ $themeColor }} {{ !empty($releaseDate) && \Carbon\Carbon::parse($releaseDate) > \Carbon\Carbon::now() ? 'desaturate' : '' }}">
         <div class="thumb-wrap">
-            <a href="{{ $itemUrl }}">
-            <div class="thumb-img bg-center corners-3 {{ $forceSquareThumb === true ? 'square' : 'widescreen' }}"
-                 style="background-image:url({{ $itemThumbnail }});">
-                @if(!empty($logoImage))
-                    <div class="logo-image pa-1">
-                        <img src="{{ $logoImage }}">
-                    </div>
-                @endif
-            </div>
+            <a href="{{ $lessonsUrl }}">
+                <div class="thumb-img bg-center corners-3 {{ $forceSquareThumb === true ? 'square' : 'widescreen' }}"
+                     style="background-image:url({{ $itemThumbnail }});">
+                    @if(!empty($logoImage))
+                        <div class="logo-image pa-1 corners-bottom-3">
+                            <img src="{{ $logoImage }}">
+                        </div>
+                    @endif
+                </div>
             </a>
         </div>
     </div>
@@ -22,7 +22,7 @@
                     </p>
                 @endif
 
-                <a href="{{ $itemUrl }}"
+                <a href="{{ $lessonsUrl }}"
                    class="body font-bold text-black no-decoration mb-1">{{ $itemTitle }}</a>
                 <p class="tiny mb-1 item-description">{{ $itemDescription }}</p>
 

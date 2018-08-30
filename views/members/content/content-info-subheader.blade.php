@@ -1,4 +1,4 @@
-<div id="subHeader" class="container collapsed-h fluid bg-x-dark pt-1">
+<div id="subHeader" class="container collapsed-h fluid bg-grey-5 pt-1">
     <div class="container">
         <div class="flex flex-row align-center flex-wrap">
             <div class="flex flex-column align-v-center text-white mb-1">

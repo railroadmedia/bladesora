@@ -56,7 +56,7 @@
                         </div>
                     </div>
 
-                    <div class="flex flex-row ph-3 inline-inputs">
+                    <div class="flex flex-row ph-3 mb-1">
                         <div class="flex flex-column">
                             @include('bladesora::members.inputs.datetime-input', array_merge([
                                 "brand" => $brand,

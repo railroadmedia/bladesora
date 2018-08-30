@@ -1,4 +1,4 @@
-<div id="instructorInfo" class="container fluid bg-x-dark">
+<div id="instructorInfo" class="container fluid bg-grey-5">
     <div class="container">
         <div  class="flex flex-row">
             <div class="flex flex-column text-white pv">
