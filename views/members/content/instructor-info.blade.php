@@ -1,5 +1,17 @@
 <div id="instructorInfo" class="container fluid bg-grey-5">
     <div class="container">
+        @if(!empty($contentDescription))
+        <div  class="flex flex-row">
+            <div class="flex flex-column text-white pv">
+                <div id="collapsableInfo">
+                    <p class="body">
+                        {{ $contentDescription }}
+                    </p>
+                </div>
+            </div>
+        </div>
+        @endif
+
         <div  class="flex flex-row">
             <div class="flex flex-column text-white pv">
                 <div id="collapsableInfo">
