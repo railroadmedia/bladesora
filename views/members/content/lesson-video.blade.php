@@ -120,9 +120,9 @@
             @endif
 
             @if($isLive === true || $showEmail === true)
-                <div id="emailForm"
-                     data-email-subject="Question on Lesson: {{ $lessonTitle }}"
-                     data-email-type="ask-question"
+            <div id="emailForm"
+                     data-email-subject="{{ $emailSubjectOverride ?? 'Question on Lesson: ' . $lessonTitle }}"
+                     data-email-type="{{ $emailTypeOverride ?? 'ask-question' }}"
                      data-success-message="Your question has been sent!"
                      data-user-avatar="{{ $userAvatar }}"
                      data-lesson-page="true"
