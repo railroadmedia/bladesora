@@ -9,6 +9,10 @@
                             <img src="{{ $logoImage }}">
                         </div>
                     @endif
+
+                    <span class="thumb-hover flex-center">
+                        <i class="fas fa-arrow-right"></i>
+                    </span>
                 </div>
             </a>
         </div>
