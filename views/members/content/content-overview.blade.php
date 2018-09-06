@@ -46,7 +46,8 @@
                     </a>
 
                     @if(!empty($lessonsUrl))
-                        <a href="{{ $lessonsUrl }}" class="btn bg-black text-black inverted short collapse-200">
+                        <a href="{{ $lessonsUrl }}"
+                           class="btn bg-black text-black inverted short collapse-200">
                             <i class="fas fa-arrow-circle-right mr-1"></i> See Lessons
                         </a>
                     @endif

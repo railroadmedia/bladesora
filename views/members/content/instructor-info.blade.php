@@ -5,7 +5,7 @@
             <div class="flex flex-column text-white pv">
                 <div id="collapsableInfo">
                     <p class="body">
-                        {{ $contentDescription }}
+                        {!! nl2br($contentDescription) !!}
                     </p>
                 </div>
             </div>
