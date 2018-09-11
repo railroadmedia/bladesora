@@ -8,7 +8,10 @@
             @if(!empty($searchEndpoint))
                 <form method="GET" action="{{ $searchEndpoint }}">
                     <div class="flex flex-row align-v-center">
-                        <span id="searchIcon" class="flex flex-column flex-auto title text-grey-4 mr-2">
+                        <span id="searchIcon" class="flex flex-column flex-auto title text-grey-4 mr-2 hide-sm-up">
+                            <i class="fas fa-search"></i>
+                        </span>
+                        <span class="flex flex-column flex-auto title text-grey-4 mr-2 hide-xs-only">
                             <i class="fas fa-search"></i>
                         </span>
                         <div id="searchBox" class="form-group flex flex-column">

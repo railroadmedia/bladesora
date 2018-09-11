@@ -17,7 +17,7 @@
                 @if($progress > 0 && $progress < 100)
                     Next Lesson &raquo;
                 @elseif($progress === 100)
-                    {{ $backButton['text'] }}
+                    {!! $backButton['text'] !!}
                 @else
                     Start First Lesson
                 @endif
@@ -27,7 +27,7 @@
 </div>
 
 {{--@if($progress === 100)--}}
-    {{--<div class="congrats-container flex flex-row bg-white corners-bottom-3 pa bb-recordeo-3 {{ !empty($compact) && $compact === true ? 'compact' : '' }}">--}}
+    {{--<div class="congrats-container flex flex-row bg-white corners-bottom-3 pa bb-{{ $themeColor }}-3 {{ !empty($compact) && $compact === true ? 'compact' : '' }}">--}}
         {{--<div class="flex flex-column flex-auto align-center">--}}
             {{--<div class="square bg-black rounded">--}}
                 {{--<div class="pa-1 heading text-white">--}}
@@ -36,7 +36,7 @@
             {{--</div>--}}
         {{--</div>--}}
         {{--<div class="flex flex-column align-v-center ph">--}}
-            {{--<h4 class="subtitle"><span class="font-bold">Course Complete!</span> Congratulations you've finished this Course!</h4>--}}
+            {{--<h4 class="subtitle"><span class="font-bold">{{ $contentType }} Complete!</span> Congratulations you've finished this Course!</h4>--}}
         {{--</div>--}}
     {{--</div>--}}
 {{--@endif--}}
