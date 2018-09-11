@@ -27,7 +27,9 @@
             <div class="flex flex-column sm-2 hide-xs-only"></div>
             <div class="header-avatar flex flex-column hide-xs-only">
                 <div class="square">
-                    <img class="rounded inset-border" src="{{ $avatarImage }}">
+                    <a href="{{ $profileUrl }}" class="no-decoration">
+                        <img class="rounded inset-border" src="{{ $avatarImage }}">
+                    </a>
                 </div>
             </div>
         </div>
