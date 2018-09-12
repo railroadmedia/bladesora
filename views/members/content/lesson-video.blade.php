@@ -67,15 +67,27 @@
                         <iframe id="player" frameborder="0" allowfullscreen="1" allow="autoplay; encrypted-media" title="YouTube video player" src="https://www.youtube.com/embed/{{ $youtubeId }}?autoplay=0&amp;modestbranding=1&amp;playsinline=1&amp;showinfo=1&amp;rel=0&amp;start=25&amp;enablejsapi=1&amp;origin=https%3A%2F%2Fwww.drumeo.com&amp;widgetid=1"></iframe>
                     </div>
                 @else
-                    <div id="videoPlayer"
-                         data-theme-color="{{ $themeColor }}"
-                         data-video-poster="{{ $videoPoster ?? "" }}"
-                         data-video-sources="{{ json_encode($videoSources) }}"
-                         data-video-id="{{ $videoId }}"
-                         data-current-second="{{ $currentSecond ?? 0 }}"
-                         data-progress-state="{{ $progressState }}"
-                         data-video-length="{{ $videoLength }}"
-                         data-check-for-timecode="true"></div> {{-- Vue will mount the video player component to this element --}}
+                    <div id="lessonVideoWrap">
+                        <div id="videoPlayer"
+                             data-theme-color="{{ $themeColor }}"
+                             data-video-poster="{{ $videoPoster ?? "" }}"
+                             data-video-sources="{{ json_encode($videoSources) }}"
+                             data-video-id="{{ $videoId }}"
+                             data-current-second="{{ $currentSecond ?? 0 }}"
+                             data-progress-state="{{ $progressState }}"
+                             data-video-length="{{ $videoLength }}"
+                             data-cast-title="{{ $lessonTitle }}"
+                             data-check-for-timecode="true"></div> {{-- Vue will mount the video player component to this element --}}
+                    </div>
+
+                    @if(!empty($qaVideoSources))
+                        <div id="qaVideoWrap" class="hide">
+                            <div id="qaVideoPlayer"
+                                 data-theme-color="{{ $themeColor }}"
+                                 data-video-poster="{{ $qaVideoPoster ?? "" }}"
+                                 data-video-sources="{{ json_encode($qaVideoSources) }}"></div>
+                        </div>
+                    @endif
                 @endif
 
                 <div class="flex flex-row mv-3">
@@ -91,18 +103,39 @@
                         @endif
                     </div>
 
-                    <div class="flex flex-column ph-1 align-center">
-                        <button class="btn completeButton {{ $isCompleted ? 'is-complete' : '' }}"
-                                data-content-id="{{ $contentId }}">
+                    <div class="flex flex-column">
+                        <div class="flex flex-row reverse flex-wrap">
 
-                            <span class="incompleted bg-{{ $themeColor }} inverted text-{{ $themeColor }}">
-                                <i class="fas fa-check mr-1"></i> Mark as Complete
-                            </span>
+                            <div class="flex flex-column ph-1">
 
-                            <span class="completed bg-{{ $themeColor }} text-white">
-                                <i class="fas fa-check mr-1"></i> Completed
-                            </span>
-                        </button>
+                                <button class="btn completeButton
+                                        {{ $isCompleted ? 'is-complete' : '' }} {{ !empty($qaVideoSources) ? 'mb-1' : '' }}"
+                                        data-content-id="{{ $contentId }}">
+
+                                    <span class="incompleted bg-{{ $themeColor }} inverted text-{{ $themeColor }}">
+                                        <i class="fas fa-check mr-1"></i> Mark as Complete
+                                    </span>
+
+                                    <span class="completed bg-{{ $themeColor }} text-white">
+                                        <i class="fas fa-check mr-1"></i> Completed
+                                    </span>
+                                </button>
+                            </div>
+
+                            @if(!empty($qaVideoSources))
+                                <div class="flex flex-column ph-1 xs-12 sm-6">
+                                    <button id="playQAVideo"
+                                            class="btn">
+                                        <span class="qa bg-{{ $themeColor }} inverted text-{{ $themeColor }}">
+                                            <i class="fas fa-play mr-1"></i> Watch Q&A
+                                        </span>
+                                        <span class="lesson bg-{{ $themeColor }} text-white">
+                                            <i class="fas fa-play mr-1"></i> Watch Lesson
+                                        </span>
+                                    </button>
+                                </div>
+                            @endif
+                        </div>
                     </div>
 
                     <div class="flex flex-column sq-btn-col ml-1">
