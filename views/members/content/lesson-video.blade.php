@@ -104,37 +104,40 @@
                     </div>
 
                     <div class="flex flex-column">
-                        <div class="flex flex-row reverse flex-wrap">
+                        <div class="flex flex-row">
 
-                            <div class="flex flex-column ph-1">
+                            @if(!empty($qaVideoSources))
+                                <div class="flex flex-column ph-1 xs-6">
+                                    <button id="playQAVideo"
+                                            class="btn">
+                                        <span class="qa bg-{{ $themeColor }} inverted text-{{ $themeColor }}">
+                                            <i class="fas fa-question-circle"></i>
+                                            <span class="hide-xs-only ml-1">Watch Q&A</span>
+                                        </span>
+                                        <span class="lesson bg-{{ $themeColor }} inverted text-{{ $themeColor }}">
+                                            <i class="fas fa-play"></i>
+                                            <span class="hide-xs-only ml-1">Watch Lesson</span>
+                                        </span>
+                                    </button>
+                                </div>
+                            @endif
 
+                            <div class="flex flex-column ph-1 {{ !empty($qaVideoSources) ? 'xs-6' : '' }}">
                                 <button class="btn completeButton
                                         {{ $isCompleted ? 'is-complete' : '' }} {{ !empty($qaVideoSources) ? 'mb-1' : '' }}"
                                         data-content-id="{{ $contentId }}">
 
                                     <span class="incompleted bg-{{ $themeColor }} inverted text-{{ $themeColor }}">
-                                        <i class="fas fa-check mr-1"></i> Mark as Complete
+                                        <i class="fas fa-check"></i>
+                                        <span class="{{ !empty($qaVideoSources) ? 'hide-xs-only' : '' }} ml-1">Mark as Complete</span>
                                     </span>
 
                                     <span class="completed bg-{{ $themeColor }} text-white">
-                                        <i class="fas fa-check mr-1"></i> Completed
+                                        <i class="fas fa-check"></i>
+                                        <span class="{{ !empty($qaVideoSources) ? 'hide-xs-only' : '' }} ml-1">Completed</span>
                                     </span>
                                 </button>
                             </div>
-
-                            @if(!empty($qaVideoSources))
-                                <div class="flex flex-column ph-1 xs-12 sm-6">
-                                    <button id="playQAVideo"
-                                            class="btn">
-                                        <span class="qa bg-{{ $themeColor }} inverted text-{{ $themeColor }}">
-                                            <i class="fas fa-play mr-1"></i> Watch Q&A
-                                        </span>
-                                        <span class="lesson bg-{{ $themeColor }} text-white">
-                                            <i class="fas fa-play mr-1"></i> Watch Lesson
-                                        </span>
-                                    </button>
-                                </div>
-                            @endif
                         </div>
                     </div>
 
