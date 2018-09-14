@@ -21,8 +21,12 @@
             ])
 
             @if($gearPhoto)
-            <div class="flex flex-row bg-center" style="max-width:480px;background-image:url({{ $gearPhoto }});">
+            <div class="flex flex-row bg-center relative" style="max-width:480px;background-image:url({{ $gearPhoto }});">
                 <div class="widescreen bg-center"></div>
+
+                {{--<span id="clearGearPhoto" class="rounded clear-button">--}}
+                    {{--<i class="fas fa-times"></i>--}}
+                {{--</span>--}}
             </div>
             @endif
         </div>

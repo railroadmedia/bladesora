@@ -10,10 +10,16 @@
     @slot('formData')
         <div class="flex flex-column">
             <div class="flex flex-row flex-wrap align-center">
-                <div class="flex flex-column image-col align-center">
+                <div class="flex flex-column image-col align-center relative">
                     <img class="rounded"
                          src="{{ $profilePictureUrl }}"
                          data-avatar-update="true">
+
+                    @if(strpos($profilePictureUrl, 'default-avatars') === false)
+                        <span id="clearAvatar" class="rounded clear-button">
+                            <i class="fas fa-times"></i>
+                        </span>
+                    @endif
                 </div>
                 <div class="flex flex-column align-center pa">
                     <p class="tiny text-grey-3">For best results upload a square photo.</p>
