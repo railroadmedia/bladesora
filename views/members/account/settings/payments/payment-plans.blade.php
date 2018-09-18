@@ -2,7 +2,7 @@
     <div class="flex flex-row pa-3">
         <div class="flex flex-column grow">
             <h2 class="subheading capitalize">
-                Payment Plans &amp; History
+                All Payments
             </h2>
         </div>
     </div>

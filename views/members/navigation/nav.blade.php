@@ -38,19 +38,19 @@
         @endif
 
         @if(!empty($links['Notifications']))
-            <div class="flex header-button flex-column noselect">
-                <a href="{{ $links['Notifications']['url'] }}"
-                   id="notificationButton" class="square">
-                    <div class="pa-1 wrap">
-                    @if (isset($unreadNotificationCount))
-                        <span class="rounded bg-{{ $brand }} text-white new">
-                            {!! $unreadNotificationCount <= 99 ? '&nbsp;' . $unreadNotificationCount . '&nbsp;' : $unreadNotificationCount !!}
-                        </span>
-                    @endif
-                    <i class="rounded inset-border text-black fas fa-bell flex-center"></i>
-                </div>
-                </a>
-            </div>
+	        <div class="flex header-button flex-column noselect">
+	            <a href="{{ $links['Notifications']['url'] }}"
+	               id="notificationButton" class="square">
+	                <div class="pa-1 wrap">
+	                    @if (!empty($unreadNotificationCount))
+	                        <span class="rounded bg-{{ $brand }} dense text-white new">
+	                            {{ $unreadNotificationCount }}
+	                        </span>
+	                    @endif
+	                    <i class="rounded inset-border text-black fas fa-bell flex-center"></i>
+	                </div>
+	            </a>
+	        </div>
         @endif
 
         <div class="flex header-button flex-column noselect mr-1 hide-xs-only">
