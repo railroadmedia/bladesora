@@ -26,7 +26,6 @@
 
                     @if(!empty($activeMethods))
                         @foreach($activeMethods as $activeMethod)
-                        @foreach($activeMethods as $activeMethod)
                             <div class="flex flex-row mb-2">
                                 @include('bladesora::members.inputs.radio-input', [
                                     "inputID" => "methodType" . ucwords($activeMethod['type']),
