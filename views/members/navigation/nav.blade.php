@@ -43,7 +43,7 @@
 	               id="notificationButton" class="square">
 	                <div class="pa-1 wrap">
 	                    @if (!empty($unreadNotificationCount))
-	                        <span class="rounded bg-{{ $brand }} dense text-white new">
+	                        <span class="rounded bg-{{ $themeColor }} dense text-white new">
 	                            {{ $unreadNotificationCount }}
 	                        </span>
 	                    @endif
