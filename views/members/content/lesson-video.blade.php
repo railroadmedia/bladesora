@@ -39,7 +39,7 @@
             </div>
         @endif
 
-        @if(empty($isLive) || $isLive !== true)
+        @if(!empty($isAdded) && (empty($isLive) || $isLive !== true))
             <div class="flex flex-column align-center sq-btn-col ml-1">
                 <button class="addToList btn {{ $isAdded ? 'added' : '' }}"
                      data-content-id="{{ $contentId }}">
