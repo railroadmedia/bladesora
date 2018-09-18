@@ -15,8 +15,9 @@
                          src="{{ $profilePictureUrl }}"
                          data-avatar-update="true">
 
-                    @if(strpos($profilePictureUrl, 'default-avatars') === false)
-                        <span id="clearAvatar" class="rounded clear-button">
+                    @if($canClearAvatar)
+                        <span id="clearAvatar" class="rounded clear-button"
+                              data-image-key="">
                             <i class="fas fa-times"></i>
                         </span>
                     @endif
@@ -37,6 +38,7 @@
                 </div>
 
                 <input type="hidden" id="vuePropData"
+                       data-field-key="profile_picture_image_url"
                        data-upload-endpoint="{{ $uploadRequestEndpoint }}"
                        data-save-endpoint="{{ $fieldSaveRequestEndpoint }}"
                        data-user-id="{{ $userId }}">
