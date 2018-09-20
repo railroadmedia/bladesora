@@ -1,5 +1,5 @@
 <div class="flex flex-row pv-3 content-overview {{ !empty($hideBorder) && $hideBorder ? '' : 'bt-grey-1-1' }}">
-    <div class="flex flex-column align-v-center large-thumbnail {{ $themeColor }} {{ !empty($releaseDate) && \Carbon\Carbon::parse($releaseDate) > \Carbon\Carbon::now() ? 'desaturate' : '' }}">
+    <div class="flex flex-column align-v-center large-thumbnail {{ !empty($showBackgroundCards) && $showBackgroundCards === true ? 'background-cards' : '' }} {{ $themeColor }} {{ !empty($releaseDate) && \Carbon\Carbon::parse($releaseDate) > \Carbon\Carbon::now() ? 'desaturate' : '' }}">
         <div class="thumb-wrap">
             <a href="{{ $lessonsUrl }}">
                 <div class="thumb-img bg-center corners-3 {{ $forceSquareThumb === true ? 'square' : 'widescreen' }}"
@@ -10,9 +10,11 @@
                         </div>
                     @endif
 
-                    <span class="thumb-hover flex-center">
-                        <i class="fas fa-arrow-right"></i>
-                    </span>
+                    @if(\Carbon\Carbon::parse($releaseDate) < \Carbon\Carbon::now())
+                        <span class="thumb-hover flex-center">
+                            <i class="fas fa-arrow-right"></i>
+                        </span>
+                    @endif
                 </div>
             </a>
         </div>
@@ -30,28 +32,30 @@
                    class="body font-bold text-black no-decoration mb-1">{{ $itemTitle }}</a>
                 <p class="tiny mb-1 item-description">{{ $itemDescription }}</p>
 
-                <div class="flex flex-row align-v-center overview-links">
-                    <a href="{{ $itemUrl }}"
-                       class="btn bg-{{ $themeColor }} text-white collapse-250 go-to-button mr-1">
-                        @if($itemProgress === 'started')
-                            <i class="fas fa-play mr-1"></i>
-                            Next Lesson
-                        @elseif($itemProgress === 'completed')
-                            <i class="fas fa-check-circle mr-1"></i>
-                            Completed
-                        @else
-                            <i class="fas fa-play mr-1"></i>
-                            First Lesson
-                        @endif
-                    </a>
-
-                    @if(!empty($lessonsUrl))
-                        <a href="{{ $lessonsUrl }}"
-                           class="btn bg-black text-black inverted short collapse-200">
-                            <i class="fas fa-arrow-circle-right mr-1"></i> See Lessons
+                @if(\Carbon\Carbon::parse($releaseDate) < \Carbon\Carbon::now())
+                    <div class="flex flex-row align-v-center overview-links">
+                        <a href="{{ $itemUrl }}"
+                           class="btn bg-{{ $themeColor }} text-white collapse-250 go-to-button mr-1">
+                            @if($itemProgress === 'started')
+                                <i class="fas fa-play mr-1"></i>
+                                Next Lesson
+                            @elseif($itemProgress === 'completed')
+                                <i class="fas fa-check-circle mr-1"></i>
+                                Completed
+                            @else
+                                <i class="fas fa-play mr-1"></i>
+                                First Lesson
+                            @endif
                         </a>
-                    @endif
-                </div>
+
+                        @if(!empty($lessonsUrl))
+                            <a href="{{ $lessonsUrl }}"
+                               class="btn bg-black text-black inverted short collapse-200">
+                                <i class="fas fa-arrow-circle-right mr-1"></i> See Lessons
+                            </a>
+                        @endif
+                    </div>
+                @endif
 
             </div>
 

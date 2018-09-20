@@ -5,7 +5,7 @@
         </h4>
     </div>
     <div class="flex flex-column payment-col hide-xs-only">
-        <p class="tiny font-bold uppercase">
+        <p class="tiny font-bold text-right uppercase">
             {{ $plan['method'] }}
         </p>
     </div>
