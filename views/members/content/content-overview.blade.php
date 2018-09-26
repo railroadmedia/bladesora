@@ -77,7 +77,7 @@
                      data-dropdown-y="up"
                      data-dropdown-x="right"
                      data-intel-apple="true">
-                    
+
                     @if(\Carbon\Carbon::parse($releaseDate) < \Carbon\Carbon::now())
                         <a @if(empty($noLink) || $noLink === false) href="{{ $lessonsUrl }}" @endif class="no-decoration">
                             @if(!empty($itemProgress))
