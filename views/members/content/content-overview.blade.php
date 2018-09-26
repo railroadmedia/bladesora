@@ -1,7 +1,7 @@
 <div class="flex flex-row pv-3 content-overview {{ !empty($hideBorder) && $hideBorder ? '' : 'bt-grey-1-1' }}">
     <div class="flex flex-column align-v-center large-thumbnail {{ !empty($showBackgroundCards) && $showBackgroundCards === true ? 'background-cards' : '' }} {{ $themeColor }} {{ !empty($releaseDate) && \Carbon\Carbon::parse($releaseDate) > \Carbon\Carbon::now() ? 'desaturate' : '' }}">
         <div class="thumb-wrap">
-            <a href="{{ $lessonsUrl }}">
+            <a @if(empty($noLink) || $noLink === false) href="{{ $lessonsUrl }}" @endif>
                 <div class="thumb-img bg-center corners-3 {{ $forceSquareThumb === true ? 'square' : 'widescreen' }}"
                      style="background-image:url({{ $itemThumbnail }});">
                     @if(!empty($logoImage))
@@ -28,7 +28,7 @@
                     </p>
                 @endif
 
-                <a href="{{ $lessonsUrl }}"
+                <a @if(empty($noLink) || $noLink === false) href="{{ $lessonsUrl }}" @endif
                    class="body font-bold text-black no-decoration mb-1">{{ $itemTitle }}</a>
                 <p class="tiny mb-1 item-description">{{ $itemDescription }}</p>
 
