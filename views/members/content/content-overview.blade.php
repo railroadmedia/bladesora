@@ -77,14 +77,16 @@
                      data-dropdown-y="up"
                      data-dropdown-x="right"
                      data-intel-apple="true">
-
+                    
                     @if(\Carbon\Carbon::parse($releaseDate) < \Carbon\Carbon::now())
-                        @if(!empty($itemProgress))
-                            <i class="fas {{ $itemProgress == 'completed' ? 'fa-check-circle' : 'fa-adjust' }} flex-center text-{{ $themeColor }} rounded"></i>
+                        <a @if(empty($noLink) || $noLink === false) href="{{ $lessonsUrl }}" @endif class="no-decoration">
+                            @if(!empty($itemProgress))
+                                <i class="fas {{ $itemProgress == 'completed' ? 'fa-check-circle' : 'fa-adjust' }} flex-center text-{{ $themeColor }} rounded"></i>
+                            @else
+                                <i class="fas fa-arrow-circle-right flex-center text-grey-2 rounded"></i>
+                            @endif
+                        </a>
                         @else
-                            <i class="fas fa-arrow-circle-right flex-center text-grey-2 rounded"></i>
-                        @endif
-                    @else
                         <i class="fas fa-calendar-plus flex-center text-grey-2 rounded"></i>
 
                         <span class="start">{{ $releaseDate }}</span>
