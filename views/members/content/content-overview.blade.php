@@ -10,6 +10,13 @@
                         </div>
                     @endif
 
+                    @if(!empty($progressPercent))
+                        <div class="lesson-progress overflow">
+                            <span class="progress bg-{{ $themeColor }}"
+                                  style="width:{{ $progressPercent }}%"></span>
+                        </div>
+                    @endif
+
                     @if(\Carbon\Carbon::parse($releaseDate) < \Carbon\Carbon::now())
                         <span class="thumb-hover flex-center">
                             <i class="fas fa-arrow-right"></i>
