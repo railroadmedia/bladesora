@@ -12,16 +12,18 @@
         </div>
         @endif
 
-        <div  class="flex flex-row">
-            <div class="flex flex-column text-white pv">
-                <div id="collapsableInfo">
-                    <h6 class="body font-bold uppercase">About {{ $name }}</h6>
-                    <p class="body">
-                        {{ $bio }}
-                    </p>
+        @if(!empty($instructorName) && !empty($instructorBio))
+            <div  class="flex flex-row">
+                <div class="flex flex-column text-white pv">
+                    <div id="collapsableInfo">
+                        <h6 class="body font-bold uppercase">About {{ $name }}</h6>
+                        <p class="body">
+                            {{ $bio }}
+                        </p>
+                    </div>
                 </div>
             </div>
-        </div>
+        @endif
     </div>
 </div>
 <div class="container fluid">

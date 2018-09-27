@@ -47,7 +47,7 @@
 	                            {{ $unreadNotificationCount }}
 	                        </span>
 	                    @endif
-	                    <i class="rounded inset-border text-black fas fa-bell flex-center"></i>
+	                    <i class="rounded inset-border text-black fas fa-bell flex-center hide-sm-down"></i>
 	                </div>
 	            </a>
 	        </div>
