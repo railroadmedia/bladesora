@@ -27,7 +27,8 @@
         </div>
     </div>
     <div class="flex flex-column grow">
-        <div class="flex flex-row align-v-center">
+        <div class="flex flex-row align-v-center
+                    {{ !$isOwned && \Carbon\Carbon::parse($releaseDate) < \Carbon\Carbon::now() ? 'flex-wrap-xs-only' : '' }}">
             <div class="flex flex-column align-v-center grow ph">
                 @if(\Carbon\Carbon::parse($releaseDate) > \Carbon\Carbon::now())
                     <p class="tiny text-{{ $themeColor }} uppercase">
@@ -39,7 +40,7 @@
                    class="body font-bold text-black no-decoration mb-1">{{ $itemTitle }}</a>
                 <p class="tiny mb-1 item-description">{{ $itemDescription }}</p>
 
-                @if(\Carbon\Carbon::parse($releaseDate) < \Carbon\Carbon::now())
+                @if(\Carbon\Carbon::parse($releaseDate) < \Carbon\Carbon::now() && $isOwned)
                     <div class="flex flex-row align-v-center overview-links">
                         <a href="{{ $itemUrl }}"
                            class="btn bg-{{ $themeColor }} text-white collapse-250 go-to-button mr-1">
@@ -66,36 +67,56 @@
 
             </div>
 
-            @if(!empty($itemDetails))
+            @if(!empty($itemDetails) && $isOwned)
                 <div class="flex flex-column align-center basic-col uppercase text-grey-3 font-italic x-tiny hide-sm-down">
                     {{ $itemDetails }}
                 </div>
             @endif
 
-            <div class="flex flex-column icon-col align-v-center hide-sm-down">
-                <div class="body {{ \Carbon\Carbon::parse($releaseDate) > \Carbon\Carbon::now() ? 'addeventatc' : '' }}"
-                     data-dropdown-y="up"
-                     data-dropdown-x="right"
-                     data-intel-apple="true">
+            @if(!$isOwned && \Carbon\Carbon::parse($releaseDate) < \Carbon\Carbon::now())
+                <div class="flex flex-column buy-col align-center">
+                    <a  href="/#customize-anchor"
+                        target="_blank"
+                        class="btn bg-{{ $themeColor }} text-white no-decoration mb-1">
+                        <i class="fas fa-plus mr-1"></i>
+                        Upgrade Membership
+                    </a>
 
-                    @if(\Carbon\Carbon::parse($releaseDate) < \Carbon\Carbon::now())
-                        <a @if(empty($noLink) || $noLink === false) href="{{ $lessonsUrl }}" @endif class="no-decoration">
-                            @if(!empty($itemProgress))
-                                <i class="fas {{ $itemProgress == 'completed' ? 'fa-check-circle' : 'fa-adjust' }} flex-center text-{{ $themeColor }} rounded"></i>
-                            @else
-                                <i class="fas fa-arrow-circle-right flex-center text-grey-2 rounded"></i>
-                            @endif
-                        </a>
-                        @else
-                        <i class="fas fa-calendar-plus flex-center text-grey-2 rounded"></i>
-
-                        <span class="start">{{ $releaseDate }}</span>
-                        <span class="timezone">UTC</span>
-                        <span class="title">{{ $itemTitle }}</span>
-                        <span class="description">{{ $itemDescription }}</span>
-                    @endif
+                    <p class="tiny font-bold uppercase text-black dense">
+                        <a href="{{ $salesUrl }}"
+                           target="_blank"
+                           class="text-black">Or Get a Single Learning Path</a>
+                        ($97)
+                    </p>
                 </div>
-            </div>
+            @endif
+
+            @if($isOwned || \Carbon\Carbon::parse($releaseDate) > \Carbon\Carbon::now())
+                <div class="flex flex-column icon-col align-v-center hide-sm-down">
+                    <div class="body {{ \Carbon\Carbon::parse($releaseDate) > \Carbon\Carbon::now() ? 'addeventatc' : '' }}"
+                         data-dropdown-y="up"
+                         data-dropdown-x="right"
+                         data-intel-apple="true">
+
+                        @if(\Carbon\Carbon::parse($releaseDate) < \Carbon\Carbon::now())
+                            <a @if(empty($noLink) || $noLink === false) href="{{ $lessonsUrl }}" @endif class="no-decoration">
+                                @if(!empty($itemProgress))
+                                    <i class="fas {{ $itemProgress == 'completed' ? 'fa-check-circle' : 'fa-adjust' }} flex-center text-{{ $themeColor }} rounded"></i>
+                                @else
+                                    <i class="fas fa-arrow-circle-right flex-center text-grey-2 rounded"></i>
+                                @endif
+                            </a>
+                            @else
+                            <i class="fas fa-calendar-plus flex-center text-grey-2 rounded"></i>
+
+                            <span class="start">{{ $releaseDate }}</span>
+                            <span class="timezone">UTC</span>
+                            <span class="title">{{ $itemTitle }}</span>
+                            <span class="description">{{ $itemDescription }}</span>
+                        @endif
+                    </div>
+                </div>
+            @endif
         </div>
     </div>
 </div>
