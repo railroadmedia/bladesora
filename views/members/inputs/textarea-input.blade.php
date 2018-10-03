@@ -2,6 +2,7 @@
     <textarea id="{{ $inputId }}"
               name="{{ $inputName }}"
               class="{{ !empty($inputErrors) && count($inputErrors) > 0 ? 'has-error' : '' }} {{ $customClass ?? '' }}"
+            {{ !empty($validateRequired) && $validateRequired === true ? 'required' : '' }}
             {{ !empty($disabled) && $disabled === true ? 'disabled' : '' }}>{{ $inputValue ?? '' }}</textarea>
     @if(!empty($inputLabel))
         <label for="{{ $inputId }}"

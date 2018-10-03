@@ -3,6 +3,7 @@
             name="{{ $inputName }}"
             class="{{ !empty($inputErrors) && count($inputErrors) > 0 ? 'has-error' : '' }}
             {{ !empty($borderless) && $borderless === true ? 'borderless' : '' }} {{ $customClasses ?? '' }}"
+            {{ !empty($validateRequired) && $validateRequired === true ? 'required' : '' }}
             {{ !empty($disabled) && $disabled === true ? 'disabled' : '' }}>
         <option value="" style="display:none;"></option>
         @foreach($inputOptions as $option)
