@@ -59,10 +59,6 @@
                     </div>
                 </form>
             </div>
-
-            <span class="close-modal close-button">
-                <i class="fas fa-times"></i>
-            </span>
         </div>
     @endslot
 @endcomponent
