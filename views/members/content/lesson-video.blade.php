@@ -17,7 +17,8 @@
 
         @if(!empty($lessonResources))
             <div class="flex flex-column align-center sq-btn-col">
-                <div class="btn bg-{{ $themeColor }} inverted text-{{ $themeColor }} is-dropdown">
+                <div class="btn bg-{{ $themeColor }} inverted text-{{ $themeColor }} is-dropdown"
+                     data-tooltip="Download Resources">
                     <i class="unopen fas fa-download no-events text-{{ $themeColor }}"></i>
                     <i class="open fas fa-download no-events text-white"></i>
 
@@ -42,6 +43,7 @@
         @if(!empty($isAdded) && (empty($isLive) || $isLive !== true))
             <div class="flex flex-column align-center sq-btn-col ml-1">
                 <button class="addToList btn {{ $isAdded ? 'added' : '' }}"
+                        data-tooltip="Add To List"
                      data-content-id="{{ $contentId }}">
                     <span class="un-added bg-{{ $themeColor }} inverted text-{{ $themeColor }}">
                         <i class="fas fa-plus"></i>
@@ -93,7 +95,9 @@
                 <div class="flex flex-row mv-3">
                     <div class="flex flex-column sq-btn-col mr-1">
                         @if(!empty($prevLessonUrl))
-                            <a href="{{ $prevLessonUrl }}" class="btn bg-{{ $themeColor }} inverted text-{{ $themeColor }}">
+                            <a href="{{ $prevLessonUrl }}"
+                               data-tooltip="Previous Lesson"
+                               class="btn bg-{{ $themeColor }} inverted text-{{ $themeColor }}">
                                 <i class="fas fa-chevron-left"></i>
                             </a>
                         @else
@@ -109,6 +113,7 @@
                             @if(!empty($qaVideoSources))
                                 <div class="flex flex-column ph-1 xs-6">
                                     <button id="playQAVideo"
+                                            data-tooltip="Play QnA Video"
                                             class="btn">
                                         <span class="qa bg-{{ $themeColor }} inverted text-{{ $themeColor }}">
                                             <i class="fas fa-question-circle"></i>
@@ -125,6 +130,7 @@
                             <div class="flex flex-column ph-1 {{ !empty($qaVideoSources) ? 'xs-6' : '' }}">
                                 <button class="btn completeButton
                                         {{ $isCompleted ? 'is-complete' : '' }} {{ !empty($qaVideoSources) ? 'mb-1' : '' }}"
+                                        data-tooltip="Mark Lesson as Complete"
                                         data-content-id="{{ $contentId }}">
 
                                     <span class="incompleted bg-{{ $themeColor }} inverted text-{{ $themeColor }}">
@@ -143,7 +149,9 @@
 
                     <div class="flex flex-column sq-btn-col ml-1">
                         @if(!empty($nextLessonUrl))
-                            <a href="{{ $nextLessonUrl }}" class="btn bg-{{ $themeColor }} inverted text-{{ $themeColor }}">
+                            <a href="{{ $nextLessonUrl }}"
+                               class="btn bg-{{ $themeColor }} inverted text-{{ $themeColor }}"
+                               data-tooltip="Next Lesson">
                                 <i class="fas fa-chevron-right"></i>
                             </a>
                         @else
