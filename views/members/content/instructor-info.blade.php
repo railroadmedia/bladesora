@@ -12,6 +12,7 @@
         </div>
         @endif
 
+        @if(!empty($bio))
         <div  class="flex flex-row">
             <div class="flex flex-column text-white pv">
                 <div id="collapsableInfo">
@@ -22,6 +23,7 @@
                 </div>
             </div>
         </div>
+        @endif
     </div>
 </div>
 <div class="container fluid">
