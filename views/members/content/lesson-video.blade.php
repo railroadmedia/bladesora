@@ -60,36 +60,36 @@
     <div class="flex flex-row flex-wrap">
         <div id="videoContainer" class="flex flex-column">
             @if(!empty($isLive) && $isLive === true)
-                <div class="widescreen">
-                    <iframe id="player" frameborder="0" allowfullscreen="1" allow="autoplay; encrypted-media" title="YouTube video player" src="https://www.youtube.com/embed/{{ $youtubeId }}?autoplay=0&amp;modestbranding=1&amp;playsinline=1&amp;showinfo=1&amp;rel=0&amp;start=25&amp;enablejsapi=1&amp;origin=https%3A%2F%2Fwww.drumeo.com&amp;widgetid=1"></iframe>
-                </div>
-            @else
                 @if(!empty($youtubeId))
                     <div class="widescreen">
                         <iframe id="player" frameborder="0" allowfullscreen="1" allow="autoplay; encrypted-media" title="YouTube video player" src="https://www.youtube.com/embed/{{ $youtubeId }}?autoplay=0&amp;modestbranding=1&amp;playsinline=1&amp;showinfo=1&amp;rel=0&amp;start=25&amp;enablejsapi=1&amp;origin=https%3A%2F%2Fwww.drumeo.com&amp;widgetid=1"></iframe>
                     </div>
                 @else
-                    <div id="lessonVideoWrap" class="widescreen">
-                        <div id="videoPlayer" class="load-before-render expand text-recordeo"
-                             data-theme-color="{{ $themeColor }}"
-                             data-video-poster="{{ $videoPoster ?? "" }}"
-                             data-video-sources="{{ json_encode($videoSources) }}"
-                             data-video-id="{{ $videoId }}"
-                             data-current-second="{{ $currentSecond ?? 0 }}"
-                             data-progress-state="{{ $progressState }}"
-                             data-video-length="{{ $videoLength }}"
-                             data-cast-title="{{ $lessonTitle }}"
-                             data-check-for-timecode="true"></div> {{-- Vue will mount the video player component to this element --}}
+                    <div class="widescreen mb-3">
+                        <iframe id="liveVideo" src="https://www.youtube.com/embed/live_stream?channel={{ $liveStreamId }}&rel=0&autoplay=1&playsinline=1&modestthemeColoring=1" frameborder="0" allowfullscreen></iframe>
                     </div>
+                @endif
+            @else
+                <div id="lessonVideoWrap" class="widescreen">
+                    <div id="videoPlayer" class="load-before-render expand text-recordeo"
+                         data-theme-color="{{ $themeColor }}"
+                         data-video-poster="{{ $videoPoster ?? "" }}"
+                         data-video-sources="{{ json_encode($videoSources) }}"
+                         data-video-id="{{ $videoId }}"
+                         data-current-second="{{ $currentSecond ?? 0 }}"
+                         data-progress-state="{{ $progressState }}"
+                         data-video-length="{{ $videoLength }}"
+                         data-cast-title="{{ $lessonTitle }}"
+                         data-check-for-timecode="true"></div> {{-- Vue will mount the video player component to this element --}}
+                </div>
 
-                    @if(!empty($qaVideoSources))
-                        <div id="qaVideoWrap" class="hide">
-                            <div id="qaVideoPlayer"
-                                 data-theme-color="{{ $themeColor }}"
-                                 data-video-poster="{{ $qaVideoPoster ?? "" }}"
-                                 data-video-sources="{{ json_encode($qaVideoSources) }}"></div>
-                        </div>
-                    @endif
+                @if(!empty($qaVideoSources))
+                    <div id="qaVideoWrap" class="hide">
+                        <div id="qaVideoPlayer"
+                             data-theme-color="{{ $themeColor }}"
+                             data-video-poster="{{ $qaVideoPoster ?? "" }}"
+                             data-video-sources="{{ json_encode($qaVideoSources) }}"></div>
+                    </div>
                 @endif
 
                 <div class="flex flex-row mv-3">
