@@ -1,6 +1,6 @@
 <header id="pageHeader" class="container fluid pv-4" style="background-image:url({{ $backgroundImage }});">
     <div class="container">
-        <div class="flex flex-row">
+        <div class="flex flex-row align-v-center">
             <div class="flex flex-column grow">
                 @if(!empty($pageType))
                     <p class="body text-{{ $themeColor }} font-bold uppercase">{{ $pageType }}</p>
@@ -31,7 +31,7 @@
                                 {{ $brand }}
                                 {{ $currentUser['access_level'] }}">
                         <a href="{{ $profileUrl }}" class="no-decoration">
-                            <img class="rounded inset-border" src="{{ $avatarImage }}">
+                            <img class="rounded inset-border" src="{{ $currentUser['avatar'] }}">
                         </a>
                     </div>
                     <p class="body dense text-white font-bold text-center uppercase mt-1 text-{{ $brand }}"
