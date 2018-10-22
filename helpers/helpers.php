@@ -77,3 +77,53 @@ if(!function_exists('get_resource_icon')){
         }
     }
 }
+
+if (!function_exists('map_experience_rank')) {
+    function map_experience_rank($xp)
+    {
+        switch ($xp) {
+            case $xp < 250:
+                return 'Casual';
+            case $xp >= 250 && $xp < 1000:
+                return 'Enthusiast I';
+            case $xp >= 1000 && $xp < 2500:
+                return 'Enthusiast II';
+            case $xp >= 2500 && $xp < 5000:
+                return 'Pro I';
+            case $xp >= 5000 && $xp < 10000:
+                return 'Pro II';
+            case $xp >= 10000 && $xp < 20000:
+                return 'Pro III';
+            case $xp >= 20000 && $xp < 50000:
+                return 'Master I';
+            case $xp >= 50000 && $xp < 100000:
+                return 'Master II';
+            case $xp >= 100000 && $xp < 250000:
+                return 'Master III';
+            case $xp >= 250000 && $xp < 500000:
+                return 'Drumeo Legend';
+            case $xp >= 500000 && $xp < 1000000:
+                return 'Legends: Star';
+            case $xp >= 1000000 && $xp < 1500000:
+                return 'Legends: Erskine';
+            case $xp >= 1500000 && $xp < 2000000:
+                return 'Legends: Cobham';
+            case $xp >= 2000000 && $xp < 2500000:
+                return 'Legends: Garibaldi';
+            case $xp >= 2500000 && $xp < 3000000:
+                return 'Legends: Peart';
+            case $xp >= 3000000 && $xp < 4000000:
+                return 'Legends: Bonham';
+            case $xp >= 4000000 && $xp < 5000000:
+                return 'Legends: Colaiuta';
+            case $xp >= 5000000 && $xp < 7500000:
+                return 'Legends: Gadd';
+            case $xp >= 75000000 && $xp < 10000000:
+                return 'Legends: Porcaro';
+            case $xp >= 10000000:
+                return 'Legends: Rich';
+            default:
+                return 'Drumeo Member';
+        }
+    }
+}

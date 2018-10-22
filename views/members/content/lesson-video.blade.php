@@ -71,7 +71,7 @@
                 @endif
             @else
                 <div id="lessonVideoWrap" class="widescreen">
-                    <div id="videoPlayer" class="load-before-render expand text-recordeo"
+                    <div id="videoPlayer" class="load-before-render expand text-{{ $themeColor }}"
                          data-theme-color="{{ $themeColor }}"
                          data-video-poster="{{ $videoPoster ?? "" }}"
                          data-video-sources="{{ json_encode($videoSources) }}"

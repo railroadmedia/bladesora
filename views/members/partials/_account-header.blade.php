@@ -25,8 +25,9 @@
                 </p>
             </div>
             <div class="flex flex-column flex-auto">
-                <p class="subheading dense text-white font-bold text-center uppercase mt-1 text-{{ $brand }}"
-                   data-map-xp="{{ $currentUser['xp'] }}"></p>
+                <p class="subheading dense text-white font-bold text-center uppercase mt-1 text-{{ $brand }}">
+                    {{ $currentUser['xp_rank'] }}
+                </p>
                 <p class="subheading dense text-white font-compressed text-center">{{ $currentUser['xp'] }} XP</p>
             </div>
         </div>

@@ -34,8 +34,9 @@
                             <img class="rounded inset-border" src="{{ $currentUser['avatar'] }}">
                         </a>
                     </div>
-                    <p class="body dense text-white font-bold text-center uppercase mt-1 text-{{ $brand }}"
-                       data-map-xp="{{ $currentUser['xp'] }}"></p>
+                    <p class="body dense text-white font-bold text-center uppercase mt-1 text-{{ $brand }}">
+                        {{ $currentUser['xp_rank'] }}
+                    </p>
                     <p class="body dense text-white font-compressed text-center">{{ $currentUser['xp'] }} XP</p>
                 </div>
             @endif
