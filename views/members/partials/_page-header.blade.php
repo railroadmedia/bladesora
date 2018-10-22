@@ -20,18 +20,25 @@
                     {{ $pageTitle }}
                 </h1>
             <p class="body text-white">{{ $pageDescription }}</p>
-
-
                 {{ $interactionSlot }}
             </div>
             <div class="flex flex-column sm-2 hide-xs-only"></div>
-            <div class="header-avatar flex flex-column hide-xs-only">
-                <div class="square">
-                    <a href="{{ $profileUrl }}" class="no-decoration">
-                        <img class="rounded inset-border" src="{{ $avatarImage }}">
-                    </a>
+
+            @if(!empty($currentUser))
+                <div class="header-avatar flex flex-column hide-xs-only">
+                    <div class="user-avatar
+                                {{ in_array($currentUser['access_level'], ['edge', 'lifetime']) ? 'subscriber' : '' }}
+                                {{ $brand }}
+                                {{ $currentUser['access_level'] }}">
+                        <a href="{{ $profileUrl }}" class="no-decoration">
+                            <img class="rounded inset-border" src="{{ $avatarImage }}">
+                        </a>
+                    </div>
+                    <p class="body dense text-white font-bold text-center uppercase mt-1 text-{{ $brand }}"
+                       data-map-xp="{{ $currentUser['xp'] }}"></p>
+                    <p class="body dense text-white font-compressed text-center">{{ $currentUser['xp'] }} XP</p>
                 </div>
-            </div>
+            @endif
         </div>
     </div>
 </header>
