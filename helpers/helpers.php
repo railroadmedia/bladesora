@@ -127,3 +127,19 @@ if (!function_exists('map_experience_rank')) {
         }
     }
 }
+
+if (!function_exists('parse_xp_value')) {
+    function parse_xp_value($xp){
+        if($xp >= 1000 && $xp < 100000){
+            return round($xp / 1000, 1) . 'K';
+        }
+        else if($xp >= 100000 && $xp < 1000000){
+            return round($xp / 1000, 0) . 'K';
+        }
+        else if($xp >= 1000000){
+            return round($xp / 1000000, 1) . 'M';
+        }
+
+        return $xp;
+    }
+}
