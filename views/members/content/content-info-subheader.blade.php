@@ -3,16 +3,11 @@
         <div class="flex flex-row align-center flex-wrap">
             <div class="flex flex-column align-v-center text-white mb-1">
                 <div class="flex flex-row align-v-center">
-                    @foreach($infoData as $index => $info)
-                        @if($index > 0)
-                            <span class="hide-xs-only body uppercase">
-                                <span style="margin:0 5px;">|</span>{{ $info }}
-                            </span>
-                        @else
-                            <span class="body uppercase">
-                                {{ $info  }}
-                            </span>
-                        @endif
+                    @foreach($infoData as $key => $value)
+
+                        <p class="subheading uppercase mr-3" style="vertical-align:middle;">
+                            {{ $value  }}  <span class="body" style="vertical-align:middle;">{{ $key }}</span>
+                        </p>
                     @endforeach
                 </div>
             </div>

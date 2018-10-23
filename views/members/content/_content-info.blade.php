@@ -16,9 +16,9 @@
             <div  class="flex flex-row">
                 <div class="flex flex-column text-white pv">
                     <div id="collapsableInfo">
-                        <h6 class="body font-bold uppercase">About {{ $name }}</h6>
+                        <h6 class="body font-bold uppercase">About {{ $instructorName }}</h6>
                         <p class="body">
-                            {{ $bio }}
+                            {{ $instructorBio }}
                         </p>
                     </div>
                 </div>

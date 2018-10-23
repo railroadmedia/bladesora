@@ -143,3 +143,28 @@ if (!function_exists('parse_xp_value')) {
         return $xp;
     }
 }
+
+if (!function_exists('parse_content_duration')) {
+    function parse_content_duration($duration){
+        $minutes = round($duration / 60, 0);
+
+        if($minutes < 60){
+            return [
+                "key" => 'Minutes',
+                "value" => $minutes
+            ];
+        }
+        else if($minutes >= 60 && $minutes <= 90){
+            return [
+                "key" => "Hour",
+                "value" => 1
+            ];
+        }
+        else {
+            return [
+                "key" => "Hours",
+                "value" => round($minutes / 60, 0)
+            ];
+        }
+    }
+}
