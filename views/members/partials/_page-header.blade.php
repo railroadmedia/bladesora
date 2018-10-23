@@ -27,7 +27,7 @@
             @if(!empty($currentUser))
                 <div class="header-avatar flex flex-column hide-xs-only">
                     <div class="user-avatar
-                                {{ in_array($currentUser['access_level'], ['edge', 'lifetime']) ? 'subscriber' : '' }}
+                                {{ in_array($currentUser['access_level'], ['edge', 'lifetime', 'team']) ? 'subscriber' : '' }}
                                 {{ $brand }}
                                 {{ $currentUser['access_level'] }}">
                         <a href="{{ $profileUrl }}" class="no-decoration">
