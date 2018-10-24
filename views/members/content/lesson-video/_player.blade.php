@@ -6,6 +6,7 @@
                  data-video-poster="{{ $videoPoster ?? "" }}"
                  data-video-sources="{{ json_encode($videoSources) }}"
                  data-video-id="{{ $videoId }}"
+                 data-content-id="{{ $contentId }}"
                  data-current-second="{{ $currentSecond ?? 0 }}"
                  data-progress-state="{{ $progressState }}"
                  data-video-length="{{ $videoLength }}"
