@@ -2,13 +2,13 @@
     <div class="flex flex-row mb-2">
         <div class="flex flex-column pr-1">
             <h1 class="heading text-white">{{ $lessonTitle }}</h1>
-            <h4 class="subtitle text-white uppercase sssssss {{ $contentType }}">
+            <h4 class="subtitle text-white uppercase {{ $contentType }}">
                 @if($contentType === 'course-part' || $contentType === 'pack-bundle-lesson')
                     From <a href="{{ $courseUrl }}" class="text-{{ $themeColor }} no-decoration">
                         {{ $courseTitle }}
                     </a>
                 @else
-                    <h4 class="subtitle text-white uppercase sssssss {{ $contentType }}">
+                    <h4 class="subtitle text-white uppercase {{ $contentType }}">
                         With <span class="text-{{ $themeColor }} no-decoration">{{ $lessonInstructor }}</span>
                     </h4>
                 @endif
