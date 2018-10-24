@@ -3,7 +3,7 @@
         <div class="flex flex-row align-center account-header">
             <div class="header-avatar flex flex-column">
                 <div class="user-avatar
-                                {{ in_array($currentUser['access_level'], ['edge', 'lifetime']) ? 'subscriber' : '' }}
+                                {{ in_array($currentUser['access_level'], ['team', 'edge', 'lifetime']) ? 'subscriber' : '' }}
                 {{ $brand }}
                 {{ $currentUser['access_level'] }}">
                     <a href="{{ $profileUrl }}" class="no-decoration">
