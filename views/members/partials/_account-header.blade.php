@@ -6,9 +6,7 @@
                                 {{ in_array($currentUser['access_level'], ['team', 'edge', 'lifetime']) ? 'subscriber' : '' }}
                 {{ $brand }}
                 {{ $currentUser['access_level'] }}">
-                    <a href="{{ $profileUrl }}" class="no-decoration">
-                        <img class="rounded inset-border" src="{{ $currentUser['avatar'] }}">
-                    </a>
+                    <img class="rounded inset-border" src="{{ $currentUser['avatar'] }}">
                 </div>
 
             </div>

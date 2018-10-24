@@ -168,3 +168,10 @@ if (!function_exists('parse_content_duration')) {
         }
     }
 }
+
+
+if(!function_exists('possessivize')){
+    function possessivize($string) {
+        return $string . '\'' . ($string[strlen($string) - 1] !== 's' ? 's' : '');
+    }
+}
