@@ -6,8 +6,8 @@
             {{ !empty($validateRequired) && $validateRequired === true ? 'required' : '' }}
             {{ !empty($disabled) && $disabled === true ? 'disabled' : '' }}>
         <option value="" style="display:none;"></option>
-        @foreach($inputOptions as $option)
-            <option value="{{ (string)$option }}"
+        @foreach($inputOptions as $optionIndex => $option)
+            <option value="{{ $inputValues[$optionIndex] ?? (string)$option }}"
                     {{ $inputValue === (string)$option ? 'selected' : '' }}>
                 {{ ucwords((string)$option) }}
             </option>
