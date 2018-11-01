@@ -41,7 +41,7 @@
 
                     <span class="incompleted bg-{{ $themeColor }} inverted text-{{ $themeColor }}">
                         <i class="fas fa-check"></i>
-                        <span class="{{ $hasQAVideo ? 'hide-xs-only' : '' }} ml-1">Mark as Complete</span>
+                        <span class="{{ $hasQAVideo ? 'hide-xs-only' : '' }} ml-1">Mark as Complete - {{ $xpAmount }} XP</span>
                     </span>
 
                     <span class="completed bg-{{ $themeColor }} text-white">
