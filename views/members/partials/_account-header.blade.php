@@ -22,11 +22,11 @@
                     {{ $appName }} Member Since {{ \Carbon\Carbon::parse($memberSince)->format('Y') }}
                 </p>
             </div>
-            <div class="flex flex-column flex-auto">
-                <p class="subheading dense text-white font-bold text-center uppercase mt-1 text-{{ $brand }}">
+            <div class="flex flex-column flex-auto xp-stats">
+                <p class="heading dense text-white font-bold font-compressed text-center uppercase mt-1 text-{{ $brand }}" style="margin-bottom:-10px;">
                     {{ $currentUser['xp_rank'] }}
                 </p>
-                <p class="subheading dense text-white font-compressed text-center">{{ $currentUser['xp'] }} XP</p>
+                <p class="heading dense text-white font-regular font-compressed text-center">{{ $currentUser['xp'] }} XP</p>
             </div>
         </div>
     </div>
