@@ -34,10 +34,17 @@
                             <img class="rounded inset-border" src="{{ $currentUser['avatar'] }}">
                         </a>
                     </div>
-                    <p class="body dense text-white font-bold text-center uppercase mt-1 text-{{ $brand }}">
-                        {{ $currentUser['xp_rank'] }}
-                    </p>
-                    <p class="body dense text-white font-compressed text-center">{{ $currentUser['xp'] }} XP</p>
+
+                        <p class="body dense text-white font-bold text-center uppercase mt-1 text-{{ $brand }}">
+                            @if($currentUser['access_level'] === 'team')
+                                Drumeo Team
+                            @else
+                                {{ $currentUser['xp_rank'] }}
+                            @endif
+                        </p>
+                    @if(!$currentUser['access_level'] === 'team')
+                        <p class="body dense text-white font-compressed text-center">{{ $currentUser['xp'] }} XP</p>
+                    @endif
                 </div>
             @endif
         </div>

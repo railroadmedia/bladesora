@@ -6,7 +6,9 @@
                                 {{ in_array($currentUser['access_level'], ['team', 'edge', 'lifetime']) ? 'subscriber' : '' }}
                 {{ $brand }}
                 {{ $currentUser['access_level'] }}">
-                    <img class="rounded inset-border" src="{{ $currentUser['avatar'] }}">
+                    <img class="rounded inset-border"
+                         data-avatar-update="true"
+                         src="{{ $currentUser['avatar'] }}">
                 </div>
 
             </div>
@@ -24,9 +26,16 @@
             </div>
             <div class="flex flex-column flex-auto xp-stats">
                 <p class="heading dense text-white font-bold font-compressed text-center uppercase mt-1 text-{{ $brand }}" style="margin-bottom:-10px;">
-                    {{ $currentUser['xp_rank'] }}
+                    @if($currentUser['access_level'] === 'team')
+                        Drumeo Team
+                    @else
+                        {{ $currentUser['xp_rank'] }}
+                    @endif
                 </p>
-                <p class="heading dense text-white font-regular font-compressed text-center">{{ $currentUser['xp'] }} XP</p>
+
+                @if(!$currentUser['access_level'] === 'team')
+                    <p class="heading dense text-white font-regular font-compressed text-center">{{ $currentUser['xp'] }} XP</p>
+                @endif
             </div>
         </div>
     </div>
