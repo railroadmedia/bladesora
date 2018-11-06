@@ -2,11 +2,10 @@
     <div class="container">
         <div class="flex flex-row align-center flex-wrap">
             <div class="flex flex-column align-v-center text-white mb-1">
-                <div class="flex flex-row align-v-center">
+                <div class="flex flex-row align-v-center meta-info-col">
                     @foreach($infoData as $key => $value)
-
-                        <p class="subheading uppercase mr-3" style="vertical-align:middle;">
-                            {{ $value  }}  <span class="body" style="vertical-align:middle;">{{ $key }}</span>
+                        <p class="subheading uppercase mr-3">
+                            {{ $value  }}  <span>{{ $key }}</span>
                         </p>
                     @endforeach
                 </div>
