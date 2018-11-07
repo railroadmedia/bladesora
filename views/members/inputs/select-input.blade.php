@@ -8,7 +8,7 @@
         <option value="" style="display:none;"></option>
         @foreach($inputOptions as $optionIndex => $option)
             <option value="{{ $inputValues[$optionIndex] ?? (string)$option }}"
-                    {{ $inputValue === (string)$option ? 'selected' : '' }}>
+                    {{ $inputValue === ($inputValues[$optionIndex] ?? (string)$option) ? 'selected' : '' }}>
                 {{ ucwords((string)$option) }}
             </option>
         @endforeach
