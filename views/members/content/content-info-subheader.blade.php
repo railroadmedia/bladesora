@@ -1,8 +1,8 @@
 <div id="subHeader" class="container collapsed-h fluid bg-grey-5 pt-1">
     <div class="container">
         <div class="flex flex-row align-center flex-wrap">
-            <div class="flex flex-column align-v-center text-white mb-1">
-                <div class="flex flex-row align-v-center meta-info-col">
+            <div class="flex flex-column align-v-center text-white mb-1 meta-info-col hide-xs-only">
+                <div class="flex flex-row align-v-center">
                     @foreach($infoData as $key => $value)
                         <p class="subheading uppercase mr-3">
                             {{ $value  }}  <span>{{ $key }}</span>
