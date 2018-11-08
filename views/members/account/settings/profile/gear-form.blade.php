@@ -46,13 +46,13 @@
 
                     <div class="flex flex-row ph-3 mb-1">
                         <div class="flex flex-column">
-                            @include('bladesora::members.inputs.text-input', array_merge([
-                                "brand" => $brand,
-                                "type" => "text",
+                            @include('bladesora::members.inputs.select-input', array_merge([
+                                "brand" => $brand ?? "recordeo",
                                 "inputId" => "drummingSince",
                                 "inputName" => "drumming_since",
                                 "inputLabel" => "Drumming Since",
-                                "inputValue" => "",
+                                "inputValue" => '',
+                                "inputOptions" => array_reverse(range(1900, date('Y'))),
                                 "inputErrors" => [],
                             ], $drummingSinceInput ?? []))
                         </div>
