@@ -1,6 +1,6 @@
-<div class="flex flex-row mb-2">
+<div class="flex flex-row">
     <div id="videoContainer" class="flex flex-column">
-        <div id="lessonVideoWrap" class="widescreen">
+        <div id="lessonVideoWrap">
             <div id="videoPlayer" class="load-before-render expand text-{{ $themeColor }}"
                  data-theme-color="{{ $themeColor }}"
                  data-video-poster="{{ $videoPoster ?? "" }}"
@@ -11,10 +11,11 @@
                  data-progress-state="{{ $progressState }}"
                  data-video-length="{{ $videoLength }}"
                  data-cast-title="{{ $lessonTitle }}"
+                 data-chapters="{{ $chapters }}"
                  data-check-for-timecode="true"></div>
         </div>
         @if(!empty($qaVideoSources))
-            <div id="qaVideoWrap" class="widescreen hide">
+            <div id="qaVideoWrap" class="widescreen mb-2 hide">
                 <div id="qaVideoPlayer"
                      data-theme-color="{{ $themeColor }}"
                      data-video-poster="{{ $qaVideoPoster ?? "" }}"

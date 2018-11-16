@@ -1,4 +1,4 @@
-<div class="flex flex-row mv-3">
+<div class="flex flex-row">
     <div class="flex flex-column next-prev-button-col mr-1">
         @if(!empty($prevLessonUrl))
             <a href="{{ $prevLessonUrl }}"
