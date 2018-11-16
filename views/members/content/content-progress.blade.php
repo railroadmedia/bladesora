@@ -1,18 +1,24 @@
 <div class="content-progress flex flex-row flex-wrap bg-{{ $themeColor }} corners-3 pa {{ !empty($compact) && $compact === true ? 'compact' : '' }}">
-    <div class="flex flex-column {{ !empty($compact) && $compact === true ? '' : 'xs-12 sm-9 lg-10' }}">
+    <div class="flex flex-column {{ !empty($compact) && $compact === true ? '' : 'xs-12 sm-9' }}">
         <div class="flex flex-row trophy-progress-bar mr-2 {{ $progress === 100 ? 'complete' : '' }}">
             <div class="flex flex-column trophy-progress-cutoff bg-{{ $themeColor }} inverted">
                 <div class="trophy-progress bg-white" style="width:{{ $progress }}%;"></div>
             </div>
-            <div class="flex flex-column align-center trophy title">
-                <i class="fas fa-trophy text-{{ $themeColor }} pr-1"></i>
+            <div class="flex flex-column align-center trophy ph-2 title">
+                <div class="flex flex-row text-{{ $themeColor }} align-v-center body font-bold nowrap">
+                    <i class="fas fa-trophy text-{{ $themeColor }}"></i>
+                    @if(!empty($xpAmount))
+                    &nbsp;-&nbsp;{{ $xpAmount }} XP
+                    @endif
+                </div>
             </div>
         </div>
     </div>
-    @if(empty($compact))
-        <div class="flex flex-column {{ !empty($compact) && $compact === true ? '' : 'xs-12 sm-3 lg-2' }}">
+
+    <div class="flex flex-column {{ !empty($compact) && $compact === true ? '' : 'xs-12 sm-3' }}">
+        @if(empty($showCompleteButton))
             <a href="{{ $progress === 100 ? $backButton['url'] : $nextLessonUrl }}"
-               class="btn bg-white short text-{{ $themeColor }}
+               class="btn bg-white short bg-white inverted text-white
                {{ $contentType === 'learning-path' && $progress < 100 ? 'start-learning-path' : '' }}">
                 @if($progress > 0 && $progress < 100)
                     Next Lesson &raquo;
@@ -22,8 +28,22 @@
                     Start First Lesson
                 @endif
             </a>
-        </div>
-    @endif
+        @else
+            <button class="btn completeButton
+                           {{ $isCompleted ? 'is-complete' : '' }}"
+                    data-tooltip="Mark Lesson as Complete"
+                    data-content-id="{{ $contentId }}">
+
+                <span class="incompleted bg-white inverted text-white short">
+                    <i class="fas fa-check mr-1"></i> Mark as Complete
+                </span>
+
+                <span class="completed bg-white text-{{ $themeColor }} short">
+                    <i class="fas fa-check mr-1"></i>Completed
+                </span>
+            </button>
+        @endif
+    </div>
 </div>
 
 {{--@if($progress === 100)--}}
