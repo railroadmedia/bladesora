@@ -8,7 +8,7 @@
                 <div class="flex flex-row text-{{ $themeColor }} align-v-center body font-bold nowrap">
                     <i class="fas fa-trophy text-{{ $themeColor }}"></i>
                     @if(!empty($xpAmount))
-                    &nbsp;-&nbsp;{{ $xpAmount }} XP
+                    &nbsp;&nbsp;{{ $xpAmount }} XP
                     @endif
                 </div>
             </div>
