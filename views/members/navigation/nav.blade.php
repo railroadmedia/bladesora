@@ -72,7 +72,10 @@
     </div>
 </header>
 <aside id="navSideBar" class="shadow bg-white flex flex-column">
-    <section id="pageLinks" class="flex flex-column">
+    <section id="pageLinks" class="flex flex-column"
+             data-simplebar
+             data-simplebar-auto-hide="false">
+
         @foreach($links as $page => $info)
             @if(!empty($info['children']))
                 @include('bladesora::members.partials._parent-nav-link', [
