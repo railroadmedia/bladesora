@@ -64,11 +64,12 @@
             </a>
         </div>
 
-        <div id="menuButton" class="flex flex-column menu noselect bl-grey-5-1" role="button">
+        <a id="menuButton" tabindex="0"
+           class="flex flex-column menu noselect bl-grey-5-1" role="button">
             <div class="flex flex-row text-white align-center uppercase">
                 <i class="menu-bars-icon"></i>
             </div>
-        </div>
+        </a>
     </div>
 </header>
 <aside id="navSideBar" class="shadow bg-white flex flex-column">
