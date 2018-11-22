@@ -1,4 +1,4 @@
-<header id="nav" class="container fluid collapsed shadow bg-black bv-grey-5-1">
+<header id="nav" class="container fluid shadow bg-black bv-grey-5-1">
     <div class="flex flex-row">
         <a href="/members" class="flex flex-column logo ph align-center br-grey-5-1">
             <img src="{{ $logo }}">
