@@ -72,9 +72,7 @@
     </div>
 </header>
 <aside id="navSideBar" class="shadow bg-white flex flex-column">
-    <section id="pageLinks" class="flex flex-column"
-             data-simplebar
-             data-simplebar-auto-hide="false">
+    <section id="pageLinks" class="flex flex-column">
 
         @foreach($links as $page => $info)
             @if(!empty($info['children']))
