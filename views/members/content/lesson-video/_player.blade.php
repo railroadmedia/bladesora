@@ -14,6 +14,7 @@
                  data-chapters="{{ $chapters }}"
                  data-user-id="{{ $userId }}"
                  data-like-count="{{ $likeCount }}"
+                 data-is-liked="{{ $isLiked }}"
                  data-check-for-timecode="true"></div>
         </div>
         @if(!empty($qaVideoSources))
