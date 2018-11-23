@@ -12,6 +12,8 @@
                  data-video-length="{{ $videoLength }}"
                  data-cast-title="{{ $lessonTitle }}"
                  data-chapters="{{ $chapters }}"
+                 data-user-id="{{ $userId }}"
+                 data-like-count="{{ $likeCount }}"
                  data-check-for-timecode="true"></div>
         </div>
         @if(!empty($qaVideoSources))
