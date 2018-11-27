@@ -36,11 +36,11 @@
         </ul>
 
         <button type="submit" class="btn mb-3">
-            <span class="text-white bg-recordeo">Sign In</span>
+            <span class="text-white bg-{{ $brand }}">Sign In</span>
         </button>
     </form>
 
-    <a id="resetToggle" class="body text-center text-grey-2">Forgot your password?</a>
+    <a id="resetToggle" class="body text-center text-grey-2 noselect">Forgot your password?</a>
 </section>
 
 <section id="resetForm" class="flex flex-column shadow bg-white pa-3 mb-3 corners-3 hide">
@@ -53,17 +53,17 @@
             {{ csrf_field() }}
         @endif
 
-        <div class="form-group mb">
+        <div class="form-group mb-2">
             <input id="resetEmail" type="email" name="email">
             <label for="resetEmail" class="{{ $brand ?? '' }}">Email Address</label>
         </div>
 
         <button type="submit" class="btn mb-3">
-            <span class="text-white bg-recordeo">Get New Password</span>
+            <span class="text-white bg-{{ $brand }}">Get New Password</span>
         </button>
     </form>
 
-    <a id="loginToggle" class="body text-center text-grey-2">Back to Login</a>
+    <a id="loginToggle" class="body text-center text-grey-2 noselect">Back to Login</a>
 </section>
 
 <p class="body">
