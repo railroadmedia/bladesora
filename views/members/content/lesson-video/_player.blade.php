@@ -1,7 +1,7 @@
 <div class="flex flex-row">
     <div id="videoContainer" class="flex flex-column">
         <div id="lessonVideoWrap">
-            <div id="videoPlayer" class="load-before-render expand text-{{ $themeColor }}"
+            <div id="videoPlayer" class="load-before-render widescreen text-{{ $themeColor }}"
                  data-theme-color="{{ $themeColor }}"
                  data-video-poster="{{ $videoPoster ?? "" }}"
                  data-video-sources="{{ json_encode($videoSources) }}"
