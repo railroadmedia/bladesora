@@ -5,7 +5,7 @@
                 <div class="trophy-progress bg-white" style="width:{{ $progress }}%;"></div>
             </div>
             <div class="flex flex-column align-center trophy ph-2 title">
-                <div class="flex flex-row text-{{ $themeColor }} align-v-center body font-bold nowrap">
+                <div class="flex flex-row text-{{ $themeColor }} align-v-center dense body font-bold nowrap">
                     <i class="fas fa-trophy text-{{ $themeColor }}"></i>
                     @if(!empty($xpAmount))
                     &nbsp;&nbsp;{{ $xpAmount }} XP
@@ -18,7 +18,7 @@
     <div class="flex flex-column {{ !empty($compact) && $compact === true ? '' : 'xs-12 sm-3' }}">
         @if(empty($showCompleteButton))
             <a href="{{ $progress === 100 ? $backButton['url'] : $nextLessonUrl }}"
-               class="btn bg-white short bg-white inverted text-white
+               class="btn bg-white bg-white inverted text-white
                {{ $contentType === 'learning-path' && $progress < 100 ? 'start-learning-path' : '' }}">
                 @if($progress > 0 && $progress < 100)
                     Next Lesson &raquo;
@@ -34,11 +34,11 @@
                     data-tooltip="Mark Lesson as Complete"
                     data-content-id="{{ $contentId }}">
 
-                <span class="incompleted bg-white inverted text-white short">
+                <span class="incompleted bg-white inverted text-white">
                     <i class="fas fa-check mr-1"></i> Mark as Complete
                 </span>
 
-                <span class="completed bg-white text-{{ $themeColor }} short">
+                <span class="completed bg-white text-{{ $themeColor }}">
                     <i class="fas fa-check mr-1"></i>Completed
                 </span>
             </button>
