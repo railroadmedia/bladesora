@@ -38,7 +38,7 @@
 
                 <a @if((empty($noLink) || $noLink === false) && $isOwned) href="{{ $lessonsUrl }}" @endif
                    class="body font-bold text-black no-decoration mb-1">{{ $itemTitle }}</a>
-                <p class="tiny mb-1 item-description">{{ $itemDescription }}</p>
+                <div class="tiny mb-1 item-description">{!! $itemDescription !!}</div>
 
                 @if(\Carbon\Carbon::parse($releaseDate) < \Carbon\Carbon::now() && $isOwned)
                     <div class="flex flex-row align-v-center overview-links">

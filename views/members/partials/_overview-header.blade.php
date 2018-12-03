@@ -18,7 +18,9 @@
                     @endif
                 </h2>
                 <h1 class="heading text-white mb-2">{{ $pageTitle }}</h1>
-                <p class="body text-white">{{ $pageDescription }}</p>
+                <div class="body text-white">
+                    {!! $pageDescription !!}
+                </div>
 
                 {{ $interactionSlot }}
             </div>

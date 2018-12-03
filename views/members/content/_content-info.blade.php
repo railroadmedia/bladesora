@@ -5,9 +5,9 @@
             <div class="flex flex-column text-white">
                 <div id="collapsableInfo">
                     <h6 class="body font-bold uppercase">About the Lesson</h6>
-                    <p class="body">
-                        {!! nl2br($contentDescription) !!}
-                    </p>
+                    <div class="body">
+                        {!! $contentDescription !!}
+                    </div>
                 </div>
             </div>
         </div>
@@ -32,9 +32,9 @@
                 <div class="flex flex-column text-white">
                     <div id="collapsableInfo">
                         <h6 class="body font-bold uppercase">About {{ $instructorName }}</h6>
-                        <p class="body">
-                            {{ $instructorBio }}
-                        </p>
+                        <div class="body">
+                            {!! $instructorBio  !!}
+                        </div>
                     </div>
                 </div>
             </div>
