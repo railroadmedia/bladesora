@@ -27,7 +27,7 @@
             @if(!empty($currentUser))
                 <div class="header-avatar flex flex-column hide-xs-only">
                     <div class="user-avatar
-                                {{ in_array($currentUser['access_level'], ['edge', 'lifetime', 'team']) ? 'subscriber' : '' }}
+                                {{ in_array($currentUser['access_level'], ['edge', 'lifetime', 'team', 'guitar']) ? 'subscriber' : '' }}
                                 {{ $brand }}
                                 {{ $currentUser['access_level'] }}">
                         <a href="{{ $profileUrl }}" class="no-decoration">
@@ -37,7 +37,7 @@
 
                         <p class="body dense text-white font-bold text-center uppercase mt-1 text-{{ $brand }}">
                             @if($currentUser['access_level'] === 'team')
-                                Drumeo Team
+                                {{ $brand }} Team
                             @else
                                 {{ $currentUser['xp_rank'] }}
                             @endif

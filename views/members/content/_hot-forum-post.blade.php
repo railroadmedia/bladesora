@@ -5,7 +5,7 @@
         </div>
         <div class="flex flex-column grow ph">
             <h5 class="text-black tiny font-bold text-truncate">
-                <span class="x-tiny corners-3 uppercase text-white font-bold bg-drumeo" style="padding:2px 5px;margin-right:5px;">New Reply</span>
+                <span class="x-tiny corners-3 uppercase text-white font-bold bg-{{ $themeColor ?? 'drumeo' }}" style="padding:2px 5px;margin-right:5px;">New Reply</span>
                 {!! $title !!}
             </h5>
             <h6 class="x-tiny text-grey-3 uppercase text-black font-italic mb-1">
