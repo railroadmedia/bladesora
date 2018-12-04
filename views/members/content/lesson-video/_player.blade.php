@@ -2,9 +2,10 @@
     <div id="videoContainer" class="flex flex-column">
         <div id="lessonVideoWrap">
             <div id="videoPlayer" class="load-before-render widescreen text-{{ $themeColor }}"
+                 data-element-id="lessonPlayer"
                  data-theme-color="{{ $themeColor }}"
-                 data-video-poster="{{ $videoPoster ?? "" }}"
-                 data-video-sources="{{ json_encode($videoSources) }}"
+                 data-poster="{{ $videoPoster ?? "" }}"
+                 data-sources="{{ json_encode($videoSources) }}"
                  data-video-id="{{ $videoId }}"
                  data-content-id="{{ $contentId }}"
                  data-current-second="{{ $currentSecond ?? 0 }}"
@@ -20,6 +21,7 @@
         @if(!empty($qaVideoSources))
             <div id="qaVideoWrap" class="widescreen mb-2 hide">
                 <div id="qaVideoPlayer"
+                     data-element-id="lessonPlayer"
                      data-theme-color="{{ $themeColor }}"
                      data-video-poster="{{ $qaVideoPoster ?? "" }}"
                      data-video-sources="{{ json_encode($qaVideoSources) }}"></div>
