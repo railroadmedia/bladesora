@@ -35,6 +35,16 @@
             @endforeach
         </ul>
 
+        <div class="flex flex-column mb-2">
+            @include('bladesora::members.inputs.checkbox-input', [
+                "brand" => $brand,
+                "inputId" => "remember",
+                "inputName" => "remember",
+                "inputLabel" => "Remember me on this device.",
+                "checked" => true
+            ])
+        </div>
+
         <button type="submit" class="btn mb-3">
             <span class="text-white bg-{{ $brand }}">Sign In</span>
         </button>
@@ -66,7 +76,7 @@
     <a id="loginToggle" class="body text-center text-grey-2 noselect">Back to Login</a>
 </section>
 
-<p class="body">
+<p class="body {{ $joinPitch ?? '' }}">
     <strong>Not a member yet?</strong>
     <a href="{{ $joinUrl }}">Join the community here!</a>
 </p>
