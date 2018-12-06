@@ -112,3 +112,9 @@
     </section>
 </aside>
 <div id="backgroundOverlay"></div>
+
+@if(!empty($levelUpNotification))
+    <input id="levelUpData" type="hidden"
+           data-old-rank="{{ $levelUpNotification['tierPrevious'] }}"
+           data-new-rank="{{ $levelUpNotification['tierNew'] }}">
+@endif
