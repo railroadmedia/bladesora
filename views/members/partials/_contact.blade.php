@@ -6,14 +6,17 @@
     </div>
     <div class="flex flex-row flex-wrap">
         <div class="flex flex-column align-v-top pa xs-12 md-8">
-            <div id="emailForm"
-                 data-email-subject="{{ $emailSubject }}"
-                 data-email-type="{{ $emailType }}"
-                 data-input-label="{{ $emailInputLabel }}"
-                 data-theme-color="{{ $themeColor }}"
-                 data-user-avatar="{{ $userAvatar ?? '' }}"
-                 data-success-message="{{ $emailSuccessMessage }}"
-                 data-lesson-page="false"></div>
+
+            {{--TODO: Requires an instance of Vue with the Vuesora plugin--}}
+                <email-form
+                    email-subject="{{ $emailSubject }}"
+                    email-type="{{ $emailType }}"
+                    input-label="{{ $emailInputLabel }}"
+                    theme-color="{{ $themeColor }}"
+                    user-avatar="{{ $userAvatar ?? '' }}"
+                    success-message="{{ $emailSuccessMessage }}"
+                    :lesson-page="false"></email-form>
+            {{--TODO: Requires an instance of Vue with the Vuesora plugin--}}
         </div>
         <div class="flex flex-column align-center pa xs-12 md-4">
             <h4 class="subtitle">International</h4>
