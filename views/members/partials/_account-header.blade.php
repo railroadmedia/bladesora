@@ -27,7 +27,7 @@
             <div class="flex flex-column flex-auto xp-stats">
                 <p class="heading dense text-white font-bold font-compressed text-center uppercase mt-1 text-{{ $brand }}" style="margin-bottom:-10px;">
                     @if($currentUser['access_level'] === 'team')
-                        Drumeo Team
+                        {{ $appName }} Team
                     @else
                         {{ $currentUser['xp_rank'] }}
                     @endif
