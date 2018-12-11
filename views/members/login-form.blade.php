@@ -5,11 +5,11 @@
             {{ csrf_field() }}
         @endif
 
-        <ul class="flex flex-column mb-2 tiny text-success list-style-none">
-            @if(session()->has('status'))
+        @if(session()->has('status'))
+            <ul class="flex flex-column mb-2 tiny text-success list-style-none">
                 <li>{{ session()->get('status') }}</li>
-            @endif
-        </ul>
+            </ul>
+        @endif
 
         <div class="flex flex-column mb-2">
             @include('bladesora::members.inputs.text-input', [
