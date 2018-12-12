@@ -37,13 +37,12 @@
                     <h2 class="subheading">Edit: Profile Picture</h2>
                 </div>
 
-                <input type="hidden" id="vuePropData"
-                       data-field-key="profile_picture_image_url"
-                       data-upload-endpoint="{{ $uploadRequestEndpoint }}"
-                       data-save-endpoint="{{ $fieldSaveRequestEndpoint }}"
-                       data-user-id="{{ $userId }}">
-
-                <div id="avatarUpload"></div>
+                <image-cropper
+                    brand="guitareo"
+                    field-key="profile_picture_image_url"
+                    upload-endpoint="{{ $uploadRequestEndpoint }}"
+                    save-endpoint="{{ $fieldSaveRequestEndpoint }}"
+                    user-id="{{ $userId }}"></image-cropper>
             </div>
         </div>
     @endslot
