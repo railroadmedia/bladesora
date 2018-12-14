@@ -8,7 +8,12 @@
                 </a>
             @else
                 <h4 class="subtitle text-white uppercase {{ $contentType }}">
-                    With <span class="text-{{ $themeColor }} no-decoration">{{ $lessonInstructor }}</span>
+                    With
+                    @foreach($instructors as $index => $instructor)
+                        <span class="text-{{ $themeColor }} no-decoration">{{ $instructor->fetch('fields.name') }}@if($index < (count($instructors) - 1)),@endif</span>
+
+
+                    @endforeach
                 </h4>
             @endif
         </h4>

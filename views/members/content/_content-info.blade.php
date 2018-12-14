@@ -27,17 +27,19 @@
             </div>
         @endif
 
-        @if(!empty($instructorName) && !empty($instructorBio))
-            <div  class="flex flex-row">
-                <div class="flex flex-column text-white">
-                    <div id="collapsableInfo">
-                        <h6 class="body font-bold uppercase">About {{ $instructorName }}</h6>
-                        <div class="body">
-                            {!! $instructorBio  !!}
+        @if(!empty($instructors))
+            @foreach($instructors as $instructor)
+                <div  class="flex flex-row mb-2">
+                    <div class="flex flex-column text-white">
+                        <div id="collapsableInfo">
+                            <h6 class="body font-bold uppercase">About {{ $instructor->fetch('fields.name') }}</h6>
+                            <div class="body">
+                                {!! $instructor->fetch('data.biography')  !!}
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            @endforeach
         @endif
     </div>
 </div>
