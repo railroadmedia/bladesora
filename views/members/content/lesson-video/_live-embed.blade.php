@@ -5,13 +5,13 @@
             </div>
 
         <div class="mt-2">
-            <div id="emailForm"
-                 data-email-subject="{{ $emailSubjectOverride ?? 'Question on Lesson: ' . $lessonTitle }}"
-                 data-email-type="{{ $emailTypeOverride ?? 'ask-question' }}"
-                 data-success-message="Your question has been sent!"
-                 data-user-avatar="{{ $userAvatar }}"
-                 data-lesson-page="true"
-                 data-theme-color="{{ $themeColor }}"></div>
+            <email-form
+                    email-subject="{{ $emailSubjectOverride ?? 'Question on Lesson: ' . $lessonContent->fetch('title') }}"
+                    email-type="{{ $emailTypeOverride ?? 'ask-question' }}"
+                    success-message="Your question has been sent!"
+                    user-avatar="{{ $userAvatar }}"
+                    :lesson-page="true"
+                    theme-color="{{ $themeColor }}"></email-form>
         </div>
     </div>
     <div id="chatContainer" class="flex flex-column">
