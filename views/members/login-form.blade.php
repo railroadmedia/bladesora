@@ -35,6 +35,16 @@
             ])
         </div>
 
+        <div class="flex flex-column">
+            <div class="flex flex-row tiny text-grey-3 align-v-center">
+                <input type="checkbox"
+                       name="remember"
+                       id="rememberMe"
+                       class="mr-1">
+                <label for="rememberMe">Remember me on this device</label>
+            </div>
+        </div>
+
         <ul class="flex flex-column mb-2 tiny text-error list-style-none">
             @foreach($errors->all() as $error)
                 <li>{{ $error }}</li>
