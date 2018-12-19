@@ -1,13 +1,24 @@
 <div id="subNav" class="container fluid collapsed bg-black bb-grey-5-1">
-    <div class="flex flex-row">
-        @foreach($subSections as $section => $info)
-            <a href="{{ $info['url'] }}"
-               class="flex flex-column subnav-link pa-1 tiny dense font-bold uppercase align-center text-grey-4 no-decoration br-grey-5-1
-                    {{ strtolower(str_replace(' ', '-', $section)) }}
-                    {{ $info['isActive'] ? 'active' : '' }}">
-                <i class="{{ $info['icon'] }} text-grey-4" style="font-size:20px;"></i>
-                {{ $section }}
-            </a>
-        @endforeach
+    <div class="container relative {{ count($subSections) > 4 ? 'pad-sides' : 'collapsed' }}">
+        <div id="subNavWrap" class="flex flex-row overflow">
+            @foreach($subSections as $section)
+                <a href="{{ $section['url'] }}"
+                   class="flex flex-column subnav-link pa-1 uppercase align-center text-grey-4 no-decoration br-grey-5-1
+                    {{ $section['active'] ? 'active' : '' }}">
+                    <i class="{{ $section['icon'] }} text-grey-4" style="font-size:20px;"></i>
+                    <p class="x-tiny dense font-bold wrap text-center" style="max-width:100%;white-space:normal;">{{ $section['title'] }}</p>
+                </a>
+            @endforeach
+        </div>
+
+        @if(count($subSections) > 4)
+            <div id="scrollSubNavLeft" class="scroll-sub-nav body text-grey-3 bh-grey-5-1 hide">
+                <i class="fas fa-chevron-left"></i>
+            </div>
+
+            <div id="scrollSubNavRight" class="scroll-sub-nav body text-grey-3 bh-grey-5-1">
+                <i class="fas fa-chevron-right"></i>
+            </div>
+        @endif
     </div>
 </div>
