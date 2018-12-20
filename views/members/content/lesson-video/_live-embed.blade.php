@@ -6,10 +6,11 @@
 
         <div class="mt-2">
             <email-form
-                    email-subject="{{ $emailSubjectOverride ?? 'Question on Lesson: ' . $lessonContent->fetch('title') }}"
+                    email-subject="{{ $emailSubjectOverride ?? 'Question on Live Lesson: ' . $lessonTitle . ' from ' . $userEmail }}"
                     email-type="{{ $emailTypeOverride ?? 'ask-question' }}"
                     success-message="Your question has been sent!"
                     user-avatar="{{ $userAvatar }}"
+                    email-endpoint="/mailora/secure/send"
                     :lesson-page="true"
                     theme-color="{{ $themeColor }}"></email-form>
         </div>
