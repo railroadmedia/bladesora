@@ -14,6 +14,7 @@
                     input-label="{{ $emailInputLabel }}"
                     theme-color="{{ $themeColor }}"
                     user-avatar="{{ $userAvatar ?? '' }}"
+                    email-endpoint="{{ $emailEndpoint }}"
                     success-message="{{ $emailSuccessMessage }}"
                     :lesson-page="false"></email-form>
             {{--TODO: Requires an instance of Vue with the Vuesora plugin--}}
