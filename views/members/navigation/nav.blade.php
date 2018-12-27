@@ -6,7 +6,7 @@
             </a>
 
             @if(!empty($mainSections))
-                <div class="flex flex-column">
+                <div id="pageLinks" class="flex flex-column nav-page-links">
                     <div class="flex flex-row hide-xs-only">
                         @foreach($mainSections as $mainSection)
                             <a href="{{ $mainSection['url'] }}"
@@ -46,13 +46,28 @@
                 </div>
             @endif
 
-            <div class="flex header-button flex-column noselect align-center ph">
-                <a href="{{ $searchUrl }}">
-                    <div class="wrap title hover-text-white text-grey-3">
+            @if(!empty($searchUrl))
+            <div id="searchColumn" class="flex search-column flex-column noselect align-v-center ph">
+                <div class="flex flex-row">
+                    <div class="flex flex-column search-button title hover-text-white text-grey-3 align-center pointer">
                         <i class="fas fa-search"></i>
                     </div>
-                </a>
+                    <div id="searchBox" class="form-group flex grow align-v-center flex-column ml-1">
+                        <form method="GET" action="{{ $searchUrl }}">
+                            <input id="searchInput"
+                                   name="term"
+                                   type="text"
+                                   class="solo text-white"
+                                   placeholder="What would you like to learn?"
+                                   autocomplete="off">
+                        </form>
+                    </div>
+                    <div class="flex flex-column search-button title hover-text-white text-grey-3 align-center pointer">
+                        <i class="fas fa-times"></i>
+                    </div>
+                </div>
             </div>
+            @endif
 
             <div class="flex header-button flex-column noselect">
                 <a href="{{ $accountUrl }}"
