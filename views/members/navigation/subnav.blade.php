@@ -7,7 +7,7 @@
                     {{ $section['active'] ? 'active' : '' }}">
                     <i class="{{ $section['icon'] }}
                             {{ $section['active'] ? ('text-' . $themeColor) : 'text-grey-4' }}" style="font-size:20px;"></i>
-                    <p class="x-tiny dense font-bold wrap text-center
+                    <p class="x-tiny font-bold wrap text-center
                             {{ $section['active'] ? 'text-white' : 'text-grey-4' }}" style="max-width:100%;white-space:normal;">
                         {{ $section['title'] }}
                     </p>
