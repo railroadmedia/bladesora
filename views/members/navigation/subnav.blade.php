@@ -5,8 +5,12 @@
                 <a href="{{ $section['url'] }}"
                    class="flex flex-column subnav-link pa-1 uppercase align-center text-grey-4 no-decoration br-grey-5-1
                     {{ $section['active'] ? 'active' : '' }}">
-                    <i class="{{ $section['icon'] }} text-grey-4" style="font-size:20px;"></i>
-                    <p class="x-tiny dense font-bold wrap text-center" style="max-width:100%;white-space:normal;">{{ $section['title'] }}</p>
+                    <i class="{{ $section['icon'] }}
+                            {{ $section['active'] ? ('text-' . $themeColor) : 'text-grey-4' }}" style="font-size:20px;"></i>
+                    <p class="x-tiny dense font-bold wrap text-center
+                            {{ $section['active'] ? 'text-white' : 'text-grey-4' }}" style="max-width:100%;white-space:normal;">
+                        {{ $section['title'] }}
+                    </p>
                 </a>
             @endforeach
         </div>
