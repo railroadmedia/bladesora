@@ -15,14 +15,12 @@
             @endforeach
         </div>
 
-        @if(count($subSections) > 4)
-            <div id="scrollSubNavLeft" class="scroll-sub-nav body text-grey-3 bh-grey-5-1 hide">
-                <i class="fas fa-chevron-left"></i>
-            </div>
+        <div id="scrollSubNavLeft" class="scroll-sub-nav body text-grey-3 bh-grey-5-1 hide">
+            <i class="fas fa-chevron-left"></i>
+        </div>
 
-            <div id="scrollSubNavRight" class="scroll-sub-nav body text-grey-3 bh-grey-5-1 hide">
-                <i class="fas fa-chevron-right"></i>
-            </div>
-        @endif
+        <div id="scrollSubNavRight" class="scroll-sub-nav body text-grey-3 bh-grey-5-1 hide">
+            <i class="fas fa-chevron-right"></i>
+        </div>
     </div>
 </div>
