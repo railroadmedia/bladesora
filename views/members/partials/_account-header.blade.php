@@ -2,14 +2,15 @@
     <div class="container">
         <div class="flex flex-row align-center account-header">
             <div class="header-avatar flex flex-column">
-                <div class="user-avatar
+                <a @if(!empty($accountUrl)) href="{{ $accountUrl }}" @endif
+                   class="user-avatar
                                 {{ in_array($currentUser['access_level'], ['team', 'edge', 'lifetime']) ? 'subscriber' : '' }}
                 {{ $brand }}
                 {{ $currentUser['access_level'] }}">
                     <img class="rounded inset-border"
                          data-avatar-update="true"
                          src="{{ $currentUser['avatar'] }}">
-                </div>
+                </a>
 
             </div>
             <div class="flex flex-column user ph-3 mv-3">
