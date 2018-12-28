@@ -47,12 +47,12 @@
             @endif
 
             @if(!empty($searchUrl))
-            <div id="searchColumn" class="flex search-column flex-column noselect align-v-center ph">
-                <div class="flex flex-row">
+            <div id="searchColumn" class="flex search-column relative flex-column noselect align-v-center">
+                <div class="flex flex-row search-row bb-grey-5-1 pl-2">
                     <div class="flex flex-column search-button title hover-text-white text-grey-3 align-center pointer">
                         <i class="fas fa-search"></i>
                     </div>
-                    <div id="searchBox" class="form-group flex grow align-v-center flex-column ml-1">
+                    <div id="searchBox" class="form-group flex grow align-v-center flex-column pl-2">
                         <form method="GET" action="{{ $searchUrl }}">
                             <input id="searchInput"
                                    name="term"
@@ -69,7 +69,7 @@
             </div>
             @endif
 
-            <div class="flex header-button flex-column noselect">
+            <div class="flex header-button flex-column bb-grey-5-1 noselect">
                 <a href="{{ $accountUrl }}"
                    class="square">
                     <div class="pa-1 wrap">
