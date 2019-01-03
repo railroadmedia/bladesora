@@ -32,6 +32,7 @@
             <button class="btn completeButton
                            {{ $isCompleted ? 'is-complete' : '' }}"
                     data-tooltip="Mark Lesson as Complete"
+                    data-brand="{{ $brand }}"
                     data-content-id="{{ $contentId }}">
 
                 <span class="incompleted bg-white inverted text-white">
