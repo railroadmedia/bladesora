@@ -3,6 +3,7 @@
         <div id="lessonVideoWrap">
             <div id="videoPlayer" class="load-before-render widescreen text-{{ $themeColor }}"
                  data-element-id="lessonPlayer"
+                 data-brand="{{ $brand }}"
                  data-theme-color="{{ $themeColor }}"
                  data-poster="{{ $videoPoster ?? "" }}"
                  data-sources="{{ json_encode($videoSources) }}"
