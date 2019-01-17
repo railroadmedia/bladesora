@@ -30,11 +30,11 @@
         <div class="flex flex-row align-v-center
                     {{ !$isOwned && \Carbon\Carbon::parse($releaseDate) < \Carbon\Carbon::now() ? 'flex-wrap-xs-only' : '' }}">
             <div class="flex flex-column align-v-center grow ph">
-                @if(\Carbon\Carbon::parse($releaseDate) > \Carbon\Carbon::now())
-                    <p class="tiny text-{{ $themeColor }} uppercase">
-                        Opening {{ \Carbon\Carbon::parse($releaseDate)->format('l, F j \a\t g:i A') }}
-                    </p>
-                @endif
+                {{--@if(\Carbon\Carbon::parse($releaseDate) > \Carbon\Carbon::now())--}}
+                    {{--<p class="tiny text-{{ $themeColor }} uppercase">--}}
+                        {{--Opening {{ \Carbon\Carbon::parse($releaseDate)->format('l, F j \a\t g:i A') }}--}}
+                    {{--</p>--}}
+                {{--@endif--}}
 
                 <a @if((empty($noLink) || $noLink === false) && $isOwned) href="{{ $lessonsUrl }}" @endif
                    class="body font-bold text-black no-decoration mb-1">{{ $itemTitle }}</a>
@@ -93,7 +93,8 @@
 
             @if($isOwned || \Carbon\Carbon::parse($releaseDate) > \Carbon\Carbon::now())
                 <div class="flex flex-column icon-col align-v-center hide-sm-down">
-                    <div class="body {{ \Carbon\Carbon::parse($releaseDate) > \Carbon\Carbon::now() ? 'addeventatc' : '' }}"
+                    {{--<div class="body {{ \Carbon\Carbon::parse($releaseDate) > \Carbon\Carbon::now() ? 'addeventatc' : '' }}"--}}
+                    <div class="body"
                          data-dropdown-y="up"
                          data-dropdown-x="right"
                          data-intel-apple="true">
@@ -106,13 +107,13 @@
                                     <i class="fas fa-arrow-circle-right flex-center text-grey-2 rounded"></i>
                                 @endif
                             </a>
-                            @else
-                            <i class="fas fa-calendar-plus flex-center text-grey-2 rounded"></i>
+                            {{--@else--}}
+                            {{--<i class="fas fa-calendar-plus flex-center text-grey-2 rounded"></i>--}}
 
-                            <span class="start">{{ $releaseDate }}</span>
-                            <span class="timezone">UTC</span>
-                            <span class="title">{{ $itemTitle }}</span>
-                            <span class="description">{{ $itemDescription }}</span>
+                            {{--<span class="start">{{ $releaseDate }}</span>--}}
+                            {{--<span class="timezone">UTC</span>--}}
+                            {{--<span class="title">{{ $itemTitle }}</span>--}}
+                            {{--<span class="description">{{ $itemDescription }}</span>--}}
                         @endif
                     </div>
                 </div>
