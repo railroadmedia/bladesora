@@ -8,6 +8,9 @@
             <email-form
                     email-subject="{{ $emailSubjectOverride ?? 'Question on Live Lesson: ' . $lessonTitle . ' from ' . $userEmail }}"
                     email-type="{{ $emailTypeOverride ?? 'ask-question' }}"
+                    @if(!empty($emailRecipient))
+                    recipient="{{ $emailRecipient }}"
+                    @endif
                     success-message="Your question has been sent!"
                     user-avatar="{{ $userAvatar }}"
                     email-endpoint="/mailora/secure/send"
