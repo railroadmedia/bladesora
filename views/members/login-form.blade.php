@@ -40,7 +40,8 @@
                 <input type="checkbox"
                        name="remember"
                        id="rememberMe"
-                       class="mr-1">
+                       class="mr-1"
+                        {{ $checked ? 'checked' : '' }}>
                 <label for="rememberMe">Remember me on this device</label>
             </div>
         </div>
