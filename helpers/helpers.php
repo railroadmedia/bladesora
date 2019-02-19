@@ -181,3 +181,59 @@ if(!function_exists('possessivize')){
         return $string . '\'' . ($string[strlen($string) - 1] !== 's' ? 's' : '');
     }
 }
+
+
+if(!function_exists('parse_lesson_type_readable')){
+    function parse_lesson_type_readable($type, $plural = false){
+        switch ($type) {
+            case 'course-part':
+                $parsedType = 'Courses';
+                break;
+            case 'song-part':
+                $parsedType = 'Songs';
+                break;
+            case 'play-along-part':
+                $parsedType = 'Play-Alongs';
+                break;
+            case 'recording':
+                $parsedType = 'Archives';
+                break;
+            case 'unit-part':
+                $parsedType = 'Learning Paths';
+                break;
+            case 'chord-and-scale':
+                $parsedType = 'Chords & Scales';
+                break;
+            case 'semester-pack':
+                $parsedType =  'Pack';
+                break;
+            case 'semester-pack-lesson':
+                $parsedType = 'Pack';
+                break;
+            default:
+                $parsedType = $type;
+                break;
+        }
+
+        if($plural){
+            return $parsedType[strlen($parsedType)-1] == 's' ? $parsedType : ($parsedType . 's');
+        }
+
+        return $parsedType;
+    }
+}
+
+if(!function_exists('parse_lesson_type_for_db')){
+    function parse_lesson_type_for_db($type){
+        switch ($type) {
+            case 'recording':
+                return 'archive';
+            case 'chord-and-scale':
+                return 'chords-scales';
+            case 'semester-pack':
+                return 'pack';
+            default:
+                return $type;
+        }
+    }
+}

@@ -41,7 +41,7 @@
                         ])
                     </div>
 
-                    <div id="textEditor"></div>
+                    <text-editor field-key="first_post_content"></text-editor>
 
                     <div class="flex flex-row align-h-right mt-2">
                         <a href="{{ $forumUrl }}"
