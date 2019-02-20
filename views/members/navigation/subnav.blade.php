@@ -5,8 +5,15 @@
                 <a href="{{ $section['url'] }}"
                    class="flex flex-column subnav-link pa-1 uppercase align-center text-grey-4 no-decoration
                     {{ $section['active'] ? 'active' : '' }}">
-                    <i class="{{ $section['icon'] }}
-                            {{ $section['active'] ? ('text-' . $themeColor) : 'text-grey-4' }}" style="font-size:20px;"></i>
+                    <i class="{{ $section['icon'] }} relative
+                            {{ $section['active'] ? ('text-' . $themeColor) : 'text-grey-4' }}" style="font-size:20px;">
+
+
+                        @if(!empty($section['badge']))
+                            <span class="notification-badge rounded smaller"></span>
+                        @endif
+
+                    </i>
                     <p class="x-tiny font-bold wrap text-center
                             {{ $section['active'] ? 'text-white' : 'text-grey-4' }}" style="max-width:100%;white-space:normal;">
                         {{ $section['title'] }}

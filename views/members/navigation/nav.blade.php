@@ -76,6 +76,9 @@
                         <img class="rounded inset-border"
                              src="{{ $userAvatar }}"
                              data-avatar-update="true">
+                        @if(!empty($hasUnreadNotifications))
+                            <span class="notification-badge rounded"></span>
+                        @endif
                     </div>
                 </a>
             </div>
