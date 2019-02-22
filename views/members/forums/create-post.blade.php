@@ -27,19 +27,23 @@
                         ])
                     </div>
 
-                    <div class="form-group mb-2">
-                        <select id="postTopic" name="category_id">
-                            <option selected disabled style="display:none;">
-                            @foreach($topicOptions as $index => $topic)
-                                <option value="{{ $index + 1 }}">{{ $topic }}</option>
-                            @endforeach
-                        </select>
-                        <label for="postTopic" class="{{ $brand }}">Topic</label>
+                    @if(!empty($topicOptions))
+                        <div class="form-group mb-2">
+                            <select id="postTopic" name="category_id">
+                                <option selected disabled style="display:none;">
+                                @foreach($topicOptions as $index => $topic)
+                                    <option value="{{ $index + 1 }}">{{ $topic }}</option>
+                                @endforeach
+                            </select>
+                            <label for="postTopic" class="{{ $brand }}">Topic</label>
 
-                        @include('bladesora::members.inputs.partials._errors', [
-                            "inputErrors" => $errors->get('category_id')
-                        ])
-                    </div>
+                            @include('bladesora::members.inputs.partials._errors', [
+                                "inputErrors" => $errors->get('category_id')
+                            ])
+                        </div>
+                    @else
+                        <input type="hidden" name="category_id" value="1">
+                    @endif
 
                     <text-editor field-key="first_post_content"></text-editor>
 
