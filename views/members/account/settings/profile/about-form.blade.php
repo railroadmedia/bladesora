@@ -11,7 +11,7 @@
         <div class="flex flex-column grow">
             @include('bladesora::members.account.partials._text-fields', [
                 "fields" => [
-                    "Full Name" => $fullName,
+                    "Full Name" => !empty($firstName) && !empty($lastName) ? $firstName . ' ' . $lastName : null,
                     "Location" => $country,
                     "Birthday" => !empty($birthday) ? \Carbon\Carbon::parse($birthday)->format('F j, Y') : '',
                 ],
@@ -39,13 +39,27 @@
                             @include('bladesora::members.inputs.text-input', array_merge([
                                 "brand" => $brand,
                                 "type" => "text",
-                                "inputId" => "profileName",
-                                "inputName" => "full_name",
-                                "inputLabel" => "Full Name",
+                                "inputId" => "firstName",
+                                "inputName" => "first_name",
+                                "inputLabel" => "First Name",
                                 "inputValue" => "",
                                 "inputErrors" => [],
-                            ], $fullNameInput ?? []))
+                            ], $firstNameInput ?? []))
                         </div>
+                        <div class="flex flex-column">
+                            @include('bladesora::members.inputs.text-input', array_merge([
+                                "brand" => $brand,
+                                "type" => "text",
+                                "inputId" => "lastName",
+                                "inputName" => "last_name",
+                                "inputLabel" => "Last Name",
+                                "inputValue" => "",
+                                "inputErrors" => [],
+                            ], $lastNameInput ?? []))
+                        </div>
+                    </div>
+
+                    <div class="flex flex-row ph-3 inline-inputs mb-1">
                         <div class="flex flex-column">
                             @include('bladesora::members.inputs.select-input', array_merge([
                                 "brand" => $brand,
@@ -54,9 +68,6 @@
                                 "inputLabel" => "Country",
                             ], $countryInput ?? []))
                         </div>
-                    </div>
-
-                    <div class="flex flex-row ph-3 mb-1">
                         <div class="flex flex-column">
                             @include('bladesora::members.inputs.datetime-input', array_merge([
                                 "brand" => $brand,

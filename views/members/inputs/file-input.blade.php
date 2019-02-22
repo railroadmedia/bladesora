@@ -1,5 +1,4 @@
 <div class="form-group file-input">
-
     <input id="{{ $inputId }}"
            name="{{ $inputName }}"
            value="{{ $inputValue ?? '' }}"

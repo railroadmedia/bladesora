@@ -38,7 +38,7 @@
                 </div>
 
                 <image-cropper
-                    brand="guitareo"
+                    brand="{{ $brand }}"
                     field-key="profile_picture_image_url"
                     upload-endpoint="{{ $uploadRequestEndpoint }}"
                     save-endpoint="{{ $fieldSaveRequestEndpoint }}"

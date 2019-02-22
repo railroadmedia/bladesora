@@ -8,14 +8,14 @@
         <option value="" style="display:none;"></option>
         @foreach($inputOptions as $optionIndex => $option)
             <option value="{{ $inputValues[$optionIndex] ?? (string)$option }}"
-                    {{ $inputValue === (string)$option ? 'selected' : '' }}>
+                    {{ $inputValue == $option ? 'selected' : '' }}>
                 {{ ucwords((string)$option) }}
             </option>
         @endforeach
     </select>
     <label for="{{ $inputId }}"
            class="{{ $brand }}">
-        {{ $inputLabel }}
+        {{ $inputLabel }} {{ $inputValue }}
     </label>
 
     @include('bladesora::members.inputs.partials._errors', [
