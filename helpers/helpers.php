@@ -229,7 +229,7 @@ if(!function_exists('parse_lesson_type_for_db')){
             case 'recording':
                 return 'archive';
             case 'chord-and-scale':
-                return 'chords-scales';
+                return 'chords-and-scales';
             case 'semester-pack':
                 return 'pack';
             default:
