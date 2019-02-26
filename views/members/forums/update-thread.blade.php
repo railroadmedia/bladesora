@@ -24,6 +24,7 @@
                         ])
                     </div>
 
+                    @if(!empty($topicOptions))
                     <div class="form-group mb-2">
                         <select id="postTopic" name="category_id">
                             @foreach($topicOptions as $index => $topic)
@@ -38,6 +39,7 @@
                             "inputErrors" => $errors->get('category_id')
                         ])
                     </div>
+                    @endif
 
                     <div class="flex flex-row align-h-right mt-2">
                         <a href="{{ $forumUrl }}"
