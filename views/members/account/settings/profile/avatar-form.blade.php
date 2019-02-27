@@ -38,6 +38,7 @@
                 </div>
 
                 <image-cropper
+                    theme-color="{{ $brand }}"
                     brand="{{ $brand }}"
                     field-key="profile_picture_image_url"
                     upload-endpoint="{{ $uploadRequestEndpoint }}"

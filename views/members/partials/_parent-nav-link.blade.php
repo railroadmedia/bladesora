@@ -1,9 +1,9 @@
 <div class="page-link parent flex flex-row flex-wrap body text-black align-v-center"
      data-remain-open="{{ strtolower(str_replace(' ', '-', $page)) }}">
-    <span class="page-link parent-button pa-1 bb-grey-2-1">
-        <i class="{{ $icon }} mr-1 text-{{ $themeColor }}"></i>{{ $page }}
+    <span class="page-link parent-button pa-1 bb-grey-2-1 pointer">
+        <i class="no-events {{ $icon }} mr-1 text-{{ $themeColor }}"></i>{{ $page }}
 
-        <i class="fas fa-chevron-down text-grey-2 arrow"></i>
+        <i class="no-events fas fa-chevron-down text-grey-2 arrow"></i>
     </span>
 
     <div class="flex flex-column xs-12 child-links">
