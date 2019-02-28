@@ -1,7 +1,5 @@
 <?php
 
 return [
-    'my-settings' => [
-        'setting-1' => true,
-    ],
+    'Agent' => Jenssegers\Agent\Facades\Agent::class,
 ];
