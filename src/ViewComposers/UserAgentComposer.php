@@ -1,6 +1,6 @@
 <?php
 
-namespace Src\ViewComposers;
+namespace Railroad\Bladesora\ViewComposers;
 
 use Illuminate\View\View;
 use Jenssegers\Agent\Agent;
