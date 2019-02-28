@@ -46,7 +46,7 @@
                 </div>
             @endif
 
-            @if(!empty($searchUrl))
+            @if(!empty($searchUrl) && !$agent->is('IE'))
             <div id="searchColumn" class="flex search-column relative flex-column noselect align-v-center">
                 <div class="flex flex-row search-row bb-grey-5-1 pl-2">
                     <div class="flex flex-column search-button title hover-text-white text-grey-3 align-center pointer">
