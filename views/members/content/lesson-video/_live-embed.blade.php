@@ -6,16 +6,18 @@
 
         <div class="mt-2">
             <email-form
-                    email-subject="{{ $emailSubjectOverride ?? 'Question on Live Lesson: ' . $lessonTitle . ' from ' . $userEmail }}"
-                    email-type="{{ $emailTypeOverride ?? 'ask-question' }}"
-                    @if(!empty($emailRecipient))
-                    recipient="{{ $emailRecipient }}"
-                    @endif
-                    success-message="Your question has been sent!"
+                    email-subject="{{ $emailSubjectOverride ?? 'Question on Live Lesson: "' . $lessonTitle . '" from ' . $userName . ' (' . $userEmail . ')' }}"
+                    brand="pianote"
                     user-avatar="{{ $userAvatar }}"
+                    recipient="{{ $emailRecipient }}"
+                    email-type="layouts/inline/alert"
                     email-endpoint="/mailora/secure/send"
+                    email-logo="https://dmmior4id2ysr.cloudfront.net/logos/pianote-logo-red.png"
+                    email-alert="{{ $emailSubjectOverride ?? 'Question on Live Lesson: ' . $lessonTitle . ' from ' . $userName . " (" . $userEmail . ")" }}"
+                    theme-color="{{ $themeColor }}"
+                    success-message="Your question has been sent!"
                     :lesson-page="true"
-                    theme-color="{{ $themeColor }}"></email-form>
+            ></email-form>
         </div>
     </div>
     <div id="chatContainer" class="flex flex-column">
