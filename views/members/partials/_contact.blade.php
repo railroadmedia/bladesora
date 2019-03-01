@@ -10,11 +10,14 @@
             {{--TODO: Requires an instance of Vue with the Vuesora plugin--}}
                 <email-form
                     email-subject="{{ $emailSubject }}"
-                    email-type="{{ $emailType }}"
-                    input-label="{{ $emailInputLabel }}"
                     theme-color="{{ $themeColor }}"
-                    user-avatar="{{ $userAvatar ?? '' }}"
+                    brand="{{ $brand }}"
+                    recipient="{{ $recipient ?? 'support@' . $brand . '.com' }}"
+                    input-label="{{ $emailInputLabel }}"
+                    email-type="{{ $emailType }}"
                     email-endpoint="{{ $emailEndpoint }}"
+                    email-logo="{{ $emailLogo }}"
+                    email-alert="{{ $emailSubject }}"
                     success-message="{{ $emailSuccessMessage }}"
                     :lesson-page="false"></email-form>
             {{--TODO: Requires an instance of Vue with the Vuesora plugin--}}
