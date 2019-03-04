@@ -210,6 +210,9 @@ if(!function_exists('parse_lesson_type_readable')){
             case 'semester-pack-lesson':
                 $parsedType = 'Pack';
                 break;
+            case 'student-review':
+                $parsedType = 'Student Reviews';
+                break;
             default:
                 $parsedType = $type;
                 break;
@@ -232,6 +235,8 @@ if(!function_exists('parse_lesson_type_for_db')){
                 return 'chords-and-scales';
             case 'semester-pack':
                 return 'pack';
+            case 'student-review':
+                return 'student-reviews';
             default:
                 return $type;
         }
