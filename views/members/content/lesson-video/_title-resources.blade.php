@@ -34,7 +34,7 @@
                                    href="{{ $resource['resource_url'] }}"
                                    target="_blank"
                                    download>
-                                    <i class="fas {{ get_resource_icon($resource['resource_url']) }} mr-1" style="width:20px;"></i>  {{ $resource['resource_name'] }}
+                                    <i class="fas {{ get_resource_icon($resource['resource_url']) }} mr-1" style="width:20px;text-align:center;"></i>  {{ $resource['resource_name'] }}
                                 </a>
                             </li>
                         @endforeach
