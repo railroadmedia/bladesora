@@ -15,7 +15,7 @@
     </select>
     <label for="{{ $inputId }}"
            class="{{ $brand }}">
-        {{ $inputLabel }} {{ $inputValue }}
+        {{ $inputLabel }}
     </label>
 
     @include('bladesora::members.inputs.partials._errors', [
