@@ -19,7 +19,7 @@
 
                     <input type="hidden" name="category_id" value="1">
                     <div class="form-group mb-2">
-                        <input type="text" name="title" id="title">
+                        <input type="text" name="title" id="title" value="{{ old('title') }}">
                         <label for="title" class="{{ $brand }}">Title</label>
 
                         @include('bladesora::members.inputs.partials._errors', [
@@ -45,7 +45,12 @@
                         <input type="hidden" name="category_id" value="1">
                     @endif
 
-                    <text-editor field-key="first_post_content"></text-editor>
+                    <text-editor field-key="first_post_content"
+                                 initial-value="{{ old('first_post_content') }}"></text-editor>
+
+                    @if(!empty($errors->get('first_post_content')))
+                        <p class="tiny text-error pa">* The post content field is required</p>
+                    @endif
 
                     <div class="flex flex-row align-h-right mt-2">
                         <a href="{{ $forumUrl }}"
