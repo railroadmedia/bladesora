@@ -40,7 +40,7 @@
                 <image-cropper
                     theme-color="{{ $brand }}"
                     brand="{{ $brand }}"
-                    field-key="profile_picture_image_url"
+                    field-key="{{ $fieldKey ?? 'profile_picture_image_url' }}"
                     upload-endpoint="{{ $uploadRequestEndpoint }}"
                     save-endpoint="{{ $fieldSaveRequestEndpoint }}"
                     user-id="{{ $userId }}"></image-cropper>
