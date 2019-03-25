@@ -12,7 +12,7 @@
                     recipient="{{ $emailRecipient }}"
                     email-type="layouts/inline/alert"
                     email-endpoint="/mailora/secure/send"
-                    email-logo="https://dmmior4id2ysr.cloudfront.net/logos/pianote-logo-red.png"
+                    email-logo="{{ $emailLogo ?? 'https://dmmior4id2ysr.cloudfront.net/logos/pianote-logo-red.png' }}"
                     email-alert="{{ $emailSubjectOverride ?? 'Question on Live Lesson: ' . $lessonTitle . ' from ' . $userName . " (" . $userEmail . ")" }}"
                     theme-color="{{ $themeColor }}"
                     success-message="Your question has been sent!"

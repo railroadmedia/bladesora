@@ -11,7 +11,7 @@
         <div class="flex flex-column grow">
             @include('bladesora::members.account.partials._text-fields', [
                 "fields" => [
-                    "Full Name" => !empty($firstName) && !empty($lastName) ? $firstName . ' ' . $lastName : null,
+                    "Full Name" => $fullName ?? '',
                     "Location" => $country,
                     "Birthday" => !empty($birthday) ? \Carbon\Carbon::parse($birthday)->format('F j, Y') : '',
                 ],
@@ -34,6 +34,7 @@
                     {{ method_field($method) }}
                     {{ csrf_field() }}
 
+                    @if(!empty($firstNameInput) && !empty($lastNameInput))
                     <div class="flex flex-row ph-3 inline-inputs">
                         <div class="flex flex-column">
                             @include('bladesora::members.inputs.text-input', array_merge([
@@ -58,6 +59,23 @@
                             ], $lastNameInput ?? []))
                         </div>
                     </div>
+                    @endif
+
+                    @if(!empty($fullNameInput))
+                        <div class="flex flex-row ph-3 mb-1">
+                            <div class="flex flex-column">
+                                @include('bladesora::members.inputs.text-input', array_merge([
+                                "brand" => $brand,
+                                "type" => "text",
+                                "inputId" => "fullName",
+                                "inputName" => "name",
+                                "inputLabel" => "Full Name",
+                                "inputValue" => "",
+                                "inputErrors" => [],
+                            ], $fullNameInput ?? []))
+                            </div>
+                        </div>
+                    @endif
 
                     <div class="flex flex-row ph-3 inline-inputs mb-1">
                         <div class="flex flex-column">
