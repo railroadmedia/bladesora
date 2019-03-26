@@ -4,7 +4,7 @@
             <div class="header-avatar flex flex-column">
                 <a @if(!empty($accountUrl)) href="{{ $accountUrl }}" @endif
                    class="user-avatar
-                                {{ in_array($currentUser['access_level'], ['team', 'edge', 'lifetime']) ? 'subscriber' : '' }}
+                                {{ in_array($currentUser['access_level'], ['team', 'edge', 'lifetime', 'guitar', 'piano']) ? 'subscriber' : '' }}
                 {{ $brand }}
                 {{ $currentUser['access_level'] }}">
                     <img class="rounded inset-border"
