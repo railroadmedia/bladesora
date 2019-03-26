@@ -2,7 +2,7 @@
     <div class="container pv-2">
         @if(!empty($contentDescription))
         <div  class="flex flex-row mb-2">
-            <div class="flex flex-column text-white">
+            <div class="flex flex-column grow text-white">
                 <div id="collapsableInfo">
                     <h6 class="body font-bold uppercase">About the Lesson</h6>
                     <div class="body">
@@ -15,7 +15,7 @@
 
         @if(!empty($contentChapters))
             <div class="flex flex-row mb-2">
-                <div class="flex flex-column text-white">
+                <div class="flex flex-column grow text-white">
                     <h6 class="body font-bold uppercase">Chapter Markers</h6>
                     @foreach($contentChapters as $chapter)
                         <p class="body text-white">
@@ -30,7 +30,7 @@
         @if(!empty($instructors))
             @foreach($instructors as $instructor)
                 <div  class="flex flex-row mb-2">
-                    <div class="flex flex-column text-white">
+                    <div class="flex flex-column grow text-white">
                         <div id="collapsableInfo">
                             <h6 class="body font-bold uppercase">About {{ $instructor->fetch('fields.name') }}</h6>
                             <div class="body">
