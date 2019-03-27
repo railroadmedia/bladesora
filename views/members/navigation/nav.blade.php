@@ -10,7 +10,10 @@
                     <div class="flex flex-row hide-xs-only">
                         @foreach($mainSections as $mainSection)
                             <a href="{{ $mainSection['url'] }}"
-                               class="main-section-link flex flex-column align-center body grow text-grey-3 no-decoration {{ $mainSection['active'] ? 'active' : '' }}">
+                               class="main-section-link flex flex-column align-center body grow text-grey-3 no-decoration {{ $mainSection['active'] ? 'active' : '' }}"
+                            @if(!empty($mainSection['newTab']))
+                                target="_blank"
+                            @endif>
                                 {!! $mainSection['title'] !!}
                             </a>
                         @endforeach
