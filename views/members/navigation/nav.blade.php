@@ -11,6 +11,7 @@
                         @foreach($mainSections as $mainSection)
                             <a href="{{ $mainSection['url'] }}"
                                class="main-section-link flex flex-column align-center body grow text-grey-3 no-decoration {{ $mainSection['active'] ? 'active' : '' }}"
+                               dusk="main-section-link-{{ strtolower($mainSection['title']) }}"
                             @if(!empty($mainSection['newTab']))
                                 target="_blank"
                             @endif>
@@ -52,7 +53,8 @@
             @if(!empty($searchUrl) && !$agent->is('IE'))
             <div id="searchColumn" class="flex search-column relative flex-column noselect align-v-center">
                 <div class="flex flex-row search-row bb-grey-5-1 pl-2">
-                    <div class="flex flex-column search-button title hover-text-white text-grey-3 align-center pointer">
+                    <div class="flex flex-column search-button title hover-text-white text-grey-3 align-center pointer"
+                        dusk="search-button">
                         <i class="fas fa-search"></i>
                     </div>
                     <div id="searchBox" class="form-group flex grow align-v-center flex-column pl-2">
@@ -62,7 +64,8 @@
                                    type="text"
                                    class="solo text-white"
                                    placeholder="What would you like to learn?"
-                                   autocomplete="off">
+                                   autocomplete="off"
+                                   dusk="search-input">
                         </form>
                     </div>
                     <div class="flex flex-column search-button title hover-text-white text-grey-3 align-center pointer">
@@ -74,7 +77,8 @@
 
             <div class="flex header-button flex-column bb-grey-5-1 noselect">
                 <a href="{{ $accountUrl }}"
-                   class="square">
+                   class="square"
+                    dusk="profile-nav-link">
                     <div class="pa-1 wrap">
                         <img class="rounded inset-border"
                              src="{{ $userAvatar }}"
@@ -86,7 +90,9 @@
                 </a>
             </div>
 
-            <a id="menuButton" tabindex="0"
+            <a id="menuButton"
+               tabindex="0"
+               dusk="hamburger-button"
                class="flex flex-column menu noselect bl-grey-5-1 hide-sm-up" role="button">
                 <div class="flex flex-row text-white align-center uppercase">
                     <i class="menu-bars-icon"></i>

@@ -1,6 +1,7 @@
 <div class="page-link parent flex flex-row flex-wrap body text-black align-v-center"
      data-remain-open="{{ strtolower(str_replace(' ', '-', $page)) }}">
-    <span class="page-link parent-button pa-1 bb-grey-2-1 pointer">
+    <span class="page-link parent-button pa-1 bb-grey-2-1 pointer"
+          dusk="parent-button-{{ strtolower(str_replace(' ', '-', $page)) }}">
         <i class="no-events {{ $icon }} mr-1 text-{{ $themeColor }}"></i>{{ $page }}
 
         <i class="no-events fas fa-chevron-down text-grey-2 arrow"></i>
