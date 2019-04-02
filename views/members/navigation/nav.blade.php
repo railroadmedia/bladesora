@@ -1,7 +1,9 @@
 <header id="nav" class="container fluid shadow bg-black bv-grey-5-1">
     <div class="container collapsed">
         <div class="flex flex-row">
-            <a href="/members" class="flex flex-column logo ph align-center">
+            <a href="/members"
+               class="flex flex-column logo ph align-center"
+               @if(!empty($isIframe)) target="_parent" @endif>
                 <img src="{{ $logo }}">
             </a>
 
@@ -12,9 +14,11 @@
                             <a href="{{ $mainSection['url'] }}"
                                class="main-section-link flex flex-column align-center body grow text-grey-3 no-decoration {{ $mainSection['active'] ? 'active' : '' }}"
                                dusk="main-section-link-{{ strtolower($mainSection['title']) }}"
-                            @if(!empty($mainSection['newTab']))
-                                target="_blank"
-                            @endif>
+
+                            @if(!empty($mainSection['newTab'])) target="_blank" @endif
+
+                            @if(empty($mainSection['newTab']) && !empty($isIframe)) target="_parent" @endif
+                            >
                                 {!! $mainSection['title'] !!}
                             </a>
                         @endforeach
@@ -50,7 +54,7 @@
                 </div>
             @endif
 
-            @if(!empty($searchUrl) && !$agent->is('IE'))
+            @if(!empty($searchUrl) && !$agent->is('IE') && empty($isIframe))
             <div id="searchColumn" class="flex search-column relative flex-column noselect align-v-center">
                 <div class="flex flex-row search-row bb-grey-5-1 pl-2">
                     <div class="flex flex-column search-button title hover-text-white text-grey-3 align-center pointer"
@@ -75,10 +79,22 @@
             </div>
             @endif
 
+            @if(!empty($isIframe))
+                <div id="searchColumn" class="flex search-column relative flex-column noselect align-v-center">
+                    <div class="flex flex-row search-row bb-grey-5-1 pl-2">
+                        <a href="{{ $searchPageUrl }}" target="_parent"
+                           class="flex flex-column search-button title no-decoration hover-text-white text-grey-3 align-center pointer">
+                            <i class="fas fa-search"></i>
+                        </a>
+                    </div>
+                </div>
+            @endif
+
             <div class="flex header-button flex-column bb-grey-5-1 noselect">
                 <a href="{{ $accountUrl }}"
                    class="square"
-                    dusk="profile-nav-link">
+                   dusk="profile-nav-link"
+                   @if(!empty($isIframe)) target="_parent" @endif>
                     <div class="pa-1 wrap">
                         <img class="rounded inset-border"
                              src="{{ $userAvatar }}"
