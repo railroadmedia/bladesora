@@ -4,7 +4,8 @@
             @foreach($subSections as $section)
                 <a href="{{ $section['url'] }}"
                    class="flex flex-column subnav-link pa-1 uppercase align-center text-grey-4 no-decoration
-                    {{ $section['active'] ? 'active' : '' }}">
+                    {{ $section['active'] ? 'active' : '' }}"
+                    dusk="subnav-link-{{ strtolower(str_replace(" ", "-", $section['title'])) }}">
                     <i class="{{ $section['icon'] }} relative
                             {{ $section['active'] ? ('text-' . $themeColor) : 'text-grey-4' }}" style="font-size:20px;">
 
