@@ -106,6 +106,7 @@
                 </a>
             </div>
 
+            @if(empty($isIframe))
             <a id="menuButton"
                tabindex="0"
                dusk="hamburger-button"
@@ -114,52 +115,55 @@
                     <i class="menu-bars-icon"></i>
                 </div>
             </a>
+            @endif
         </div>
     </div>
 </header>
-<aside id="navSideBar" class="shadow bg-white flex flex-column">
-    <section id="pageLinks" class="flex flex-column">
+@if(empty($isIframe))
+    <aside id="navSideBar" class="shadow bg-white flex flex-column">
+        <section id="pageLinks" class="flex flex-column">
 
-        @foreach($links as $page => $info)
-            @if(!empty($info['children']))
-                @include('bladesora::members.partials._parent-nav-link', [
-                    "page" => $page,
-                    "icon" => $info['icon'],
-                    "children" => $info['children'],
-                ])
-            @else
-                @include('bladesora::members.partials._nav-link', [
-                    "page" => $page,
-                    "icon" => $info['icon'],
-                    "url" => $info['url'],
-                    "greyed" => false
-                ])
-            @endif
+            @foreach($links as $page => $info)
+                @if(!empty($info['children']))
+                    @include('bladesora::members.partials._parent-nav-link', [
+                        "page" => $page,
+                        "icon" => $info['icon'],
+                        "children" => $info['children'],
+                    ])
+                @else
+                    @include('bladesora::members.partials._nav-link', [
+                        "page" => $page,
+                        "icon" => $info['icon'],
+                        "url" => $info['url'],
+                        "greyed" => false
+                    ])
+                @endif
 
-        @endforeach
-        <div class="flex flex-column spacer"></div>
-        <div class="sub-links flex flex-column mt-3">
+            @endforeach
+            <div class="flex flex-column spacer"></div>
+            <div class="sub-links flex flex-column mt-3">
 
-            @if(!empty($drumeoBeatUrl))
-                <a class="flex flex-row align-v-center text-black ph mb-1"
-                   href="{{ $drumeoBeatUrl }}" target="_blank">
-                    Drumeo Beat <i class="fal fa-external-link ml-1"></i>
-                </a>
-            @endif
+                @if(!empty($drumeoBeatUrl))
+                    <a class="flex flex-row align-v-center text-black ph mb-1"
+                       href="{{ $drumeoBeatUrl }}" target="_blank">
+                        Drumeo Beat <i class="fal fa-external-link ml-1"></i>
+                    </a>
+                @endif
 
-            @if(!empty($legacyResourcesUrl))
-                <a class="flex flex-row align-v-center text-black ph mb-1" href="{{ $legacyResourcesUrl }}">Legacy Resources</a>
-            @endif
+                @if(!empty($legacyResourcesUrl))
+                    <a class="flex flex-row align-v-center text-black ph mb-1" href="{{ $legacyResourcesUrl }}">Legacy Resources</a>
+                @endif
 
-            <a class="flex flex-row align-v-center text-black ph mb-1" href="{{ $supportUrl }}">Support</a>
-            <a class="flex flex-row align-v-center text-black ph mb-1" href="{{ $logoutUrl }}">Logout</a>
-        </div>
-    </section>
-</aside>
-<div id="backgroundOverlay"></div>
+                <a class="flex flex-row align-v-center text-black ph mb-1" href="{{ $supportUrl }}">Support</a>
+                <a class="flex flex-row align-v-center text-black ph mb-1" href="{{ $logoutUrl }}">Logout</a>
+            </div>
+        </section>
+    </aside>
+    <div id="backgroundOverlay"></div>
 
-@if(!empty($levelUpNotification))
-    <input id="levelUpData" type="hidden"
-           data-old-rank="{{ $levelUpNotification['tierPrevious'] }}"
-           data-new-rank="{{ $levelUpNotification['tierNew'] }}">
+    @if(!empty($levelUpNotification))
+        <input id="levelUpData" type="hidden"
+               data-old-rank="{{ $levelUpNotification['tierPrevious'] }}"
+               data-new-rank="{{ $levelUpNotification['tierNew'] }}">
+    @endif
 @endif
