@@ -11,7 +11,7 @@
         <div class="flex flex-column">
             <div class="flex flex-row flex-wrap align-center">
                 <div class="flex flex-column gear-photo-col align-center relative">
-                    <img src="{{ $gearPhotoUrl ?? 'https://placehold.it/1280x720' }}"
+                    <img src="{{ $gearPhotoUrl ?? 'https://dmmior4id2ysr.cloudfront.net/assets/images/default-gear-photo.jpg' }}"
                          data-gear-update="true">
 
                     @if($canClear)
@@ -21,7 +21,7 @@
                     @endif
                 </div>
                 <div class="flex flex-column align-center pa">
-                    <p class="tiny text-grey-3">For best results upload photo wider than 1280px.</p>
+                    <p class="tiny text-grey-3">For best results upload photo larger than 1280x720.</p>
                     <p class="tiny text-grey-3 font-italic">Max file size: <strong>5MB</strong></p>
                 </div>
             </div>
