@@ -154,8 +154,8 @@
                     <a class="flex flex-row align-v-center text-black ph mb-1" href="{{ $legacyResourcesUrl }}">Legacy Resources</a>
                 @endif
 
-                <a class="flex flex-row align-v-center text-black ph mb-1" href="{{ $supportUrl }}">Support</a>
-                <a class="flex flex-row align-v-center text-black ph mb-1" href="{{ $logoutUrl }}">Logout</a>
+                <a class="flex flex-row align-v-center text-black ph mb-1" href="{{ $supportUrl }}" dusk="page-link-support">Support</a>
+                <a class="flex flex-row align-v-center text-black ph mb-1" href="{{ $logoutUrl }}" dusk="page-link-logout">Logout</a>
             </div>
         </section>
     </aside>
