@@ -11,7 +11,7 @@
         <div class="flex flex-column">
             <div class="flex flex-row flex-wrap align-center">
                 <div class="flex flex-column gear-photo-col align-center relative">
-                    <img src="{{ $gearPhotoUrl ?? 'https://dmmior4id2ysr.cloudfront.net/assets/images/default-gear-photo.jpg' }}"
+                    <img src="{{ !empty($gearPhotoUrl) ? $gearPhotoUrl : 'https://dmmior4id2ysr.cloudfront.net/assets/images/default-gear-photo.jpg' }}"
                          data-gear-update="true">
 
                     @if($canClear)
