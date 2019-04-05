@@ -58,7 +58,7 @@
     </div>
 
     <div class="flex flex-row flex-wrap">
-        <div id="videoContainer" class="flex flex-column">
+        <div id="videoContainer" class="flex flex-column" dusk="video-player">
             @if(!empty($isLive) && $isLive === true)
                 @if(!empty($youtubeId))
                     <div class="widescreen">
