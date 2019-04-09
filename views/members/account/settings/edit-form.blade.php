@@ -6,7 +6,7 @@
             </h2>
         </div>
         <div class="flex flex-column edit-button">
-            <button class="btn" data-open-modal="{{ $modalId }}">
+            <button class="btn" data-open-modal="{{ $modalId }}" dusk="{{ $modalId }}">
                 <span class="text-black bg-black inverted corners-3 short">
                     Edit
                 </span>
