@@ -100,7 +100,7 @@
                              src="{{ $userAvatar }}"
                              data-avatar-update="true">
                         @if(!empty($hasUnreadNotifications))
-                            <span class="notification-badge rounded"></span>
+                            <span class="notification-badge rounded" dusk="notification-dot"></span>
                         @endif
                     </div>
                 </a>

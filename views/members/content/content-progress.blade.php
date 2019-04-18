@@ -31,6 +31,7 @@
         @else
             <button class="btn completeButton
                            {{ $isCompleted ? 'is-complete' : '' }}"
+                    dusk="master-complete-button"
                     data-tooltip="Mark Lesson as Complete"
                     data-brand="{{ $brand }}"
                     data-content-id="{{ $contentId }}">

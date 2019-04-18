@@ -1,4 +1,4 @@
-<div id="pageHeader" class="container fluid pv-4" style="background-image:url({{ $backgroundImage }});">
+<div id="pageHeader" class="container fluid pv-4" style="background-image:url({{ $backgroundImage }});" dusk="profile-header">
     <div class="container">
         <div class="flex flex-row align-center account-header">
             <div class="header-avatar flex flex-column">
@@ -9,7 +9,8 @@
                 {{ $currentUser['access_level'] }}">
                     <img class="rounded inset-border"
                          data-avatar-update="true"
-                         src="{{ $currentUser['avatar'] }}">
+                         src="{{ $currentUser['avatar'] }}"
+                         dusk="avatar">
                 </a>
 
             </div>

@@ -11,7 +11,7 @@
 
 
                         @if(!empty($section['badge']))
-                            <span class="notification-badge rounded smaller"></span>
+                            <span class="notification-badge rounded smaller" dusk="notification-dot-small"></span>
                         @endif
 
                     </i>
