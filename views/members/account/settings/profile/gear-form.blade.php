@@ -19,16 +19,6 @@
                 ],
                 "showEmpty" => true
             ])
-
-            @if($gearPhoto)
-            <div class="flex flex-row bg-center relative" style="max-width:480px;background-image:url({{ $gearPhoto }});">
-                <div class="widescreen bg-center"></div>
-
-                <span id="clearGearPhoto" class="rounded clear-button">
-                    <i class="fas fa-times"></i>
-                </span>
-            </div>
-            @endif
         </div>
     @endslot
 
@@ -104,19 +94,6 @@
                                 "inputValue" => "",
                                 "inputErrors" => [],
                             ], $sticksInput ?? []))
-                        </div>
-                    </div>
-
-                    <div class="flex flex-row ph-3 pv mb-1">
-                        <div class="flex flex-column">
-                            @include('bladesora::members.inputs.file-input', array_merge([
-                                "brand" => $brand,
-                                "inputId" => "gearPhoto",
-                                "inputName" => "profile-data[drumkit-image|user-profile-images]",
-                                "inputLabel" => "Gear Photo",
-                                "inputValue" => "",
-                                "inputErrors" => [],
-                            ], $gearInput ?? []))
                         </div>
                     </div>
 
