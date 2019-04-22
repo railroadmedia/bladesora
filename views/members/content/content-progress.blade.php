@@ -1,4 +1,4 @@
-<div class="content-progress flex flex-row flex-wrap bg-{{ $themeColor }} corners-3 pa {{ !empty($compact) && $compact === true ? 'compact' : '' }}">
+<div class="content-progress flex flex-row flex-wrap bg-{{ $themeColor }} shadow corners-3 pa {{ !empty($compact) && $compact === true ? 'compact' : '' }}">
     <div class="flex flex-column {{ !empty($compact) && $compact === true ? '' : 'xs-12 sm-9' }}">
         <div class="flex flex-row trophy-progress-bar mr-2 {{ $progress === 100 ? 'complete' : '' }}">
             <div class="flex flex-column trophy-progress-cutoff bg-{{ $themeColor }} inverted">
