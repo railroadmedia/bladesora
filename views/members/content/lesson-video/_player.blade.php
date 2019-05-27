@@ -1,5 +1,5 @@
 <div class="flex flex-row">
-    <div id="videoContainer" class="flex flex-column">
+    <div id="videoContainer" class="flex flex-column" dusk="video-player">
         <div id="lessonVideoWrap">
             <div id="videoPlayer" class="load-before-render widescreen text-{{ $themeColor }}"
                  data-element-id="lessonPlayer"

@@ -1,5 +1,5 @@
 <div class="flex flex-row">
-    <div class="flex flex-column next-prev-button-col mr-1">
+    <div class="flex flex-column next-prev-button-col mr-1" dusk="previous-lesson">
         @if(!empty($prevLessonUrl))
             <a href="{{ $prevLessonUrl }}"
                data-tooltip="Previous Lesson"
@@ -36,7 +36,7 @@
         </div>
     </div>
 
-    <div class="flex flex-column next-prev-button-col ml-1">
+    <div class="flex flex-column next-prev-button-col ml-1" dusk="next-lesson">
         @if(!empty($nextLessonUrl))
             <a href="{{ $nextLessonUrl }}"
                class="btn bg-{{ $themeColor }} inverted text-{{ $themeColor }}"

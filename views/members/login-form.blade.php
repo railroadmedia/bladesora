@@ -53,7 +53,7 @@
             ])
         </div>
 
-        <button type="submit" class="btn mb-3">
+        <button type="submit" class="btn mb-3" dusk="submit-button">
             <span class="text-white bg-{{ $brand }}">Sign In</span>
         </button>
     </form>

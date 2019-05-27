@@ -1,4 +1,4 @@
-<div id="breadCrumbs" class="container fluid bg-black bb-grey-5-1 collapsed hide-xs-only">
+<div id="breadCrumbs" class="container fluid bg-black bb-grey-5-1 collapsed hide-xs-only" dusk="breadcrumbs">
     <div class="container text-grey-3 pa-1 uppercase text-center">
         {{--<div class="flex flex-row">--}}
             @foreach($pages as $index => $page)

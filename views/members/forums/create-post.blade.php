@@ -54,11 +54,11 @@
 
                     <div class="flex flex-row align-h-right mt-2">
                         <a href="{{ $forumUrl }}"
-                           class="btn bg-black text-black no-decoration flat collapse-150 no-border mr-1">
+                           class="btn bg-black text-black no-decoration flat collapse-150 no-border mr-1" dusk="cancel-button">
                             Cancel
                         </a>
 
-                        <button class="btn collapse-320" type="submit">
+                        <button class="btn collapse-320" type="submit" dusk="submit-button">
                             <span class="bg-{{ $brand }} text-white corners-3">
                                 Create Discussion
                             </span>

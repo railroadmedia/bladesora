@@ -11,7 +11,7 @@
 
 
                         @if(!empty($section['badge']))
-                            <span class="notification-badge rounded smaller"></span>
+                            <span class="notification-badge rounded smaller" dusk="notification-dot-small"></span>
                         @endif
 
                     </i>
@@ -23,11 +23,11 @@
             @endforeach
         </div>
 
-        <div id="scrollSubNavLeft" class="scroll-sub-nav body text-grey-3 bh-grey-5-1 hide">
+        <div id="scrollSubNavLeft" class="scroll-sub-nav body text-grey-3 bh-grey-5-1 hide" dusk="scroll-subnav-left">
             <i class="fas fa-chevron-left"></i>
         </div>
 
-        <div id="scrollSubNavRight" class="scroll-sub-nav body text-grey-3 bh-grey-5-1 hide">
+        <div id="scrollSubNavRight" class="scroll-sub-nav body text-grey-3 bh-grey-5-1 hide" dusk="scroll-subnav-right">
             <i class="fas fa-chevron-right"></i>
         </div>
     </div>
