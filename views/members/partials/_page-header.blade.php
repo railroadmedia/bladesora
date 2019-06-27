@@ -43,7 +43,7 @@
                             @endif
                         </p>
 
-                    @if($currentUser['access_level'] !== 'team')
+                    @if($currentUser['access_level'] !== 'team' || $currentUser['access_level'] !== 'pack')
                         <p class="body dense text-white font-compressed text-center">{{ $currentUser['xp'] }} XP</p>
                     @endif
                 </div>
