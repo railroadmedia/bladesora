@@ -35,6 +35,7 @@
                         </a>
                     </div>
 
+                    @if($currentUser['access_level'] !== 'pack')
                         <p class="body dense text-white font-bold text-center uppercase mt-1 text-{{ $brand }}">
                             @if($currentUser['access_level'] === 'team')
                                 {{ $brand }} Team
@@ -43,8 +44,9 @@
                             @endif
                         </p>
 
-                    @if($currentUser['access_level'] !== 'team' || $currentUser['access_level'] !== 'pack')
-                        <p class="body dense text-white font-compressed text-center">{{ $currentUser['xp'] }} XP</p>
+                        @if($currentUser['access_level'] !== 'team')
+                            <p class="body dense text-white font-compressed text-center">{{ $currentUser['xp'] }} XP</p>
+                        @endif
                     @endif
                 </div>
             @endif
