@@ -2,17 +2,15 @@
     <div class="container">
         <div class="flex flex-row align-center account-header">
             <div class="header-avatar flex flex-column">
-                <a @if(!empty($accountUrl)) href="{{ $accountUrl }}" @endif
-                   class="user-avatar
-                                {{ in_array($currentUser['access_level'], ['team', 'edge', 'lifetime', 'guitar', 'piano']) ? 'subscriber' : '' }}
-                {{ $brand }}
-                {{ $currentUser['access_level'] }}">
-                    <img class="rounded inset-border"
-                         data-avatar-update="true"
-                         src="{{ $currentUser['avatar'] }}"
-                         dusk="avatar">
-                </a>
-
+                <div class="user-avatar
+                        {{ in_array($currentUser['access_level'], ['edge', 'lifetime', 'team', 'guitar', 'piano']) ? 'subscriber' : '' }}
+                        {{ $brand }}
+                        {{ $currentUser['access_level'] }}">
+                    <a @if(!empty($accountUrl)) href="{{ $accountUrl }}" @endif
+                       class="no-decoration">
+                        <img class="rounded inset-border" src="{{ $currentUser['avatar'] }}">
+                    </a>
+                </div>
             </div>
             <div class="flex flex-column user ph-3 mv-3">
                 <h1 class="heading text-white flex flex-row align-v-center">
