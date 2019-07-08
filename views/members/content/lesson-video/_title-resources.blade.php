@@ -1,22 +1,20 @@
 <div class="flex flex-row mb-2">
     <div class="flex flex-column pr-1">
         <h1 class="heading text-white">{{ $lessonTitle }}</h1>
-        <h4 class="subtitle text-white uppercase {{ $contentType }}">
-            @if(!empty($parentTitle))
-                From <a href="{{ $courseUrl }}" class="text-{{ $themeColor }} no-decoration">
-                    {{ $parentTitle }}
-                </a>
-            @else
-                <h4 class="subtitle text-white uppercase {{ $contentType }}">
-                    With
-                    @foreach($instructors as $index => $instructor)
-                        <span class="text-{{ $themeColor }} no-decoration">{{ $instructor->fetch('fields.name') }}@if($index < (count($instructors) - 1)),@endif</span>
+        @if(!empty($parentTitle))
+            From <a href="{{ $courseUrl }}" class="text-{{ $themeColor }} no-decoration">
+                {{ $parentTitle }}
+            </a>
+        @else
+            <h4 class="subtitle text-white uppercase {{ $contentType }}">
+                With
+                @foreach($instructors as $index => $instructor)
+                    <span class="text-{{ $themeColor }} no-decoration">{{ $instructor->fetch('fields.name') }}@if($index < (count($instructors) - 1)),@endif</span>
 
 
-                    @endforeach
-                </h4>
-            @endif
-        </h4>
+                @endforeach
+            </h4>
+        @endif
     </div>
 
     @if(!empty($lessonResources))
