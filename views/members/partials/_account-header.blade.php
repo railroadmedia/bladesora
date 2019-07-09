@@ -24,19 +24,21 @@
                     {{ $appName }} Member Since {{ \Carbon\Carbon::parse($memberSince)->format('Y') }}
                 </p>
             </div>
-            <div class="flex flex-column flex-auto xp-stats">
-                <p class="heading dense text-white font-bold font-compressed text-center uppercase mt-1 text-{{ $brand }}" style="margin-bottom:-10px;">
-                    @if($currentUser['access_level'] === 'team')
-                        {{ $appName }} Team
-                    @else
-                        {{ $currentUser['xp_rank'] }}
-                    @endif
-                </p>
+            @if($currentUser['access_level'] !== 'pack')
+                <div class="flex flex-column flex-auto xp-stats">
+                    <p class="heading dense text-white font-bold font-compressed text-center uppercase mt-1 text-{{ $brand }}" style="margin-bottom:-10px;">
+                        @if($currentUser['access_level'] === 'team')
+                            {{ $appName }} Team
+                        @else
+                            {{ $currentUser['xp_rank'] }}
+                        @endif
+                    </p>
 
-                @if($currentUser['access_level'] !== 'team')
-                    <p class="heading dense text-white font-regular font-compressed text-center">{{ $currentUser['xp'] }} XP</p>
-                @endif
-            </div>
+                    @if($currentUser['access_level'] !== 'team')
+                        <p class="heading dense text-white font-regular font-compressed text-center">{{ $currentUser['xp'] }} XP</p>
+                    @endif
+                </div>
+            @endif
         </div>
     </div>
 </div>
