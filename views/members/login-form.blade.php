@@ -43,15 +43,15 @@
             ])
         </div>
 
-        <div class="flex flex-column mb-2">
-            @include('bladesora::members.inputs.checkbox-input', [
-                "brand" => $brand,
-                "inputId" => "remember",
-                "inputName" => "remember",
-                "inputLabel" => "Remember me on this device.",
-                "checked" => true
-            ])
-        </div>
+{{--        <div class="flex flex-column mb-2">--}}
+{{--            @include('bladesora::members.inputs.checkbox-input', [--}}
+{{--                "brand" => $brand,--}}
+{{--                "inputId" => "remember",--}}
+{{--                "inputName" => "remember",--}}
+{{--                "inputLabel" => "Remember me on this device.",--}}
+{{--                "checked" => true--}}
+{{--            ])--}}
+{{--        </div>--}}
 
         <button type="submit" class="btn mb-3" dusk="submit-button">
             <span class="text-white bg-{{ $brand }}">Sign In</span>
