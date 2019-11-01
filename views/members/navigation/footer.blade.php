@@ -1,26 +1,30 @@
-<footer class="container fluid bg-white shadow text-grey-3 collapsed-xs">
+<footer class="container fluid bg-grey-5 shadow text-grey-3 collapsed-xs">
     <div class="container">
         <div class="flex flex-row flex-wrap align-h-center">
-            <section class="flex flex-column footer-col">
+            <section class="flex flex-column xs-12 sm-3 pv-2">
                 <div class="flex flex-row tiny align-v-center">
-                    Musora Media Inc &copy; {{ date('Y') }} -
-                    <a href="{{ $termsUrl }}" target="_blank" class="text-grey-3">Terms</a>
-                    /
-                    <a href="{{ $privacyUrl }}" target="_blank" class="text-grey-3">Privacy</a>
-
-                    @if(!empty($legacyResourcesUrl))
-                        /
-                        <a href="{{ $legacyResourcesUrl }}" target="_blank" class="text-grey-3">Legacy Resources</a>
-                    @endif
+                    <img
+                        alt="Musora Media Inc."
+                        src="https://dmmior4id2ysr.cloudfront.net/logos/drumeo-by-musora-grey.png"
+                        style="max-width:125px;"
+                    >
                 </div>
             </section>
 
-            <div class="flex flex-column spacer ph hide-xs-only"></div>
-
-            <section class="flex flex-column footer-col">
+            <section class="flex flex-column xs-12 sm-9 pv-2">
                 <div class="flex flex-row tiny align-v-center">
+                    <span class="hide-xs-only">Musora Media Inc &copy; {{ date('Y') }}</span>
+                    <span class="hide-xs-only" style="margin:0 4px">-</span>
+                    <a href="{{ $termsUrl }}" target="_blank" class="text-grey-3">Terms</a>
+                    <span style="margin:0 4px">/</span>
+                    <a href="{{ $privacyUrl }}" target="_blank" class="text-grey-3">Privacy</a>
+                    @if(!empty($legacyResourcesUrl))
+                        <span style="margin:0 4px">/</span>
+                        <a href="{{ $legacyResourcesUrl }}" target="_blank" class="text-grey-3">Legacy Resources</a>
+                        <span style="margin:0 4px">/</span>
+                    @endif
                     <a href="{{ $supportUrl }}" class="text-grey-3">Support</a>
-                    /
+                    <span style="margin:0 4px">/</span>
                     <a href="{{ $logoutUrl }}" class="text-grey-3">Logout</a>
                 </div>
             </section>
