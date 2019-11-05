@@ -24,7 +24,7 @@
             </div>
             <div class="flex flex-column sm-2 hide-xs-only"></div>
 
-            @if(!empty($currentUser))
+            @if(empty($currentUser))
                 <div class="header-avatar flex flex-column hide-xs-only">
                     <div class="user-avatar
                                 {{ in_array($currentUser['access_level'], ['edge', 'lifetime', 'team', 'guitar', 'piano']) ? 'subscriber' : '' }}
