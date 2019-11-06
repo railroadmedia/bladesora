@@ -5,6 +5,7 @@
                 <div class="flex flex-column trophy-progress-cutoff bg-{{ $themeColor }} inverted relative">
                     <span class="progress-border ba-white-5 absolute-fill"></span>
                     <span
+                        data-current-progress="{{ $progress }}"
                         class="trophy-progress relative bg-{{ $themeColor }}"
                         style="transform:translateX({{ $progress - 100 }}%);"
                     >
