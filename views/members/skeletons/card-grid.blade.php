@@ -1,4 +1,4 @@
-<div class="flex flex-column pa-1 catalogue-card">
+<div class="flex flex-column pa-1 catalogue-card {{ $cardClass ?? '' }}">
     <div class="card-media active corners-5 mb-1 {{ $thumbnailType ?? 'widescreen' }}">
         <div class="thumb-img bg-center skeleton-loader"></div>
     </div>
