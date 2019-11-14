@@ -29,7 +29,7 @@
     <div class="flex flex-column grow">
         <div class="flex flex-row align-v-center
                     {{ !$isOwned && \Carbon\Carbon::parse($releaseDate) < \Carbon\Carbon::now() ? 'flex-wrap-xs-only' : '' }}">
-            <div class="flex flex-column align-v-center grow ph">
+            <div class="flex flex-column align-v-center grow ph p-sm-up">
                 @if(\Carbon\Carbon::parse($releaseDate) > \Carbon\Carbon::now())
                     <p class="tiny text-{{ $themeColor }} uppercase">
                         Opening {{ \Carbon\Carbon::parse($releaseDate)->format('l, F j \a\t g:i A') }}
@@ -38,7 +38,7 @@
 
                 <a @if((empty($noLink) || $noLink === false) && $isOwned) href="{{ $lessonsUrl }}" @endif
                    class="body font-bold text-black no-decoration mb-1">{{ $itemTitle }}</a>
-                <div class="tiny mb-1 item-description">{!! $itemDescription !!}</div>
+                <div class="tiny mb-1">{!! $itemDescription !!}</div>
 
                 @if(\Carbon\Carbon::parse($releaseDate) < \Carbon\Carbon::now() && $isOwned)
                     <div class="flex flex-row align-v-center overview-links">
