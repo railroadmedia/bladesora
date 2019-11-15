@@ -1,14 +1,14 @@
 <div class="container bg-{{ $themeColor }}">
     <div class="content-progress flex flex-row flex-wrap pv-3">
         @if(!empty($labelText))
-            <div class="flex flex-column xs-12 sm-3 align-center mb-2 m-xs-only">
-                <h1 class="display text-white nowrap">
+            <div class="flex flex-column left-column align-v-center">
+                <h3 class="display text-white nowrap">
                     {{ $labelText }}
-                </h1>
+                </h3>
             </div>
         @endif
 
-        <div class="flex flex-column xs-12 {{ !empty($progressLabelText) ? 'sm-6' : 'sm-9' }}">
+        <div class="flex flex-column">
             <div class="flex flex-row trophy-progress-bar bg-white mr-2 {{ $progress === 100 ? 'complete' : '' }}">
                 <div class="flex flex-column trophy-progress-cutoff bg-{{ $themeColor }} inverted relative">
                     <span class="progress-border ba-white-5 absolute-fill"></span>
@@ -34,7 +34,7 @@
             </div>
         </div>
 
-        <div class="flex flex-column xs-12 sm-3">
+        <div class="flex flex-column right-column">
             @if(empty($showCompleteButton))
                 <a href="{{ $progress === 100 ? $backButton['url'] : $nextLessonUrl }}"
                    class="btn bg-white bg-white inverted text-white
