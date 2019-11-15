@@ -10,7 +10,7 @@
     <div class="{{ $overview ? 'large-thumbnail' : 'thumbnail-col' }}
             flex flex-column align-v-center">
         <div class="thumb-wrap corners-3">
-            <div class="thumb-img corners-3 widescreen skeleton-loader">
+            <div class="thumb-img corners-3 {{ $thumbnailType ?? 'widescreen' }} skeleton-loader">
             </div>
         </div>
     </div>

@@ -20,11 +20,11 @@
                     </div>
 
                     @if($currentUser['access_level'] !== 'pack')
-                        <p class="body dense text-white font-bold text-center uppercase mt-1 text-{{ $brand }}">
+                        <p class="body dense text-white font-bold text-center uppercase mt-1 text-white">
                             @if($currentUser['access_level'] === 'team')
                                 {{ $brand }} Team
                             @else
-                                {{ $currentUser['xp_rank'] }}
+                                Level {{ $currentUser['level_number'] }}
                             @endif
                         </p>
 

@@ -1,18 +1,18 @@
-<div id="subHeader" class="container collapsed-h fluid bg-grey-5 pt-1">
+<div id="subHeader" class="container collapsed-h fluid bg-grey-5 pv-1">
     <div class="container">
-        <div class="flex flex-row align-center flex-wrap">
-            <div class="flex flex-column align-v-center text-white mb-1 meta-info-col hide-xs-only">
+        <div class="flex flex-row align-center flex-wrap nmh-1">
+            <div class="flex flex-column align-v-center text-white ph-1 meta-info-col hide-xs-only">
                 <div class="flex flex-row align-v-center">
                     @foreach($infoData as $key => $value)
                         <p class="subheading uppercase mr-3">
-                            {{ $value  }}  <span>{{ $key }}</span>
+                            {{ $value  }}  <span class="body">{{ $key }}</span>
                         </p>
                     @endforeach
                 </div>
             </div>
 
             @if(!empty($addToList) && $addToList === true)
-                <div class="flex flex-column button-col mb-1">
+                <div class="flex flex-column button-col">
                     <button class="addToList btn {{ $isAdded ? 'added' : '' }}"
                             data-content-id="{{ $contentId }}">
                         <span class="un-added bg-white inverted text-white">
@@ -27,7 +27,7 @@
             @endif
 
             @if(!empty($downloadableResources))
-                <div class="flex flex-column button-col mb-1">
+                <div class="flex flex-column button-col">
                     <div class="btn bg-white inverted is-dropdown">
                         <i class="unopen fas fa-download no-events text-white"></i>
                         <i class="open fas fa-download no-events text-x-dark"></i>
@@ -51,7 +51,7 @@
             @endif
 
             @if(!empty($resetProgress) && $resetProgress === true)
-                <div class="flex flex-column button-col mb-1">
+                <div class="flex flex-column button-col">
                     <button class="resetProgress btn" title="Reset Progress"
                             data-content-id="{{ $contentId }}"
                             data-brand="{{ $brand }}">
