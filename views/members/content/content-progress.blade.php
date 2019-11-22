@@ -18,7 +18,7 @@
                         style="transform:translateX({{ $progress - 100 }}%);"
                     >
                         <span class="progress-percent body font-bold text-white
-                                    {{ $progress > 50 ? 'text-white' : 'text-drumeo right'  }}">
+                                    {{ $progress > 50 ? 'text-white' : 'right text-' . $themeColor  }}">
                             {{ round($progress) }}%
                         </span>
                     </span>
