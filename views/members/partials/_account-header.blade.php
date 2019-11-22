@@ -1,5 +1,6 @@
-<div id="pageHeader" class="container fluid pv-4" style="background-image:url({{ $backgroundImage }});" dusk="profile-header">
-    <div class="container">
+<div id="pageHeader" class="container fluid pv-4 relative" style="background-image:url({{ $backgroundImage }});" dusk="profile-header">
+    <div class="header-gradient-overlay absolute-fill {{ $brand }}"></div>
+    <div class="container relative">
         <div class="flex flex-row align-center account-header">
             <div class="header-avatar flex flex-column">
                 <div class="user-avatar
