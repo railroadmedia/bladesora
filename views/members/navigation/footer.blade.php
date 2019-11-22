@@ -5,7 +5,7 @@
                 <div class="flex flex-row tiny align-v-center">
                     <img
                         alt="Musora Media Inc."
-                        src="https://dmmior4id2ysr.cloudfront.net/logos/drumeo-by-musora-grey.png"
+                        src="{{ $logoImage }}"
                         style="max-width:125px;"
                     >
                 </div>
