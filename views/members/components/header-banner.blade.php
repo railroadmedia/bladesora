@@ -2,7 +2,7 @@
     class="container fluid collapsed-h pv-5 relative bg-black bg-center"
     style="background-image:url({{ $backgroundImage }});"
 >
-    <div class="header-gradient-overlay absolute-fill"></div>
+    <div class="header-gradient-overlay absolute-fill {{ $brand }}"></div>
     <div class="container relative">
         <div class="flex flex-row align-center">
             {{ $content }}

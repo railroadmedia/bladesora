@@ -18,8 +18,8 @@
                     <a href="{{ $termsUrl }}" target="_blank" class="text-grey-3">Terms</a>
                     <span style="margin:0 4px">/</span>
                     <a href="{{ $privacyUrl }}" target="_blank" class="text-grey-3">Privacy</a>
+                    <span style="margin:0 4px">/</span>
                     @if(!empty($legacyResourcesUrl))
-                        <span style="margin:0 4px">/</span>
                         <a href="{{ $legacyResourcesUrl }}" target="_blank" class="text-grey-3">Legacy Resources</a>
                         <span style="margin:0 4px">/</span>
                     @endif
