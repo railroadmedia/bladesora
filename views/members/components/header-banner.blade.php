@@ -1,6 +1,7 @@
 <div
     class="container fluid collapsed-h pv-5 relative bg-black bg-center"
-    style="background-image:url({{ $backgroundImage }});"
+{{--    style="background-image:url({{ $backgroundImage }});"--}}
+    data-ix-bg="{{ $backgroundImage }}"
 >
     <div class="header-gradient-overlay absolute-fill {{ $brand }}"></div>
     <div class="container relative">
@@ -15,7 +16,11 @@
                                 {{ $currentUser['access_level'] }}"
                     >
                         <a href="{{ $profileUrl }}" class="no-decoration">
-                            <img class="rounded inset-border" src="{{ $currentUser['avatar'] }}">
+                            <img
+                                class="rounded inset-border"
+                                src="https://dmmior4id2ysr.cloudfront.net/assets/images/image-loader.svg"
+                                data-ix-src="{{ $currentUser['avatar'] }}"
+                            >
                         </a>
                     </div>
 

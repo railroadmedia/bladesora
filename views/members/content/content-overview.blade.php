@@ -2,11 +2,21 @@
     <div class="flex flex-column align-v-center large-thumbnail {{ !empty($showBackgroundCards) && $showBackgroundCards === true ? 'background-cards' : '' }} {{ $themeColor }} {{ !empty($releaseDate) && \Carbon\Carbon::parse($releaseDate) > \Carbon\Carbon::now() ? 'desaturate' : '' }}">
         <div class="thumb-wrap corners-3">
             <a @if((empty($noLink) || $noLink === false) && $isOwned) href="{{ $lessonsUrl }}" @endif>
-                <div class="thumb-img bg-center corners-3 {{ $forceSquareThumb === true ? 'square' : 'widescreen' }}"
-                     style="background-image:url({{ $itemThumbnail }});">
+                <div class="thumb-img bg-center corners-3 {{ $forceSquareThumb === true ? 'square' : 'widescreen' }}">
+                    <img
+                        src="https://dmmior4id2ysr.cloudfront.net/assets/images/image-loader.svg"
+                        data-ix-src="{{ $itemThumbnail }}"
+                        class="bg-grey-2"
+                        alt="{{ $itemTitle }} Thumbnail"
+                    >
+
+
                     @if(!empty($logoImage))
                         <div class="logo-image pa-1 corners-bottom-3">
-                            <img src="{{ $logoImage }}">
+                            <img
+                                data-ix-lazy
+                                data-ix-src="{{ $logoImage }}"
+                                alt="{{ $itemTitle }} Logo">
                         </div>
                     @endif
 

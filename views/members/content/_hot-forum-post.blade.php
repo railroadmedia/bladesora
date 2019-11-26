@@ -1,7 +1,12 @@
 <div class="flex flex-column xs-12 sm-6 md-4 pa-3 raised-hover corners-3">
     <a href="{{ $url }}" class="flex flex-row no-decoration">
         <div class="flex flex-column avatar-col text-black">
-            <img src="{{ $avatar }}" class="rounded mb-1">
+            <img
+                src="https://dmmior4id2ysr.cloudfront.net/assets/images/image-loader.svg"
+                data-ix-src="{{ $avatar }}"
+                class="bg-grey-2 rounded mb-1"
+                alt="{{ $author }} Avatar"
+            >
 
             <p class="title text-center font-compressed">{{ parse_xp_value($xp) }}</p>
 
