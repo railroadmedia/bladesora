@@ -1,6 +1,6 @@
 <div
     class="container fluid collapsed-h pv-5 relative bg-black bg-center"
-{{--    style="background-image:url({{ $backgroundImage }});"--}}
+    style="background-image:url({{ imgix($backgroundImage, ["q" => 5, "blur" => 20]) }});"
     data-ix-bg="{{ $backgroundImage }}"
 >
     <div class="header-gradient-overlay absolute-fill {{ $brand }}"></div>

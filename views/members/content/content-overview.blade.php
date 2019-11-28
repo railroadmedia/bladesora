@@ -6,6 +6,7 @@
                     <img
                         src="https://dmmior4id2ysr.cloudfront.net/assets/images/image-loader.svg"
                         data-ix-src="{{ $itemThumbnail }}"
+                        data-ix-fade
                         class="bg-grey-2"
                         alt="{{ $itemTitle }} Thumbnail"
                     >
@@ -14,7 +15,7 @@
                     @if(!empty($logoImage))
                         <div class="logo-image pa-1 corners-bottom-3">
                             <img
-                                data-ix-lazy
+                                data-ix-fade
                                 data-ix-src="{{ $logoImage }}"
                                 alt="{{ $itemTitle }} Logo">
                         </div>

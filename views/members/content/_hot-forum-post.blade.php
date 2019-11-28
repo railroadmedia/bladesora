@@ -4,6 +4,7 @@
             <img
                 src="https://dmmior4id2ysr.cloudfront.net/assets/images/image-loader.svg"
                 data-ix-src="{{ $avatar }}"
+                data-ix-fade
                 class="bg-grey-2 rounded mb-1"
                 alt="{{ $author }} Avatar"
             >
