@@ -20,7 +20,6 @@
                                 class="rounded inset-border"
                                 src="{{ imgix($currentUser['avatar'], ["q" => 50, "blur" => 2, "w" => 50, "h" => 50, "fit" => "crop", "auto" => "format"]) }}"
                                 data-ix-src="{{ $currentUser['avatar'] }}"
-                                style="width:100%;"
                             >
                         </a>
                     </div>

@@ -1,4 +1,10 @@
-<div id="pageHeader" class="container fluid pv-4 relative" style="background-image:url({{ $backgroundImage }});" dusk="profile-header">
+<div
+    id="pageHeader"
+    class="container fluid pv-4 relative"
+    dusk="profile-header"
+    style="background-image:url({{ imgix($backgroundImage, ["q" => 80, "blur" => 40, "w" => 600, "fit" => "crop", "auto" => "format"]) }});"
+    data-ix-bg="{{ $backgroundImage }}"
+>
     <div class="header-gradient-overlay absolute-fill {{ $brand }}"></div>
     <div class="container relative">
         <div class="flex flex-row align-center account-header">
@@ -9,7 +15,11 @@
                         {{ $currentUser['access_level'] }}">
                     <a @if(!empty($accountUrl)) href="{{ $accountUrl }}" @endif
                        class="no-decoration">
-                        <img class="rounded inset-border" src="{{ $currentUser['avatar'] }}">
+                        <img
+                            class="rounded inset-border"
+                            src="{{ imgix($currentUser['avatar'], ["q" => 50, "blur" => 2, "w" => 50, "h" => 50, "fit" => "crop", "auto" => "format"]) }}"
+                            data-ix-src="{{ $currentUser['avatar'] }}"
+                        >
                     </a>
                 </div>
             </div>
