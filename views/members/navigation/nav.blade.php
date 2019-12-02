@@ -97,7 +97,7 @@
                    @if(!empty($isIframe)) target="_parent" @endif>
                     <div class="pa-1 wrap">
                         <img class="rounded inset-border"
-                             src="{{ $userAvatar }}"
+                             src="{{ imgix($userAvatar, ["q" => 50, "blur" => 2, "w" => 50, "h" => 50, "fit" => "crop"]) }}"
                              data-avatar-update="true">
                         @if(!empty($hasUnreadNotifications))
                             <span class="notification-badge rounded" dusk="notification-dot"></span>
@@ -110,7 +110,7 @@
             <a id="menuButton"
                tabindex="0"
                dusk="hamburger-button"
-               class="flex flex-column menu noselect bl-grey-5-1 hide-sm-up" role="button">
+               class="flex flex-column menu noselect bl-grey-5-1 bb-grey-5-1 hide-sm-up" role="button">
                 <div class="flex flex-row text-white align-center uppercase">
                     <i class="menu-bars-icon"></i>
                 </div>

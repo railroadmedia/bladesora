@@ -1,6 +1,6 @@
 <div
     class="container fluid collapsed-h pv-5 relative bg-black bg-center"
-    style="background-image:url({{ imgix($backgroundImage, ["q" => 5, "blur" => 20]) }});"
+    style="background-image:url({{ imgix($backgroundImage, ["q" => 80, "blur" => 40, "w" => 600, "fit" => "crop", "auto" => "format"]) }});"
     data-ix-bg="{{ $backgroundImage }}"
 >
     <div class="header-gradient-overlay absolute-fill {{ $brand }}"></div>
@@ -10,7 +10,7 @@
 
             @if(empty($hideUser))
                 <div class="header-avatar flex flex-column hide-xs-only">
-                    <div class="user-avatar
+                    <div class="user-avatar rounded bg-black
                                 {{ in_array($currentUser['access_level'], ['edge', 'lifetime', 'team', 'guitar', 'piano']) ? 'subscriber' : '' }}
                                 {{ $brand }}
                                 {{ $currentUser['access_level'] }}"
@@ -18,8 +18,9 @@
                         <a href="{{ $profileUrl }}" class="no-decoration">
                             <img
                                 class="rounded inset-border"
-                                src="https://dmmior4id2ysr.cloudfront.net/assets/images/image-loader.svg"
+                                src="{{ imgix($currentUser['avatar'], ["q" => 50, "blur" => 2, "w" => 50, "h" => 50, "fit" => "crop", "auto" => "format"]) }}"
                                 data-ix-src="{{ $currentUser['avatar'] }}"
+                                style="width:100%;"
                             >
                         </a>
                     </div>
