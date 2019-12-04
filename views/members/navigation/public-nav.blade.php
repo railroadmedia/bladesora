@@ -1,6 +1,6 @@
 <header id="nav" class="container fluid collapsed shadow bg-{{ $themeColor }}">
     <div class="flex flex-row">
-        <a href="/members" class="flex flex-column logo ph align-center">
+        <a href="{{ $homeUrl ?? '/' }}" class="flex flex-column logo ph align-center">
             <img src="{{ $logo }}">
         </a>
 
@@ -27,9 +27,9 @@
                     "page" => $page,
                     "icon" => $info['icon'],
                     "url" => $info['url'],
+                    "greyed" => false
                 ])
             @endif
-
         @endforeach
         <div class="flex flex-column spacer"></div>
     </section>
