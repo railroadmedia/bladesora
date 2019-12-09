@@ -1,6 +1,9 @@
 <div
     class="container fluid collapsed-h pv-5 relative bg-black bg-center"
-    style="background-image:url({{ imgix($backgroundImage, ["q" => 80, "blur" => 40, "w" => 600, "fit" => "crop", "auto" => "format"]) }});"
+    style="background-image:url({{ _imgix(
+        $backgroundImage,
+        ["q" => 80, "blur" => 40, "w" => 640]
+    ) }});"
     data-ix-bg="{{ $backgroundImage }}"
 >
     <div class="header-gradient-overlay absolute-fill {{ $brand }}"></div>
@@ -18,7 +21,10 @@
                         <a href="{{ $profileUrl }}" class="no-decoration">
                             <img
                                 class="rounded inset-border"
-                                src="{{ imgix($currentUser['avatar'], ["q" => 50, "blur" => 2, "w" => 50, "h" => 50, "fit" => "crop", "auto" => "format"]) }}"
+                                src="{{ _imgix(
+                                    $currentUser['avatar'],
+                                    ["q" => 50, "blur" => 2, "w" => 50, "h" => 50]
+                                ) }}"
                                 data-ix-src="{{ $currentUser['avatar'] }}"
                             >
                         </a>

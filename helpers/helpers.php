@@ -242,3 +242,15 @@ if(!function_exists('parse_lesson_type_for_db')){
         }
     }
 }
+
+if(!function_exists('_imgix')){
+    function _imgix($url, $params = []){
+        return imgix(
+            $url,
+            array_merge(
+                config('imgix.defaultParams'),
+                $params
+            )
+        );
+    }
+}
