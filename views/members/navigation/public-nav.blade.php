@@ -27,6 +27,7 @@
                     "page" => $page,
                     "icon" => $info['icon'],
                     "url" => $info['url'],
+                    "greyed" => $info['greyed'] ?? null,
                 ])
             @endif
 

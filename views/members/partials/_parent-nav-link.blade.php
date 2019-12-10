@@ -11,7 +11,7 @@
         @foreach($children as $page => $info)
             @include('bladesora::members.partials._nav-link', [
                 "page" => $page,
-                "icon" => $info['icon'],
+                "icon" => $info['icon'] ?? null,
                 "url" => $info['url'],
                 "greyed" => true
             ])
