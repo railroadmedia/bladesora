@@ -27,7 +27,7 @@
                     "page" => $page,
                     "icon" => $info['icon'],
                     "url" => $info['url'],
-                    "greyed" => false
+                    "greyed" => $info['greyed'] ?? false,
                 ])
             @endif
         @endforeach

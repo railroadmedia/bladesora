@@ -7,7 +7,7 @@
         <div class="mt-2">
             <email-form
                     email-subject="{{ $emailSubjectOverride ?? 'Question on Live Lesson: "' . $lessonTitle . '" from ' . $userName . ' (' . $userEmail . ')' }}"
-                    brand="pianote"
+                    brand="{{ $brand ?? 'pianote' }}"
                     user-avatar="{{ $userAvatar }}"
                     recipient="{{ $emailRecipient }}"
                     email-type="layouts/inline/alert"
