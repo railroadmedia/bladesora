@@ -41,6 +41,10 @@
                         </div>
                     @endif
 
+                    <div class="flex flex-row ph-3 mb-2">
+                        <p class="tiny text-grey-3">WARNING: Changing your email in Drumeo will also change your email in Pianote and Guitareo.</p>
+                    </div>
+
                     <div class="flex flex-row ph-3 mb-1">
                         <div class="flex flex-column">
                             @include('bladesora::members.inputs.text-input', array_merge([
