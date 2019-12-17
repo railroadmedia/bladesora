@@ -1,6 +1,6 @@
 <div class="flex flex-column xs-12 sm-6 md-4 pa-3 raised-hover corners-3">
     <a href="{{ $url }}" class="flex flex-row no-decoration">
-        <div class="flex flex-column avatar-col text-black">
+        <div class="flex flex-column hot-forum-avatar-col text-black">
             <img
                 src="https://dmmior4id2ysr.cloudfront.net/assets/images/image-loader.svg"
                 data-ix-src="{{ $avatar }}"
@@ -9,13 +9,15 @@
                 alt="{{ $author }} Avatar"
             >
 
-            <p class="title text-center font-compressed">{{ parse_xp_value($xp) }}</p>
+            <p class="tiny dense font-bold uppercase text-center font-compressed">
+                {{ $rank }}
+            </p>
 
             <p
                class="tiny text-center font-compressed"
                style="margin-top:-3px;"
             >
-                {{ $rank }}
+                {{ parse_xp_value($xp) }} XP
             </p>
         </div>
         <div class="flex flex-column grow ph">
