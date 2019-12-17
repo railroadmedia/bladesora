@@ -120,7 +120,7 @@
     </div>
 </header>
 @if(empty($isIframe))
-    <aside id="navSideBar" class="shadow bg-white flex flex-column hide" tabindex="-1" aria-hidden="true">
+    <aside id="navSideBar" class="shadow bg-white flex flex-column">
         <section id="pageLinks" class="flex flex-column">
 
             @foreach($links as $page => $info)
