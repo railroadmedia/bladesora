@@ -1,7 +1,7 @@
 <div id="subHeader" class="container collapsed-h fluid bg-grey-5 pv-1">
     <div class="container">
-        <div class="flex flex-row align-center flex-wrap">
-            <div class="flex flex-column align-v-center text-white meta-info-col hide-xs-only">
+        <div class="flex flex-row align-center flex-wrap nmh-1">
+            <div class="flex flex-column align-v-center text-white meta-info-col hide-xs-only ph-1">
                 <div class="flex flex-row align-v-center">
                     @foreach($infoData as $key => $value)
                         <p class="subheading uppercase mr-3">
