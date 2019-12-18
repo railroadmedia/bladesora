@@ -9,7 +9,7 @@
         @endif
 
         <div class="flex flex-column">
-            <div class="flex flex-row trophy-progress-bar bg-white mr-2 {{ $progress === 100 ? 'complete' : '' }}">
+            <div class="flex flex-row trophy-progress-bar bg-white mr-2 {{ $isCompleted ? 'complete' : '' }}">
                 <div class="flex flex-column trophy-progress-cutoff bg-{{ $themeColor }} inverted relative">
                     <span class="progress-border ba-white-5 absolute-fill"></span>
                     <span
@@ -36,15 +36,16 @@
 
         <div class="flex flex-column right-column">
             @if(empty($showCompleteButton))
-                <a href="{{ $progress === 100 ? $backButton['url'] : $nextLessonUrl }}"
-                   class="btn bg-white bg-white inverted text-white
-                   {{ $contentType === 'learning-path' && $progress < 100 ? 'start-learning-path' : '' }}">
-                    @if($progress > 0 && $progress < 100)
-                        Next Lesson &raquo;
-                    @elseif($progress === 100)
-                        {!! $backButton['text'] !!}
+                <a href="{{ $isCompleted ? $backButton['url'] : $nextLessonUrl }}"
+                   class="btn bg-white bg-white inverted text-white">
+                    @if(!$isCompleted)
+                        @if($isStarted)
+                            Next Lesson &raquo;
+                        @else
+                            Start First Lesson
+                        @endif
                     @else
-                        Start First Lesson
+                        {!! $backButton['text'] !!}
                     @endif
                 </a>
             @else
