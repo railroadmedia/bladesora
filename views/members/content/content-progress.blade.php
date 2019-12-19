@@ -9,27 +9,28 @@
         @endif
 
         <div class="flex flex-column">
-            <div class="flex flex-row trophy-progress-bar bg-white mr-2 {{ $isCompleted ? 'complete' : '' }}">
+            <div class="flex flex-row trophy-progress-bar mr-2 {{ $brand }} {{ $isCompleted ? 'complete' : '' }}">
                 <div class="flex flex-column trophy-progress-cutoff bg-{{ $themeColor }} inverted relative">
-                    <span class="progress-border ba-white-5 absolute-fill"></span>
+                    <span class="progress-border ba-black-5 absolute-fill"></span>
                     <span
                         data-current-progress="{{ $progress }}"
-                        class="trophy-progress relative bg-{{ $themeColor }}"
+                        class="trophy-progress relative bg-white"
                         style="transform:translateX({{ $progress - 100 }}%);"
                     >
-                        <span class="progress-percent body font-bold text-white
-                                    {{ $progress > 50 ? 'text-white' : 'right text-' . $themeColor  }}">
+                        <span class="progress-percent body font-bold text-{{ $themeColor }}
+                                    {{ $progress > 50 ? '' : 'right' }}">
                             {{ round($progress) }}%
                         </span>
                     </span>
                 </div>
                 <div class="flex flex-column align-center trophy ph-2 title">
-                    <div class="flex flex-row text-{{ $themeColor }} align-v-center dense body font-bold nowrap">
+                    <div class="reward flex flex-row text-{{ $themeColor }} align-v-center dense tiny font-bold nowrap">
                         <i class="fas fa-trophy text-{{ $themeColor }}"></i>
                         @if(!empty($xpAmount))
                         &nbsp;&nbsp;{{ $xpAmount }} XP
                         @endif
                     </div>
+                    <div class="white-underlay {{ $brand }} {{ $progress === 100 ? 'visible' : '' }}"></div>
                 </div>
             </div>
         </div>
