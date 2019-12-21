@@ -9,9 +9,9 @@
         @endif
 
         <div class="flex flex-column">
-            <div class="flex flex-row trophy-progress-bar mr-2 {{ $brand }} {{ $isCompleted ? 'complete' : '' }}">
+            <div class="flex flex-row trophy-progress-bar mr-2 bg-{{ $themeColor }} bg-darken {{ $isCompleted ? 'complete' : '' }}">
                 <div class="flex flex-column trophy-progress-cutoff bg-{{ $themeColor }} inverted relative">
-                    <span class="progress-border ba-black-5 absolute-fill"></span>
+                    <span class="progress-border ba-{{ $themeColor }}-5 border-darken absolute-fill"></span>
                     <span
                         data-current-progress="{{ $progress }}"
                         class="trophy-progress relative bg-white"
