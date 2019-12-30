@@ -20,7 +20,7 @@
             </div>
         </div>
 
-        <div class="flex flex-row pv-3 flex-wrap single-col dark-mode">
+        <div class="flex flex-row pv-3 flex-wrap single-col dark-mode align-h-center">
             <div class="flex flex-column xs-12 sm-6">
                 <p class="body text-center text-grey-4 mb-2">
                     Completed...
@@ -38,22 +38,24 @@
                 ></content-catalogue>
             </div>
 
-            <div class="flex flex-column xs-12 sm-6">
-                <p class="body text-center text-grey-4 mb-2">
-                    Up Next...
-                </p>
+            @if(!empty($nextLessonJson))
+                <div class="flex flex-column xs-12 sm-6">
+                    <p class="body text-center text-grey-4 mb-2">
+                        Up Next...
+                    </p>
 
-                <content-catalogue
-                    catalogue-type="grid"
-                    theme-color="{{ $themeColor }}"
-                    :use-theme-color="true"
-                    :pre-loaded-content="{{ $nextLessonJson }}"
-                    @if(!empty($lockUnowned))
-                    :lock-unowned="true"
-                    @endif
-                    user-id="{{ auth()->id() }}"
-                ></content-catalogue>
-            </div>
+                    <content-catalogue
+                        catalogue-type="grid"
+                        theme-color="{{ $themeColor }}"
+                        :use-theme-color="true"
+                        :pre-loaded-content="{{ $nextLessonJson }}"
+                        @if(!empty($lockUnowned))
+                        :lock-unowned="true"
+                        @endif
+                        user-id="{{ auth()->id() }}"
+                    ></content-catalogue>
+                </div>
+            @endif
         </div>
     </div>
 </div>
