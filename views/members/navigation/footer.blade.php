@@ -1,7 +1,7 @@
 <footer class="container fluid bg-grey-5 shadow text-grey-3 collapsed-xs">
     <div class="container">
         <div class="flex flex-row flex-wrap align-h-center">
-            <section class="flex flex-column xs-12 sm-3 pv-2">
+            <section class="flex flex-column xs-12 md-3 pv-2">
                 <div class="flex flex-row tiny align-v-center">
                     <img
                         alt="Musora Media Inc."
@@ -11,7 +11,7 @@
                 </div>
             </section>
 
-            <section class="flex flex-column xs-12 sm-9 pv-2">
+            <section class="flex flex-column xs-12 md-9 pv-2">
                 <div class="flex flex-row tiny align-v-center">
                     <span class="hide-xs-only">Musora Media Inc &copy; {{ date('Y') }}</span>
                     <span class="hide-xs-only" style="margin:0 4px">-</span>
