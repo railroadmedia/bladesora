@@ -30,7 +30,8 @@
                         &nbsp;&nbsp;{{ $xpAmount }} XP
                         @endif
                     </div>
-                    <div class="white-underlay {{ $brand }} {{ $progress === 100 ? 'visible' : '' }}"></div>
+
+                    <div class="white-underlay ba-{{ $themeColor }}-5 {{ $progress === 100 ? 'visible' : '' }} border-darken"></div>
                 </div>
             </div>
         </div>
