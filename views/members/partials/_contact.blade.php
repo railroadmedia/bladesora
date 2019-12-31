@@ -1,4 +1,4 @@
-<div class="flex flex-column bg-white shadow corners-3">
+<div class="flex flex-column">
     <div class="flex flex-row">
         <div class="flex flex-column xs-12 pa">
             <h1 class="heading pv">Contact Us</h1>
