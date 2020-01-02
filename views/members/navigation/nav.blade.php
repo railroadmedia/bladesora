@@ -31,6 +31,7 @@
             @if(!empty($isLive) && $isLive === true)
                 <div class="flex header-button live-button flex-column align-v-center noselect ph-1">
                     <a href="{{ $livePageUrl }}"
+                       @if(!empty($isIframe)) target="_parent" @endif
                        id="liveIndicator"
                        class="bg-error text-white tiny font-bold corners-3 text-center uppercase no-decoration">
                         Live
