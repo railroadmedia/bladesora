@@ -9,10 +9,8 @@
         @else
             With
             @foreach($instructors as $index => $instructor)
-            <span class="text-{{ $themeColor }} no-decoration">
                 {{ $instructor->fetch('fields.name') }}
                 @if($index < (count($instructors) - 1)),@endif
-            </span>
             @endforeach
         @endif
         </h4>
