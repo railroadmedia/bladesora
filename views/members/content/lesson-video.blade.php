@@ -164,8 +164,9 @@
             @endif
 
             @if($isLive === true || $showEmail === true)
-            <div id="emailForm"
-                     data-email-subject="{{ $emailSubjectOverride ?? 'Question on Lesson: ' . $lessonTitle }}"
+                <?php $user = auth()->user(); /** @var Railroad\Usora\Entities\User $user */ ?>
+                <div id="emailForm"
+                     data-email-subject="{{ $emailSubjectOverride ?? 'Question on Lesson: \"' . $lessonTitle  . '\" from ' . $user->getEmail()}}"
                      data-email-type="{{ $emailTypeOverride ?? 'ask-question' }}"
                      data-success-message="Your question has been sent!"
                      data-user-avatar="{{ $userAvatar }}"
