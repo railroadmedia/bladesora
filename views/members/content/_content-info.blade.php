@@ -28,7 +28,7 @@
 </div>
 <div class="container fluid">
     <div class="flex flex-column align-center">
-        <div id="toggleInstructorInfo" class="text-center bg-x-dark text-white pointer">
+        <div id="toggleInstructorInfo" class="text-center bg-grey-5 text-white pointer">
             <span class="x-tiny uppercase font-bold">Info</span>
             <i class="fas fa-chevron-down"></i>
         </div>

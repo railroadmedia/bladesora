@@ -8,7 +8,7 @@
                 </a>
             @else
                 <h4 class="subtitle text-white uppercase {{ $contentType }}">
-                    With <span class="text-{{ $themeColor }} no-decoration">{{ $lessonInstructor }}</span>
+                    With {{ $lessonInstructor }}
                 </h4>
             @endif
         </h4>
