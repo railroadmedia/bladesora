@@ -1,5 +1,5 @@
 <div
-    class="container fluid collapsed-h pv-5 relative bg-black bg-center"
+    class="container fluid collapsed-h pv-5 relative bg-black bg-top"
     style="background-image:url({{ _imgix(
         $backgroundImage,
         ["q" => 80, "blur" => 40, "w" => 640]
