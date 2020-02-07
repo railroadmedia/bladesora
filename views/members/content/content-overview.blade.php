@@ -14,9 +14,10 @@
 
                     @if(!empty($logoImage))
                         <div class="logo-image pa-1 corners-bottom-3">
+                            {{--data-ix-fade--}}
+                            {{--data-ix---}}
                             <img
-                                data-ix-fade
-                                data-ix-src="{{ $logoImage }}"
+                                src="{{ $logoImage }}"
                                 alt="{{ $itemTitle }} Logo">
                         </div>
                     @endif
