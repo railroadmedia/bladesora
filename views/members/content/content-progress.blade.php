@@ -1,5 +1,5 @@
 <div class="container bg-{{ $themeColor }}">
-    <div class="content-progress flex flex-row flex-wrap pb-3 pt-1">
+    <div class="content-progress flex flex-row flex-wrap pv-3">
         @if(!empty($labelText))
             <div class="flex flex-column left-column align-v-center">
                 <h3 class="display text-white nowrap">
