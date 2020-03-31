@@ -48,6 +48,12 @@
                     </p>
                 @endif
 
+                @if(isset($includedWithEdge) && $includedWithEdge === true)
+                    <p class="tiny text-{{ $themeColor }} uppercase" style="margin-bottom: 8px;">
+                        ★ Included With Edge
+                    </p>
+                @endif
+
                 <a @if((empty($noLink) || $noLink === false) && $isOwned) href="{{ $lessonsUrl }}" @endif
                    class="body font-bold text-black no-decoration mb-1">{{ $itemTitle }}</a>
                 <div class="tiny mb-1">{!! $itemDescription !!}</div>
