@@ -3,7 +3,7 @@
         <h1 class="heading text-white">{{ $lessonTitle }}</h1>
         <h4 class="body text-grey-3 {{ $contentType }}">
         @if(!empty($parentTitle))
-            From <a href="{{ $courseUrl }}" class="text-{{ $themeColor }} no-decoration">
+            From <a href="{{ $courseUrl }}" class="text-{{ $brand }} no-decoration">
                 {{ $parentTitle }}
             </a>
         @else
@@ -18,9 +18,9 @@
 
     @if(!empty($lessonResources))
         <div class="flex flex-column align-center sq-btn-col">
-            <div class="btn bg-{{ $themeColor }} inverted text-{{ $themeColor }} is-dropdown"
+            <div class="btn bg-{{ $brand }} inverted text-{{ $brand }} is-dropdown"
                  data-tooltip="Download Resources">
-                <i class="unopen fas fa-download no-events text-{{ $themeColor }}"></i>
+                <i class="unopen fas fa-download no-events text-{{ $brand }}"></i>
                 <i class="open fas fa-download no-events text-white"></i>
 
                 <div class="dropdown-content bg-white shadow tiny text-black">
@@ -46,11 +46,11 @@
             <button class="addToList btn {{ $isAdded ? 'added' : '' }}"
                     data-tooltip="Add To List"
                     data-content-id="{{ $contentId }}">
-                    <span class="un-added bg-{{ $themeColor }} inverted text-{{ $themeColor }}">
+                    <span class="un-added bg-{{ $brand }} inverted text-{{ $brand }}">
                         <i class="fas fa-plus"></i>
                     </span>
 
-                <span class="is-added bg-{{ $themeColor }} text-white">
+                <span class="is-added bg-{{ $brand }} text-white">
                         <i class="fas fa-plus rotate-45"></i>
                     </span>
             </button>

@@ -14,7 +14,7 @@
                     email-endpoint="/mailora/secure/send"
                     email-logo="{{ $emailLogo ?? 'https://dmmior4id2ysr.cloudfront.net/logos/pianote-logo-red.png' }}"
                     email-alert="{{ $emailSubjectOverride ?? 'Question on Live Lesson: ' . $lessonTitle . ' from ' . $userName . " (" . $userEmail . ")" }}"
-                    theme-color="{{ $themeColor }}"
+                    theme-color="{{ $brand }}"
                     success-message="Your question has been sent!"
                     :lesson-page="true"
             ></email-form>
