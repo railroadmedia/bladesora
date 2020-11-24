@@ -1,5 +1,5 @@
 <header id="nav" class="container fluid shadow bg-black bv-grey-5-1">
-    <div class="container collapsed">
+    <div class="{{ (isset($stretch) && $stretch) ? 'nav-inner' : 'container collapsed' }}">
         <div class="flex flex-row">
             <a href="/members"
                class="flex flex-column logo ph align-center"
