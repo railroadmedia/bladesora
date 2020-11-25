@@ -1,5 +1,5 @@
 <header id="nav" class="container fluid shadow bg-black bv-grey-5-1">
-    <div class="{{ (isset($stretch) && $stretch) ? 'nav-inner' : 'container collapsed' }}">
+    <div class="{{ (isset($stretch) && $stretch) ? 'nav-inner' : '' }} container collapsed">
         <div class="flex flex-row">
             <a href="/members"
                class="flex flex-column logo ph align-center"
@@ -111,7 +111,7 @@
             <a id="menuButton"
                tabindex="0"
                dusk="hamburger-button"
-               class="flex flex-column menu noselect bl-grey-5-1 bb-grey-5-1 hide-sm-up" role="button">
+               class="flex flex-column menu noselect bl-grey-5-1 bb-grey-5-1 hide-md-up" role="button">
                 <div class="flex flex-row text-white align-center uppercase">
                     <i class="menu-bars-icon"></i>
                 </div>
