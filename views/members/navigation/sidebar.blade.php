@@ -27,7 +27,7 @@
     </symbol>
 </svg>
 
-<div id="sidebar" class="">
+<div id="sidebar" class="" data-simplebar>
     <div class="">
         <div class="member-section flex flex-row align-v-center bb-grey-1-1">
             <div class="member-avatar">
@@ -64,7 +64,7 @@
         </div>
         <div class="membership-links-section pl-1">
             @isset($membershipSectionTitle)
-                <h5 class="title font-bold">{{ $membershipSectionTitle }}</h5>
+                <h5 class="title font-bold dense">{{ $membershipSectionTitle }}</h5>
             @endisset
             @foreach($membershipLinks as $link)
                 <div class="pv-1">
