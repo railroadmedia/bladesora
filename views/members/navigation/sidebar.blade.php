@@ -31,7 +31,9 @@
     <div class="">
         <div class="member-section flex flex-row align-v-center bb-grey-1-1">
             <div class="member-avatar">
-                <img class="bg-grey-2 rounded {{ $themeColor }}" src="{{ $member['avatar'] }}" alt="member avatar">
+                <a href="{{ $member['profileUrl'] ?? '#' }}">
+                    <img class="bg-grey-2 rounded {{ $themeColor }}" src="{{ $member['avatar'] }}" alt="member avatar">
+                </a>
             </div>
             <div class="member-details">
                 <h5 class="title font-bold">{{ $member['name'] }}</h5>
