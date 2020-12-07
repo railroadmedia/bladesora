@@ -29,7 +29,7 @@
 
 <div id="sidebar" class="" data-simplebar>
     <div class="">
-        <div class="member-section flex flex-row align-v-center bb-grey-1-1">
+        <div class="sidebar-section member-section flex flex-row align-v-center bb-grey-1-1">
             <div class="member-avatar">
                 <a href="{{ $member['profileUrl'] ?? '#' }}">
                     <img class="bg-grey-2 rounded {{ $themeColor }}" src="{{ $member['avatar'] }}" alt="member avatar">
@@ -43,7 +43,7 @@
                 </div>
             </div>
         </div>
-        <div class="user-links-section pl-1 bb-grey-1-1">
+        <div class="sidebar-section user-links-section pl-1 bb-grey-1-1">
             @foreach($userLinks as $link)
                 <div class="pv-1">
                     <a
@@ -64,9 +64,11 @@
                 </div>
             @endforeach
         </div>
-        <div class="membership-links-section pl-1">
-            @isset($membershipSectionTitle)
-                <h5 class="title font-bold dense">{{ $membershipSectionTitle }}</h5>
+        <div class="sidebar-section membership-links-section pl-1">
+            @isset($membershipSectionLink)
+                <h5 class="title font-bold dense">
+                    <a href="{{ $membershipSectionLink['url'] }}">{{ $membershipSectionLink['title'] }}</a>
+                </h5>
             @endisset
             @foreach($membershipLinks as $link)
                 <div class="pv-1">
