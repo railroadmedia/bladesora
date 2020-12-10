@@ -122,11 +122,11 @@
 </header>
 @if(empty($isIframe))
     <aside id="navSideBar" class="shadow bg-white flex flex-column">
-        <div>
+        <div class="relative">
             <div class="sidebar-member-section flex flex-row align-v-center bb-grey-1-1">
                 <div class="member-avatar">
                     <a href="{{ $member['profileUrl'] ?? '#' }}">
-                        <img class="bg-grey-2 rounded {{ $themeColor }}" src="{{ $member['avatar'] }}" alt="member avatar">
+                        <img class="bg-grey-2 rounded {{ $themeColor }}" src="{{ imgix($member['avatar'], ['q' => 50, 'blur' => 2, 'w' => 60, 'h' => 60, 'fit' => 'crop']) }}" alt="member avatar">
                     </a>
                 </div>
                 <div class="member-details">
@@ -137,6 +137,7 @@
                     </div>
                 </div>
             </div>
+            <div id="nav-sidebar-close"><i class="fal fa-times"></i></div>
         </div>
         <section id="pageLinks" class="flex flex-column">
 
@@ -144,13 +145,13 @@
                 @if(!empty($info['children']))
                     @include('bladesora::members.partials._parent-nav-link', [
                         "page" => $page,
-                        "icon" => $info['icon'],
+                        "iconClass" => $info['iconClass'],
                         "children" => $info['children'],
                     ])
                 @else
                     @include('bladesora::members.partials._nav-link', [
                         "page" => $page,
-                        "icon" => $info['icon'],
+                        "iconClass" => $info['iconClass'],
                         "url" => $info['url'],
                         "greyed" => false
                     ])

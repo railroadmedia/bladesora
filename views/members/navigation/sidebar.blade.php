@@ -3,7 +3,7 @@
         <div class="sidebar-section member-section flex flex-row align-v-center bb-grey-1-1">
             <div class="member-avatar">
                 <a href="{{ $member['profileUrl'] ?? '#' }}">
-                    <img class="bg-grey-2 rounded {{ $themeColor }}" src="{{ $member['avatar'] }}" alt="member avatar">
+                    <img class="bg-grey-2 rounded {{ $themeColor }}" src="{{ imgix($member['avatar'], ['q' => 50, 'blur' => 2, 'w' => 60, 'h' => 60, 'fit' => 'crop']) }}" alt="member avatar">
                 </a>
             </div>
             <div class="member-details">
