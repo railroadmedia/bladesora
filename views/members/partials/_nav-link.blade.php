@@ -1,4 +1,4 @@
-<a href="{{ $url }}" class="page-link flex flex-row body text-black align-v-center bb-grey-2-1 pointer"
+<a href="{{ $url }}" class="page-link flex flex-row body text-black align-v-center bb-grey-1-1 pointer"
     dusk="page-link-{{ strtolower(str_replace(' ', '-', $page)) }}">
     @if(!empty($iconClass))
         <div class="page-link-icon"><i class="no-events {{ $iconClass }} text-{{ $greyed ? 'black' : $themeColor }}"></i></div>{{ $page }}

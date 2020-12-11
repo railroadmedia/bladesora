@@ -1,6 +1,6 @@
 <div class="page-link parent flex flex-row flex-wrap body text-black align-v-center"
      data-remain-open="{{ strtolower(str_replace(' ', '-', $page)) }}">
-    <div class="page-link parent-button bb-grey-2-1 pointer"
+    <div class="page-link parent-button bb-grey-1-1 pointer"
           dusk="parent-button-{{ strtolower(str_replace(' ', '-', $page)) }}">
         @if(!empty($iconClass))
             <div class="page-link-icon"><i class="no-events {{ $iconClass }} text-{{ $themeColor }}"></i></div>{{ $page }}
