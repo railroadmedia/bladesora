@@ -37,7 +37,7 @@
         </div>
         <div class="sidebar-section membership-links-section">
             @isset($membershipSectionLink)
-                <h5 class="title font-bold dense">
+                <h5 class="title font-bold dense pl-3">
                     <a href="{{ $membershipSectionLink['url'] }}">{{ $membershipSectionLink['title'] }}</a>
                 </h5>
             @endisset
