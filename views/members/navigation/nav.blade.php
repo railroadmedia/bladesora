@@ -74,7 +74,7 @@
                         <i class="fas fa-search"></i>
                     </div>
                     <div id="searchBox" class="form-group flex grow align-v-center flex-column pl-2">
-                        <form method="GET" action="{{ $searchUrl }}">
+                        <form method="GET" action="{{ $searchUrl }}" style="display: none;">
                             <input id="searchInput"
                                    name="term"
                                    type="text"
