@@ -1,10 +1,13 @@
 <div id="sidebar" class="" data-simplebar>
     <div class="">
         <div class="sidebar-section member-section flex flex-row align-v-center bb-grey-1-1 pl-3">
-            <div class="member-avatar">
+            <div class="member-avatar rounded">
                 <a href="{{ $member['profileUrl'] ?? '#' }}">
                     <img class="bg-grey-2 rounded {{ $themeColor }}" src="{{ imgix($member['avatar'], ['q' => 50, 'blur' => 2, 'w' => 60, 'h' => 60, 'fit' => 'crop']) }}" alt="member avatar">
                 </a>
+                @isset($member['accessLevel'])
+                    <div class="member-avatar-icon {{ $member['accessLevel'] }}"></div>
+                @endisset
             </div>
             <div class="member-details">
                 <h5 class="title font-bold sidebar-member-username">{{ $member['name'] }}</h5>
