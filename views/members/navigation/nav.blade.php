@@ -5,7 +5,16 @@
             <a id="menuButton"
                tabindex="0"
                dusk="hamburger-button"
-               class="flex flex-column menu noselect bl-grey-5-1 bb-grey-5-1 hide-md-up" role="button">
+               class="flex flex-column menu noselect bb-grey-5-1 hide-md-up" role="button">
+                <div class="flex flex-row text-white align-center uppercase">
+                    <i class="menu-bars-icon"></i>
+                </div>
+            </a>
+
+            <a id="colapseButton"
+               tabindex="0"
+               dusk="hamburger-button"
+               class="flex flex-column menu noselect bb-grey-5-1 hide-sm-down" role="button">
                 <div class="flex flex-row text-white align-center uppercase">
                     <i class="menu-bars-icon"></i>
                 </div>
