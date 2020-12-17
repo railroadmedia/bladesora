@@ -1,27 +1,20 @@
 <div id="sidebar" class="{{ !empty($_COOKIE['collapsed']) ? 'collapsed' : '' }}" data-simplebar>
-    <div class="">
-        <div class="sidebar-section main-links-section bb-grey-1-1">
-            @include('bladesora::members.partials._sidebar_links_section', [
-                'sectionLinks' => $mainLinks,
-                'themeColor' => $themeColor,
-            ])
+    @isset($section['header'])
+        <div class="sidebar-header">
+            
         </div>
-        <div class="sidebar-section membership-links-section bb-grey-1-1">
-            @isset($membershipSectionLink)
-                <h5 class="title font-bold dense pl-3">
-                    <a href="{{ $membershipSectionLink['url'] }}">{{ $membershipSectionLink['title'] }}</a>
+    @endisset
+    @foreach($sections as $section)
+        <div class="sidebar-section {{ $loop->last ? '' : 'bb-grey-1-1' }}">
+            @isset($section['header'])
+                <h5 class="sidebar-section-title font-bold dense pl-3">
+                    <a href="{{ $section['header']['url'] }}">{{ $section['header']['title'] }}</a>
                 </h5>
             @endisset
             @include('bladesora::members.partials._sidebar_links_section', [
-                'sectionLinks' => $membershipLinks,
+                'sectionLinks' => $section['links'],
                 'themeColor' => $themeColor,
             ])
         </div>
-        <div class="sidebar-section user-links-section">
-            @include('bladesora::members.partials._sidebar_links_section', [
-                'sectionLinks' => $userLinks,
-                'themeColor' => $themeColor,
-            ])
-        </div>
-    </div>
+    @endforeach
 </div>

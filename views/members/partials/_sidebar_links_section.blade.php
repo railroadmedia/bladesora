@@ -1,5 +1,5 @@
 @foreach($sectionLinks as $link)
-    <div>
+    <div class="sidebar-link-container {{ isset($link['collapsed']) && $link['collapsed'] ? 'collapsed' : '' }}">
         <a
             href="{{ $link['url'] }}"
             class="sidebar-link pl-3 no-decoration body {{ $themeColor }} {{ $link['active'] ? 'active' : '' }}"
