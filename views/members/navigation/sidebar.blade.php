@@ -1,7 +1,10 @@
 <div id="sidebar" class="{{ !empty($_COOKIE['collapsed']) ? 'collapsed' : '' }}" data-simplebar>
-    @isset($section['header'])
-        <div class="sidebar-header">
-            
+    @isset($header)
+        <div class="sidebar-header flex flex-row align-v-bottom bb-grey-1-1">
+            <div id="sidebar-close"><i class="fal fa-times"></i></div>
+            <div class="sidebar-header-inner">
+                <img src="{{ $header }}">
+            </div>
         </div>
     @endisset
     @foreach($sections as $section)

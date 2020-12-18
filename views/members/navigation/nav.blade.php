@@ -1,4 +1,4 @@
-<header id="nav" class="container fluid shadow bg-black bv-grey-5-1">
+<header id="nav" class="container fluid shadow">
     <div class="{{ (isset($stretch) && $stretch) ? 'nav-inner' : '' }} container collapsed">
         <div class="flex flex-row">
             @if(empty($isIframe))
@@ -27,26 +27,20 @@
                 <img src="{{ $logo }}">
             </a>
 
-            @if(!empty($mainSections))
-                <div id="pageLinks" class="flex flex-column nav-page-links">
-                    <div class="flex flex-row hide-md-down">
-                        @foreach($mainSections as $mainSection)
-                            <a href="{{ $mainSection['url'] }}"
-                               class="main-section-link flex flex-column align-center body grow text-grey-3 no-decoration {{ $mainSection['active'] ? 'active' : '' }}"
-                               dusk="main-section-link-{{ strtolower($mainSection['title']) }}"
-
-                            @if(!empty($mainSection['newTab'])) target="_blank" @endif
-
-                            @if(empty($mainSection['newTab']) && !empty($isIframe)) target="_parent" @endif
-                            >
-                                {!! $mainSection['title'] !!}
-                            </a>
-                        @endforeach
-                    </div>
+            <!-- todo: refactor / merge with search below  -->
+            <div class="flex flex-column">
+                <div class="flex flex-row align-center hide-md-down">
+                    <form method="GET" action="{{ $searchUrl }}">
+                        <input id="searchInput"
+                               name="term"
+                               type="text"
+                               class="solo text-white"
+                               placeholder="&#xf002;   What would you like to learn?"
+                               autocomplete="off"
+                               dusk="search-input">
+                    </form>
                 </div>
-            @else
-                <div class="flex flex-column"></div>
-            @endif
+            </div>
 
             @if(!empty($isLive) && $isLive === true)
                 <div class="flex header-button live-button flex-column align-v-center noselect ph-1">
@@ -76,15 +70,15 @@
             @endif
 
             @if(!empty($searchUrl) && !$agent->is('IE') && empty($isIframe))
-            <div id="searchColumn" class="flex search-column relative flex-column noselect align-v-center">
-                <div class="flex flex-row search-row bb-grey-5-1 pl-2">
+            <div id="searchColumn" class="flex search-column relative flex-column noselect align-v-center hide-md-up">
+                <div class="flex flex-row search-row pl-2">
                     <div class="flex flex-column search-button title hover-text-white text-grey-3 align-center pointer"
                         dusk="search-button">
                         <i class="fas fa-search"></i>
                     </div>
                     <div id="searchBox" class="form-group flex grow align-v-center flex-column pl-2">
                         <form method="GET" action="{{ $searchUrl }}" style="display: none;">
-                            <input id="searchInput"
+                            <input id="searchInputOld"
                                    name="term"
                                    type="text"
                                    class="solo text-white"
@@ -102,7 +96,7 @@
 
             @if(!empty($isIframe))
                 <div id="searchColumn" class="flex search-column relative flex-column noselect align-v-center">
-                    <div class="flex flex-row search-row bb-grey-5-1 pl-2">
+                    <div class="flex flex-row search-row pl-2">
                         <a href="{{ $searchPageUrl }}" target="_parent"
                            class="flex flex-column search-button title no-decoration hover-text-white text-grey-3 align-center pointer">
                             <i class="fas fa-search"></i>
@@ -111,9 +105,9 @@
                 </div>
             @endif
 
-            <div class="flex header-button flex-column bb-grey-5-1 noselect">
+            <div class="flex header-button flex-column noselect">
                 <a href="{{ $accountUrl }}"
-                   class="square"
+                   class="square relative"
                    dusk="profile-nav-link"
                    @if(!empty($isIframe)) target="_parent" @endif>
                     <div class="pa-1 wrap">
