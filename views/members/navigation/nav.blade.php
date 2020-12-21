@@ -22,14 +22,14 @@
             @endif
 
             <a href="/members"
-               class="flex flex-column logo ph align-center"
+               class="flex flex-column logo align-center"
                @if(!empty($isIframe)) target="_parent" @endif>
                 <img src="{{ $logo }}">
             </a>
 
             <!-- todo: refactor / merge with search below  -->
             <div class="flex flex-column">
-                <div class="flex flex-row align-center hide-md-down">
+                <div class="flex flex-row align-center hide-sm-down">
                     <form method="GET" action="{{ $searchUrl }}">
                         <input id="searchInput"
                                name="term"
@@ -71,13 +71,13 @@
 
             @if(!empty($searchUrl) && !$agent->is('IE') && empty($isIframe))
             <div id="searchColumn" class="flex search-column relative flex-column noselect align-v-center hide-md-up">
-                <div class="flex flex-row search-row pl-2">
+                <div class="flex flex-row search-row">
                     <div class="flex flex-column search-button title hover-text-white text-grey-3 align-center pointer"
                         dusk="search-button">
                         <i class="fas fa-search"></i>
                     </div>
-                    <div id="searchBox" class="form-group flex grow align-v-center flex-column pl-2">
-                        <form method="GET" action="{{ $searchUrl }}" style="display: none;">
+                    <div id="searchBox" class="form-group flex grow align-v-center flex-column hide-xs-only">
+                        <form method="GET" action="{{ $searchUrl }}">
                             <input id="searchInputOld"
                                    name="term"
                                    type="text"
@@ -105,13 +105,13 @@
                 </div>
             @endif
 
-            <div class="flex header-button flex-column noselect">
+            <div class="flex header-button flex-column noselect relative">
                 <a href="{{ $accountUrl }}"
-                   class="square relative"
+                   class="square profile-nav-link"
                    dusk="profile-nav-link"
                    @if(!empty($isIframe)) target="_parent" @endif>
                     <div class="pa-1 wrap">
-                        <img class="rounded inset-border"
+                        <img class="rounded"
                              src="{{ imgix($userAvatar, ["q" => 50, "blur" => 2, "w" => 50, "h" => 50, "fit" => "crop"]) }}"
                              data-avatar-update="true">
                         @if(!empty($hasUnreadNotifications))
@@ -119,6 +119,14 @@
                         @endif
                     </div>
                 </a>
+                <div class="profile-nav-info text-black corners-5">
+                    <div class="relative">
+                        <div class="profile-nav-tip"></div>
+                        <h3 class="body font-bold">{{ $userName }}</h3>
+                        <p class="">LEVEL {{  $userLevel}}</p>
+                        <p class="">{{ $userXp }} XP</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
