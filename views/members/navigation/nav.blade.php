@@ -39,6 +39,8 @@
                                class="solo text-white"
                                placeholder="What would you like to learn?"
                                autocomplete="off"
+                               onfocus="this.placeholder = ''"
+                               onblur="this.placeholder = 'What would you like to learn?'"
                                dusk="search-input">
                     </form>
                 </div>
@@ -85,6 +87,8 @@
                                    type="text"
                                    class="solo text-white"
                                    placeholder="What would you like to learn?"
+                                   onfocus="this.placeholder = ''"
+                                   onblur="this.placeholder = 'What would you like to learn?'"
                                    autocomplete="off"
                                    dusk="search-input">
                         </form>
