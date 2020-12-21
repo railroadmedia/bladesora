@@ -9,7 +9,7 @@
                     <i class="{{ $link['iconClass'] }}"></i>
                 @endisset
                 @isset($link['iconSvg'])
-                    <svg width="22" height="22" aria-hidden="true" focusable="false">
+                    <svg width="16" height="16" aria-hidden="true" focusable="false">
                         <use xlink:href="#{{ $link['iconSvg'] }}"></use>
                     </svg>
                 @endisset
