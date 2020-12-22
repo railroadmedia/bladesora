@@ -27,13 +27,12 @@
                 <img src="{{ $logo }}">
             </a>
 
-            <!-- todo: refactor / merge with search below  -->
             <div class="flex flex-column">
                 <div class="flex flex-row align-center hide-sm-down">
                     <i class="fas fa-search" style="font-size: 17px; color: #7E9AB1; margin-right: -29px; font-weight: 400; z-index: 50000;"></i>
 
                     <form method="GET" action="{{ $searchUrl }}">
-                        <input id="searchInput"
+                        <input id="search-input"
                                name="term"
                                type="text"
                                class="solo text-white"
@@ -82,7 +81,7 @@
                     </div>
                     <div id="searchBox" class="form-group flex grow align-v-center flex-column hide-xs-only">
                         <form method="GET" action="{{ $searchUrl }}">
-                            <input id="searchInputOld"
+                            <input id="toggled-search-input"
                                    name="term"
                                    type="text"
                                    class="solo text-white"
