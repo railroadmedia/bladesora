@@ -21,7 +21,7 @@
             <div  class="flex flex-row mb-3">
                 <div class="flex flex-column grow text-white">
                     <div id="collapsableInfo">
-                        <h6 class="body font-bold uppercase mb-1">About the Lesson</h6>
+                        <h6 class="body font-bold uppercase mb-1">{{ $contentDescriptionHeader ?? 'About the Lesson' }}</h6>
                         <div class="body">
                             {!! $contentDescription !!}
                         </div>
