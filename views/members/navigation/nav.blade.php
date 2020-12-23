@@ -29,7 +29,7 @@
 
             <div class="flex flex-column">
                 <div class="flex flex-row align-center hide-sm-down">
-                    <i class="fas fa-search" style="font-size: 17px; color: #7E9AB1; margin-right: -29px; font-weight: 400; z-index: 50000;"></i>
+                    <i class="fas fa-search" style="font-size: 17px; margin-right: -29px; font-weight: 400; z-index: 50000;"></i>
 
                     <form method="GET" action="{{ $searchUrl }}">
                         <input id="search-input"
