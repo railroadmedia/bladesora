@@ -2,7 +2,7 @@
      pa-1 pointer relative text-grey-3 hover-bg-grey-7 hover-text-black"
 >
     @if($showNumbers)
-        <div class="flex flex-column align-center number-col title text-black hide-sm-down">
+        <div class="flex flex-column align-left number-col title text-black hide-sm-down">
             <div class="skeleton-loader corners-3" style="height:12px;width:8px;"></div>
         </div>
     @endif
