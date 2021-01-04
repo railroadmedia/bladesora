@@ -1,4 +1,4 @@
-<div id="sidebar" class="{{ !empty($_COOKIE['collapsed']) ? 'sidebar-collapsed' : '' }}" data-simplebar>
+<div id="sidebar" class="{{ $themeColor }} {{ !empty($_COOKIE['collapsed']) ? 'sidebar-collapsed' : '' }}" data-simplebar>
     @isset($header)
         <div class="sidebar-header flex flex-row align-v-bottom bb-grey-1-1">
             <div id="sidebar-close"><i class="fal fa-times"></i></div>
