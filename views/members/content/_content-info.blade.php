@@ -1,5 +1,5 @@
 <div id="instructorInfo" class="container fluid bg-grey-5">
-    <div class="container pv-2">
+    <div class="container lean pv-2">
         @if(!empty($lessonList))
             <div class="flex flex-row">
                 <h6 class="body font-bold uppercase text-white mb-1">Course Lessons</h6>
