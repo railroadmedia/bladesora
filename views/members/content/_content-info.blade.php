@@ -58,6 +58,8 @@
                 </div>
             @endforeach
         @endif
+
+        {{ $extra ?? '' }}
     </div>
 </div>
 <div class="container fluid">
