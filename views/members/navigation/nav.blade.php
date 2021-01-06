@@ -27,9 +27,11 @@
                 <img src="{{ $logo }}">
             </a>
 
-            <div class="flex flex-column">
-                <div class="flex flex-row align-center hide-sm-down">
-                    <i class="fas fa-search" style="font-size: 17px; margin-right: -29px; font-weight: 400; z-index: 50000;"></i>
+            <div class="flex flex-column align-center">
+                <div class="flex flex-row search-input-container align-v-center hide-sm-down">
+                    <div class="search-input-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
 
                     <form method="GET" action="{{ $searchUrl }}">
                         <input id="search-input"
@@ -42,6 +44,10 @@
                                onblur="this.placeholder = 'What would you like to learn?'"
                                dusk="search-input">
                     </form>
+
+                    <div id="search-input-clear" class="hide">
+                        <i class="fal fa-times"></i>
+                    </div>
                 </div>
             </div>
 
