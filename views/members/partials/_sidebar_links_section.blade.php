@@ -14,6 +14,14 @@
                     </svg>
                 @endisset
             </div><span class="sidebar-link-title">{{ $link['title'] }}</span>
+            @isset($link['badge'])
+                <span
+                    @isset($link['badge']['id'])
+                        id="{{ $link['badge']['id'] }}"
+                    @endisset
+                    class="text-white corners-5"
+                >{{ $link['badge']['text'] }}</span>
+            @endisset
         </a>
     </div>
 @endforeach
