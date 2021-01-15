@@ -10,7 +10,7 @@
         <div class="flex flex-row align-center account-header">
             <div class="header-avatar flex flex-column">
                 <div class="user-avatar
-                        {{ in_array($currentUser['access_level'], ['edge', 'lifetime', 'team', 'guitar', 'piano']) ? 'subscriber' : '' }}
+                        {{ in_array($currentUser['access_level'], ['coach', 'edge', 'lifetime', 'team', 'guitar', 'piano']) ? 'subscriber' : '' }}
                         {{ $brand }}
                         {{ $currentUser['access_level'] }}">
                     <a @if(!empty($accountUrl)) href="{{ $accountUrl }}" @endif
