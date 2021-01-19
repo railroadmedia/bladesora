@@ -11,14 +11,10 @@
         <div class="flex flex-row align-center">
             {{ $content }}
 
-            @php
-            // $currentUser['access_level'] = 'new-lifetime';
-            @endphp
-
             @if(empty($hideUser))
                 <div class="header-avatar flex flex-column hide-xs-only">
                     <div class="user-avatar rounded bg-black
-                                {{ in_array($currentUser['access_level'], ['new-lifetime', 'coach', 'edge', 'lifetime', 'team', 'guitar', 'piano']) ? 'subscriber' : '' }}
+                                {{ in_array($currentUser['access_level'], ['coach', 'edge', 'lifetime', 'team', 'guitar', 'piano']) ? 'subscriber' : '' }}
                                 {{ $brand }}
                                 {{ $currentUser['access_level'] }}"
                     >
