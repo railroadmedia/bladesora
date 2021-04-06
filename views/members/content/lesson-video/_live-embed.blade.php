@@ -17,6 +17,8 @@
                     theme-color="{{ $brand }}"
                     success-message="Your question has been sent!"
                     :lesson-page="true"
+                    :enable-event="true"
+                    event-name="postQuestion"
             ></email-form>
         </div>
     </div>
