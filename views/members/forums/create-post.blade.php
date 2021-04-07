@@ -17,7 +17,10 @@
                     {{ csrf_field() }}
                     {{ method_field($method) }}
 
-                    <input type="hidden" name="category_id" value="1">
+                    @isset($categoryId)
+                        <input type="hidden" name="category_id" value="{{$categoryId}}">
+                    @endisset
+
                     <div class="form-group mb-2">
                         <input type="text" name="title" id="title" value="{{ old('title') }}">
                         <label for="title" class="{{ $brand }}">Title</label>
@@ -29,7 +32,7 @@
 
                     @if(!empty($topicOptions))
                         <div class="form-group mb-2">
-                            <select id="postTopic" name="category_id">
+                            <select id="postTopic" name="topic">
                                 <option selected disabled style="display:none;">
                                 @foreach($topicOptions as $index => $topic)
                                     <option value="{{ $index + 1 }}">{{ $topic }}</option>
@@ -38,11 +41,9 @@
                             <label for="postTopic" class="{{ $brand }}">Topic</label>
 
                             @include('bladesora::members.inputs.partials._errors', [
-                                "inputErrors" => $errors->get('category_id')
+                                "inputErrors" => $errors->get('topic')
                             ])
                         </div>
-                    @else
-                        <input type="hidden" name="category_id" value="1">
                     @endif
 
                     <text-editor field-key="first_post_content"
