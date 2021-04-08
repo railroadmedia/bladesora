@@ -22,7 +22,7 @@
             ></email-form>
         </div>
     </div>
-    <div class="inside flex flex-column shadow bg-white" style="height: 690px;">
+    <div class="flex flex-column" style="flex: 0 0 350px; height: auto; padding-left: 0.625rem;">
         <chat
             api-key="{{ $apiKey }}"
             token="{{ $token }}"
