@@ -23,7 +23,7 @@
         </div>
     </div>
     <div id="chatContainer" class="flex flex-column" dusk="chat-container">
-        <div class="inside flex flex-column shadow bg-white" style="height: 690px;">
+        <div class="inside flex flex-column shadow">
             <chat
                 api-key="{{ $apiKey }}"
                 token="{{ $token }}"
