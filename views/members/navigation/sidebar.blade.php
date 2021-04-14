@@ -1,6 +1,6 @@
 <div id="sidebar" class="{{ $themeColor }} {{ !empty($_COOKIE['collapsed']) ? 'sidebar-collapsed' : '' }}" data-simplebar>
     @isset($header)
-        <div class="sidebar-header flex flex-row align-v-bottom bb-grey-1-1">
+        <div class="sidebar-header flex flex-row align-v-center bb-grey-1-1">
             <div id="sidebar-close"><i class="fal fa-times"></i></div>
             <div class="sidebar-header-inner">
                 <img src="{{ $header }}">
