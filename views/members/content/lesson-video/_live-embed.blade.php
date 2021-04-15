@@ -22,17 +22,15 @@
             ></email-form>
         </div>
     </div>
-    <div id="chatContainer" class="flex flex-column" dusk="chat-container">
-        <div class="inside flex flex-column shadow">
-            <chat
-                api-key="{{ $apiKey }}"
-                token="{{ $token }}"
-                user-id="{{ current_user()->getId() }}"
-                chat-channel-name="{{ $chatChannelName }}"
-                questions-channel-name="{{ $questionsChannelName }}"
-                :is-administrator="{{ json_encode(boolval($isAdministrator)) }}"
-                :user-data="{{ json_encode($userData) }}"
-            ></chat>
-        </div>
+    <div id="chat-container" class="flex flex-column" dusk="chat-container">
+        <chat
+            api-key="{{ $apiKey }}"
+            token="{{ $token }}"
+            user-id="{{ current_user()->getId() }}"
+            chat-channel-name="{{ $chatChannelName }}"
+            questions-channel-name="{{ $questionsChannelName }}"
+            :is-administrator="{{ json_encode(boolval($isAdministrator)) }}"
+            :user-data="{{ json_encode($userData) }}"
+        ></chat>
     </div>
 </div>
