@@ -3,8 +3,13 @@
         <div class="widescreen">
             <iframe id="player" frameborder="0" allowfullscreen="1" allow="autoplay; encrypted-media" title="YouTube video player" src="https://www.youtube.com/embed/{{ $youtubeId }}?rel=0&autoplay=1&playsinline=1&modestthemeColoring=1"></iframe>
         </div>
-        <div class="video-title flex flex-column pr-1 pt-1">
-            <h1 class="heading text-white">{{ $lessonTitle }}</h1>
+        <div class="video-title flex flex-column pt-1">
+            <div class="flex flex-row">
+                <h1 class="flex heading text-white">{{ $lessonTitle }}</h1>
+                <div class="">
+                    <span id="liveIndicator" class="bg-error text-white tiny font-bold corners-3 text-center uppercase">live</span>
+                </div>
+            </div>
             <h4 class="body text-grey-3 {{ $contentType }}">
             @if(!empty($parentTitle))
                 From <a href="{{ $courseUrl }}" class="text-{{ $brand }} no-decoration">
