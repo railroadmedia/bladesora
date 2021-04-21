@@ -34,6 +34,7 @@
             questions-channel-name="{{ $questionsChannelName }}"
             :is-administrator="{{ json_encode(boolval($isAdministrator)) }}"
             :user-data="{{ json_encode($userData) }}"
+            embed-url="{{ $embedUrl }}"
         ></chat>
     </div>
 </div>
