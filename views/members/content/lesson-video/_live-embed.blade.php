@@ -7,7 +7,7 @@
             <div class="flex flex-row">
                 <h1 class="flex heading text-white">{{ $lessonTitle }}</h1>
                 <div class="">
-                    <span id="liveIndicator" class="bg-error text-white tiny font-bold corners-3 text-center uppercase">live</span>
+                    <span id="liveIndicator" class="bg-error text-white tiny font-bold corners-3 text-center uppercase pr-1 pl-1">live</span>
                 </div>
             </div>
             <h4 class="body text-grey-3 {{ $contentType }}">
