@@ -3,7 +3,7 @@
         <div class="widescreen">
             <iframe id="player" frameborder="0" allowfullscreen="1" allow="autoplay; encrypted-media" title="YouTube video player" src="https://www.youtube.com/embed/{{ $youtubeId }}?rel=0&autoplay=1&playsinline=1&modestthemeColoring=1"></iframe>
         </div>
-        <div class="video-title flex flex-column pt-1">
+        <div class="video-title pt-1">
             <div class="flex flex-row">
                 <h1 class="flex heading text-white">{{ $lessonTitle }}</h1>
                 <div class="">
