@@ -17,7 +17,6 @@
                     {{ csrf_field() }}
                     {{ method_field($method) }}
 
-                    <input type="hidden" name="category_id" value="1">
                     <div class="form-group mb-2">
                         <input type="text" name="title" id="title" value="{{ old('title') }}">
                         <label for="title" class="{{ $brand }}">Title</label>
@@ -32,7 +31,7 @@
                             <select id="postTopic" name="category_id">
                                 <option selected disabled style="display:none;">
                                 @foreach($topicOptions as $index => $topic)
-                                    <option value="{{ $index + 1 }}">{{ $topic }}</option>
+                                    <option value="{{ $index  }}">{{ $topic }}</option>
                                 @endforeach
                             </select>
                             <label for="postTopic" class="{{ $brand }}">Topic</label>
