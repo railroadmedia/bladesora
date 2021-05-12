@@ -10,12 +10,13 @@
     @slot('formData')
 
         <div class="flex flex-column grow">
-            <p class="body">{{$signature}}</p>
+            <p class="body">{!! $signature !!}</p>
 
             <p class="tiny text-grey-3 font-italic">
                 This will appear below your posts on the forums page.
             </p>
         </div>
+
     @endslot
 
     @slot('formModal')
