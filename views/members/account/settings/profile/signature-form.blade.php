@@ -10,7 +10,7 @@
     @slot('formData')
 
         <div class="flex flex-column grow">
-            <p class="body">{!! $signature !!}</p>
+            <p class="body tw-mb-3">{!! $signature !!}</p>
 
             <p class="tiny text-grey-3 font-italic">
                 This will appear below your posts on the forums page.
@@ -23,7 +23,7 @@
         <div id="signatureModal" class="modal">
             <div class="flex flex-column bg-white corners-3 shadow">
                 <div class="flex flex-row pa-3">
-                    <h2 class="subheading">Edit: Signatue</h2>
+                    <h2 class="subheading">Edit: Signature</h2>
                 </div>
 
                 <form method="POST" action="{{ $action }}">
@@ -32,7 +32,7 @@
 
                     <div class="flex flex-row ph-3 mb-1">
                         <div class="flex flex-column">
-                            <div class="flex flex-row ph-3 mb-1">
+                            <div class="flex flex-row mb-1">
                                 <div class="flex flex-column">
                                     @include('bladesora::members.inputs.textarea-input', [
                                         "brand" => $brand,
