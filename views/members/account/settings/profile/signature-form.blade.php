@@ -9,10 +9,11 @@
 
     @slot('formData')
 
-        <div class="flex flex-column grow">
-            <p class="body tw-mb-3">{!! html_entity_decode($signature) !!}</p>
+        <div class="flex flex-column grow body">
 
-            <p class="tiny text-grey-3 font-italic">
+            {!! html_entity_decode($signature) !!}
+
+            <p class="tiny text-grey-3 font-italic tw-mt-3">
                 This will appear below your posts on the forums page.
             </p>
         </div>
