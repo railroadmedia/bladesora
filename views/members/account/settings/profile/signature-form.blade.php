@@ -10,7 +10,7 @@
     @slot('formData')
 
         <div class="flex flex-column grow">
-            <p class="body tw-mb-3">{!! $signature !!}</p>
+            <p class="body tw-mb-3">{{ $signature }}</p>
 
             <p class="tiny text-grey-3 font-italic">
                 This will appear below your posts on the forums page.
