@@ -4,7 +4,7 @@
             <a href="{{ $forumUrl }}" class="no-decoration mr-1">
                 <i class="fas fa-arrow-circle-left text-grey-2"></i>
             </a>
-            Create a Discussion
+            Create a Forum
         </h1>
     </div>
     <div class="flex flex-column ph pv-3">
