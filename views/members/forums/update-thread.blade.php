@@ -4,7 +4,7 @@
             <a href="{{ $forumUrl }}" class="no-decoration mr-1">
                 <i class="fas fa-arrow-circle-left text-grey-2"></i>
             </a>
-            Edit Discussion Details
+            Edit Thread Details
         </h1>
     </div>
     <div class="flex flex-column ph pv-3">
@@ -27,13 +27,13 @@
                     @if(!empty($topicOptions))
                     <div class="form-group mb-2">
                         <select id="postTopic" name="category_id">
-                            @foreach($topicOptions as $index => $topic)
+                            @foreach($topicOptions as $topicId => $topic)
                                 <option
-                                    {{ $thread['category_id'] == ($index + 1) ? 'selected' : '' }}
-                                    value="{{ $index + 1 }}">{{ $topic }}</option>
+                                    {{ $thread['category_id'] == ($topicId) ? 'selected' : '' }}
+                                    value="{{ $topicId }}">{{ $topic }}</option>
                             @endforeach
                         </select>
-                        <label for="postTopic" class="{{ $brand }}">Topic</label>
+                        <label for="postTopic" class="{{ $brand }}">Forum</label>
 
                         @include('bladesora::members.inputs.partials._errors', [
                             "inputErrors" => $errors->get('category_id')
@@ -49,7 +49,7 @@
 
                         <button class="btn collapse-320" type="submit">
                             <span class="bg-{{ $brand }} text-white corners-3">
-                                Edit Discussion
+                                Edit Thread
                             </span>
                         </button>
                     </div>
