@@ -4,4 +4,15 @@
 /storage/*.key
 /vendor
 
-.idea
+/.idea
+!.idea/codeStyles
+!.idea/codeStyles/codeStyleConfig.xml
+!.idea/deployment.xml
+!.idea/laravel-plugin.xml
+!.idea/misc.xml
+!.idea/modules.xml
+!.idea/php.xml
+!.idea/php-test-framework.xml
+!.idea/bladesora.iml
+!.idea/vcs.xml
+!.idea/webServers.xml
