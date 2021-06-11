@@ -34,7 +34,7 @@
                                     <option value="{{ $index + 1 }}">{{ $topic }}</option>
                                 @endforeach
                             </select>
-                            <label for="postTopic" class="{{ $brand }}">Discussion Topic...</label>
+                            <label for="postTopic" class="{{ $brand }}">Forum Topic...</label>
 
                             @include('bladesora::members.inputs.partials._errors', [
                                 "inputErrors" => $errors->get('topic')
@@ -42,12 +42,32 @@
                         </div>
                     @endif
 
-                    <text-editor field-key="first_post_content"
-                                 initial-value="{{ old('first_post_content') }}"></text-editor>
+                    <div class="form-group mb-2">
+                        <input type="text" name="description" id="description" value="{{ old('description') }}">
+                        <label for="description" class="{{ $brand }}">Description</label>
 
-                    @if(!empty($errors->get('first_post_content')))
-                        <p class="tiny text-error pa">* The post content field is required</p>
-                    @endif
+                        @include('bladesora::members.inputs.partials._errors', [
+                            "inputErrors" => $errors->get('description')
+                        ])
+                    </div>
+
+                    <div class="form-group mb-2">
+                        <input type="text" name="weight" id="weight" value="{{ old('weight') }}">
+                        <label for="weight" class="{{ $brand }}">Weight (order), any number</label>
+
+                        @include('bladesora::members.inputs.partials._errors', [
+                            "inputErrors" => $errors->get('weight')
+                        ])
+                    </div>
+
+                    <div class="form-group mb-2">
+                        <input type="text" name="icon-class" id="icon-class" value="{{ old('icon-class') }}">
+                        <label for="icon-class" class="{{ $brand }}">Icon class</label>
+
+                        @include('bladesora::members.inputs.partials._errors', [
+                            "inputErrors" => $errors->get('icon-class')
+                        ])
+                    </div>
 
                     <div class="flex flex-row align-h-right mt-2">
                         <a href="{{ $forumUrl }}"
@@ -57,7 +77,7 @@
 
                         <button class="btn collapse-320" type="submit" dusk="submit-button">
                             <span class="bg-{{ $brand }} text-white corners-3">
-                                Create Discussion
+                                Create Forum
                             </span>
                         </button>
                     </div>
