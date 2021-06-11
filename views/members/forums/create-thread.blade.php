@@ -19,7 +19,7 @@
 
                     <div class="form-group mb-2">
                         <input type="text" name="title" id="title" value="{{ old('title') }}">
-                        <label for="title" class="{{ $brand }}">Enter the discussion title...</label>
+                        <label for="title" class="{{ $brand }}">Title</label>
 
                         @include('bladesora::members.inputs.partials._errors', [
                             "inputErrors" => $errors->get('title')
@@ -28,46 +28,28 @@
 
                     @if(!empty($topicOptions))
                         <div class="form-group mb-2">
-                            <select id="postTopic" name="topic">
+                            <select id="postTopic" name="category_id">
                                 <option selected disabled style="display:none;">
                                 @foreach($topicOptions as $index => $topic)
-                                    <option value="{{ $index + 1 }}">{{ $topic }}</option>
+                                    <option value="{{ $index }}">{{ $topic }}</option>
                                 @endforeach
                             </select>
-                            <label for="postTopic" class="{{ $brand }}">Forum Topic...</label>
+                            <label for="postTopic" class="{{ $brand }}">Topic</label>
 
                             @include('bladesora::members.inputs.partials._errors', [
-                                "inputErrors" => $errors->get('topic')
+                                "inputErrors" => $errors->get('category_id')
                             ])
                         </div>
+                    @else
+                        <input type="hidden" name="category_id" value="1">
                     @endif
 
-                    <div class="form-group mb-2">
-                        <input type="text" name="description" id="description" value="{{ old('description') }}">
-                        <label for="description" class="{{ $brand }}">Description</label>
+                    <text-editor field-key="first_post_content"
+                                 initial-value="{{ old('first_post_content') }}"></text-editor>
 
-                        @include('bladesora::members.inputs.partials._errors', [
-                            "inputErrors" => $errors->get('description')
-                        ])
-                    </div>
-
-                    <div class="form-group mb-2">
-                        <input type="text" name="weight" id="weight" value="{{ old('weight') }}">
-                        <label for="weight" class="{{ $brand }}">Weight (order), any number</label>
-
-                        @include('bladesora::members.inputs.partials._errors', [
-                            "inputErrors" => $errors->get('weight')
-                        ])
-                    </div>
-
-                    <div class="form-group mb-2">
-                        <input type="text" name="icon-class" id="icon-class" value="{{ old('icon-class') }}">
-                        <label for="icon-class" class="{{ $brand }}">Icon class</label>
-
-                        @include('bladesora::members.inputs.partials._errors', [
-                            "inputErrors" => $errors->get('icon-class')
-                        ])
-                    </div>
+                    @if(!empty($errors->get('first_post_content')))
+                        <p class="tiny text-error pa">* The post content field is required</p>
+                    @endif
 
                     <div class="flex flex-row align-h-right mt-2">
                         <a href="{{ $forumUrl }}"
@@ -77,7 +59,7 @@
 
                         <button class="btn collapse-320" type="submit" dusk="submit-button">
                             <span class="bg-{{ $brand }} text-white corners-3">
-                                Create Forum
+                                Create Discussion
                             </span>
                         </button>
                     </div>
