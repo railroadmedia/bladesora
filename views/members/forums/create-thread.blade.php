@@ -4,7 +4,7 @@
             <a href="{{ $forumUrl }}" class="no-decoration mr-1">
                 <i class="fas fa-arrow-circle-left text-grey-2"></i>
             </a>
-            Create a Discussion
+            Create a Thread
         </h1>
     </div>
     <div class="flex flex-column ph pv-3">
@@ -28,13 +28,13 @@
 
                     @if(!empty($topicOptions))
                         <div class="form-group mb-2">
-                            <select id="postTopic" name="category_id">
+                            <select id="forum" name="category_id">
                                 <option selected disabled style="display:none;">
                                 @foreach($topicOptions as $index => $topic)
                                     <option value="{{ $index }}">{{ $topic }}</option>
                                 @endforeach
                             </select>
-                            <label for="postTopic" class="{{ $brand }}">Topic</label>
+                            <label for="forum" class="{{ $brand }}">Forum</label>
 
                             @include('bladesora::members.inputs.partials._errors', [
                                 "inputErrors" => $errors->get('category_id')
@@ -59,7 +59,7 @@
 
                         <button class="btn collapse-320" type="submit" dusk="submit-button">
                             <span class="bg-{{ $brand }} text-white corners-3">
-                                Create Discussion
+                                Create Thread
                             </span>
                         </button>
                     </div>
