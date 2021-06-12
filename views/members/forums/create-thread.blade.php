@@ -31,7 +31,7 @@
                             <select id="forum" name="category_id">
                                 <option selected disabled style="display:none;">
                                 @foreach($topicOptions as $index => $topic)
-                                    <option value="{{ $index }}">{{ $topic }}</option>
+                                    <option value="{{ $index }}" {!! (app('request')->input('thread-title') === $topic) ? 'selected' : '' !!} >{{ $topic }}</option>
                                 @endforeach
                             </select>
                             <label for="forum" class="{{ $brand }}">Forum</label>
