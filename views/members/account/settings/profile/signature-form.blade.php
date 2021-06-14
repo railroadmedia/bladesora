@@ -9,7 +9,7 @@
 
     @slot('formData')
 
-        <div class="flex flex-column grow body">
+        <div class="flex flex-column grow body tw-break-words">
 
             {!! html_entity_decode($signature) !!}
 
