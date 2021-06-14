@@ -1,6 +1,6 @@
 @component('bladesora::members.account.settings.edit-form')
     @slot('formTitle')
-        Signature
+        Forum Signature
     @endslot
 
     @slot('modalId')
