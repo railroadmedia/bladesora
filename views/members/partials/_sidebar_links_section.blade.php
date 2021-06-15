@@ -2,7 +2,7 @@
     <div class="sidebar-link-container {{ isset($link['collapsed']) && $link['collapsed'] ? 'show-collapsed' : '' }}">
         <a
             href="{{ $link['url'] }}"
-            class="sidebar-link pl-3 no-decoration body {{ $themeColor }} {{ $link['active'] ? 'active' : '' }}"
+            class="sidebar-link pl-3 no-decoration body tw-relative {{ $themeColor }} {{ $link['active'] ? 'active' : '' }}"
         >
             <div class="sidebar-link-icon">
                 @isset($link['iconClass'])
@@ -13,7 +13,8 @@
                         <use xlink:href="#{{ $link['iconSvg'] }}"></use>
                     </svg>
                 @endisset
-            </div><span class="sidebar-link-title">{{ $link['title'] }}</span>
+            </div>
+            <span class="sidebar-link-title">{{ $link['title'] }}</span>
             @isset($link['badge'])
                 <span
                     @isset($link['badge']['id'])
@@ -22,6 +23,10 @@
                     class="text-white corners-5"
                 >{{ $link['badge']['text'] }}</span>
             @endisset
+
+            @if( ($link['title'] === "Notifications") && !empty($hasUnreadNotifications))
+                <span class="notification-badge rounded tw-top-1" dusk="notification-dot"></span>
+            @endif
         </a>
     </div>
 @endforeach
