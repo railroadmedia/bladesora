@@ -123,9 +123,6 @@
                         <img class="rounded"
                              src="{{ imgix($userAvatar, ["q" => 50, "blur" => 2, "w" => 50, "h" => 50, "fit" => "crop"]) }}"
                              data-avatar-update="true">
-                        @if(!empty($hasUnreadNotifications))
-                            <span class="notification-badge rounded" dusk="notification-dot"></span>
-                        @endif
                     </div>
                 </a>
                 <div class="profile-nav-info text-black corners-5">
