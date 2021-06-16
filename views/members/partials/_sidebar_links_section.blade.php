@@ -4,7 +4,7 @@
             href="{{ $link['url'] }}"
             class="sidebar-link pl-3 no-decoration body tw-relative {{ $themeColor }} {{ $link['active'] ? 'active' : '' }}"
         >
-            <div class="sidebar-link-icon">
+            <div class="sidebar-link-icon tw-inline-flex">
                 @isset($link['iconClass'])
                     <i class="{{ $link['iconClass'] }}"></i>
                 @endisset
@@ -13,6 +13,10 @@
                         <use xlink:href="#{{ $link['iconSvg'] }}"></use>
                     </svg>
                 @endisset
+
+                @if( ($link['title'] === "Notifications") && !empty($hasUnreadNotifications) )
+                    <div class="tw-rounded-full tw-h-2 tw-w-2 tw-bg-red-500 tw-inline-block" dusk="notification-dot"></div>
+                @endif
             </div>
             <span class="sidebar-link-title">{{ $link['title'] }}</span>
             @isset($link['badge'])
@@ -24,9 +28,6 @@
                 >{{ $link['badge']['text'] }}</span>
             @endisset
 
-            @if( ($link['title'] === "Notifications") && !empty($hasUnreadNotifications))
-                <span class="notification-badge rounded tw-top-1" dusk="notification-dot"></span>
-            @endif
         </a>
     </div>
 @endforeach
