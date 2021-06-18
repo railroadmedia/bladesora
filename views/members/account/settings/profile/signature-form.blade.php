@@ -23,10 +23,12 @@
     @slot('formModal')
         <div id="signatureModal" class="modal">
             <div class="flex flex-column bg-white corners-3 shadow">
-                <div class="flex flex-row pa-3">
+                <div class="pa-3 tw-pb-3">
                     <h2 class="subheading">Edit: Signature</h2>
+                    <p class="tw-mt-1 tw-italic tw-text-13 tw-text-gray-400">Limit of 200 characters</p>
+                    <p id="signatureErrorMessage" class="tw-text-13 tw-text-red-500 tw-mt-2 tw-transition tw-opacity-0">You have entered more than 200 characters.</p>
                 </div>
-
+                <span>
                 <form method="POST" action="{{ $action }}">
                     {{ method_field($method) }}
                     {{ csrf_field() }}
@@ -49,7 +51,7 @@
                     </div>
 
                     <div class="flex flex-row ph-3 pb-3">
-                        <button class="btn collapse-150 mr-1">
+                        <button id="signatureButton" class="btn collapse-150 mr-1">
                             <span class="bg-{{ $brand }} text-white corners-3 short">
                                 Save
                             </span>
