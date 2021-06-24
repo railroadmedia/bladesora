@@ -42,7 +42,7 @@
                     </div>
 
                     <div class="form-group mb-2">
-                        <input type="text" name="icon-class" id="icon-class" value="{{ old('icon-class') }}">
+                        <input type="text" name="icon" id="icon" value="{{ old('icon-class') }}">
                         <label for="icon-class" class="{{ $brand }}">Icon class</label>
 
                         @include('bladesora::members.inputs.partials._errors', [
