@@ -15,7 +15,7 @@
                 @endisset
 
                 @if( ($link['title'] === "Notifications") && !empty($hasUnreadNotifications) )
-                    <div class="tw-rounded-full tw-h-2 tw-w-2 tw-bg-red-500 tw-inline-block" dusk="notification-dot"></div>
+                    <div class="tw-rounded-full tw-h-1.5 tw-w-1.5 tw-bg-red-500 tw-inline-block" dusk="notification-dot"></div>
                 @endif
             </div>
             <span class="sidebar-link-title">{{ $link['title'] }}</span>
