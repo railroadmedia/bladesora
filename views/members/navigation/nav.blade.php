@@ -1,6 +1,6 @@
 <header id="nav" class="container fluid shadow tw-z-100">
-    <div class="{{ (isset($stretch) && $stretch) ? 'nav-inner' : '' }} container collapsed">
-        <div class="flex flex-row">
+    <div class="{{ (isset($stretch) && $stretch) ? 'nav-inner' : '' }} container collapsed tw-bg-inherit">
+        <div class="flex flex-row tw-bg-inherit">
             @if(empty($isIframe))
             <a id="menuButton"
                tabindex="0"
