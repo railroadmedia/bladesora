@@ -1,6 +1,6 @@
-<header id="nav" class="container fluid shadow">
-    <div class="{{ (isset($stretch) && $stretch) ? 'nav-inner' : '' }} container collapsed">
-        <div class="flex flex-row">
+<header id="nav" class="container fluid shadow tw-z-100">
+    <div class="{{ (isset($stretch) && $stretch) ? 'nav-inner' : '' }} container collapsed tw-bg-inherit">
+        <div class="flex flex-row tw-bg-inherit">
             @if(empty($isIframe))
             <a id="menuButton"
                tabindex="0"
@@ -20,12 +20,15 @@
                 </div>
             </a>
             @endif
-
+            
             <a href="/members"
                class="flex flex-column logo align-center"
                @if(!empty($isIframe)) target="_parent" @endif>
                 <img src="{{ $logo }}">
             </a>
+
+            <!-- Platform Select -->
+            @include('bladesora::members.partials._platform-dropdown')
 
             <div class="flex flex-column align-center">
                 <div class="flex flex-row search-input-container align-v-center hide-sm-down">
