@@ -1,38 +1,6 @@
-@php
-    $platforms = [
-        [
-            "name" => "drumeo",
-            "img" => "https://musora-ui.s3.amazonaws.com/logos/drumeo.svg",
-            "membersURL" => "https://drumeo.com/members/",
-            "offerURL" => "https://drumeo.com/",
-            "isMember" => true   
-        ],  
-        [
-            "name" => "pianote",
-            "img" => "https://musora-ui.s3.amazonaws.com/logos/pianote.svg",
-            "offerURL" => "https://pianote.com/members/",
-            "membersURL" => "https://pianote.com/",
-            "isMember" => true   
-        ], 
-        [
-            "name" => "guitareo",
-            "img" => "https://musora-ui.s3.amazonaws.com/logos/guitareo.svg",
-            "membersURL" => "https://guitareo.com/members/",
-            "offerURL" => "https://guitareo.com/",
-            "isMember" => false   
-        ], 
-        [
-            "name" => "singeo",
-            "img" => "https://musora-ui.s3.amazonaws.com/logos/singeo.svg",
-            "membersURL" => "https://singeo.com/members/",
-            "offerURL" => "https://singeo.com/",
-            "isMember" => false   
-        ]  
-    ]
-@endphp
-
+@if(isset($platforms) && !empty($platforms))
 <div class="tw-relative tw-ml-1 tw-items-center tw-inline-flex tw-bg-inherit">
-    <button role="button" 
+    <button role="button"
             class="tw-bg-transparent tw-border-none tw-cursor-pointer tw-transform tw-transition-all focus:tw-outline-none tw-mt-3" 
             id="platformDropdownTrigger" 
             tabindex="0"
@@ -66,3 +34,4 @@
         </ul>
     </div>
 </div>
+@endif
