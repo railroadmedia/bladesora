@@ -24,7 +24,16 @@
             <a href="/members"
                class="flex flex-column logo align-center"
                @if(!empty($isIframe)) target="_parent" @endif>
-                <img src="{{ $logo }}">
+                <img src="{{ $logo }}"
+                style=" @if ( $themeColor == 'drumeo' )
+                            padding:0 0 10px;
+                        @elseif ( $themeColor == 'pianote' )
+                            padding:3px 0;
+                        @elseif ( $themeColor == 'guitareo' )
+                            padding:4px 0 0;
+                        @elseif ( $themeColor == 'singeo' )
+                            padding:5px 0 1px;
+                        @endif ">
             </a>
 
             <!-- Platform Select -->

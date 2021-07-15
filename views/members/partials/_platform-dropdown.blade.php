@@ -2,7 +2,7 @@
 <div class="tw-relative tw-ml-1 tw-items-center tw-inline-flex tw-bg-inherit">
     <button role="button"
             class="tw-bg-transparent tw-border-none tw-cursor-pointer tw-transform tw-transition-all focus:tw-outline-none"
-            id="platformDropdownTrigger" 
+            id="platformDropdownTrigger"
             tabindex="0"
     >
         <span class="tw-sr-only">Got to another one of our platforms</span>
@@ -14,21 +14,12 @@
             @foreach ($platforms as $platform)
                 @if ($platform['name'] != $themeColor )
                     <li>
-                        <a href="{{ $platform['isMember'] ? $platform['membersURL'] : $platform['offerURL'] }}" 
-                           target="{{ $platform['isMember'] ? '' : '_blank' }}" 
-                           title="Go to {{ $platform['name'] }}" 
-                           class="tw-py-2 tw-px-4 tw-flex tw-items-center hover:tw-bg-opacity-10 hover:tw-bg-white"
+                        <a href="{{ $platform['isMember'] ? $platform['membersURL'] : $platform['offerURL'] }}"
+                                target="{{ $platform['isMember'] ? '' : '_blank' }}"
+                                title="Go to {{ $platform['name'] }}"
+                                class="tw-py-2 tw-px-4 tw-flex tw-items-center hover:tw-bg-opacity-10 hover:tw-bg-white"
                         >
-                            <img src="{{ $platform['img'] }}" alt="{{ $platform['name'] }} logo"
-                                    style=" @if ( $platform['name'] == 'drumeo' )
-                                                padding:0 0 10px;
-                                            @elseif ( $platform['name'] == 'pianote' )
-                                                padding:3px 0;
-                                            @elseif ( $platform['name'] == 'guitareo' )
-                                                padding:4px 0 0;
-                                            @elseif ( $platform['name'] == 'singeo' )
-                                                padding:5px 0 1px;
-                                            @endif ">
+                            <img src="{{ $platform['img'] }}" class="{{ $platform['name'] == 'singeo' ? 'tw-w-14' : 'tw-w-16' }}" alt="{{ $platform['name'] }} logo">
                             <div class="tw-ml-auto">
                                 @if ( $platform['isMember'] == true )
                                     <i class="far fa-chevron-right tw-text-gray-200" style="font-size: 9px"></i>
