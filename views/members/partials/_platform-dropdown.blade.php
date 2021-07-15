@@ -1,7 +1,7 @@
 @if(isset($platforms) && !empty($platforms))
 <div class="tw-relative tw-ml-1 tw-items-center tw-inline-flex tw-bg-inherit">
     <button role="button"
-            class="tw-bg-transparent tw-border-none tw-cursor-pointer tw-transform tw-transition-all focus:tw-outline-none tw-mt-3" 
+            class="tw-bg-transparent tw-border-none tw-cursor-pointer tw-transform tw-transition-all focus:tw-outline-none"
             id="platformDropdownTrigger" 
             tabindex="0"
     >
