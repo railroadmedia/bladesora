@@ -7,7 +7,7 @@
         </div>
         <div class="flex flex-column edit-button">
             <button class="btn" data-open-modal="{{ $modalId }}" dusk="{{ $modalId }}">
-                <span class="text-black bg-black inverted corners-3 short">
+                <span class="text-black bg-black inverted corners-10 short">
                     Edit
                 </span>
             </button>

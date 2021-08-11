@@ -7,7 +7,7 @@
 </header>
 
 <div class="container">
-    <div class="flex flex-column shadow bg-white xs-12 pa body mv-3 corners-3">
+    <div class="flex flex-column shadow bg-white xs-12 pa body mv-3 corners-10">
         <p class="mb-3">Please read this agreement carefully before accessing or using this web site. By accessing or
             using the site, you agree to be bound by this agreement. The information and services on this site are
             provided by Musora Media, Inc. and its suppliers, subject to your agreement to the terms and conditions

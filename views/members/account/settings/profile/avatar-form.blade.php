@@ -31,7 +31,7 @@
 
     @slot('formModal')
         <div id="avatarModal" class="modal">
-            <div class="flex flex-column bg-white corners-3 shadow">
+            <div class="flex flex-column bg-white corners-10 shadow">
                 <div class="flex flex-row pa-3">
                     <h2 class="subheading">Edit: Profile Picture</h2>
                 </div>

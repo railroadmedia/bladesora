@@ -1,4 +1,4 @@
-<div class="flex flex-column xs-12 sm-6 md-4 pa-3 raised-hover corners-3">
+<div class="flex flex-column xs-12 sm-6 md-4 pa-2 raised-hover corners-10">
     <a href="{{ $url }}" class="flex flex-row no-decoration">
         <div class="flex flex-column hot-forum-avatar-col text-black">
             <img
@@ -20,9 +20,9 @@
                 {{ parse_xp_value($xp) }} XP
             </p>
         </div>
-        <div class="flex flex-column grow ph">
+        <div class="flex flex-column grow pl">
             <h5 class="text-black tiny font-bold text-truncate">
-{{--                <span class="x-tiny corners-3 uppercase text-white font-bold bg-{{ $themeColor ?? 'drumeo' }}" style="padding:2px 5px;margin-right:5px;">New Reply</span>--}}
+{{--                <span class="x-tiny corners-10 uppercase text-white font-bold bg-{{ $themeColor ?? 'drumeo' }}" style="padding:2px 5px;margin-right:5px;">New Reply</span>--}}
                 {!! $title !!}
             </h5>
             <h6 class="x-tiny text-grey-3 uppercase text-black mb-1">

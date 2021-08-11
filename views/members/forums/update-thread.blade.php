@@ -1,4 +1,4 @@
-<div class="flex flex-column bg-white shadow corners-3">
+<div class="flex flex-column bg-white shadow corners-10">
     <div class="flex flex-column pa-3 bb-light-1">
         <h1 class="heading">
             <a href="{{ $forumUrl }}" class="no-decoration mr-1">
@@ -48,7 +48,7 @@
                         </a>
 
                         <button class="btn collapse-320" type="submit">
-                            <span class="bg-{{ $brand }} text-white corners-3">
+                            <span class="bg-{{ $brand }} text-white corners-10">
                                 Edit Thread
                             </span>
                         </button>

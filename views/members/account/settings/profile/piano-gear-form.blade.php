@@ -22,7 +22,7 @@
 
     @slot('formModal')
         <div id="gearModal" class="modal">
-            <div class="flex flex-column bg-white corners-3 shadow">
+            <div class="flex flex-column bg-white corners-10 shadow">
                 <div class="flex flex-row pa-3">
                     <h2 class="subheading">Edit: My Gear</h2>
                 </div>
@@ -73,12 +73,12 @@
                     <div class="flex flex-row ph-3 pb-3">
                         <button class="btn collapse-150 mr-1"
                                 type="submit">
-                            <span class="bg-{{ $brand }} text-white corners-3 short">
+                            <span class="bg-{{ $brand }} text-white corners-10 short">
                                 Save
                             </span>
                         </button>
 
-                        <a class="btn collapse-150 close-modal corners-3 flat text-black flat short">
+                        <a class="btn collapse-150 close-modal corners-10 flat text-black flat short">
                             Cancel
                         </a>
                     </div>

@@ -13,7 +13,7 @@
 
     <div class="flex flex-column thumbnail-col align-v-center">
         <div class="thumb-wrap">
-            <div class="thumb-img bg-center corners-3 {{ $isScheduled ?? false ? 'desaturate' : '' }} {{ $contentType === 'song' ? 'square' : 'widescreen' }}"
+            <div class="thumb-img bg-center corners-10 {{ $isScheduled ?? false ? 'desaturate' : '' }} {{ $contentType === 'song' ? 'square' : 'widescreen' }}"
                  style="background-image:url({{ $thumbnail }});"></div>
 
             @if(!empty($isNew) && $isNew === true)

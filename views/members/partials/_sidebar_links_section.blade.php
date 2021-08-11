@@ -24,7 +24,7 @@
                     @isset($link['badge']['id'])
                         id="{{ $link['badge']['id'] }}"
                     @endisset
-                    class="text-white corners-5"
+                    class="text-white corners-10"
                 >{{ $link['badge']['text'] }}</span>
             @endisset
 

@@ -58,7 +58,7 @@
                         </a>
 
                         <button class="btn collapse-320" type="submit" dusk="submit-button">
-                            <span class="bg-{{ $brand }} text-white corners-3">
+                            <span class="bg-{{ $brand }} text-white corners-10">
                                 Create Thread
                             </span>
                         </button>

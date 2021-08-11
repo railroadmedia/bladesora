@@ -1,7 +1,7 @@
 {{-- ----------------------------------------------------------------------
   -- Payment Type Card
   -- ----------------------------------------------------------------------}}
-<div class="credit-card-box corners-5 {{ $activeMethod['type'] }}">
+<div class="credit-card-box corners-10 {{ $activeMethod['type'] }}">
     @include('bladesora::members.account.settings.payments.partials._payment-card')
 </div>
 
@@ -20,7 +20,7 @@
     <div class="flex flex-row">
         <button class="btn delete-payment"
                 data-method-to-delete="{{ $activeMethod['id'] }}">
-        <span class="bg-error inverted text-error corners-3 short">
+        <span class="bg-error inverted text-error corners-10 short">
             Delete
         </span>
         </button>

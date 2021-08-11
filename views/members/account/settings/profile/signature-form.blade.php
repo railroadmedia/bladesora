@@ -22,7 +22,7 @@
 
     @slot('formModal')
         <div id="signatureModal" class="modal">
-            <div class="flex flex-column bg-white corners-3 shadow">
+            <div class="flex flex-column bg-white corners-10 shadow">
                 <div class="pa-3 tw-pb-3">
                     <h2 class="subheading">Edit: Signature</h2>
                     <p class="tw-mt-1 tw-italic tw-text-13 tw-text-gray-400">Limit of 200 characters</p>
@@ -52,12 +52,12 @@
 
                     <div class="flex flex-row ph-3 pb-3">
                         <button id="signatureButton" class="btn collapse-150 mr-1">
-                            <span class="bg-{{ $brand }} text-white corners-3 short">
+                            <span class="bg-{{ $brand }} text-white corners-10 short">
                                 Save
                             </span>
                         </button>
 
-                        <a class="btn collapse-150 close-modal corners-3 flat text-black flat short">
+                        <a class="btn collapse-150 close-modal corners-10 flat text-black flat short">
                             Cancel
                         </a>
                     </div>

@@ -1,8 +1,8 @@
 <div class="flex flex-row pv-3 content-overview {{ !empty($hideBorder) && $hideBorder ? '' : 'bt-grey-1-1' }}">
     <div class="flex flex-column align-v-center large-thumbnail {{ !empty($showBackgroundCards) && $showBackgroundCards === true ? 'background-cards' : '' }} {{ $themeColor }} {{ !empty($releaseDate) && \Carbon\Carbon::parse($releaseDate) > \Carbon\Carbon::now() ? 'desaturate' : '' }}">
-        <div class="thumb-wrap corners-3">
+        <div class="thumb-wrap corners-10">
             <a @if((empty($noLink) || $noLink === false) && $isOwned) href="{{ $lessonsUrl }}" @endif>
-                <div class="thumb-img bg-center corners-3 {{ $forceSquareThumb === true ? 'square' : 'widescreen' }}">
+                <div class="thumb-img bg-center corners-10 {{ $forceSquareThumb === true ? 'square' : 'widescreen' }}">
                     <img
                         src="https://dmmior4id2ysr.cloudfront.net/assets/images/image-loader.svg"
                         data-ix-src="{{ $itemThumbnail }}"

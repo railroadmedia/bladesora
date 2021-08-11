@@ -1,4 +1,4 @@
-<section id="loginForm" class="flex flex-column bg-grey-1 pa-3 mb-3 corners-3">
+<section id="loginForm" class="flex flex-column bg-grey-1 pa-3 mb-3 corners-10">
 
     <form method="post" action="{{ $loginUrl }}" class="flex flex-column">
         @if($useCsrfToken ?? true)
@@ -61,7 +61,7 @@
     <a id="resetToggle" class="tiny text-center text-grey-3 noselect">Forgot your password?</a>
 </section>
 
-<section id="resetForm" class="flex flex-column bg-grey-1 pa-3 mb-3 corners-3 hide">
+<section id="resetForm" class="flex flex-column bg-grey-1 pa-3 mb-3 corners-10 hide">
 
     <p class="tiny mb text-grey-3">Please enter your email address and we will send you instructions to reset your
         password.</p>

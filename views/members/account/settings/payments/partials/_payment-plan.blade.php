@@ -12,7 +12,7 @@
     {{--<div class="flex flex-column edit-button">--}}
     {{--<button class="btn"--}}
     {{--data-open-modal="paymentModal{{ str_replace(' ', '', ucwords($plan['title'])) }}">--}}
-    {{--<span class="bg-black inverted text-black corners-3 short">--}}
+    {{--<span class="bg-black inverted text-black corners-10 short">--}}
     {{--Edit--}}
     {{--</span>--}}
     {{--</button>--}}
@@ -47,7 +47,7 @@
 @endforeach
 
 <div id="paymentModal{{ str_replace(' ', '', ucwords($plan['title'])) }}" class="modal">
-    <div class="flex flex-column bg-white corners-3 shadow">
+    <div class="flex flex-column bg-white corners-10 shadow">
         <div class="flex flex-row pa-3 align-v-center">
             <div class="flex flex-column">
                 <h2 class="subheading">Edit: Payment Method</h2>

@@ -7,7 +7,7 @@
 </header>
 
 <div class="container">
-    <div class="flex flex-column shadow bg-white xs-12 pa body mv-3 corners-3">
+    <div class="flex flex-column shadow bg-white xs-12 pa body mv-3 corners-10">
         <p class="font-bold">Privacy Policy</p>
         <p class="mb-3">Below is a list of the standard policies we use on this website. They are in place to safeguard our users, and to ensure we can provide a quality user experience!</p>
 

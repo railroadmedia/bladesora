@@ -137,7 +137,7 @@
                              data-avatar-update="true">
                     </div>
                 </a>
-                <div class="profile-nav-info text-black corners-5">
+                <div class="profile-nav-info text-black corners-10">
                     <div class="relative">
                         <div class="profile-nav-tip"></div>
                         <h3 class="body font-bold">{{ $userName }}</h3>
