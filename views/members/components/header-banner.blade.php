@@ -12,8 +12,8 @@
             {{ $content }}
 
             @if(empty($hideUser))
-                <div class="header-avatar flex flex-column hide-xs-only">
-                    <div class="user-avatar rounded bg-black
+                <div class="tw-flex-col tw-items-center tw-hidden sm:tw-flex">
+                    <div class="header-avatar user-avatar rounded tw-bg-black tw-pb-0 tw-w-32
                                 {{ in_array($currentUser['access_level'], ['coach', 'edge', 'lifetime', 'team', 'guitar', 'piano']) ? 'subscriber' : '' }}
                                 {{ $brand }}
                                 {{ $currentUser['access_level'] }}"
@@ -42,7 +42,13 @@
                         </p>
 
                         @if($currentUser['access_level'] !== 'team')
-                            <p class="body dense text-white font-compressed text-center">{{ $currentUser['xp'] }} XP</p>
+                            <p class="body dense text-white font-compressed text-center">
+                                {{ $currentUser['xp'] }} XP
+                            </p>
+                        @endif
+                        
+                        @isset($userActions)
+                            {{ $userActions }}
                         @endif
                     @endif
                 </div>
