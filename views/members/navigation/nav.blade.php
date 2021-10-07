@@ -146,6 +146,18 @@
                     </div>
                 </div>
             </div>
+
+            @if($showReferralButton)
+                <div class="flex flex-column pa-1 noselect" style="max-width: 160px; max-height: 53px;">
+                    <a
+                        href="{{ $referralPageUrl ?? '/' }}"
+                        class="btn text-white bg-{{ $themeColor }}"
+                        style="font-size: 13px;"
+                    >
+                        <i class="fas fa-gift mr-1"></i> invite a friend
+                    </a>
+                </div>
+            @endif
         </div>
     </div>
 </header>
