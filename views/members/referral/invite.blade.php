@@ -7,7 +7,7 @@
                     <img class="tw-inline-block tw-w-full tw-max-w-xs sm:tw-max-w-md md:tw-max-w-lg lg:tw-max-w-xl" src="https://drumeo-assets.s3.amazonaws.com/redeem/referral/30-day-guest-pass.png">
                     <div class="tw-absolute tw-bottom-0 tw-w-full tw-p-4">
                         <p class="tw-leading-none">PASSES REDEEMED</p>
-                        <h1 class="tw-leading-none"><strong>{{ 'todo' }}/5</strong></h1>
+                        <h1 class="tw-leading-none"><strong>{{ $userReferralsPerformed }}/{{ $referralsPerUser }}</strong></h1>
                     </div>
                 </div>
             </div>
@@ -25,7 +25,7 @@
                 <form id="commentform" name="drumeo" method="post" action="{{ URL::route('access-codes.form-claim') }}">
                     <label class="tw-inline-block tw-w-full tw-text-left tw-pt-6" for="email"><strong>Share your link</strong></label>
                     <div class="tw-flex tw-flex-wrap sm:tw-flex-nowrap tw-items-center tw-justify-center tw-mt-1">
-                        <input class="tw-inline-block tw-w-full tw-mb-4 sm:tw-mb-0 sm:tw-mr-4 tw-default-form-field sm:tw-flex-grow tw-pt-0" type="email" id="email" name="email" placeholder="link" value="{{ Input::old('link') }}">
+                        <input class="tw-inline-block tw-w-full tw-mb-4 sm:tw-mb-0 sm:tw-mr-4 tw-default-form-field sm:tw-flex-grow tw-pt-0" type="email" id="email" name="email" placeholder="link" value="{{ $userReferralLink }}">
                         <input name="button" type="submit" id="button" class="tw-bg-drumeo tw-leading-none tw-text-base tw-font-bold tw-border-0 tw-rounded-full tw-select-none tw-cursor-pointer tw-text-center tw-py-4 tw-px-6 tw-uppercase tw-font-roboto tw-text-white tw-flex-none tw-w-52" value="Copy Link"/>
                     </div>
                 </form>
