@@ -5,6 +5,15 @@
     $footerLineTwo = $canRefer ? 'redeemed for renewals, extensions, or gift subscriptions.' : 'You\'ll have access to more invites soon!';
 
     $containerClass = $canRefer ? '' : 'tw-justify-center';
+
+    $cardImages = [
+        'drumeo' => 'https://drumeo-assets.s3.amazonaws.com/redeem/referral/30-day-guest-pass.png',
+        'pianote' => 'https://drumeo-assets.s3.amazonaws.com/redeem/referral/pianote-guest-pass.png',
+        'singeo' => 'https://drumeo-assets.s3.amazonaws.com/redeem/referral/singeo-guest-pass.png',
+        'guitareo' => 'https://drumeo-assets.s3.amazonaws.com/redeem/referral/guitareo-guest-pass.png',
+    ];
+
+    $cardImage = $cardImages[$brand];
 @endphp
 
 <div class="referral-sections">
@@ -13,12 +22,13 @@
             <h1 class="tw-leading-tight lg:tw-mb-14"><strong>{{ $titleLineOne }}<br> {{ $titleLineTwo }}</strong></h1>
             <div class="tw-flex tw-flex-col xl:tw-flex-row tw-items-center tw-px-4 {{ $containerClass }}">
                 <div class="tw-flex-shrink-0 tw-w-full lg:tw-w-auto tw-my-5 md:tw-my-6 lg:tw-my-0">
-                    @include('bladesora::members.referral._brand-card', [
-                        'showEmpty' => true,
-                        'brand' => $brand,
-                        'userReferralsPerformed' => $userReferralsPerformed,
-                        'referralsPerUser' => $referralsPerUser,
-                    ])
+                    <div class="tw-relative">
+                        <img class="tw-inline-block tw-w-full tw-max-w-xs sm:tw-max-w-md md:tw-max-w-lg lg:tw-max-w-xl" src="{{ $cardImage }}">
+                        <div class="tw-absolute tw-bottom-0 tw-w-full tw-p-4">
+                            <p class="tw-leading-none">PASSES REDEEMED</p>
+                            <h1 class="tw-leading-none"><strong>{{ $userReferralsPerformed }}/{{ $referralsPerUser }}</strong></h1>
+                        </div>
+                    </div>
                 </div>
                 @if($canRefer)
                     <div class="tw-flex tw-flex-col lg:tw-h-full lg:tw-pl-10 tw-w-full tw-max-w-lg lg:tw-max-w-none tw-mx-auto">
