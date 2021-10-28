@@ -33,19 +33,19 @@
                         <input type="hidden" name="redirect" value="/members">
 
                         <label class="inline-block w-full text-left @if($errors->has('name')) text-red-600 @endif" for="name"><strong>Your name</strong> <em class="opacity-70 text-xs md:float-right">@if($errors->has('name')) {{ $errors->first('name') }} @else Used to say hello! @endif</em></label>
-                        <input class="pt-0 inline-block w-full mt-1 mb-4 default-form-field @if($errors->has('name')) text-red-600 @else text-black @endif" type="text" id="name" name="name" placeholder="Your name..." value="{{ old('name') }}">
+                        <input class="main-form pt-0 inline-block w-full mt-1 mb-4 default-form-field @if($errors->has('name')) text-red-600 @else text-black @endif" type="text" id="name" name="name" placeholder="Your name..." value="{{ old('name') }}">
 
                         <label class="inline-block w-full text-left @if($errors->has('email')) text-red-600 @endif" for="email"><strong>Email address</strong> <em class="opacity-70 text-xs md:float-right">@if($errors->has('email')) {{ $errors->first('email') }} @else Used for member communication. @endif</em></label>
-                        <input class="pt-0 inline-block w-full mt-1 mb-4 default-form-field @if($errors->has('email')) text-red-600 @else text-black @endif" type="email" id="email" name="email" placeholder="Email address..." value="{{ old('email') }}">
+                        <input class="main-form pt-0 inline-block w-full mt-1 mb-4 default-form-field @if($errors->has('email')) text-red-600 @else text-black @endif" type="email" id="email" name="email" placeholder="Email address..." value="{{ old('email') }}">
 
                         <label class="inline-block w-full text-left @if($errors->has('phone')) text-red-600 @endif" for="phone"><strong>Phone number</strong> <em class="opacity-70 text-xs md:float-right">@if($errors->has('phone')) {{ $errors->first('phone') }} @else Used to validate you’re a human. @endif</em></label>
-                        <input class="pt-0 inline-block w-full mt-1 mb-4 default-form-field @if($errors->has('phone')) text-red-600 @else text-black @endif" type="tel" id="phone" name="phone" placeholder="Phone number..." pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" value="{{ old('phone') }}">
+                        <input class="main-form pt-0 inline-block w-full mt-1 mb-4 default-form-field @if($errors->has('phone')) text-red-600 @else text-black @endif" type="tel" id="phone" name="phone" placeholder="Phone number..." pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" value="{{ old('phone') }}">
 
                         <label class="inline-block w-full text-left @if($errors->has('password')) text-red-600 @endif" for="password"><strong>Password</strong> <em class="opacity-70 text-xs md:float-right">@if($errors->has('password')) {{ $errors->first('password') }} @else Used to access your lessons. @endif</em></label>
-                        <input class="pt-0 inline-block w-full mt-1 mb-4 default-form-field @if($errors->has('password')) text-red-600 @else text-black @endif" type="password" id="password" name="password" placeholder="Password..." value="{{ old('password') }}">
+                        <input class="main-form pt-0 inline-block w-full mt-1 mb-4 default-form-field @if($errors->has('password')) text-red-600 @else text-black @endif" type="password" id="password" name="password" placeholder="Password..." value="{{ old('password') }}">
 
                         <label class="inline-block w-full text-left" for="password_confirmation"><strong>Password confirm</strong> <em class="opacity-70 text-xs md:float-right">No typos.</em></label>
-                        <input class="pt-0 inline-block w-full mt-1 mb-4 default-form-field" type="password" id="password_confirmation" name="password_confirmation" placeholder="Password Confirm..." value="{{ old('password_confirmation') }}">
+                        <input class="main-form pt-0 inline-block w-full mt-1 mb-4 default-form-field" type="password" id="password_confirmation" name="password_confirmation" placeholder="Password Confirm..." value="{{ old('password_confirmation') }}">
 
                         <input name="button" type="submit" id="button" class="text-white bg-{{ $brand }} leading-none text-base font-bold border-0 rounded-full select-none cursor-pointer text-center py-4 px-16 uppercase font-roboto" value="Redeem Guest Pass"/>
                     </form>
