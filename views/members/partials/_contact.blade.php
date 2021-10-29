@@ -1,6 +1,14 @@
-<div class="flex flex-column">
+<div class="flex flex-column tw-max-w-3xl tw-mx-auto tw-px-4">
 
-    <section class="flex flex-row flex-wrap">
+    <section>
+        <div class="tw-mt-12 tw-text-center">
+            <h2 class="tw-font-bold tw-text-3xl tw-mb-6">We'd love to hear from you!</h2>
+            <p class="tw-mb-6 tw-text-base">Whether your question is about membership, shipping, technical troubles or anything else, our amazing support team is ready to answer any and all of your questions!</p>
+            <p class="tw-text-base">You may find your response in our <a href="https://help.{{ $brand }}.com/" class="tw-font-bold tw-no-underline tw-text-{{ $themeColor }}" title="go to help center">Help Center here</a>, but if not, fill out the quick form below.</p>
+        </div>
+    </section>
+
+    <section class="flex flex-row flex-wrap mv-3">
         <div class="flex flex-column">
 
             {{--TODO: Requires an instance of Vue with the Vuesora plugin--}}
@@ -40,7 +48,7 @@
     </section>
 
     <section class="tw-flex tw-flex-col tw-text-center tw-mb-12">
-        <h2 class="tw-font-bold tw-text-3xl tw-mb-6">Want to join the team?</h2>
-        <p>For current available positions at our company, please visit <a href="https://musora.com/jobs" title="go to help center" class="tw-font-bold tw-no-underline">Musora.com/Jobs</a>.</p>
+        <h2 class="tw-font-bold tw-text-3xl tw-mb-3 md:tw-mb-6">Want to join the team?</h2>
+        <p class="tw-text-base">For current available positions at our company, please visit <a href="https://musora.com/jobs" title="go to help center" class="tw-font-bold tw-no-underline text-{{ $themeColor }}">Musora.com/Jobs</a>.</p>
     </section>
 </div>
