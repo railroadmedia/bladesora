@@ -94,11 +94,7 @@
 </script>
 @endsection
 
-@php
-
-@endphp
-
-<div class="tw-pl-4 tw-grid xs:tw-grid-cols-1 sm:tw-grid-cols-1 md:tw-grid-cols-1 lg:tw-grid-cols-2 tw-grid-cols-4 tw-gap-0">
+<div class="tw-grid xs:tw-grid-cols-1 sm:tw-grid-cols-1 md:tw-grid-cols-1 lg:tw-grid-cols-2 tw-grid-cols-4 tw-gap-0">
     <div class="tw-bg-deepblue tw-text-white" style="background-color: #00101d;">
         <div class="sm:tw-py-12 md:tw-py-12 lg:tw-py-16 tw-py-16 tw-px-14">
             <h1 class="tw-text-4xl tw-mb-2 tw-uppercase tw-font-normal">
