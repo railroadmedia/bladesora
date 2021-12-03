@@ -124,7 +124,7 @@
                 </div>
                 <div id="unsubscribeButton" class="tw-mr-4 {{ $isUserSubscribed ? '' : 'tw-hidden' }}">
                     <button onclick="unsubscribeToCoach({{ $coachId }});"
-                        class="tw-text-xs xs:tw-text-sm tw-transition-none tw-px-3 sm:tw-px-6 tw-h-auto tw-py-3 tw-btn-secondary tw-btn-small tw-text-white tw-border-{{ $brandName }} tw-bg-{{ $brandName }} hover:tw-bg-transparent hover:tw-text-white hover:tw-border-white">
+                        class="tw-text-xs sm:tw-text-sm tw-transition-none tw-px-3 sm:tw-px-6 tw-h-auto tw-py-3 tw-btn-secondary tw-btn-small tw-text-white tw-border-{{ $brandName }} tw-bg-{{ $brandName }} hover:tw-bg-transparent hover:tw-text-white hover:tw-border-white">
                         <span>
                             <i aria-hidden="true" class="fa fa-check tw-px-0.5"></i>
                             <span>Subscribed</span> </span>
