@@ -94,9 +94,9 @@
 </script>
 @endsection
 
-<div class="tw-grid xs:tw-grid-cols-1 sm:tw-grid-cols-1 md:tw-grid-cols-1 lg:tw-grid-cols-2 tw-grid-cols-4 tw-gap-0">
+<div class="tw-grid xs:tw-grid-cols-1 sm:tw-grid-cols-1 md:tw-grid-cols-1 lg:tw-grid-cols-2 tw-gap-0">
     <div class="tw-bg-deepblue tw-text-white" style="background-color: #00101d;">
-        <div class="sm:tw-py-12 md:tw-py-12 lg:tw-py-16 tw-py-16 tw-px-14">
+        <div class="md:tw-py-12 lg:tw-py-16 tw-py-12 md:tw-px-14 tw-px-6">
             <h1 class="tw-text-4xl tw-mb-2 tw-uppercase tw-font-normal">
                 {{ $firstName }} <span class="tw-font-bold">{{ $lastName }}</span></h1>
             <div class="tw-uppercase tw-font-semibold tw-mb-1 tw-font-bold" style="color: #7E9AB1;">
@@ -116,34 +116,34 @@
             <div class="tw-flex">
                 <div id="subscribeButton" class="tw-mr-4 {{ $isUserSubscribed ? 'tw-hidden' : '' }}">
                     <button onclick="subscribeToCoach({{ $coachId }});"
-                        class="tw-transition-none tw-px-6 tw-h-auto tw-py-3 tw-btn-secondary tw-btn-small tw-text-white tw-border-{{ $brandName }} tw-bg-{{ $brandName }} hover:tw-bg-transparent hover:tw-text-white hover:tw-border-white">
+                        class="tw-text-xs sm:tw-text-sm tw-transition-none tw-px-3 sm:tw-px-6 tw-h-auto tw-py-3 tw-btn-secondary tw-btn-small tw-text-white tw-border-{{ $brandName }} tw-bg-{{ $brandName }} hover:tw-bg-transparent hover:tw-text-white hover:tw-border-white">
                         <span>
-                            <i aria-hidden="true" class="fa fa-bell tw-pr-1.5"></i>
+                            <i aria-hidden="true" class="fa fa-bell tw-px-0.5"></i>
                             Subscribe</span>
                     </button>
                 </div>
                 <div id="unsubscribeButton" class="tw-mr-4 {{ $isUserSubscribed ? '' : 'tw-hidden' }}">
                     <button onclick="unsubscribeToCoach({{ $coachId }});"
-                        class="tw-transition-none tw-px-6 tw-h-auto tw-py-3 tw-btn-secondary tw-btn-small tw-text-white tw-border-{{ $brandName }} tw-bg-{{ $brandName }} hover:tw-bg-transparent hover:tw-text-white hover:tw-border-white">
+                        class="tw-text-xs xs:tw-text-sm tw-transition-none tw-px-3 sm:tw-px-6 tw-h-auto tw-py-3 tw-btn-secondary tw-btn-small tw-text-white tw-border-{{ $brandName }} tw-bg-{{ $brandName }} hover:tw-bg-transparent hover:tw-text-white hover:tw-border-white">
                         <span>
-                            <i aria-hidden="true" class="fa fa-check tw-pr-1.5"></i>
-                            Subscribed </span>
+                            <i aria-hidden="true" class="fa fa-check tw-px-0.5"></i>
+                            <span>Subscribed</span> </span>
                     </button>
                 </div>
                 <div class="tw-mr-4">
                     <a href="{{ $forumUrl }}"
-                        class="tw-transition-none tw-px-6 tw-h-auto tw-py-3 tw-btn-secondary tw-btn-small tw-text-white hover:tw-bg-{{ $brandName }} hover:tw-text-white hover:tw-border-{{ $brandName }}">
+                        class="tw-text-xs sm:tw-text-sm tw-transition-none tw-px-3 sm:tw-px-6 tw-h-auto tw-py-3 tw-btn-secondary tw-btn-small tw-text-white hover:tw-bg-{{ $brandName }} hover:tw-text-white hover:tw-border-{{ $brandName }}">
                         <span>
-                            <i aria-hidden="true" class="fa fa-question-circle tw-pr-1.5"></i>
-                            Ask a question</span>
+                            <i aria-hidden="true" class="fa fa-question-circle tw-px-0.5"></i>
+                            <span class="tw-hidden sm:tw-inline-block">Ask a question</span></span>
                     </a>
                 </div>
                 <div class="tw-mr-4">
                     <button data-open-modal="previewModal"
-                        class="tw-transition-none tw-px-6 tw-h-auto tw-py-3 tw-btn-secondary tw-btn-small tw-text-white hover:tw-bg-{{ $brandName }} hover:tw-text-white hover:tw-border-{{ $brandName }}">
+                        class="tw-text-xs sm:tw-text-sm tw-transition-none tw-px-3 sm:tw-px-6 tw-h-auto tw-py-3 tw-btn-secondary tw-btn-small tw-text-white hover:tw-bg-{{ $brandName }} hover:tw-text-white hover:tw-border-{{ $brandName }}">
                         <span>
-                            <i aria-hidden="true" class="fa fa-play tw-pr-1.5"></i>
-                            Play Trailer</span>
+                            <i aria-hidden="true" class="fa fa-play tw-px-0.5"></i>
+                            <span class="tw-hidden sm:tw-inline-block">Play Trailer</span></span>
                     </button>
                 </div>
             </div>
