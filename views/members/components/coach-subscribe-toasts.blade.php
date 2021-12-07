@@ -11,7 +11,7 @@
                 tw-rounded-md">
             <div class="tw-flex tw-justify-between tw-text-white tw-text-small">
                 <div><i class="far fa-bell-slash tw-mr-2"></i>You will no longer receive
-                    updates when {{ $firstName }} releases new content
+                    updates when {{ $firstName }} releases new content 
                 </div>
                 <button class="tw-bg-transparent tw-border-none" onclick="hideElement('unsubscribeToast');">
                     <i class="far fa-times-circle tw-text-white"></i>

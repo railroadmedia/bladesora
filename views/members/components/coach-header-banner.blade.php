@@ -47,10 +47,10 @@
         hideElement("unsubscribeToast");
     };
 
-    function subscribeToCoach(coachId) {
+    function subscribeToCoach(coachId, URL) {
         switchToSubscribedButton();
 
-        fetch('../../laravel/public/railcontent/follow', {
+        fetch(URL, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',
@@ -70,10 +70,10 @@
             });
     }
 
-    function unsubscribeToCoach(coachId) {
+    function unsubscribeToCoach(coachId, URL) {
         switchToSubscribeButton();
 
-        fetch('../../laravel/public/railcontent/unfollow', {
+        fetch(URL, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',
@@ -115,7 +115,7 @@
             </h2>
             <div class="tw-flex">
                 <div id="subscribeButton" class="tw-mr-4 {{ $isUserSubscribed ? 'tw-hidden' : '' }}">
-                    <button onclick="subscribeToCoach({{ $coachId }});"
+                    <button onclick="subscribeToCoach({{ $coachId }}, '{{ $subscribeUrl }}');"
                         class="tw-text-xs sm:tw-text-sm tw-transition-none tw-px-3 sm:tw-px-6 tw-h-auto tw-py-3 tw-btn-secondary tw-btn-small tw-text-white tw-border-{{ $brandName }} tw-bg-{{ $brandName }} hover:tw-bg-transparent hover:tw-text-white hover:tw-border-white">
                         <span>
                             <i aria-hidden="true" class="fa fa-bell tw-px-0.5"></i>
@@ -123,7 +123,7 @@
                     </button>
                 </div>
                 <div id="unsubscribeButton" class="tw-mr-4 {{ $isUserSubscribed ? '' : 'tw-hidden' }}">
-                    <button onclick="unsubscribeToCoach({{ $coachId }});"
+                    <button onclick="unsubscribeToCoach({{ $coachId }}, '{{ $unsubscribeUrl }}');"
                         class="tw-text-xs sm:tw-text-sm tw-transition-none tw-px-3 sm:tw-px-6 tw-h-auto tw-py-3 tw-btn-secondary tw-btn-small tw-text-white tw-border-{{ $brandName }} tw-bg-{{ $brandName }} hover:tw-bg-transparent hover:tw-text-white hover:tw-border-white">
                         <span>
                             <i aria-hidden="true" class="fa fa-check tw-px-0.5"></i>
