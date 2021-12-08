@@ -42,7 +42,7 @@
                     upload-endpoint="{{ $uploadRequestEndpoint }}"
                     save-endpoint="{{ $fieldSaveRequestEndpoint }}"
                     user-id="{{ $userId }}"
-                    @image-uploaded="gearPhotoUploaded"/>
+                    @image-uploaded="gearPhotoUploaded"></image-cropper>
             </div>
         </div>
     @endslot
