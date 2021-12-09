@@ -138,14 +138,16 @@
                             <span class="tw-hidden sm:tw-inline-block">Ask a question</span></span>
                     </a>
                 </div>
-                <div class="tw-mr-4">
-                    <button data-open-modal="previewModal"
-                        class="tw-text-xs sm:tw-text-sm tw-transition-none tw-px-3 sm:tw-px-6 tw-h-auto tw-py-3 tw-btn-secondary tw-btn-small tw-text-white hover:tw-bg-{{ $brandName }} hover:tw-text-white hover:tw-border-{{ $brandName }}">
-                        <span>
-                            <i aria-hidden="true" class="fa fa-play tw-px-0.5"></i>
-                            <span class="tw-hidden sm:tw-inline-block">Play Trailer</span></span>
-                    </button>
-                </div>
+                @if ($vimeoVideo != null)
+                    <div class="tw-mr-4">
+                        <button data-open-modal="previewModal"
+                            class="tw-text-xs sm:tw-text-sm tw-transition-none tw-px-3 sm:tw-px-6 tw-h-auto tw-py-3 tw-btn-secondary tw-btn-small tw-text-white hover:tw-bg-{{ $brandName }} hover:tw-text-white hover:tw-border-{{ $brandName }}">
+                            <span>
+                                <i aria-hidden="true" class="fa fa-play tw-px-0.5"></i>
+                                <span class="tw-hidden sm:tw-inline-block">Play Trailer</span></span>
+                        </button>
+                    </div>
+                @endif
             </div>
         </div>
 
