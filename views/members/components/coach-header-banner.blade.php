@@ -111,7 +111,7 @@
                 <span>{{ $lastFocus }}</span>
             </div>
             <h2 class="tw-mb-6 tw-text-base tw-font-normal">
-                {{ $shortBio }}
+                {!! $shortBio !!}
             </h2>
             <div class="tw-flex">
                 <div id="subscribeButton" class="tw-mr-4 {{ $isUserSubscribed ? 'tw-hidden' : '' }}">

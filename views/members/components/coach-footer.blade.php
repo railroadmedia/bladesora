@@ -18,7 +18,7 @@
                         <span>{{ $lastFocus }}</span>
                     </div>
                     <h2 class="tw-mb-10 tw-text-base tw-font-normal tw-max-w-4xl">
-                        {{ $shortBio }}
+                        {!! $shortBio !!}
                     </h2>
                 </div>
                 <div class="lg:tw-h-48 lg:tw-w-48">
@@ -30,7 +30,7 @@
             <div class="tw-bg-off-black tw-text-white">
                 <div class="tw-text-4xl">Bio</div>
                 <div class="tw-py-4">
-                    {{ $longBio }}
+                    {!! $longBio !!}
                 </div>
                 <div class="tw-text-4xl">Bands</div>
                 <div class="tw-py-4 tw-font-normal">
