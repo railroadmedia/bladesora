@@ -47,7 +47,11 @@
                         <label class="inline-block w-full text-left" for="password_confirmation"><strong>Password confirm</strong> <em class="opacity-70 text-xs md:float-right">No typos.</em></label>
                         <input class="main-form pt-0 inline-block w-full mt-1 mb-4 default-form-field" type="password" id="password_confirmation" name="password_confirmation" placeholder="Password Confirm..." value="{{ old('password_confirmation') }}">
 
-                        <input name="button" type="submit" id="button" class="text-white bg-{{ $brand }} leading-none text-base font-bold border-0 rounded-full select-none cursor-pointer text-center py-4 px-16 uppercase font-roboto" value="Redeem Guest Pass"/>
+                        @if(!empty($googleRecaptchaSiteKey))
+                            <div class="g-recaptcha mx-auto" style="display: inline-block;" data-sitekey="{{ $googleRecaptchaSiteKey }}"></div>
+                        @endif
+
+                        <input name="button" type="submit" id="button" class="mt-2 text-white bg-{{ $brand }} leading-none text-base font-bold border-0 rounded-full select-none cursor-pointer text-center py-4 px-16 uppercase font-roboto" value="Redeem Guest Pass"/>
                     </form>
                 </div>
             </div>
