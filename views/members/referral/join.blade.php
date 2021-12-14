@@ -31,6 +31,7 @@
                 <div class="xl:pl-10 max-w-md xl:max-w-none mx-auto">
                     <form id="join-form" name="join-form" method="post" action="{{ $joinUrl }}">
                         <input type="hidden" name="redirect" value="/members">
+                        <input type="hidden" name="referral_code" value="{{ $referralCode ?? request()->get('rsCode') }}">
 
                         <label class="inline-block w-full text-left @if($errors->has('name')) text-red-600 @endif" for="name"><strong>Your name</strong> <em class="opacity-70 text-xs md:float-right">@if($errors->has('name')) {{ $errors->first('name') }} @else Used to say hello! @endif</em></label>
                         <input class="main-form pt-0 inline-block w-full mt-1 mb-4 default-form-field @if($errors->has('name')) text-red-600 @else text-black @endif" type="text" id="name" name="name" placeholder="Your name..." value="{{ old('name') }}">
