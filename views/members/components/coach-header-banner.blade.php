@@ -130,14 +130,16 @@
                             <span>Subscribed</span> </span>
                     </button>
                 </div>
-                <div class="tw-mr-4">
-                    <a href="{{ $forumUrl }}"
-                        class="tw-text-xs sm:tw-text-sm tw-transition-none tw-px-3 sm:tw-px-6 tw-h-auto tw-py-3 tw-btn-secondary tw-btn-small tw-text-white hover:tw-bg-{{ $brandName }} hover:tw-text-white hover:tw-border-{{ $brandName }}">
-                        <span>
-                            <i aria-hidden="true" class="fa fa-question-circle tw-px-0.5"></i>
-                            <span class="tw-hidden sm:tw-inline-block">Ask a question</span></span>
-                    </a>
-                </div>
+                @if ($forumUrl != null)
+                    <div class="tw-mr-4">
+                        <a href="{{ $forumUrl }}"
+                            class="tw-text-xs sm:tw-text-sm tw-transition-none tw-px-3 sm:tw-px-6 tw-h-auto tw-py-3 tw-btn-secondary tw-btn-small tw-text-white hover:tw-bg-{{ $brandName }} hover:tw-text-white hover:tw-border-{{ $brandName }}">
+                            <span>
+                                <i aria-hidden="true" class="fa fa-question-circle tw-px-0.5"></i>
+                                <span class="tw-hidden sm:tw-inline-block">Ask a question</span></span>
+                        </a>
+                    </div>
+                @endif
                 @if ($vimeoVideo != null)
                     <div class="tw-mr-4">
                         <button data-open-modal="previewModal"
