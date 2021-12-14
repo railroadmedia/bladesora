@@ -28,36 +28,41 @@
                 </div>
             </div>
             <div class="tw-bg-off-black tw-text-white">
-                <div class="tw-text-4xl">Bio</div>
-                <div class="tw-py-4">
-                    {!! $longBio !!}
-                </div>
-                <div class="tw-text-4xl">Bands</div>
-                <div class="tw-py-4 tw-font-normal">
-                    @php
-                        $lastBand = array_pop($bandsArray);
-                    @endphp
-                    {{ implode($bandsArray, ', ') }}
-                    @if (count($bandsArray) !== 0)
-                        <span>and</span>
-                    @endif
-                    <span>{{ $lastBand }}</span>
-                </div>
-                <div class="tw-text-4xl">Endorsements</div>
-                <div class="tw-py-4 tw-font-normal">
-                    @php
-                        foreach ($endorsementsArray as $key => $endorsement) {
-                            if ($key === 0) {
-                                echo $endorsement . ': ';
-                            } elseif (count($endorsementsArray) - 1 !== $key) {
-                                echo $endorsement . ', ';
-                            } else {
-                                echo $endorsement;
-                            }
-                        }
-                    @endphp
-                </div>
-            </div>
+{{--                <div class="tw-text-4xl">Bio</div>--}}
+{{--                <div class="tw-py-4">--}}
+{{--                    {!! $longBio !!}--}}
+{{--                </div>--}}
+                @if (count($bandsArray) !== 0)
+                    <div class="tw-text-4xl">Bands</div>
+                    <div class="tw-py-4 tw-font-normal">
+                        @php
+                            $lastBand = array_pop($bandsArray);
+                        @endphp
+                        {{ implode($bandsArray, ', ') }}
+                        @if (count($bandsArray) !== 0)
+                            <span>and</span>
+                        @endif
+                        <span>{{ $lastBand }}</span>
+                    </div>
+                @endif
+
+                @if (count($endorsementsArray) !== 0)
+                    <div class="tw-text-4xl">Endorsements</div>
+                        <div class="tw-py-4 tw-font-normal">
+                            @php
+                                foreach ($endorsementsArray as $key => $endorsement) {
+                                    if ($key === 0) {
+                                        echo $endorsement . ': ';
+                                    } elseif (count($endorsementsArray) - 1 !== $key) {
+                                        echo $endorsement . ', ';
+                                    } else {
+                                        echo $endorsement;
+                                    }
+                                }
+                            @endphp
+                        </div>
+                    </div>
+                @endif
         </div>
     </div>
 </div>
