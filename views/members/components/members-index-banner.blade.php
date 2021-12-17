@@ -1,6 +1,6 @@
 @if (isset($coachOfTheMonth))
     @component('bladesora::members.components.coach-header-template', [
-        'brand'=> 'singeo',
+        'brand'=> $brand,
         'backgroundImage'=> $coachOfTheMonth->fetch('coach_top_banner_image'),
         ])
         @slot('topSubitle')

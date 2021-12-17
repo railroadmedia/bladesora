@@ -95,7 +95,7 @@
 @endsection
 
 @component('bladesora::members.components.coach-header-template', [
-    'brand'=> 'singeo',
+    'brand'=> $brandName,
     'backgroundImage'=> $backgroundImage
     ])
     @slot('bottomSubitle')
