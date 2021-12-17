@@ -94,27 +94,29 @@
 </script>
 @endsection
 
-<div class="tw-grid xs:tw-grid-cols-1 sm:tw-grid-cols-1 md:tw-grid-cols-1 lg:tw-grid-cols-2 tw-gap-0">
-    <div class="tw-bg-deepblue tw-text-white" style="background-color: #00101d;">
-        <div class="md:tw-py-12 lg:tw-py-16 tw-py-12 md:tw-px-14 tw-px-6">
-            <h1 class="tw-text-4xl tw-mb-2 tw-uppercase tw-font-normal">
-                {{ $firstName }} <span class="tw-font-bold">{{ $lastName }}</span></h1>
-            <div class="tw-uppercase tw-font-semibold tw-mb-1 tw-font-bold" style="color: #7E9AB1;">
-                @php
-                    $focusArray;
-                    $lastFocus = array_pop($focusArray);
-                @endphp
-                {{ implode($focusArray, ', ') }}
-                @if (count($focusArray) !== 0)
-                    <span>AND</span>
-                @endif
-                <span>{{ $lastFocus }}</span>
-            </div>
-            <h2 class="tw-mb-6 tw-text-base tw-font-normal">
-                {!! $shortBio !!}
-            </h2>
-            <div class="tw-flex">
-                <div id="subscribeButton" class="tw-mr-4 {{ $isUserSubscribed ? 'tw-hidden' : '' }}">
+@component('bladesora::members.components.coach-header-template', [
+    'brand'=> 'singeo',
+    'backgroundImage'=> $backgroundImage
+    ])
+    @slot('bottomSubitle')
+        @php
+                $focusArray;
+                $lastFocus = array_pop($focusArray);
+            @endphp
+            {{ implode($focusArray, ', ') }}
+            @if (count($focusArray) !== 0)
+                <span>AND</span>
+            @endif
+            <span>{{ $lastFocus }}</span>
+    @endslot
+    @slot('title')
+        {{ $firstName }} <span class="tw-font-bold">{{ $lastName }}</span>
+    @endslot
+    @slot('shortBio')
+        {!! $shortBio !!}
+    @endslot
+    @slot('actions')
+            <div id="subscribeButton" class="tw-mr-4 {{ $isUserSubscribed ? 'tw-hidden' : '' }}">
                     <button onclick="subscribeToCoach({{ $coachId }}, '{{ $subscribeUrl }}');"
                         class="tw-text-xs sm:tw-text-sm tw-transition-none tw-px-3 sm:tw-px-6 tw-h-auto tw-py-3 tw-btn-secondary tw-btn-small tw-text-white tw-border-{{ $brandName }} tw-bg-{{ $brandName }} hover:tw-bg-transparent hover:tw-text-white hover:tw-border-white">
                         <span>
@@ -150,8 +152,8 @@
                         </button>
                     </div>
                 @endif
-            </div>
-        </div>
+    @endslot
+@endcomponent 
 
         @if ($vimeoVideo != null)
             <div id="previewModal" class="modal">
@@ -212,17 +214,3 @@
                 @endif
             </div>
         @endif
-    </div>
-    <div
-        style="
-            background-image: url({{ _imgix(
-                $backgroundImage,
-                []
-            ) }});
-            color: #fff;
-            background-size: cover;
-            background-position: 50%;">
-        <div style="width: 100%; height: 100%; background: linear-gradient(268deg,rgba(0,16,29,.07) 50%,#00101d);"></div>
-
-    </div>
-</div>
