@@ -11,8 +11,8 @@
     <section class="flex flex-row flex-wrap mv-3">
         <div class="flex flex-column">
 
-            {{--TODO: Requires an instance of Vue with the Vuesora plugin--}}
-                <support-email-form 
+            {{--TODO: Requires an instance of Vue with the Vuesora plugin ...? --}}
+                <contact-member-email-form
                     brand="{{ $brand }}"
                     email-subject="{{ $emailSubject }}"
                     email-type="{{ $emailType }}"
@@ -24,7 +24,7 @@
                     recipient="{{ $recipient ?? 'support@' . $brand . '.com' }}"
                     success-message="{{ $emailSuccessMessage }}"
                 />
-            {{--TODO: Requires an instance of Vue with the Vuesora plugin--}}
+            {{--TODO: Requires an instance of Vue with the Vuesora plugin ...? --}}
         </div>
     </section>
 
