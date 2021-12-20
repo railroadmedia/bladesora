@@ -1,7 +1,7 @@
 @if ($hasFeaturedCoaches)
     <div class="container mt-2 tw-mb-6">
         <div class="flex flex-row align-v-center pv-2  tw-mb-4">
-            <span class="rounded bg-drumeo text-white icon-bg-circle body mr-1">
+            <span class="rounded bg-{{ $brand }} text-white icon-bg-circle body mr-1">
                 <i class="fas fa-star"></i>
             </span>
 
