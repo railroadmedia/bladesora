@@ -52,7 +52,7 @@
                             </h2>
                             <!-- Buttons -->
                             <a href="{{ $featured->fetch('url') }}"
-                                class="tw-btn tw-btn-primary tw-bg-drumeo tw-ml-auto tw-hidden hover:tw-bg-drumeo-600 {{ $singleFeaturedCoach ? '' : 'xl:tw-inline-flex' }}">Visit
+                                class="tw-btn tw-btn-primary tw-bg-{{ $brand }} tw-ml-auto tw-hidden hover:tw-bg-{{ $brand }}-600 {{ $singleFeaturedCoach ? '' : 'xl:tw-inline-flex' }}">Visit
                                 Coach</a>
                         </div>
                         <!-- Card Body -->
@@ -72,7 +72,7 @@
                         </div>
                         <!-- Buttons -->
                         <a href="{{ $featured->fetch('url') }}"
-                            class="tw-btn tw-btn-primary tw-bg-drumeo tw-mr-auto hover:tw-bg-drumeo-600 {{ $singleFeaturedCoach ? '' : 'xl:tw-hidden' }}">Visit
+                            class="tw-btn tw-btn-primary tw-bg-{{ $brand }} tw-mr-auto hover:tw-bg-{{ $brand }}-600 {{ $singleFeaturedCoach ? '' : 'xl:tw-hidden' }}">Visit
                             Coach</a>
                     </div>
                 </div>
