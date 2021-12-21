@@ -8,7 +8,7 @@ $colors = [
     ],
     'guitareo' => [
         'solidBg' => '#101817',
-        'bgRgbStart' => '(0, 16, 29, 0)',
+        'bgRgbStart' => 'rgba(0, 16, 29, 0)',
         'bgRgbEnd' => '',
         'subtitle' => '#717179',
     ],
