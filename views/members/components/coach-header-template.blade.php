@@ -54,6 +54,7 @@ $brandColors = $colors[$brand];
     </div>
     <div
         style="
+            background-color: {{ $colors["$brand"]['solidBg'] }};
             background-image: url({{ _imgix(
                 $backgroundImage,
                 []
