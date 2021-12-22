@@ -3,7 +3,7 @@
         'brand' => $brand,
         'backgroundImage' => $coachOfTheMonth->fetch('coach_top_banner_image'),
         ])
-        @slot('topSubitle')
+        @slot('topSubtitle')
             Coach of The Month
         @endslot
         @slot('title')
@@ -13,7 +13,7 @@
                 $firstName = array_shift($exploded);
             @endphp
             <span class="tw-font-normal">{{ $firstName }}</span>
-            {{ implode($exploded, ' ') }}
+            <span class="tw-font-bold">{{ implode($exploded, ' ') }}</span>
         @endslot
         @slot('shortBio')
             {!! $coachOfTheMonth->fetch('data.short_bio', '') !!}

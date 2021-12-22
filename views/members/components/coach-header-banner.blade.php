@@ -98,7 +98,7 @@
     'brand'=> $brandName,
     'backgroundImage'=> $backgroundImage
     ])
-    @slot('bottomSubitle')
+    @slot('bottomSubtitle')
         @php
                 $focusArray;
                 $lastFocus = array_pop($focusArray);
@@ -118,7 +118,7 @@
     @slot('actions')
             <div id="subscribeButton" class="tw-mr-4 {{ $isUserSubscribed ? 'tw-hidden' : '' }}">
                     <button onclick="subscribeToCoach({{ $coachId }}, '{{ $subscribeUrl }}');"
-                        class="tw-text-xs sm:tw-text-sm tw-transition-none tw-px-3 sm:tw-px-6 tw-h-auto tw-py-3 tw-btn-secondary tw-btn-small tw-text-white tw-border-{{ $brandName }} tw-bg-{{ $brandName }} hover:tw-bg-transparent hover:tw-text-white hover:tw-border-white">
+                        class="tw-transition-none tw-px-3 sm:tw-px-6 tw-h-auto tw-py-3 tw-btn-secondary tw-btn-small tw-text-white tw-border-{{ $brandName }} tw-bg-{{ $brandName }} hover:tw-bg-transparent hover:tw-text-white hover:tw-border-white" style="font-size: 16px; line-height: 24px;">
                         <span>
                             <i aria-hidden="true" class="fa fa-bell tw-px-0.5"></i>
                             Subscribe</span>
@@ -126,7 +126,7 @@
                 </div>
                 <div id="unsubscribeButton" class="tw-mr-4 {{ $isUserSubscribed ? '' : 'tw-hidden' }}">
                     <button onclick="unsubscribeToCoach({{ $coachId }}, '{{ $unsubscribeUrl }}');"
-                        class="tw-text-xs sm:tw-text-sm tw-transition-none tw-px-3 sm:tw-px-6 tw-h-auto tw-py-3 tw-btn-secondary tw-btn-small tw-text-white tw-border-{{ $brandName }} tw-bg-{{ $brandName }} hover:tw-bg-transparent hover:tw-text-white hover:tw-border-white">
+                        class="tw-transition-none tw-px-3 sm:tw-px-6 tw-h-auto tw-py-3 tw-btn-secondary tw-btn-small tw-text-white tw-border-{{ $brandName }} tw-bg-{{ $brandName }} hover:tw-bg-transparent hover:tw-text-white hover:tw-border-white" style="font-size: 16px; line-height: 24px;">
                         <span>
                             <i aria-hidden="true" class="fa fa-check tw-px-0.5"></i>
                             <span>Subscribed</span> </span>
@@ -135,20 +135,20 @@
                 @if ($forumUrl != null)
                     <div class="tw-mr-4">
                         <a href="{{ $forumUrl }}"
-                            class="tw-text-xs sm:tw-text-sm tw-transition-none tw-px-3 sm:tw-px-6 tw-h-auto tw-py-3 tw-btn-secondary tw-btn-small tw-text-white hover:tw-bg-{{ $brandName }} hover:tw-text-white hover:tw-border-{{ $brandName }}">
+                            class="tw-transition-none tw-px-3 sm:tw-px-6 tw-h-auto tw-py-3 tw-btn-secondary tw-btn-small tw-text-white hover:tw-bg-{{ $brandName }} hover:tw-text-white hover:tw-border-{{ $brandName }}" style="font-size: 16px; line-height: 24px;">
                             <span>
                                 <i aria-hidden="true" class="fa fa-question-circle tw-px-0.5"></i>
-                                <span class="tw-hidden sm:tw-inline-block">Ask a question</span></span>
+                                <span>Ask a question</span></span>
                         </a>
                     </div>
                 @endif
                 @if ($vimeoVideo != null)
                     <div class="tw-mr-4">
                         <button data-open-modal="previewModal"
-                            class="tw-text-xs sm:tw-text-sm tw-transition-none tw-px-3 sm:tw-px-6 tw-h-auto tw-py-3 tw-btn-secondary tw-btn-small tw-text-white hover:tw-bg-{{ $brandName }} hover:tw-text-white hover:tw-border-{{ $brandName }}">
+                            class="tw-transition-none tw-px-3 sm:tw-px-6 tw-h-auto tw-py-3 tw-btn-secondary tw-btn-small tw-text-white hover:tw-bg-{{ $brandName }} hover:tw-text-white hover:tw-border-{{ $brandName }}" style="font-size: 16px; line-height: 24px;">
                             <span>
                                 <i aria-hidden="true" class="fa fa-play tw-px-0.5"></i>
-                                <span class="tw-hidden sm:tw-inline-block">Play Trailer</span></span>
+                                <span>Play Trailer</span></span>
                         </button>
                     </div>
                 @endif
