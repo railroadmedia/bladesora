@@ -20,8 +20,9 @@
         @endslot
         @slot('actions')
             <a href="{{ $coachOfTheMonth->fetch('url', '') }}"
-                class="tw-btn tw-btn-primary tw-transition tw-bg-{{ $brand }} hover:tw-bg-{{ $brand }}-600 tw-mr-4">See
-                Coach</a>
+               class="tw-btn tw-btn-primary tw-transition tw-bg-{{ $brand }} hover:tw-bg-{{ $brand }}-600 tw-mr-4">
+                See Coach
+            </a>
             <button class="tw-btn tw-btn-secondary tw-transition hover:tw-bg-opacity-10 hover:tw-bg-white"
                 data-open-modal="coach-trailer">
                 <span>
@@ -36,9 +37,11 @@
         <div class="flex flex-column corners-3">
             <div class="tw-w-full tw-relative" style="padding-bottom: 56.25%;">
                 <iframe class="tw-absolute tw-w-full tw-h-full reset-on-close"
-                    src="//player.vimeo.com/video/495414119?autoplay=1"
-                    data-lazy-load-url="//player.vimeo.com/video/495414119?autoplay=1" frameborder="0"
-                    allowfullscreen="" allow="">
+                    src="//player.vimeo.com/video/{{$coachOfTheMonth->fetch('fields.video.fields.vimeo_video_id')}}?autoplay=1"
+                    data-lazy-load-url="//player.vimeo.com/video/{{$coachOfTheMonth->fetch('fields.video.fields.vimeo_video_id')}}?autoplay=1"
+                    frameborder="0" 
+                    allowfullscreen="" 
+                    allow="">
                 </iframe>
             </div>
         </div>
