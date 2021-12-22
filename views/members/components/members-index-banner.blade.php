@@ -1,7 +1,7 @@
 @if (isset($coachOfTheMonth))
     @component('bladesora::members.components.coach-header-template', [
-        'brand'=> $brand,
-        'backgroundImage'=> $coachOfTheMonth->fetch('coach_top_banner_image'),
+        'brand' => $brand,
+        'backgroundImage' => $coachOfTheMonth->fetch('coach_top_banner_image'),
         ])
         @slot('topSubitle')
             Coach of The Month
@@ -20,10 +20,13 @@
         @endslot
         @slot('actions')
             <a href="{{ $coachOfTheMonth->fetch('url', '') }}"
-                class="tw-btn tw-btn-primary tw-transition tw-bg-{{ $brand }} hover:tw-bg-{{ $brand }}-600 tw-mr-4">See Coach</a>
+                class="tw-btn tw-btn-primary tw-transition tw-bg-{{ $brand }} hover:tw-bg-{{ $brand }}-600 tw-mr-4">See
+                Coach</a>
             <button class="tw-btn tw-btn-secondary tw-transition hover:tw-bg-opacity-10 hover:tw-bg-white"
                 data-open-modal="coach-trailer">
-                Watch Trailer
+                <span>
+                    <i aria-hidden="true" class="fa fa-play tw-px-0.5"></i>
+                    <span class="tw-hidden sm:tw-inline-block">Play Trailer</span></span>
             </button>
         @endslot
     @endcomponent
