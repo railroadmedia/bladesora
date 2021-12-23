@@ -20,10 +20,11 @@
         @endslot
         @slot('actions')
             <a href="{{ $coachOfTheMonth->fetch('url', '') }}"
-               class="tw-btn tw-btn-primary tw-transition tw-bg-{{ $brand }} hover:tw-bg-{{ $brand }}-600 sm:tw-mr-4">
+               class="tw-btn tw-btn-primary tw-transition tw-bg-{{ $brand }} hover:tw-bg-{{ $brand }}-600 sm:tw-mr-4 tw-box-border"  style="font-size: 16px; line-height: 24px; height: 50px;">
                 See Coach
             </a>
-            <button class="tw-btn tw-btn-secondary tw-transition hover:tw-bg-opacity-10 hover:tw-bg-white"
+            <button class="tw-btn tw-btn-secondary tw-transition hover:tw-bg-opacity-10 hover:tw-bg-white tw-box-border"
+             style="font-size: 16px; line-height: 24px; height: 50px;"
                 data-open-modal="coach-trailer">
                 <span>
                     <i aria-hidden="true" class="fa fa-play tw-px-0.5"></i>

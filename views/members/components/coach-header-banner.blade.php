@@ -118,7 +118,7 @@
     @slot('actions')
             <div id="subscribeButton" class="tw-mr-4 {{ $isUserSubscribed ? 'tw-hidden' : '' }}">
                     <button onclick="subscribeToCoach({{ $coachId }}, '{{ $subscribeUrl }}');"
-                        class="tw-transition-none tw-px-3 sm:tw-px-6 tw-h-auto tw-py-3 tw-btn-secondary tw-btn-small tw-text-white tw-border-{{ $brandName }} tw-bg-{{ $brandName }} hover:tw-bg-transparent hover:tw-text-white hover:tw-border-white" style="font-size: 16px; line-height: 24px;">
+                        class="tw-btn tw-btn-primary tw-transition tw-bg-{{ $brandName }} hover:tw-bg-{{ $brandName }}-600 sm:tw-mr-4 tw-box-border" style="font-size: 16px; line-height: 24px; height: 50px;">
                         <span>
                             <i aria-hidden="true" class="fa fa-bell tw-px-0.5"></i>
                             Subscribe</span>
@@ -126,7 +126,7 @@
                 </div>
                 <div id="unsubscribeButton" class="tw-mr-4 {{ $isUserSubscribed ? '' : 'tw-hidden' }}">
                     <button onclick="unsubscribeToCoach({{ $coachId }}, '{{ $unsubscribeUrl }}');"
-                        class="tw-transition-none tw-px-3 sm:tw-px-6 tw-h-auto tw-py-3 tw-btn-secondary tw-btn-small tw-text-white tw-border-{{ $brandName }} tw-bg-{{ $brandName }} hover:tw-bg-transparent hover:tw-text-white hover:tw-border-white" style="font-size: 16px; line-height: 24px;">
+                        class="tw-btn tw-btn-primary tw-transition tw-bg-{{ $brandName }} hover:tw-bg-{{ $brandName }}-600 sm:tw-mr-4 tw-box-border" style="font-size: 16px; line-height: 24px; height: 50px;">
                         <span>
                             <i aria-hidden="true" class="fa fa-check tw-px-0.5"></i>
                             <span>Subscribed</span> </span>
@@ -135,7 +135,7 @@
                 @if ($forumUrl != null)
                     <div class="tw-mr-4">
                         <a href="{{ $forumUrl }}"
-                            class="tw-transition-none tw-px-3 sm:tw-px-6 tw-h-auto tw-py-3 tw-btn-secondary tw-btn-small tw-text-white hover:tw-bg-{{ $brandName }} hover:tw-text-white hover:tw-border-{{ $brandName }}" style="font-size: 16px; line-height: 24px;">
+                            class="tw-btn tw-btn-primary tw-transition tw-bg-{{ $brandName }} hover:tw-bg-{{ $brandName }}-600 sm:tw-mr-4 tw-box-border" style="font-size: 16px; line-height: 24px; height: 50px;">
                             <span>
                                 <i aria-hidden="true" class="fa fa-question-circle tw-px-0.5"></i>
                                 <span>Ask a question</span></span>
@@ -145,7 +145,7 @@
                 @if ($vimeoVideo != null)
                     <div class="tw-mr-4">
                         <button data-open-modal="previewModal"
-                            class="tw-transition-none tw-px-3 sm:tw-px-6 tw-h-auto tw-py-3 tw-btn-secondary tw-btn-small tw-text-white hover:tw-bg-{{ $brandName }} hover:tw-text-white hover:tw-border-{{ $brandName }}" style="font-size: 16px; line-height: 24px;">
+                            class="tw-btn tw-btn-secondary tw-transition hover:tw-bg-opacity-10 hover:tw-bg-white tw-box-border" style="font-size: 16px; line-height: 24px; height: 50px;">
                             <span>
                                 <i aria-hidden="true" class="fa fa-play tw-px-0.5"></i>
                                 <span>Play Trailer</span></span>
