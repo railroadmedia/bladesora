@@ -116,7 +116,7 @@
         {!! $shortBio !!}
     @endslot
     @slot('actions')
-            <div id="subscribeButton" class="tw-mr-4 {{ $isUserSubscribed ? 'tw-hidden' : '' }}">
+            <div id="subscribeButton" class="md:tw-mr-4 {{ $isUserSubscribed ? 'tw-hidden' : '' }}">
                     <button onclick="subscribeToCoach({{ $coachId }}, '{{ $subscribeUrl }}');"
                         class="tw-btn tw-btn-primary tw-transition tw-bg-{{ $brandName }} hover:tw-bg-{{ $brandName }}-600 sm:tw-mr-4 tw-box-border" style="font-size: 16px; line-height: 24px; height: 50px;">
                         <span>
@@ -124,7 +124,7 @@
                             Subscribe</span>
                     </button>
                 </div>
-                <div id="unsubscribeButton" class="tw-mr-4 {{ $isUserSubscribed ? '' : 'tw-hidden' }}">
+                <div id="unsubscribeButton" class="md:tw-mr-4 {{ $isUserSubscribed ? '' : 'tw-hidden' }}">
                     <button onclick="unsubscribeToCoach({{ $coachId }}, '{{ $unsubscribeUrl }}');"
                         class="tw-btn tw-btn-primary tw-transition tw-bg-{{ $brandName }} hover:tw-bg-{{ $brandName }}-600 sm:tw-mr-4 tw-box-border" style="font-size: 16px; line-height: 24px; height: 50px;">
                         <span>
@@ -133,7 +133,7 @@
                     </button>
                 </div>
                 @if ($forumUrl != null)
-                    <div class="tw-mr-4">
+                    <div class="md:tw-mr-4">
                         <a href="{{ $forumUrl }}"
                             class="tw-btn tw-btn-primary tw-transition tw-bg-{{ $brandName }} hover:tw-bg-{{ $brandName }}-600 sm:tw-mr-4 tw-box-border" style="font-size: 16px; line-height: 24px; height: 50px;">
                             <span>
@@ -143,7 +143,7 @@
                     </div>
                 @endif
                 @if ($vimeoVideo != null)
-                    <div class="tw-mr-4">
+                    <div class="md:tw-mr-4">
                         <button data-open-modal="previewModal"
                             class="tw-btn tw-btn-secondary tw-transition hover:tw-bg-opacity-10 hover:tw-bg-white tw-box-border" style="font-size: 16px; line-height: 24px; height: 50px;">
                             <span>
