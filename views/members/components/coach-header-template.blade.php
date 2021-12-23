@@ -36,7 +36,7 @@ $brandColors = $colors[$brand];
                     {{ $topSubtitle }}
                 </h2>
             @endif
-            <h1 class="tw-mb-3 tw-uppercase tw-font-normal" style="font-size: 40px; line-height: 24px;">
+            <h1 class="tw-mb-3 tw-uppercase tw-font-normal" style="font-size: 40px; line-height: 36px;">
                 {{ $title }}
             </h1>
             @if (isset($bottomSubtitle))
