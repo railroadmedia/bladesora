@@ -2,6 +2,7 @@
     @component('bladesora::members.components.coach-header-template', [
         'brand' => $brand,
         'backgroundImage' => $coachOfTheMonth->fetch('coach_top_banner_image'),
+        'vimeoVideo' => $coachOfTheMonth->fetch('fields.video.fields.vimeo_video_id'),
         ])
         @slot('topSubtitle')
             Coach of The Month
@@ -20,31 +21,16 @@
         @endslot
         @slot('actions')
             <a href="{{ $coachOfTheMonth->fetch('url', '') }}"
-               class="tw-btn tw-btn-primary tw-transition tw-bg-{{ $brand }} hover:tw-bg-{{ $brand }}-600 sm:tw-mr-4 tw-box-border"  style="font-size: 16px; line-height: 24px; height: 50px;">
+               class="tw-btn tw-btn-primary tw-transition tw-bg-{{ $brand }} hover:tw-bg-{{ $brand }}-600 sm:tw-mr-4 tw-box-border"  style="font-size: 16px; line-height: 24px; height: 50px; width: 200px;">
                 See Coach
             </a>
-            <button class="tw-btn tw-btn-secondary tw-transition hover:tw-bg-opacity-10 hover:tw-bg-white tw-box-border"
-             style="font-size: 16px; line-height: 24px; height: 50px;"
-                data-open-modal="coach-trailer">
+            <button onclick="onModalButtonClick()" class="tw-btn tw-btn-secondary tw-transition hover:tw-bg-opacity-10 hover:tw-bg-white tw-box-border"
+             style="font-size: 16px; line-height: 24px; height: 50px; width: 200px;"
+                data-open-modal="coach-trailer-modal">
                 <span>
                     <i aria-hidden="true" class="fa fa-play tw-px-0.5"></i>
                     <span>Play Trailer</span></span>
             </button>
         @endslot
     @endcomponent
-
-    <!-- Video Modal -->
-    <div id="coach-trailer" class="modal">
-        <div class="flex flex-column corners-3">
-            <div class="tw-w-full tw-relative" style="padding-bottom: 56.25%;">
-                <iframe class="tw-absolute tw-w-full tw-h-full reset-on-close"
-                    src="//player.vimeo.com/video/{{$coachOfTheMonth->fetch('fields.video.fields.vimeo_video_id')}}?autoplay=1"
-                    data-lazy-load-url="//player.vimeo.com/video/{{$coachOfTheMonth->fetch('fields.video.fields.vimeo_video_id')}}?autoplay=1"
-                    frameborder="0" 
-                    allowfullscreen="" 
-                    allow="">
-                </iframe>
-            </div>
-        </div>
-    </div>
 @endif

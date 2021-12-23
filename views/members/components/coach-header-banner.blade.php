@@ -96,7 +96,8 @@
 
 @component('bladesora::members.components.coach-header-template', [
     'brand'=> $brandName,
-    'backgroundImage'=> $backgroundImage
+    'backgroundImage'=> $backgroundImage,
+    'vimeoVideo' => $vimeoVideo,
     ])
     @slot('bottomSubtitle')
         @php
@@ -144,7 +145,7 @@
                 @endif
                 @if ($vimeoVideo != null)
                     <div class="md:tw-mr-4">
-                        <button data-open-modal="previewModal"
+                        <button onclick="onModalButtonClick()" data-open-modal="coach-trailer-modal"
                             class="tw-btn tw-btn-secondary tw-transition hover:tw-bg-opacity-10 hover:tw-bg-white tw-box-border tw-px-auto" style="font-size: 16px; line-height: 24px; height: 50px; width: 250px;">
                             <span>
                                 <i aria-hidden="true" class="fa fa-play tw-px-0.5"></i>
@@ -154,23 +155,6 @@
                 @endif
     @endslot
 @endcomponent 
-
-        @if ($vimeoVideo != null)
-            <div id="previewModal" class="modal">
-                <div class="flex flex-column corners-10">
-                    <div class="video-wrap">
-                        <div class="widescreen">
-                            <div class="flex flex-column video-player user-active">
-                                <iframe
-                                    style="max-width: 100%; width: 100%; height: 100%; position: absolute; top: 0; left: 0;z-index: 1;"
-                                    src="//player.vimeo.com/video/{{ $vimeoVideo }}"
-                                    frameborder="0" allowfullscreen></iframe>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        @endif
 
         @if(empty($hideUser))
             <div class="tw-flex-col tw-items-center tw-hidden sm:tw-flex">
