@@ -71,8 +71,7 @@
                         </div>
                         <!-- Buttons -->
                         <a href="{{ $featured->fetch('url') }}"
-                            class="tw-btn tw-btn-primary tw-bg-{{ $brand }} tw-mr-auto hover:tw-bg-{{ $brand }}-600 {{ $singleFeaturedCoach ? '' : 'xl:tw-hidden' }}">Visit
-                            Coach</a>
+                            class="tw-btn tw-btn-primary tw-bg-{{ $brand }} tw-mr-auto hover:tw-bg-{{ $brand }}-600 {{ $singleFeaturedCoach ? '' : 'xl:tw-hidden' }}">SEE COACH</a>
                     </div>
                 </div>
             @endforeach
