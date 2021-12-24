@@ -1,26 +1,29 @@
 @section('scripts')
-<script src="https://player.vimeo.com/api/player.js"></script>
-<script type="application/javascript">
-    const attachOverlayListener = function () {
-        const modalOverlay = document.getElementById('modalOverlay');
+    <script src="https://player.vimeo.com/api/player.js"></script>
+    <script type="application/javascript">
+        const attachOverlayListener = function () {
+            const modalOverlay = document.getElementById('modalOverlay');
 
-        modalOverlay.onclick = function () {
+            modalOverlay.onclick = function () {
+                const videoIframe = document.getElementById('coachVideoIframe');
+                const player = new Vimeo.Player(videoIframe);
+                player.pause();
+            }
+        }
+
+        const onModalButtonClick = function () {
             const videoIframe = document.getElementById('coachVideoIframe');
             const player = new Vimeo.Player(videoIframe);
-            player.pause();
+            player.play();
+
+            setTimeout(function() {
+                attachOverlayListener();
+            }, 100);
         }
-    }
-
-    const onModalButtonClick = function () {
-        const videoIframe = document.getElementById('coachVideoIframe');
-        const player = new Vimeo.Player(videoIframe);
-        player.play();
-
-        setTimeout(function() {
-            attachOverlayListener();
-        }, 100);
-    }
-</script>
+    </script>
+    @if(isset($queuedScripts))
+        {{ $queuedScripts }}
+    @endif
 @endsection
 
 @php
