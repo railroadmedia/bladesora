@@ -52,8 +52,7 @@
                             </h2>
                             <!-- Buttons -->
                             <a href="{{ $featured->fetch('url') }}"
-                                class="tw-btn tw-btn-primary tw-bg-{{ $brand }} tw-ml-auto tw-hidden hover:tw-bg-{{ $brand }}-600 {{ $singleFeaturedCoach ? '' : 'xl:tw-inline-flex' }}">Visit
-                                Coach</a>
+                                class="tw-btn tw-btn-primary tw-bg-{{ $brand }} tw-ml-auto tw-hidden hover:tw-bg-{{ $brand }}-600 {{ $singleFeaturedCoach ? '' : 'xl:tw-inline-flex' }}">SEE COACH</a>
                         </div>
                         <!-- Card Body -->
                         <div class="tw-flex tw-flex-col tw-mb-6">
