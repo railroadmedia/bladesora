@@ -14,7 +14,7 @@
 <div class="referral-sections">
     <section class="text-center text-white py-6 md:py-10 lg:pt-12 lg:pb-16" style="background:linear-gradient(to bottom, #010e2c, #000c17);">
         <div class="container mx-auto max-w-6xl">
-            @if ($canRefer && !$errors->has('email-invite-message')))
+            @if ($canRefer && !$errors->has('email-invite-message'))
                 <h1 class="leading-tight lg:mb-14"><strong>{{ $referredByUserName }} gifted you 30 days<br class="hidden md:inline"> of free drum lessons!</strong></h1>
                 <div class="flex flex-wrap xl:flex-nowrap items-center px-4">
                     <div class="flex-shrink-0 w-full xl:w-auto my-5 md:my-6 xl:my-0">
