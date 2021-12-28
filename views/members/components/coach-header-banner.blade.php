@@ -1,103 +1,102 @@
-    
-@section('scripts')
-<script type="application/javascript">
-    function hideElement(elId) {
-        var element = document.getElementById(elId);
-        if (!element.classList.contains("tw-hidden")) {
-            element.classList.add("tw-hidden");
-        }
-    }
-
-    function showElement(elId) {
-        var element = document.getElementById(elId);
-        element.classList.remove("tw-hidden");
-    }
-
-    function switchToSubscribedButton() {
-        hideElement("subscribeButton");
-        showElement("unsubscribeButton");
-    };
-
-    function switchToSubscribeButton() {
-        hideElement("unsubscribeButton");
-        showElement("subscribeButton");
-    };
-
-    function successSubscribeToast() {
-        showElement("subscribeToast");
-        hideElement("unsubscribeToast");
-        hideElement("errorToast");
-        setTimeout(() => {
-            hideElement("subscribeToast");
-        }, 2500);
-    };
-
-    function successUnsubscribeToast() {
-        showElement("unsubscribeToast");
-        hideElement("subscribeToast");
-        hideElement("errorToast");
-        setTimeout(() => {
-            hideElement("unsubscribeToast");
-        }, 2500);
-    };
-
-    function showErrorToast() {
-        showElement("errorToast");
-        hideElement("subscribeToast");
-        hideElement("unsubscribeToast");
-    };
-
-    function subscribeToCoach(coachId, URL) {
-        switchToSubscribedButton();
-
-        fetch(URL, {
-                method: 'PUT',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'X-CSRF-TOKEN': '{{ csrf_token() }}'
-                },
-                referrerPolicy: 'no-referrer',
-                body: JSON.stringify({
-                    content_id: coachId
-                })
-            })
-            .then(response => response.json())
-            .then(() => {
-                successSubscribeToast();
-            })
-            .catch((e) => {
-                switchToSubscribeButton();
-            });
-    }
-
-    function unsubscribeToCoach(coachId, URL) {
-        switchToSubscribeButton();
-
-        fetch(URL, {
-                method: 'PUT',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'X-CSRF-TOKEN': '{{ csrf_token() }}'
-                },
-                referrerPolicy: 'no-referrer',
-                body: JSON.stringify({
-                    content_id: coachId
-                })
-            })
-            .then(() => {
-                successUnsubscribeToast();
-            })
-            .catch((e) => {
-                switchToSubscribedButton();
-            });
-    }
-</script>
-@endsection
-
 @component('bladesora::members.components.coach-header-template', [
     'brand'=> $brandName,
-    'backgroundImage'=> $backgroundImage
-    ])
+    'backgroundImage'=> $backgroundImage,
+    'vimeoVideo' => $vimeoVideo,
+    ])    
+    @slot('queuedScripts')
+    <script type="application/javascript">
+        function hideElement(elId) {
+            var element = document.getElementById(elId);
+            if (!element.classList.contains("tw-hidden")) {
+                element.classList.add("tw-hidden");
+            }
+        }
+
+        function showElement(elId) {
+            var element = document.getElementById(elId);
+            element.classList.remove("tw-hidden");
+        }
+
+        function switchToSubscribedButton() {
+            hideElement("subscribeButton");
+            showElement("unsubscribeButton");
+        };
+
+        function switchToSubscribeButton() {
+            hideElement("unsubscribeButton");
+            showElement("subscribeButton");
+        };
+
+        function successSubscribeToast() {
+            showElement("subscribeToast");
+            hideElement("unsubscribeToast");
+            hideElement("errorToast");
+            setTimeout(() => {
+                hideElement("subscribeToast");
+            }, 2500);
+        };
+
+        function successUnsubscribeToast() {
+            showElement("unsubscribeToast");
+            hideElement("subscribeToast");
+            hideElement("errorToast");
+            setTimeout(() => {
+                hideElement("unsubscribeToast");
+            }, 2500);
+        };
+
+        function showErrorToast() {
+            showElement("errorToast");
+            hideElement("subscribeToast");
+            hideElement("unsubscribeToast");
+        };
+
+        function subscribeToCoach(coachId, URL) {
+            switchToSubscribedButton();
+
+            fetch(URL, {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRF-TOKEN': '{{ csrf_token() }}'
+                    },
+                    referrerPolicy: 'no-referrer',
+                    body: JSON.stringify({
+                        content_id: coachId
+                    })
+                })
+                .then(response => response.json())
+                .then(() => {
+                    successSubscribeToast();
+                })
+                .catch((e) => {
+                    switchToSubscribeButton();
+                });
+        }
+
+        function unsubscribeToCoach(coachId, URL) {
+            switchToSubscribeButton();
+
+            fetch(URL, {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRF-TOKEN': '{{ csrf_token() }}'
+                    },
+                    referrerPolicy: 'no-referrer',
+                    body: JSON.stringify({
+                        content_id: coachId
+                    })
+                })
+                .then(() => {
+                    successUnsubscribeToast();
+                })
+                .catch((e) => {
+                    switchToSubscribedButton();
+                });
+        }
+    </script>
+    @endslot
     @slot('bottomSubtitle')
         @php
                 $focusArray;
@@ -144,7 +143,7 @@
                 @endif
                 @if ($vimeoVideo != null)
                     <div class="md:tw-mr-4">
-                        <button data-open-modal="previewModal"
+                        <button onclick="onModalButtonClick()" data-open-modal="coach-trailer-modal"
                             class="tw-btn tw-btn-secondary tw-transition hover:tw-bg-opacity-10 hover:tw-bg-white tw-box-border tw-px-auto" style="font-size: 16px; line-height: 24px; height: 50px; width: 250px;">
                             <span>
                                 <i aria-hidden="true" class="fa fa-play tw-px-0.5"></i>
@@ -154,23 +153,6 @@
                 @endif
     @endslot
 @endcomponent 
-
-        @if ($vimeoVideo != null)
-            <div id="previewModal" class="modal">
-                <div class="flex flex-column corners-10">
-                    <div class="video-wrap">
-                        <div class="widescreen">
-                            <div class="flex flex-column video-player user-active">
-                                <iframe
-                                    style="max-width: 100%; width: 100%; height: 100%; position: absolute; top: 0; left: 0;z-index: 1;"
-                                    src="//player.vimeo.com/video/{{ $vimeoVideo }}"
-                                    frameborder="0" allowfullscreen></iframe>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        @endif
 
         @if(empty($hideUser))
             <div class="tw-flex-col tw-items-center tw-hidden sm:tw-flex">
