@@ -36,7 +36,7 @@
                                     class="tw-bg-yellow-500 tw-absolute tw-w-full tw-h-3 tw-left-0 tw-bottom-0 tw-z-10 tw-flex tw-items-center tw-justify-center">
                                     <svg class="tw-block" width="10" height="10" aria-hidden="true" fill="white"
                                         focusable="false">
-                                        <use xlink:href="#whistle"></use>
+                                        <use href="#whistle"></use>
                                     </svg>
                                 </div>
                             </div>

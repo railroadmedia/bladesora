@@ -3,7 +3,7 @@
         <div class="tw-flex tw-items-center tw-mb-6">
             <span class="rounded bg-{{ $brand }} text-white icon-bg-circle body mr-1">
                 <svg width="20" height="20" aria-hidden="true" fill="white" focusable="false">
-                    <use xlink:href="#whistle"></use>
+                    <use href="#whistle"></use>
                 </svg>
             </span>
             <h2 class="heading sans">
