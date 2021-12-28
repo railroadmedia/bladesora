@@ -6,7 +6,7 @@
                     <h1 class="tw-text-4xl tw-mb-2 tw-uppercase tw-font-normal">
                         {{ $firstName }} <span class="tw-font-bold">{{ $lastName }}</span>
                     </h1>
-                    <div class="tw-uppercase tw-font-semibold tw-mb-1" style="color: #7E9AB1;">
+                    <div class="tw-uppercase tw-font-semibold tw-mb-6" style="color: #7E9AB1;">
                         @php
                             $focusArray;
                             $lastFocus = array_pop($focusArray);
