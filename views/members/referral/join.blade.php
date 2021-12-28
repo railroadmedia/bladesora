@@ -31,8 +31,8 @@
 
 
                     <div class="xl:pl-10 max-w-md xl:max-w-none mx-auto">
+                        <form id="join-form" name="join-form" method="post" action="{{ url()->route('referral.claiming-join') }}">
 
-                        <form id="join-form" name="join-form" method="post" action="{{ $joinUrl }}">
                             <input type="hidden" name="redirect" value="/members">
                             <input type="hidden" name="referral_code" value="{{ $referralCode ?? request()->get('rsCode') }}">
 
@@ -52,9 +52,9 @@
                             <input class="main-form pt-0 inline-block w-full mt-1 mb-4 default-form-field text-black" type="password" id="password_confirmation" name="password_confirmation" placeholder="Password Confirm..." value="{{ old('password_confirmation') }}">
 
                             @if(!empty($googleRecaptchaSiteKey))
-                                <div class="g-recaptcha mx-auto" style="display: inline-block;" data-sitekey="{{ $googleRecaptchaSiteKey }}"></div>
+                                @if($errors->has('g-recaptcha-response')) <label class="inline-block w-full text-left  text-red-600">  <em class="text-red-600 opacity-70 text-xs md:float-right"> {{ $errors->first('g-recaptcha-response') }}</em></label>@endif
+                                <div class="g-recaptcha mx-auto @if($errors->has('g-recaptcha-response')) text-red-600 @endif " name="recaptcha" style="display: inline-block;" id='recaptcha_token' data-sitekey="{{ $googleRecaptchaSiteKey }}"></div>
                             @endif
-
                             <input name="button" type="submit" id="button" class="mt-2 text-white bg-{{ $brand }} leading-none text-base font-bold border-0 rounded-full select-none cursor-pointer text-center py-4 px-16 uppercase font-roboto" value="Redeem Guest Pass"/>
                         </form>
 
