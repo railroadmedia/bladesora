@@ -37,18 +37,8 @@
                             </p>
 
                             <!-- Coach Title -->
-                            <p
-                                class="tw-text-sm xl:tw-text-lg tw-font-primary tw-h-1/2 tw-pt-4 xl:tw-pt-8 tw-hidden lg:tw-mb-6 lg:tw-block">
-                                @php
-                                    $focusArray = $coach->fetch('*fields.focus.value');
-                                    $lastFocus = array_pop($focusArray);
-                                @endphp
-
-                                {{ implode($focusArray, ', ') }}
-                                @if (count($focusArray) !== 0)
-                                    <span>AND</span>
-                                @endif
-                                <span>{{ $lastFocus }}</span>
+                            <p class="tw-text-sm xl:tw-text-lg tw-font-primary tw-h-1/2 tw-pt-4 xl:tw-pt-8 tw-hidden lg:tw-mb-6 lg:tw-block">
+                                {{ $coach->fetch('data.focus_text.value') }}
                             </p>
                         </div>
 
