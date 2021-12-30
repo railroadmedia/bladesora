@@ -42,7 +42,7 @@
                 {{-- <div class="tw-py-4"> --}}
                 {{-- {!! $longBio !!} --}}
                 {{-- </div> --}}
-                @if (count($bandsArray) !== 0)
+                @if (!empty($bandsArray))
                     <div class="tw-text-4xl">Bands</div>
                     <div class="tw-py-4 tw-font-normal">
                         @php
@@ -56,7 +56,7 @@
                     </div>
                 @endif
 
-                @if (count($endorsementsArray) !== 0)
+                @if (!empty($endorsementsArray))
                     <div class="tw-text-4xl">Endorsements</div>
                     <div class="tw-py-4 tw-font-normal">
                         @php
