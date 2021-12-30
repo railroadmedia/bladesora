@@ -27,7 +27,7 @@
                         <!-- Card Header -->
                         <div class="tw-flex tw-items-center tw-mb-4">
                             <!-- Coach Headshot -->
-                            <div
+                            <a href="{{ $featured->fetch('url') }}"
                                 class="tw-mr-4 tw-rounded-full tw-relative tw-w-16 tw-h-16 tw-overflow-hidden tw-flex-shrink-0">
                                 <img class="tw-w-16 tw-h-16 tw-rounded-full tw-border-2 tw-border-solid tw-border-yellow-500"
                                     src="{{ imgix($featured->fetch('coach_profile_image'), ['w' => 300]) }} ">
@@ -39,9 +39,11 @@
                                         <use href="#whistle"></use>
                                     </svg>
                                 </div>
-                            </div>
+                            </a>
                             <!-- Header -->
-                            <h2 class="tw-text-2xl tw-font-bold tw-uppercase tw-mr-4">
+                            <a class="tw-text-2xl tw-text-black tw-no-underline tw-font-bold tw-uppercase tw-mr-4"
+                               href="{{ $featured->fetch('url') }}"
+                            >
                                 @php
                                     $fullName = $featured->fetch('fields.name');
                                     $exploded = explode(' ', $fullName);
@@ -49,10 +51,12 @@
                                 @endphp
                                 <span class="tw-font-normal">{{ $firstName }}</span>
                                 {{ implode($exploded, ' ') }}
-                            </h2>
+                            </a>
                             <!-- Buttons -->
                             <a href="{{ $featured->fetch('url') }}"
-                                class="tw-btn tw-btn-primary tw-bg-{{ $brand }} tw-ml-auto tw-hidden hover:tw-bg-{{ $brand }}-600 {{ $singleFeaturedCoach ? '' : 'xl:tw-inline-flex' }}">SEE COACH</a>
+                                class="tw-btn tw-btn-primary tw-bg-{{ $brand }} tw-ml-auto tw-hidden hover:tw-bg-{{ $brand }}-600 {{ $singleFeaturedCoach ? '' : 'xl:tw-inline-flex' }}">
+                                SEE COACH
+                            </a>
                         </div>
                         <!-- Card Body -->
                         <div class="tw-flex tw-flex-col tw-mb-6">
