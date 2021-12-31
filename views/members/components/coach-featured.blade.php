@@ -12,8 +12,7 @@
         <?php $singleFeaturedCoach = count($featuredCoaches->results()) === 1; ?>
         <div class="tw-grid tw-grid-cols-1 tw-gap-6 {{ $singleFeaturedCoach ? '' : 'md:tw-grid-cols-2' }}">
             @foreach ($featuredCoaches->results() as $featured)
-                <?php //dd($featured->dot());
-                ?>
+                <?php //dd($featured->dot()); ?>
                 <div class="tw-flex {{ $singleFeaturedCoach ? 'tw-flex-col md:tw-flex-row' : 'tw-flex-col' }}">
                     <!-- Card Thumbnail -->
                     <div class="{{ $singleFeaturedCoach ? 'md:tw-mr-6 md:tw-w-1/2' : 'md:tw-mr-0' }}">
@@ -61,15 +60,7 @@
                         <!-- Card Body -->
                         <div class="tw-flex tw-flex-col tw-mb-6">
                             <h3 class="tw-text-xl tw-font-bold tw-uppercase tw-mb-4">
-                                @php
-                                    $focusArray = $featured->fetch('*fields.focus.value');
-                                    $lastFocus = array_pop($focusArray);
-                                @endphp
-                                {{ implode($focusArray, ', ') }}
-                                @if (count($focusArray) !== 0)
-                                    <span>AND</span>
-                                @endif
-                                <span>{{ $lastFocus }}</span>
+                                {{ $featured->fetch('data.focus_text.value') }}
                             </h3>
                             <div class="tw-text-sm">{!! $featured->fetch('data.short_bio.value') !!}</div>
                         </div>
