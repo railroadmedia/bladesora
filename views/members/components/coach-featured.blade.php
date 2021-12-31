@@ -17,10 +17,10 @@
                 <div class="tw-flex {{ $singleFeaturedCoach ? 'tw-flex-col md:tw-flex-row' : 'tw-flex-col' }}">
                     <!-- Card Thumbnail -->
                     <div class="{{ $singleFeaturedCoach ? 'md:tw-mr-6 md:tw-w-1/2' : 'md:tw-mr-0' }}">
-                        <div class="tw-w-full tw-rounded-xl tw-mb-4 tw-bg-cover tw-bg-top tw-h-80 tw-bg-gray-200"
+                        <a href="{{ $featured->fetch('url') }}" class="tw-w-full tw-flex tw-rounded-xl tw-mb-4 tw-bg-cover tw-bg-top tw-h-80 tw-bg-gray-200"
                             style="background-image: url( {{ imgix($featured->fetch('data.coach_featured_image'), ['w' => 720]) }} );">
                             <span class="sr-only">Image of {{ $featured->fetch('fields.name') }}</span>
-                        </div>
+                        </a>
                     </div>
                     <div
                         class="tw-inline-flex tw-flex-col tw-justify-center {{ $singleFeaturedCoach ? 'md:tw-w-1/2' : '' }}">
