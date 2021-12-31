@@ -22,10 +22,10 @@
                         <img src="{{ imgix($coach->fetch('data.coach_card_image'), ['w' => 300]) }}"
                             class="tw-w-full tw-flex" alt="{{ $coach->fetch('fields.name') }} Card">
 
-                        <div class="tw-absolute tw-w-full tw-left-0 tw-bottom-0 tw-text-white tw-flex tw-flex-col tw-text-center tw-uppercase tw-h-2/3 xl:tw-h-1/2 tw-px-6"
+                        <div class="tw-absolute tw-w-full tw-left-0 tw-bottom-0 tw-text-white tw-flex tw-flex-col tw-text-center tw-uppercase tw-h-2/3 tw-px-3 sm:tw-px-6"
                             style="background: linear-gradient(transparent, #112E4A)">
                             <!-- Coach Name -->
-                            <p class="tw-text-2xl md:tw-text-3xl xl:tw-text-4xl tw-font-roboto-condensed tw-h-1/2 tw-font-bold tw-break-words tw-flex tw-flex-col tw-mt-auto xl:tw-mt-0"
+                            <p class="tw-text-lg tw-leading-tight sm:tw-text-2xl xl:tw-text-3xl tw-font-bold tw-break-words tw-flex tw-flex-col tw-mt-auto tw-mb-6 sm:tw-mb-3"
                                 style="hyphens: auto;">
                                 @php
                                     $fullName = $coach->fetch('fields.name');
@@ -37,7 +37,7 @@
                             </p>
 
                             <!-- Coach Title -->
-                            <p class="tw-text-sm xl:tw-text-lg tw-font-primary tw-h-1/2 tw-pt-4 xl:tw-pt-8 tw-hidden lg:tw-mb-6 lg:tw-block">
+                            <p class="tw-text-sm xl:tw-text-lg tw-font-primary tw-pt-4 xl:tw-pt-8 tw-hidden lg:tw-mb-6 lg:tw-block">
                                 {{ $coach->fetch('data.focus_text.value') }}
                             </p>
                         </div>
