@@ -80,7 +80,7 @@ $brandColors = $colors[$brand];
             </div>
         </div>
     </div>
-    <div
+    <div class="tw-bg-top"
         style="
             background-color: {{ $colors["$brand"]['solidBg'] }};
             background-image: url({{ _imgix(
