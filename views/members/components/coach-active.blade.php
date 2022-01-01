@@ -22,7 +22,7 @@
                         <img src="{{ imgix($coach->fetch('data.coach_card_image'), ['w' => 300]) }}"
                             class="tw-w-full tw-flex" alt="{{ $coach->fetch('fields.name') }} Card">
 
-                        <div class="tw-absolute tw-w-full tw-left-0 tw-bottom-0 tw-text-white tw-flex tw-flex-col tw-text-center tw-uppercase tw-h-2/3 tw-px-3 sm:tw-px-6"
+                        <div class="tw-absolute tw-w-full tw-left-0 tw-bottom-0 tw-text-white tw-flex tw-flex-col tw-text-center tw-uppercase tw-h-2/3 tw-px-3"
                             style="background: linear-gradient(transparent, #112E4A)">
                             <!-- Coach Name -->
                             <p class="tw-text-lg sm:tw-text-xl xl:tw-text-3xl tw-font-bold tw-break-words tw-flex tw-flex-col tw-mt-auto tw-mb-4 lg:tw-mb-1"
