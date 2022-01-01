@@ -13,7 +13,7 @@
 
         <!-- Active Coaches -->
         <div class="tw-my-3">
-            <div class="tw-grid tw-grid-cols-2 md:tw-grid-cols-3 lg:tw-grid-cols-4 tw-gap-3">
+            <div class="tw-grid tw-grid-cols-2 sm:tw-grid-cols-3 md:tw-grid-cols-4 lg:tw-grid-cols-4 tw-gap-3">
                 @foreach ($activeCoaches as $coach)
                     <a href="{{ url()->route('members.coaches.show', ['coachSlug' => $coach['slug']]) }}"
                         class="tw-rounded-3xl tw-overflow-hidden tw-relative tw-flex tw-mb-3">
@@ -25,7 +25,7 @@
                         <div class="tw-absolute tw-w-full tw-left-0 tw-bottom-0 tw-text-white tw-flex tw-flex-col tw-text-center tw-uppercase tw-h-2/3 tw-px-3 sm:tw-px-6"
                             style="background: linear-gradient(transparent, #112E4A)">
                             <!-- Coach Name -->
-                            <p class="tw-text-lg tw-leading-tight sm:tw-text-2xl xl:tw-text-3xl tw-font-bold tw-break-words tw-flex tw-flex-col tw-mt-auto tw-mb-6 sm:tw-mb-3"
+                            <p class="tw-text-lg tw-leading-tight sm:tw-text-xl xl:tw-text-3xl tw-font-bold tw-break-words tw-flex tw-flex-col tw-mt-auto tw-mb-6 sm:tw-mb-3"
                                 style="hyphens: auto;">
                                 @php
                                     $fullName = $coach->fetch('fields.name');
