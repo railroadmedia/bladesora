@@ -141,8 +141,8 @@
                     <div class="relative">
                         <div class="profile-nav-tip"></div>
                         <h3 class="body font-bold">{{ $userName }}</h3>
-                        <p class="">LEVEL {{  $userLevel}}</p>
-                        <p class="">{{ $userXp }} XP</p>
+                        <p class="tw-text-nowrap">LEVEL {{  $userLevel}}</p>
+                        <p class="tw-text-nowrap">{{ $userXp }} XP</p>
                     </div>
                 </div>
             </div>
