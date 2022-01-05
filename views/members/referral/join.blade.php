@@ -32,7 +32,7 @@
 
                     <div class="xl:pl-10 max-w-md xl:max-w-none mx-auto">
                         <form id="join-form" name="join-form" method="post" action="{{ url()->route('referral.claiming-join') }}">
-
+                            <input type="hidden" name="_token" class="sort-input" value="{{ csrf_token() }}" />
                             <input type="hidden" name="redirect" value="/members">
                             <input type="hidden" name="referral_code" value="{{ $referralCode ?? request()->get('rsCode') }}">
 
