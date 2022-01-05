@@ -90,7 +90,7 @@ $brandColors = $colors[$brand];
             color: #fff;
             background-size: cover;
             background-position: 50%;">
-        <div style="width: 100%; height: 100%; background: linear-gradient(268deg,{{ $colors["$brand"]['bgRgbStart'] }} 50%,{{ $colors["$brand"]['solidBg'] }};"></div>
+        <div style="width: 100%; height: 100%; background: linear-gradient(268deg,{{ $colors["$brand"]['bgRgbStart'] }} 50%,{{ $colors["$brand"]['solidBg'] }});"></div>
     </div>
 </section>
 
