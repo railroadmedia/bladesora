@@ -18,17 +18,21 @@
             </a>
         </div>
 
-        @include('members.partials._method-progress', [
+        @component('bladesora::members.components.home._method-progress', [
+            "brand" => $brand,
             "progress" => $nextLearningPathProgressPercent,
             "level" => explode('.', $nextLearningPathLevel)[0] ?? "1",
             "lesson" => explode('.', $nextLearningPathLevel)[1] ?? "0",
+            "methodLogo" => $methodLogo,
         ])
+        @endcomponent
 
         <div class="flex flex-row flex-wrap mt-1 nmh-1">
             @foreach($userMetrics as $userMetric)
                 <a href="{{ $userDashboardUrl }}"
                    class="flex flex-column xs-6 sm-3 no-decoration">
                     @include('bladesora::members.components.user-metric', [
+                        "brand" => $brand,
                         "icon" => $userMetric['icon'],
                         "value" => $userMetric['value'],
                         "label" => $userMetric['label'],
