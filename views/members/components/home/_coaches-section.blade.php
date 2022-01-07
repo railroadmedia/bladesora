@@ -4,7 +4,10 @@
 
             <div class="flex flex-row align-v-center pv-2">
                 <span class="rounded bg-{{$brand}} text-white icon-bg-circle body mr-1">
-                    <i class="fa fa-diamond"></i>
+                    <i class="fas fa-gem"></i>
+                    <!-- <svg width="19" height="19" aria-hidden="true" focusable="false" fill="white">
+                        <use href="#whistle"></use>
+                    </svg> -->
                 </span>
                 <h2 class="heading capitalize grow">
                     <a
