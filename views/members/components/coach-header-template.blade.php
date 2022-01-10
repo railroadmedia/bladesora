@@ -88,7 +88,7 @@ $brandColors = $colors[$brand];
             <h3 class="tw-mb-6 tw-font-normal" style="font-size: 14px; line-height: 24px;">
                 {{ $shortBio }}
             </h3>
-            <div class="tw-flex tw-flex-col sm:tw-flex-row tw-items-center xl:tw-items-start tw-flex-wrap xl:tw-flex-nowrap">
+            <div class="tw-flex tw-flex-col lg:tw-flex-row tw-items-center xl:tw-items-start tw-flex-wrap xl:tw-flex-nowrap">
                 {{ $actions }}
             </div>
         </div>
