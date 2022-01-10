@@ -115,7 +115,7 @@
         {!! $shortBio !!}
     @endslot
     @slot('actions')
-            <div id="subscribeButton" class="md:tw-mr-4 {{ $isUserSubscribed ? 'tw-hidden' : '' }}">
+            <div id="subscribeButton" class="{{ $isUserSubscribed ? 'tw-hidden' : '' }}">
                     <button onclick="subscribeToCoach({{ $coachId }}, '{{ $subscribeUrl }}');"
                         class="tw-btn tw-btn-primary tw-transition tw-bg-{{ $brandName }} hover:tw-bg-{{ $brandName }}-600 sm:tw-mr-4 tw-box-border tw-px-auto tw-mb-4" style="font-size: 16px; line-height: 24px; height: 50px; width: 200px;">
                         <span>
@@ -123,7 +123,7 @@
                             Subscribe</span>
                     </button>
                 </div>
-                <div id="unsubscribeButton" class="md:tw-mr-4 {{ $isUserSubscribed ? '' : 'tw-hidden' }}">
+                <div id="unsubscribeButton" class="{{ $isUserSubscribed ? '' : 'tw-hidden' }}">
                     <button onclick="unsubscribeToCoach({{ $coachId }}, '{{ $unsubscribeUrl }}');"
                         class="tw-btn tw-btn-primary tw-transition tw-bg-{{ $brandName }} hover:tw-bg-{{ $brandName }}-600 sm:tw-mr-4 tw-box-border tw-px-auto tw-mb-4" style="font-size: 16px; line-height: 24px; height: 50px; width: 200px;">
                         <span>
