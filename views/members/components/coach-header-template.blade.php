@@ -57,8 +57,21 @@ $brandColors = $colors[$brand];
 @endphp
 
 <section class="tw-grid xs:tw-grid-cols-1 sm:tw-grid-cols-1 md:tw-grid-cols-1 lg:tw-grid-cols-2 tw-gap-0">
+    <div class="lg:tw-hidden tw-bg-top"
+        style="
+            background-color: {{ $colors["$brand"]['solidBg'] }};
+            background-image: url({{ _imgix(
+                $backgroundImage,
+                []
+            ) }});
+            color: #fff;
+            background-size: cover;
+            min-height: 25vh;
+            background-position: 50%;">
+        <div style="width: 100%; height: 100%; background: linear-gradient(180deg,{{ $colors["$brand"]['bgRgbStart'] }} 50%,{{ $colors["$brand"]['solidBg'] }});"></div>
+    </div>
     <div class="tw-text-white" style="background-color: {{ $brandColors['solidBg'] }}">
-        <div class="md:tw-py-12 lg:tw-py-16 tw-py-12 md:tw-px-14 tw-px-6">
+        <div class="tw--mt-24 md:tw-mt-0 tw-text-center lg:tw-text-left md:tw-py-12 lg:tw-py-16 tw-py-12 md:tw-px-14 tw-px-6">
             @if (isset($topSubtitle))
                 <h2 class="tw-uppercase tw-font-semibold tw-mb-2 tw-font-bold" style="color: {{ $brandColors['subtitle'] }}; font-size: 14px; line-height: 24px;">
                     {{ $topSubtitle }}
@@ -80,7 +93,7 @@ $brandColors = $colors[$brand];
             </div>
         </div>
     </div>
-    <div class="tw-bg-top"
+    <div class="tw-hidden lg:tw-flex tw-bg-top"
         style="
             background-color: {{ $colors["$brand"]['solidBg'] }};
             background-image: url({{ _imgix(
