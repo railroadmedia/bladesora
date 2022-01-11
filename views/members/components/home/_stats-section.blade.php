@@ -27,10 +27,10 @@
         ])
         @endcomponent
 
-        <div class="tw-flex tw-flex-wrap tw-mt-4">
+        <div class="tw-flex tw-flex-wrap xl:tw-flex-nowrap tw-mt-4">
             @foreach($userMetrics as $userMetric)
                 <a href="{{ $userDashboardUrl }}"
-                   class="tw-flex tw-flex-col tw-no-underline tw-w-1/2 md:tw-w-1/3 lg:tw-w-1/4 xl:tw-w-1/5">
+                   class="tw-flex tw-flex-col tw-no-underline tw-w-1/2 md:tw-w-1/3 lg:tw-w-1/4 xl:tw-w-full">
                     @include('bladesora::members.components.user-metric', [
                         "brand" => $brand,
                         "icon" => $userMetric['icon'],
