@@ -25,7 +25,6 @@
     <div class="md:tw-px-1 xl:tw-px-0 tw-mb-2 xl:tw-mb-0 tw-w-full md:tw-w-1/2 xl:tw-w-full">
         <div class="tw-bg-gray-900 tw-h-full tw-bg-cover tw-bg-center tw-text-white tw-text-center tw-rounded-lg tw-p-8" style="background-image: url('{{ imgix($songsBgImg, ['w' => 500]) }} ');">
             <img class="tw-mx-auto tw-mb-4 tw-block"
-                 style="{{ $brand === 'pianote' ? 'filter: hue-rotate(211deg) brightness(1.8);' : '' }}" 
                  src="{{ $songsLogo }}" 
                  alt="Songs Icon" 
             />
