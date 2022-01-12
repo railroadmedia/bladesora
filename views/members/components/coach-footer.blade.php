@@ -62,7 +62,8 @@
                         @php
                             foreach ($endorsementsArray as $key => $endorsement) {
                                 if ($key === 0) {
-                                    echo $endorsement . ': ';
+                                    /*echo $endorsement . ': ';*/
+                                    echo $endorsement;
                                 } elseif (count($endorsementsArray) - 1 !== $key) {
                                     echo $endorsement . ', ';
                                 } else {
