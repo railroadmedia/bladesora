@@ -1,5 +1,5 @@
 <!-- Toasts start -->
-    <div class="tw-sticky tw-bottom-0 tw-text-center tw-pb-6 tw-hidden" id="unsubscribeToast">
+    <div class="tw-sticky tw-bottom-0 tw-text-center tw-pb-6 tw-hidden" id="unsubscribeToast" style="z-index: 2000">
         <div
             class="
                 tw-bg-{{ $brandName }}
@@ -19,7 +19,7 @@
             </div>
         </div>
     </div>
-    <div class="tw-sticky tw-bottom-0 tw-text-center tw-pb-6 tw-hidden" id="subscribeToast">
+    <div class="tw-sticky tw-bottom-0 tw-text-center tw-pb-6 tw-hidden" id="subscribeToast" style="z-index: 2000">
         <div
             class="
                 tw-bg-{{ $brandName }}
@@ -39,7 +39,7 @@
             </div>
         </div>
     </div>
-    <div class="tw-sticky tw-bottom-0 tw-text-center tw-pb-6 tw-hidden" id="errorToast">
+    <div class="tw-sticky tw-bottom-0 tw-text-center tw-pb-6 tw-hidden" id="errorToast" style="z-index: 2000">
         <div
             class="
                 tw-bg-red
