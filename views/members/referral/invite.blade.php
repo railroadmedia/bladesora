@@ -14,11 +14,9 @@ $cardImages = [
 ];
 
 $cardImage = $cardImages[$brand];
-
-$showToast = true; // add toast condition here
 @endphp
 <div class="referral-sections">
-    @if ($showToast)
+    @if (isset($showToast) && $showToast)
         <div class="tw-bottom-0 tw-text-center tw-pb-6" id="emailSentToast"
         style="z-index: 2000; position: fixed !important; width: 100%">
         <div
@@ -31,7 +29,7 @@ $showToast = true; // add toast condition here
                 tw-mx-auto
                 tw-rounded-md">
             <div class="tw-flex tw-justify-between tw-text-white tw-text-small">
-                <div><i class="fas fa-envelope tw-mr-2"></i>Email Sent
+                <div><i class="fas fa-envelope tw-mr-2"></i>{{ $toastMessage ?? 'Your invite has been sent!' }}
                 </div>
                 <button class="tw-bg-transparent tw-border-none" onclick="hideToast();">
                     <i class="far fa-times-circle tw-text-white"></i>
