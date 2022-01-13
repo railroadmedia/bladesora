@@ -34,7 +34,7 @@
                     <div class="tw-flex tw-flex-col lg:tw-h-full lg:tw-pl-10 tw-w-full tw-max-w-lg lg:tw-max-w-none tw-mx-auto">
                         <h5 class="tw-leading-tight tw-py-4">Give a friend unlimited access to Drumeo, free for 30 days</h5>
                         <form id="invite-email-form" name="invite-email-form" method="post" action="{{ $emailInviteUrl }}">
-                            <label class="tw-inline-block tw-w-full tw-text-left tw-pt-6" for="email"><strong>Invite via email</strong></label>
+                            <label class="tw-inline-block tw-w-full tw-text-left tw-pt-6 tw-ml-6" for="email"><strong>Invite via email</strong></label>
                             <div class="tw-flex tw-flex-wrap sm:tw-flex-nowrap tw-items-center tw-justify-center tw-mt-1">
                                 <input type="hidden" name="_token" class="sort-input" value="{{ csrf_token() }}" />
                                 <input class="tw-inline-block tw-w-full tw-mb-4 sm:tw-mb-0 sm:tw-mr-4 tw-default-form-field sm:tw-flex-grow tw-pt-0" type="email" id="email" name="email" placeholder="Email address..." value="">
@@ -43,7 +43,7 @@
                         </form>
 
                         <form id="invite-link-form" name="invite-link-form" action="#">
-                            <label class="tw-inline-block tw-w-full tw-text-left tw-pt-6" for="email"><strong>Share your link</strong></label>
+                            <label class="tw-inline-block tw-w-full tw-text-left tw-pt-6 tw-ml-6" for="email"><strong>Share your link</strong></label>
                             <div class="tw-flex tw-flex-wrap sm:tw-flex-nowrap tw-items-center tw-justify-center tw-mt-1">
                                 <input class="tw-inline-block tw-w-full tw-mb-4 sm:tw-mb-0 sm:tw-mr-4 tw-default-form-field sm:tw-flex-grow tw-pt-0" type="text" id="referral-link" readonly name="referral-link" placeholder="link" value="{{ $userReferralLink }}">
                                 <input onclick="copyLink()" name="button" type="submit" id="button" class="tw-bg-{{ $brand }} tw-leading-none tw-text-base tw-font-bold tw-border-0 tw-rounded-full tw-select-none tw-cursor-pointer tw-text-center tw-py-4 tw-px-6 tw-uppercase tw-font-roboto tw-text-white tw-flex-none tw-w-52" value="Copy Link"/>
