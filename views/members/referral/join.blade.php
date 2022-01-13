@@ -42,9 +42,6 @@
                             <label class="inline-block w-full text-left @if($errors->has('email')) text-red-600 @endif" for="email"><strong>Email address</strong> <em class="opacity-70 text-xs md:float-right">@if($errors->has('email')) {{ $errors->first('email') }} @else Used for member communication. @endif</em></label>
                             <input class="main-form pt-0 inline-block w-full mt-1 mb-4 default-form-field @if($errors->has('email')) text-red-600 @else text-black @endif" type="email" id="email" name="email" placeholder="Email address..." value="{{ old('email') }}">
 
-                            <label class="inline-block w-full text-left @if($errors->has('phone')) text-red-600 @endif" for="phone"><strong>Phone number</strong> <em class="opacity-70 text-xs md:float-right">@if($errors->has('phone')) {{ $errors->first('phone') }} @else Used to validate you’re a human. @endif</em></label>
-                            <input class="main-form pt-0 inline-block w-full mt-1 mb-4 default-form-field @if($errors->has('phone')) text-red-600 @else text-black @endif" type="tel" id="phone" name="phone" placeholder="Phone number..." value="{{ old('phone') }}">
-
                             <label class="inline-block w-full text-left @if($errors->has('password')) text-red-600 @endif" for="password"><strong>Password</strong> <em class="opacity-70 text-xs md:float-right">@if($errors->has('password')) {{ $errors->first('password') }} @else Used to access your lessons. @endif</em></label>
                             <input class="main-form pt-0 inline-block w-full mt-1 mb-4 default-form-field @if($errors->has('password')) text-red-600 @else text-black @endif" type="password" id="password" name="password" placeholder="Password..." value="{{ old('password') }}">
 
