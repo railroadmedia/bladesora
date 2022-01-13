@@ -42,11 +42,11 @@
                             </div>
                         </form>
 
-                        <form id="invite-link-form" name="invite-link-form" method="post" action="#">
+                        <form id="invite-link-form" name="invite-link-form" action="#">
                             <label class="tw-inline-block tw-w-full tw-text-left tw-pt-6" for="email"><strong>Share your link</strong></label>
                             <div class="tw-flex tw-flex-wrap sm:tw-flex-nowrap tw-items-center tw-justify-center tw-mt-1">
-                                <input class="tw-inline-block tw-w-full tw-mb-4 sm:tw-mb-0 sm:tw-mr-4 tw-default-form-field sm:tw-flex-grow tw-pt-0" type="email" id="email" name="email" placeholder="link" value="{{ $userReferralLink }}">
-                                <input name="button" type="submit" id="button" class="tw-bg-{{ $brand }} tw-leading-none tw-text-base tw-font-bold tw-border-0 tw-rounded-full tw-select-none tw-cursor-pointer tw-text-center tw-py-4 tw-px-6 tw-uppercase tw-font-roboto tw-text-white tw-flex-none tw-w-52" value="Copy Link"/>
+                                <input class="tw-inline-block tw-w-full tw-mb-4 sm:tw-mb-0 sm:tw-mr-4 tw-default-form-field sm:tw-flex-grow tw-pt-0" type="text" id="referral-link" readonly name="referral-link" placeholder="link" value="{{ $userReferralLink }}">
+                                <input onclick="copyLink()" name="button" type="submit" id="button" class="tw-bg-{{ $brand }} tw-leading-none tw-text-base tw-font-bold tw-border-0 tw-rounded-full tw-select-none tw-cursor-pointer tw-text-center tw-py-4 tw-px-6 tw-uppercase tw-font-roboto tw-text-white tw-flex-none tw-w-52" value="Copy Link"/>
                             </div>
                         </form>
                     </div>
@@ -60,3 +60,9 @@
         </div>
     </section>
 </div>
+<script>
+    function copyLink() {
+        var link = document.getElementById("referral-link");
+        navigator.clipboard.writeText(link.value);
+    }
+</script>
