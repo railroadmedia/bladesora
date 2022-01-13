@@ -147,7 +147,7 @@
                 </div>
             </div>
 
-            @if($showReferralButton)
+            @if(isset($showReferralButton) && $showReferralButton)
                 <div class="flex flex-column pa-1 noselect" style="max-width: 160px; max-height: 53px;">
                     <a
                         href="{{ $referralPageUrl ?? '/' }}"
