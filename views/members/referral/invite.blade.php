@@ -86,7 +86,7 @@ $cardImage = $cardImages[$brand];
                                     class="tw-inline-block tw-w-full tw-mb-4 sm:tw-mb-0 sm:tw-mr-4 tw-default-form-field sm:tw-flex-grow tw-pt-0"
                                     type="text" id="referral-link" readonly name="referral-link" placeholder="link"
                                     value="{{ $userReferralLink }}">
-                                <input onclick="copyLink()" name="button" type="submit" id="button"
+                                <input onclick="copyLink()" name="button" id="button"
                                     class="tw-bg-{{ $brand }} tw-leading-none tw-text-base tw-font-bold tw-border-0 tw-rounded-full tw-select-none tw-cursor-pointer tw-text-center tw-py-4 tw-px-6 tw-uppercase tw-font-roboto tw-text-white tw-flex-none tw-w-52"
                                     value="Copy Link" />
                             </div>
