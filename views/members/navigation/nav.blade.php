@@ -132,7 +132,7 @@
                    dusk="profile-nav-link"
                    @if(!empty($isIframe)) target="_parent" @endif>
                     <div class="pa-1 wrap">
-                        <img class="rounded"
+                        <img class="rounded tw-h-7 tw-w-7 lg:tw-w-9 lg:tw-h-9 tw-box-border"
                              src="{{ imgix($userAvatar, ["q" => 50, "blur" => 2, "w" => 50, "h" => 50, "fit" => "crop"]) }}"
                              data-avatar-update="true">
                     </div>
@@ -148,13 +148,13 @@
             </div>
 
             @if(isset($showReferralButton) && $showReferralButton)
-                <div class="flex flex-column pa-1 noselect" style="max-width: 160px; max-height: 53px;">
+                <div class="pa-1 noselect tw-grow-0 tw-bg-inherit" style="padding-left: 0; z-index: 10">
                     <a
                         href="{{ $referralPageUrl ?? '/' }}"
-                        class="btn text-white bg-{{ $themeColor }}"
+                        class="btn tw-w-7 tw-h-7 lg:tw-h-9 md:tw-w-36 tw-rounded-full text-white bg-{{ $themeColor }}"
                         style="font-size: 13px;"
                     >
-                        <i class="fas fa-gift mr-1"></i> invite a friend
+                        <i class="fas fa-gift md:tw-mr-2"></i> <span class="tw-hidden md:tw-inline-block">invite a friend</span>
                     </a>
                 </div>
             @endif
