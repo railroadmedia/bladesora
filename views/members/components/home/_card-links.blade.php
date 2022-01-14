@@ -44,7 +44,7 @@
             <img class="tw-mx-auto tw-mb-4 tw-block" src="{{ $coachCardIcon }}" alt="Coaches Icon" />
             <h3 class="tw-mb-4 tw-text-xl">{{ $coachCardTitle }}</h3>
             <p class="tw-mb-4 tw-text-sm">{{ $coachCardDescription }}</p>
-            <a href="{{ $coachCardsUrl }}" title="Go to Coaches Page"
+            <a href="{{ $coachCardUrl }}" title="Go to Coaches Page"
                 class="tw-btn tw-btn-primary tw-transition tw-bg-yellow-500 tw-px-8 tw-w-full hover:tw-bg-yellow-600">
                 Go to Coaches <span class="tw-h-full tw-px-1 tw-pb-1">&raquo;</span>
             </a>
