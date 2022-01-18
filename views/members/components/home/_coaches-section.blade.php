@@ -15,7 +15,7 @@
                         class="text-black font-no-underline"
                     >Subscribed Coaches</a>
                 </h2>
-                <a href="{{ $allCoachesUrl }}
+                <a href="{{ $allCoachesUrl }}"
                     aria-label="See All Coaches"
                     class="text-{{$brand}} tiny no-decoration nowrap raised-hover pa-1 dense font-bold uppercase corners-10">
                     See All
