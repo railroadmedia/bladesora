@@ -33,7 +33,7 @@
                                 style="background: linear-gradient(180deg, rgba(1, 5, 15, 0) 0%, #01050F 100%);"
                             >
                                 <!-- Coach Name -->
-                                <h4 class="tw-uppercase tw-mt-auto tw-leading-tight tw-text-base tw-mb-4 tw-text-center"
+                                <h4 class="tw-uppercase tw-mt-auto tw-font-roboto-condensed tw-leading-tight tw-text-xl tw-mb-4 tw-text-center"
                                     style="hyphens: auto">
                                     @php
                                         $fullName = $coach->fetch('fields.name');
