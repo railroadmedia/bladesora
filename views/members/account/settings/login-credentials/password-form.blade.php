@@ -30,7 +30,7 @@
                     {{ csrf_field() }}
 
                     <div class="flex flex-row ph-3 mb-2">
-                        <p class="tiny text-grey-3">WARNING: Changing your password in Drumeo will also change your password in Pianote and Guitareo.</p>
+                        <p class="tiny text-grey-3">WARNING: Changing your password in {{ ucfirst($brand) }} will also change your password in {{ $otherBrands }}.</p>
                     </div>
 
                     <div class="flex flex-row ph-3 mb-3">
