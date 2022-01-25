@@ -13,7 +13,7 @@
 
         <!-- Active Coaches -->
         <div class="tw-my-3">
-            <div class="tw-grid tw-grid-cols-2 sm:tw-grid-cols-3 md:tw-grid-cols-4 lg:tw-grid-cols-4 tw-gap-3">
+            <div class="tw-grid tw-grid-cols-2 sm:tw-grid-cols-3 md:tw-grid-cols-4 xl:tw-grid-cols-5 tw-gap-3">
                 @foreach ($activeCoaches as $coach)
                     <a href="{{ url()->route('members.coaches.show', ['coachSlug' => $coach['slug']]) }}"
                         class="tw-rounded-3xl tw-overflow-hidden tw-relative tw-flex tw-mb-3">
@@ -23,21 +23,21 @@
                             class="tw-w-full tw-flex" alt="{{ $coach->fetch('fields.name') }} Card">
 
                         <div class="tw-absolute tw-w-full tw-left-0 tw-bottom-0 tw-text-white tw-flex tw-flex-col tw-text-center tw-uppercase tw-h-2/3 tw-px-3"
-                            style="background: linear-gradient(transparent, #112E4A)">
+                            style="background: linear-gradient(180deg, rgba(1, 5, 15, 0) 0%, #01050F 100%);">
                             <!-- Coach Name -->
-                            <p class="tw-text-lg sm:tw-text-xl xl:tw-text-3xl tw-font-bold tw-break-words tw-flex tw-flex-col tw-mt-auto tw-mb-4 lg:tw-mb-1"
-                                style="line-height: 1em!important;hyphens: auto;">
+                            <p class="tw-text-2xl xl:tw-text-3xl tw-font-bold tw-font-roboto-condensed tw-break-words tw-flex tw-flex-col tw-mt-auto tw-mb-4"
+                                style="line-height:1.1 !important; hyphens: auto;">
                                 @php
                                     $fullName = $coach->fetch('fields.name');
                                     $exploded = explode(' ', $fullName);
                                     $firstName = array_shift($exploded);
                                 @endphp
-                                <span class="tw-block tw-font-normal">{{ $firstName }}</span>
+                                <span class="tw-block">{{ $firstName }}</span>
                                 {{ implode($exploded, ' ') }}
                             </p>
 
                             <!-- Coach Title -->
-                            <p class="tw-text-sm xl:tw-text-lg tw-font-primary tw-hidden tw-mb-4 lg:tw-block">
+                            <p class="tw-text-sm tw-font-primary tw-text-yellow-400 tw-mb-8 tw-leading-snug">
                                 {{ $coach->fetch('data.focus_text.value') }}
                             </p>
                         </div>
