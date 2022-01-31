@@ -58,7 +58,7 @@ $cardImage = $cardImages[$brand];
                 @if ($canRefer)
                     <div
                         class="tw-flex tw-flex-col lg:tw-h-full lg:tw-pl-10 tw-w-full tw-max-w-lg lg:tw-max-w-none tw-mx-auto">
-                        <h5 class="tw-leading-tight tw-py-4">Give a friend unlimited access to Drumeo, free for 30 days
+                        <h5 class="tw-leading-tight tw-py-4">Give a friend unlimited access to {{ ucfirst($brand) }}, free for 30 days
                         </h5>
                         <form id="invite-email-form" name="invite-email-form" method="post"
                             action="{{ $emailInviteUrl }}">

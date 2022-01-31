@@ -7,8 +7,6 @@
     ];
 
     $cardImage = $cardImages[$brand];
-
-    // dd($errors);
 @endphp
 
 <div class="referral-sections">
