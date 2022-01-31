@@ -22,18 +22,17 @@
                 </a>
             </div>
 
-            <div class="tw-grid tw-gap-3 tw-grid-cols-2 sm:tw-grid-cols-3 md:tw-grid-cols-4 lg:tw-grid-cols-5 xl:tw-grid-cols-6">
+            <div class="tw-grid tw-gap-3 tw-grid-cols-3 sm:tw-grid-cols-4 md:tw-grid-cols-5 xl:tw-grid-cols-6">
                 @foreach($subscribedCoaches->results() as $coach)
                     <a href="{{ $coach->fetch('url','') }}"
                         class="tw-no-underline ">
-                        <div class="tw-flex tw-bg-cover tw-bg-top tw-h-64 tw-relative tw-bg-gray-200 tw-overflow-hidden tw-rounded-lg lg:tw-rounded-xl tw-no-underline tw-text-white"
-                                style="background-image: url( '{{ $coach->fetch('data.coach_card_image') }}' )"
-                        >
-                            <div class="tw-flex tw-flex-col tw-mt-auto tw-w-full tw-items-center tw-justify-center tw-h-2/3 tw-px-2 tw-text-center"
+                        <div class="tw-flex tw-bg-cover tw-bg-top tw-relative tw-bg-gray-200 tw-overflow-hidden tw-rounded-lg lg:tw-rounded-xl tw-no-underline tw-text-white">
+                            <img src="{{ $coach->fetch('data.coach_card_image') }}" alt="{{ $coach->fetch('fields.name') }}" class="tw-w-full">
+                            <div class="tw-flex tw-flex-col tw-mt-auto tw-w-full tw-items-center tw-justify-center tw-h-2/3 tw-px-2 tw-text-center tw-absolute tw-bottom-0 tw-left-0 tw-w-full"
                                 style="background: linear-gradient(180deg, rgba(1, 5, 15, 0) 0%, #01050F 100%);"
                             >
                                 <!-- Coach Name -->
-                                <h4 class="tw-uppercase tw-mt-auto tw-font-roboto-condensed tw-leading-tight tw-text-xl tw-mb-4 tw-text-center"
+                                <h4 class="tw-uppercase tw-mt-auto tw-font-roboto-condensed tw-fluid-text-2xl-base tw-break-all tw-leading-tight tw-mb-4 tw-text-center"
                                     style="hyphens: auto">
                                     @php
                                         $fullName = $coach->fetch('fields.name');
@@ -44,10 +43,11 @@
                                     {{ implode($exploded, ' ')}}
                                 </h4>
                                 <!-- Coach Title -->
-                                <p class="tw-text-yellow-400 tw-text-xs tw-mb-4 md:tw-mb-6 tw-uppercase">
+                                <p class="tw-text-yellow-400 tw-fluid-text-sm-xs tw-mb-4 md:tw-mb-6 tw-uppercase">
                                     {{ $coach->fetch('data.focus_text.value') }}
                                 </p>
                             </div>
+                            <!-- Hover State -->
                             <div class="tw-absolute tw-w-full tw-h-full tw-top-0 tw-left-0 tw-z-10 tw-bg-opacity-0 tw-transition tw-bg-black hover:tw-bg-opacity-25"></div>
                         </div>
                     </a>
