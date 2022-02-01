@@ -20,7 +20,7 @@
 
                         <!-- Coach Image -->
                         <img src="{{ imgix($coach->fetch('data.coach_card_image'), ['w' => 300]) }}"
-                            class="tw-w-full tw-flex" alt="{{ $coach->fetch('fields.name') }} Card">
+                            class="tw-w-full tw-flex tw-object-cover" alt="{{ $coach->fetch('fields.name') }} Card">
 
                         <div class="tw-absolute tw-w-full tw-left-0 tw-bottom-0 tw-text-white tw-flex tw-flex-col tw-text-center tw-uppercase tw-h-2/3 tw-px-3"
                             style="background: linear-gradient(180deg, rgba(1, 5, 15, 0) 0%, #01050F 100%);">
