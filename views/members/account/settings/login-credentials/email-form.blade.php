@@ -42,7 +42,7 @@
                     @endif
 
                     <div class="flex flex-row ph-3 mb-2">
-                        <p class="tiny text-grey-3">WARNING: Changing your email in Drumeo will also change your email in Pianote and Guitareo.</p>
+                        <p class="tiny text-grey-3">WARNING: Changing your email in {{ ucfirst($brand) }} will also change your email in {{ $otherBrands }}.</p>
                     </div>
 
                     <div class="flex flex-row ph-3 mb-1">
