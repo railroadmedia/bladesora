@@ -1,4 +1,4 @@
-<footer class="container fluid bg-grey-5 shadow text-grey-3 collapsed-xs">
+<footer class="container fluid bg-grey-5 shadow text-grey-3 collapsed-xs tw-pt-2">
     <div class="container">
         <div class="flex flex-row flex-wrap align-h-center">
             <section class="flex flex-column xs-12 md-3 pv-2">
