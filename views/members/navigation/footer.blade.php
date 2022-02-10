@@ -6,7 +6,7 @@
                     <img
                         alt="Musora Media Inc."
                         src="{{ $logoImage }}"
-                        style="max-width:125px;"
+                        class="tw-w-28"
                     >
                 </div>
             </section>
