@@ -16,11 +16,13 @@
                 @foreach ($upcomingCoaches as $coach)
                     <div class="tw-rounded-3xl tw-overflow-hidden tw-relative tw-flex tw-mb-3">
                         <!-- Coach Image -->
-                         <img src="{{ imgix($coach['image'], ['h' => 436, 'w' => 300, 'fit' => 'crop', 'crop' => 'faces']) }}"
+                        <img src="{{ imgix($coach['image'], ['h' => 436, 'w' => 300, 'fit' => 'crop', 'crop' => 'faces']) }}"
                             class="tw-w-full tw-flex tw-object-cover" alt="{{ $coach['name'] }} Card">
-                            @if (isset($coach['date']))
-                                <div class="tw-absolute tw-text-black tw-leading-none tw-uppercase tw-rounded tw-font-roboto-condensed tw-p-1 tw-m-4 tw-bg-yellow-400">{{ $coach['date'] }}</div>
-                            @endif
+                        @if (isset($coach['date']))
+                            <div
+                                class="tw-absolute tw-text-black tw-leading-none tw-uppercase tw-font-bold tw-rounded tw-font-roboto-condensed tw-p-1 tw-m-4 tw-bg-yellow-400">
+                                {{ $coach['date'] }}</div>
+                        @endif
                         <div class="tw-absolute tw-w-full tw-left-0 tw-bottom-0 tw-text-white tw-flex tw-flex-col tw-text-center tw-uppercase tw-h-2/3 tw-px-3"
                             style="background: linear-gradient(180deg, rgba(1, 5, 15, 0) 0%, #01050F 100%);">
                             <!-- Coach Name -->
