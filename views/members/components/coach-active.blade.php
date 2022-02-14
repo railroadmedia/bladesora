@@ -22,7 +22,7 @@
                         <img src="{{ imgix($coach->fetch('data.coach_card_image'), ['w' => 300]) }}"
                             class="tw-w-full tw-flex tw-object-cover" alt="{{ $coach->fetch('fields.name') }} Card">
 
-                        <div class="tw-absolute tw-w-full tw-left-0 tw-bottom-0 tw-text-white tw-flex tw-flex-col tw-text-center tw-uppercase tw-h-2/3 tw-px-3"
+                        <div class="tw-absolute tw-w-full tw-left-0 tw-bottom-0 tw-text-white tw-flex tw-flex-col tw-text-center tw-uppercase tw-h-3/4"
                             style="background: linear-gradient(180deg, rgba(1, 5, 15, 0) 0%, #01050F 100%);">
                             <!-- Coach Name -->
                             <p class="tw-text-2xl xl:tw-text-3xl tw-font-bold tw-font-roboto-condensed tw-break-words tw-flex tw-flex-col tw-mt-auto tw-mb-4"
@@ -37,9 +37,16 @@
                             </p>
 
                             <!-- Coach Title -->
-                            <p class="tw-text-sm tw-font-primary tw-text-yellow-400 tw-mb-8 tw-leading-snug">
+                            <p class="tw-text-sm tw-font-primary tw-text-yellow-400 tw-h-10 tw-mb-10 tw-leading-snug tw-px-3">
                                 {{ $coach->fetch('data.focus_text.value') }}
                             </p>
+
+                            @if ($coach->fetch('is_house_coach'))
+                                <div class="tw-text-white tw-text-xs tw-font-roboto-condensed tw-font-bold tw-absolute tw-bottom-0 tw-w-full tw-flex tw-mb-4 tw-justify-center tw-items-center">
+                                    <svg width="11" height="11" fill="#ffffff" class="tw-mr-1" aria-hidden="true" focusable="false"><use xlink:href="#whistle"></use></svg>
+                                    HOUSE
+                                </div>
+                            @endif
                         </div>
 
                         <!-- Overlay -->
