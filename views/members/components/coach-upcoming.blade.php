@@ -10,18 +10,14 @@
                 Upcoming Coaches
             </h2>
         </div>
-        @php
-        //dd($upcomingCoaches)
-        @endphp
         <!-- Upcoming Coaches -->
         <div class="tw-my-3">
             <div class="tw-grid tw-grid-cols-2 sm:tw-grid-cols-3 md:tw-grid-cols-4 xl:tw-grid-cols-5 tw-gap-3">
                 @foreach ($upcomingCoaches as $coach)
                     <div class="tw-rounded-3xl tw-overflow-hidden tw-relative tw-flex tw-mb-3">
-
                         <!-- Coach Image -->
-                        <div style="background: url({{ imgix($coach['image'], ['h' => 436]) }}); height: 436px; width: 300px;"
-                            class="tw-w-full tw-flex tw-object-cover tw-bg-center" alt="{{ $coach['name'] }} Card"></div>
+                         <img src="{{ imgix($coach['image'], ['h' => 436, 'w' => 300, 'fit' => 'crop', 'crop' => 'faces']) }}"
+                            class="tw-w-full tw-flex tw-object-cover" alt="{{ $coach['name'] }} Card">
                             @if (isset($coach['date']))
                                 <div class="tw-absolute tw-text-white tw-font-bold tw-rounded-md" style="background: #ffac00; font-size: 18px; line-height: 14px; padding: 6px 12px; left: 12px; top: 12px">{{  $coach['date'] }}</div>
                             @endif
