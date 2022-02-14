@@ -2,9 +2,7 @@
     <div class="container">
         <div class="tw-flex tw-items-center tw-mb-6">
             <span class="rounded bg-{{ $brand }} text-white icon-bg-circle body mr-1">
-                <svg width="20" height="20" aria-hidden="true" fill="white" focusable="false">
-                    <use href="#whistle"></use>
-                </svg>
+                @include('bladesora::members.partials._upcoming-coaches-icon')
             </span>
             <h2 class="heading sans">
                 Upcoming Coaches
