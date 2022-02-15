@@ -22,7 +22,7 @@
         <div class="flex flex-row flex-wrap">
             @foreach($packs as $index => $pack)
                 @include('bladesora::members.content.content-overview', [
-                    "themeColor" => "{{$brand}}",
+                    "themeColor" => $brand,
                     "hideBorder" => $index === 0,
                     "itemThumbnail" => $pack->fetch('data.thumbnail_url'),
                     "itemTitle" => $pack->fetch('fields.title'),
