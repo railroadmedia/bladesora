@@ -25,7 +25,7 @@
         @endslot
         @slot('actions')
             <a href="{{ $coachOfTheMonth->fetch('url', '') }}"
-               class="tw-btn tw-btn-primary tw-transition tw-bg-{{ $brand }} hover:tw-bg-{{ $brand }}-600 sm:tw-mr-4 tw-box-border tw-mb-4"  style="font-size: 16px; line-height: 24px; height: 50px; width: 200px;">
+               class="tw-btn tw-btn-primary tw-transition tw-bg-{{ $brand }} hover:tw-bg-{{ $brand }}-600 lg:tw-mr-4 tw-box-border tw-mb-4"  style="font-size: 16px; line-height: 24px; height: 50px; width: 200px;">
                 See Coach
             </a>
             @if($vimeoVideo != null)
