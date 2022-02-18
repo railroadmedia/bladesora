@@ -15,11 +15,17 @@
                     <div class="tw-rounded-3xl tw-overflow-hidden tw-relative tw-flex tw-mb-3">
                         <!-- Coach Image -->
                         <img src="{{ imgix($coach['image'], ['h' => 436, 'w' => 300, 'fit' => 'crop', 'crop' => 'faces']) }}"
-                            class="tw-w-full tw-flex tw-object-cover" alt="{{ $coach['name'] }} Card">
+                            class="tw-w-full tw-flex tw-object-cover tw-filter tw-grayscale" alt="{{ $coach['name'] }} Card">
                         @if (isset($coach['date']))
-                            <div
-                                class="tw-absolute tw-text-black tw-leading-none tw-uppercase tw-font-bold tw-rounded tw-font-roboto-condensed tw-p-1 tw-m-4 tw-bg-yellow-400">
-                                {{ $coach['date'] }}</div>
+                            <div class="tw-absolute  tw-leading-none tw-uppercase  tw-rounded  tw-p-1 tw-m-4 tw-bg-yellow-400">
+                                <span class="tw-text-sm tw-text-black tw-font-bold tw-leading-none tw-font-roboto-condensed">
+                                    <!-- Lock Icon SVG-->
+                                    <svg width="8" height="10" viewBox="0 0 8 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M7.14286 4.375H6.71429V2.96875C6.71429 1.33203 5.49643 0 4 0C2.50357 0 1.28571 1.33203 1.28571 2.96875V4.375H0.857143C0.383929 4.375 0 4.79492 0 5.3125V9.0625C0 9.58008 0.383929 10 0.857143 10H7.14286C7.61607 10 8 9.58008 8 9.0625V5.3125C8 4.79492 7.61607 4.375 7.14286 4.375ZM5.28571 4.375H2.71429V2.96875C2.71429 2.19336 3.29107 1.5625 4 1.5625C4.70893 1.5625 5.28571 2.19336 5.28571 2.96875V4.375Z" fill="black"/>
+                                    </svg>
+                                    {{ $coach['date'] }}
+                                </span>
+                            </div>
                         @endif
                         <div class="tw-absolute tw-w-full tw-left-0 tw-bottom-0 tw-text-white tw-flex tw-flex-col tw-text-center tw-uppercase tw-h-2/3 tw-px-3"
                             style="background: linear-gradient(180deg, rgba(1, 5, 15, 0) 0%, #01050F 100%);">
@@ -39,11 +45,6 @@
                             <p class="tw-text-sm tw-font-primary tw-text-yellow-400 tw-mb-8 tw-leading-snug">
                                 {{ strip_tags($coach['focus_text']) }}
                             </p>
-                        </div>
-
-                        <!-- Overlay -->
-                        <div
-                            class="tw-flex tw-items-center tw-content-center tw-p-6 tw-absolute tw-top-0 tw-left-0 tw-right-0 tw-bottom-0 tw-bg-black tw-opacity-0 tw-transition tw-bg-opacity-60 tw-duration-500 tw-ease-in-out hover:tw-opacity-100">
                         </div>
                     </div>
                 @endforeach
