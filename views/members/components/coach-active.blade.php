@@ -15,12 +15,12 @@
         <div class="tw-my-3">
             <div class="tw-grid tw-grid-cols-2 sm:tw-grid-cols-3 md:tw-grid-cols-4 xl:tw-grid-cols-5 tw-gap-3">
                 @foreach ($activeCoaches as $coach)
-                    <a href="{{ url()->route('members.coaches.show', ['coachSlug' => $coach['slug']]) }}"
+                    <a href="{{ url()->route('members.coaches.show', ['coachSlug' => $coach->getSlug()]) }}"
                         class="tw-rounded-3xl tw-overflow-hidden tw-relative tw-flex tw-mb-3">
 
                         <!-- Coach Image -->
                         <img src="{{ imgix($coach->fetch('data.coach_card_image'), ['w' => 300]) }}"
-                            class="tw-w-full tw-flex tw-object-cover" alt="{{ $coach->fetch('fields.name') }} Card">
+                            class="tw-w-full tw-flex tw-object-cover" alt="{{ $coach->getName()}} Card">
 
                         <div class="tw-absolute tw-w-full tw-left-0 tw-bottom-0 tw-text-white tw-flex tw-flex-col tw-text-center tw-uppercase tw-h-3/4"
                             style="background: linear-gradient(180deg, rgba(1, 5, 15, 0) 0%, #01050F 100%);">
