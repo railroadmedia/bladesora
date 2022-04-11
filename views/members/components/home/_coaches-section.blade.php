@@ -29,11 +29,11 @@
                         <div class="tw-flex tw-bg-cover tw-bg-top tw-relative tw-bg-gray-200 tw-overflow-hidden tw-rounded-lg lg:tw-rounded-xl tw-no-underline tw-text-white">
                             <img src="{{ $coach->fetch('data.coach_card_image') }}" alt="{{ $coach->fetch('fields.name') }}" class="tw-w-full">
                             <div class="tw-flex tw-flex-col tw-mt-auto tw-w-full tw-items-center tw-justify-center tw-h-3/4 tw-text-center tw-absolute tw-bottom-0 tw-left-0 tw-w-full"
-                                style="background: linear-gradient(180deg, rgba(1, 5, 15, 0) 0%, #01050F 100%);"
+                                style="background: linear-gradient(180deg, rgba(1, 5, 15, 0) 20%, #01050F 100%);"
                             >
                                 <!-- Coach Name -->
-                                <h4 class="tw-uppercase tw-mt-auto tw-font-roboto-condensed tw-fluid-text-2xl-base tw-break-all tw-leading-tight md:tw-leading-none tw-mb-3 tw-text-center"
-                                    style="hyphens: auto">
+                                <h4 class="tw-uppercase tw-mt-auto tw-font-roboto-condensed tw-fluid-text-2xl-base tw-break-all tw-leading-tight md:tw-leading-none tw-mb-2 tw-text-center"
+                                    style="line-height:0.9 !important;hyphens: auto">
                                     @php
                                         $fullName = $coach->fetch('fields.name');
                                         $exploded = explode(' ', $fullName);
