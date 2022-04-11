@@ -17,7 +17,7 @@
                         <img src="{{ imgix($coach['image'], ['h' => 436, 'w' => 300, 'fit' => 'crop', 'crop' => 'faces']) }}"
                             class="tw-w-full tw-flex tw-object-cover tw-filter tw-grayscale" alt="{{ $coach['name'] }} Card">
                         @if (isset($coach['date']))
-                            <div class="tw-absolute  tw-leading-none tw-uppercase  tw-rounded  tw-p-1 tw-m-4 tw-bg-yellow-400">
+                            <div class="tw-absolute  tw-leading-none tw-uppercase  tw-rounded  tw-p-1 tw-ml-3 tw-mt-3 tw-bg-yellow-400">
                                 <span class="tw-text-sm tw-text-black tw-font-bold tw-leading-none tw-font-roboto-condensed">
                                     <!-- Lock Icon SVG-->
                                     <svg width="8" height="10" viewBox="0 0 8 10" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -28,10 +28,10 @@
                             </div>
                         @endif
                         <div class="tw-absolute tw-w-full tw-left-0 tw-bottom-0 tw-text-white tw-flex tw-flex-col tw-text-center tw-uppercase tw-h-2/3 tw-px-3"
-                            style="background: linear-gradient(180deg, rgba(1, 5, 15, 0) 0%, #01050F 100%);">
+                            style="background: linear-gradient(180deg, rgba(1, 5, 15, 0) 20%, #01050F 100%);">
                             <!-- Coach Name -->
-                            <p class="tw-text-2xl xl:tw-text-3xl tw-font-bold tw-font-roboto-condensed tw-break-words tw-flex tw-flex-col tw-mt-auto tw-mb-4"
-                                style="line-height:1.1 !important; hyphens: auto;">
+                            <p class="tw-text-2xl xl:tw-text-3xl tw-font-bold tw-font-roboto-condensed tw-break-words tw-flex tw-flex-col tw-mt-auto tw-mb-2"
+                                style="line-height:0.9 !important; hyphens: auto;">
                                 @php
                                     $fullName = strip_tags($coach['name']);
                                     $exploded = explode(' ', $fullName);
@@ -42,7 +42,7 @@
                             </p>
 
                             <!-- Coach Title -->
-                            <p class="tw-text-sm tw-font-primary tw-text-yellow-400 tw-mb-8 tw-leading-snug">
+                            <p class="tw-text-sm tw-font-primary tw-text-yellow-400 tw-mb-4 tw-leading-snug">
                                 {{ strip_tags($coach['focus_text']) }}
                             </p>
                         </div>

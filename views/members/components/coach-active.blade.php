@@ -38,7 +38,7 @@
                             </p>
 
                             <!-- Coach Title -->
-                            <p class="tw-text-sm tw-font-primary tw-text-yellow-400 tw-h-10 tw-mb-10 tw-leading-snug tw-px-3">
+                            <p class="tw-text-sm tw-font-primary tw-text-yellow-400 tw-h-10 tw-mb-8 tw-leading-snug tw-px-3">
                                 {{ $coach->fetch('data.focus_text.value') }}
                             </p>
 
