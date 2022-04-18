@@ -50,7 +50,7 @@
 
                 @if(isset($includedWithEdge) && $includedWithEdge === true)
                     <p class="tiny text-{{ $themeColor }} uppercase" style="margin-bottom: 8px;">
-                        ★ Included With Edge
+                        ★ Included With Drumeo
                     </p>
                 @endif
 
