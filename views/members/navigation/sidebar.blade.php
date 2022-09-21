@@ -7,6 +7,19 @@
             </div>
         </div>
     @endisset
+
+    {{-- New Platform Preview Button --}}
+    <div class="tw-p-2 tw-pb-0">
+        <a  class="tw-btn-primary tw-px-4 tw-w-full tw-border-0 musora-btn tw-wrap"
+            href="{{ $newPlatformUrl ?? 'https://www.musora.com/members/' }}"
+            target="_blank"
+            title="Open Musora in new tab"
+            style="background: linear-gradient(45.69deg, rgb(0, 201, 172) 1.54%, rgb(11, 118, 219) 30.83%, rgb(154, 0, 238) 72.12%, rgb(246, 26, 48) 95.24%);">
+            <span class="collapsed-text">Musora</span>
+            <span class="expanded-text">Try our new platform!</span>
+        </a>
+    </div>
+
     @foreach($sections as $section)
         <div class="sidebar-section {{ $loop->last ? '' : 'bb-grey-1-1' }}">
             @isset($section['header'])
