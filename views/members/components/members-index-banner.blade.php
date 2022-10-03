@@ -1,8 +1,7 @@
-@php
-    $vimeoVideo = $coachOfTheMonth->fetch('fields.video.fields.vimeo_video_id');
-@endphp
-
 @if (isset($coachOfTheMonth))
+    @php
+        $vimeoVideo = $coachOfTheMonth->fetch('fields.video.fields.vimeo_video_id');
+    @endphp
     @component('bladesora::members.components.coach-header-template', [
         'brand' => $brand,
         'backgroundImage' => $coachOfTheMonth->fetch('coach_top_banner_image'),
